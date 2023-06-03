@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Page</title>
+<meta name="generator" content="WYSIWYG Web Builder 18 - https://www.wysiwygwebbuilder.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="font-awesome.min.css" rel="stylesheet">
+<link href="SeriesLatino2.css" rel="stylesheet">
+<link href="politica.css" rel="stylesheet">
+</head>
+<body>
+<div id="offline-message" class="offline-message">
+  <div class="content">
+    <img src="https://i.ibb.co/Y37PJzt/IMG-20230603-132637-477.jpg" alt="Error de conexión">
+     <p>Revisa tu conexión a internet</p>
+    <p>Se volverá a conectar automáticamente una vez tengas internet.</p>
+  </div>
+</div>
+
+<script>
+  window.addEventListener('load', function() {
+    var offlineMessage = document.getElementById('offline-message');
+
+    function checkConnection() {
+      if (!navigator.onLine) {
+        offlineMessage.style.display = 'block';
+      } else {
+        offlineMessage.style.display = 'none';
+      }
+    }
+
+    window.addEventListener('online', checkConnection);
+    window.addEventListener('offline', checkConnection);
+
+    checkConnection();
+  });
+</script>
+
+
+<div id="wb_LayoutGrid1">
+<div id="LayoutGrid1">
+<div class="row">
+<div class="col-1">
+<div id="wb_Text1">
+<span style="color:#FFFFFF;font-family:Arial;font-size:15px;"><br><br></span><span style="color:#FFFFFF;font-family:Arial;font-size:17px;"><strong>Politica de privacidad:</strong></span><span style="color:#FFFFFF;font-family:Arial;font-size:15px;"><br><br><br>La app no recoge ningun dato de<br>caracter personal del usuario como, por<br>ejemplo, nombre, fotografias <br>localizacion.<br><br>- En consecuencia la app no comparte<br> ningun dato personal con ninguna otra<br> entidad o terceras personas.<br><br>- Permitimos que terceras compañias<br>publiquen anuncios y recopilen cierta<br>informacion anonima cuando visite nues-<br>tra aplicacion. Estas empresas pueden<br>utilizar informacion anonima, como su<br>ID de publicidad de Google,&nbsp; la<br>version de su dispositivo, la actividad de<br>navegacion, la ubicacion y otros datos<br>técnicos relacionados con su dispositivo,<br>a fin de proporcionar anuncios.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="upStickyLayer" style="position:fixed;text-align:left;left:auto;right:10px;top:10px;width:61px;height:53px;z-index:3;">
+<div id="wb_IconFont1" style="position:absolute;left:9px;top:8px;width:47px;height:37px;text-align:center;z-index:1;">
+<a href="./index.html"><div id="IconFont1"><i class="fa fa-times"></i></div></a></div>
+</div>
+
+</body>
+</html>

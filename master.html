@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es-ar">
+<head>
+<meta charset="utf-8">
+<title>Untitled Page</title>
+<meta name="generator" content="WYSIWYG Web Builder 18 - https://www.wysiwygwebbuilder.com">
+<link href="font-awesome.min.css" rel="stylesheet">
+<link href="SeriesLatino2.css" rel="stylesheet">
+<link href="master.css" rel="stylesheet">
+<script src="jquery-3.6.0.min.js"></script>
+<script src="wb.overlay.min.js"></script>
+<script>
+$(document).ready(function()
+{
+   $('#OverlayMenu2-overlay').overlay({hideTransition:true});
+   $('#OverlayMenu2').on('click', function(e)
+   {
+      $.overlay.show($('#OverlayMenu2-overlay'));
+      return false;
+   });
+});
+</script>
+</head>
+<body>
+<div id="h" style="position:fixed;text-align:center;left:0px;top:20px;width:258px;height:43px;z-index:2;">
+<div id="h_Container" style="width:258px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
+<div id="wb_Image2" style="position:absolute;left:70px;top:0px;width:188px;height:43px;z-index:0;">
+<img src="images/8248849621_2e551c55-070d-47aa-9422-2b995658cef6.png" id="Image2" alt="" width="188" height="43"></div>
+<div id="wb_OverlayMenu2" style="position:absolute;left:9px;top:6px;width:40px;height:37px;z-index:1;">
+<a href="#" id="OverlayMenu2">
+<span class="line"></span>
+<span class="line">
+</span><span class="line"></span>
+</a>
+</div>
+</div>
+</div>
+<div id="OverlayMenu2-overlay">
+<div class="OverlayMenu2">
+<ul class="drilldown-menu" role="menu">
+<li><a role="menuitem" href="./index.html" class="OverlayMenu2-effect"><i class="fa fa-home overlay-icon"></i>Inicio</a></li>
+<li><a role="menuitem" href="./categorias.html" class="OverlayMenu2-effect"><i class="fa fa-caret-right overlay-icon"></i>Categorias</a></li>
+<li><a role="menuitem" href="./buscar.html" class="OverlayMenu2-effect"><i class="fa fa-search overlay-icon"></i>Buscar</a></li>
+<li><a role="menuitem" href="./favoritos.html" class="OverlayMenu2-effect"><i class="fa fa-heart overlay-icon"></i>Favoritos</a></li>
+   </ul>
+</div>
+<a class="close-button" id="OverlayMenu2-close" href="#" role="button" aria-hidden="true"><span></span></a>
+</div>
+</body>
+</html>

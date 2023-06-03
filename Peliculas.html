@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="es-ar">
+<head>
+<meta charset="utf-8">
+<title>Untitled Page</title>
+<meta name="generator" content="WYSIWYG Web Builder 18 - https://www.wysiwygwebbuilder.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="font-awesome.min.css" rel="stylesheet">
+<link href="SeriesLatino2.css" rel="stylesheet">
+<link href="Peliculas.css" rel="stylesheet">
+<script src="jquery-3.6.0.min.js"></script>
+<script src="wb.overlay.min.js"></script>
+<script src="wb.drilldownmenu.min.js"></script>
+<script>
+$(document).ready(function()
+{
+   $('#OverlayMenu1-overlay').overlay({hideTransition:true});
+   $('.OverlayMenu1').drilldownmenu({backText: 'Atrás'});
+   $('#OverlayMenu1').on('click', function(e)
+   {
+      $.overlay.show($('#OverlayMenu1-overlay'));
+      return false;
+   });
+   if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {$('#preloader').remove();}
+});
+$(window).on('load', function()
+{
+   $('#preloader').remove();
+});
+</script>
+</head>
+<body>
+<div id="offline-message" class="offline-message">
+  <div class="content">
+    <img src="https://i.ibb.co/Y37PJzt/IMG-20230603-132637-477.jpg" alt="Error de conexión">
+     <p>Revisa tu conexión a internet</p>
+    <p>Se volverá a conectar automáticamente una vez tengas internet.</p>
+  </div>
+</div>
+
+<script>
+  window.addEventListener('load', function() {
+    var offlineMessage = document.getElementById('offline-message');
+
+    function checkConnection() {
+      if (!navigator.onLine) {
+        offlineMessage.style.display = 'block';
+      } else {
+        offlineMessage.style.display = 'none';
+      }
+    }
+
+    window.addEventListener('online', checkConnection);
+    window.addEventListener('offline', checkConnection);
+
+    checkConnection();
+  });
+</script>
+
+
+<div id="wb_LayoutGrid1">
+<div id="LayoutGrid1">
+<div class="row">
+<div class="col-1">
+<div id="Html1" style="display:inline-block;width:100%;height:218px;z-index:0">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./assets/images/icon.png" type="image/png">
+  <title>CineFlix</title>
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="stylesheet" href="./assets/css/media_query.css">
+
+  <!--
+    - google font link
+  -->
+  <link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" rel="stylesheet" />
+</head>
+
+<body>
+
+ 
+
+  <!--
+    - main container
+  -->
+ 
+    </header>
+
+   <!--
+        - #BANNER SECTION
+      
+
+
+
+
+
+
+      <!--
+        - #CATEGORY SECTION
+      -->
+      <div class="movies-grid">
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img data-src="./img/ladyop.webp" alt="Lady" class="card-img lazy">
+
+              <div class="card-overlay">
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>6.4</span>
+                </div>
+
+                <div class="play">
+                 <a href="./lady.html"><ion-icon name="play-circle-outline"></ion-icon>
+                 </a>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+              <a href="./lady.html"><h3 class="card-title">Lady, la vendedora de rosas</h3>
+
+              <div class="card-info">
+                <span class="genre">    </span>
+                <span class="year">     </span>
+              </div>
+            </div>
+</a>
+          </div>
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              
+              <img data-src="./img/cartelop.webp" alt="cartel" class="card-img lazy">
+
+              <div class="card-overlay">
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>7.4</span>
+                </div>
+
+                <div class="play">
+                  <a href="./cartel.html"><ion-icon name="play-circle-outline"></ion-icon>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+
+
+            <div class="card-body">
+              <a href="./cartel.html"><h3 class="card-title">El cartel de los sapos</h3>
+
+              <div class="card-info">
+                <span class="genre"></span>
+                <span class="year"></span>
+              </div>
+            </div>
+</a>
+          </div>
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img data-src="./img/muñecasop.webp" alt="muñecas" class="card-img lazy">
+
+              <div class="card-overlay">
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>7.6</span>
+                </div>
+
+                <a href="./muñecas.html"><div class="play">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+              <a href="./muñecas.html"><h3 class="card-title">Las muñecas de la mafia</h3>
+
+              <div class="card-info">
+                <span class="genre"></span>
+                <span class="year"></span>
+              </div>
+            </div>
+</a>
+          </div>
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img data-src="./img/enfermerasop.webp" alt="enfermeras" class="card-img lazy">
+
+              <div class="card-overlay">
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>8.0</span>
+                </div>
+
+                <div class="play">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+              <h3 class="card-title">Enfermeras</h3>
+
+              <div class="card-info">
+                <span class="genre"></span>
+                <span class="year"></span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img data-src="./img/hastaop.webp" alt="hasta" class="card-img lazy">
+
+              <div class="card-overlay">
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>9.0</span>
+                </div>
+
+                <div class="play">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+              <h3 class="card-title">Hasta que la plata nos separe</h3>
+
+              <div class="card-info">
+                <span class="genre"></span>
+                <span class="year"></span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img data-src="./img/dejemonosop.webp" alt="dejemonos" class="card-img lazy">
+
+              <div class="card-overlay">
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>7.3</span>
+                </div>
+
+                <div class="play">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+              <h3 class="card-title">Dejemonos de vargas</h3>
+
+              <div class="card-info">
+                <span class="genre"></span>
+                <span class="year"></span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img data-src="./img/guacaop.webp" alt="guaca" class="card-img lazy">
+
+              <div class="card-overlay">
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>6.7</span>
+                </div>
+
+                <div class="play">
+                  <a href="./guaca.html"><ion-icon name="play-circle-outline"></ion-icon>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+              <a href="./guaca.html"><h3 class="card-title">Regreso a la guaca</h3>
+              
+
+              <div class="card-info">
+                <span class="genre"></span>
+                <span class="year"></span>
+              </div>
+            </div>
+</a>
+          </div>
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img data-src="./img/anaop.webp" alt="ana" class="card-img lazy">
+
+              <div class="card-overlay">
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>8.9</span>
+                </div>
+
+                <div class="play">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+              <h3 class="card-title">Ana de nadie</h3>
+
+              <div class="card-info">
+                <span class="genre"></span>
+                <span class="year"></span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img data-src="./img/pasionop.webp" alt="pasion" class="card-img lazy">
+
+              <div class="card-overlay">
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>8.6</span>
+                </div>
+
+                <div class="play">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+              <h3 class="card-title">Pasion de gavilanes</h3>
+
+              <div class="card-info">
+                <span class="genre"></span>
+                <span class="year"></span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img data-src="./img/entreop.webp" alt="entre" class="card-img lazy">
+
+              <div class="card-overlay">
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>8.6</span>
+                </div>
+
+                <div class="play">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+              <h3 class="card-title">Entre sombras</h3>
+
+              <div class="card-info">
+                <span class="genre"></span>
+                <span class="year"></span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img data-src="./img/tresop.webp" alt="tres" class="card-img lazy">
+
+              <div class="card-overlay">
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>8.5</span>
+                </div>
+
+                <div class="play">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+              <h3 class="card-title">Tres caines</h3>
+
+              <div class="card-info">
+                <span class="genre"></span>
+                <span class="year"></span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img data-src="./img/betiop.webp" alt="beti" class="card-img lazy">
+
+              <div class="card-overlay">
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>8.4</span>
+                </div>
+
+                <div class="play">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+              <h3 class="card-title">Yo soy Betty la fea</h3>
+
+              <div class="card-info">
+                <span class="genre"></span>
+                <span class="year"></span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img data-src="./img/chepeop.webp" alt="chepe" class="card-img lazy">
+
+              <div class="card-overlay">
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>5.4</span>
+                </div>
+
+                <div class="play">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+              <h3 class="card-title">Chepe fortuna</h3>
+
+              <div class="card-info">
+                <span class="genre"></span>
+                <span class="year"></span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img data-src="./img/costeñaop.webp" alt="costeña" class="card-img lazy">
+
+              <div class="card-overlay">
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>6.8</span>
+                </div>
+
+                <div class="play">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+              <h3 class="card-title">La costeña y el cachaco</h3>
+
+              <div class="card-info">
+                <span class="genre"></span>
+                <span class="year"></span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+ 
+  
+
+      </section>
+
+
+
+
+
+
+    
+
+
+
+
+
+    <!--
+      - FOOTER SECTION
+    -->
+    
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  
+  <script>
+  
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    var lazyImages = [].slice.call(document.querySelectorAll('img.lazy'));
+
+    if ('IntersectionObserver' in window) {
+      var lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            var lazyImage = entry.target;
+            lazyImage.src = lazyImage.dataset.src;
+            lazyImage.classList.remove('lazy');
+            lazyImageObserver.unobserve(lazyImage);
+          }
+        });
+      });
+
+      lazyImages.forEach(function(lazyImage) {
+        lazyImageObserver.observe(lazyImage);
+      });
+    } else {
+      // Fallback para navegadores que no soportan IntersectionObserver
+      // Carga las imágenes inmediatamente
+      lazyImages.forEach(function(lazyImage) {
+        lazyImage.src = lazyImage.dataset.src;
+        lazyImage.classList.remove('lazy');
+      });
+    }
+  });
+  
+  
+  </script>
+  
+  
+  
+  
+  <script src="./assets/js/main.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html></div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="h" style="position:fixed;text-align:center;left:0px;top:20px;width:213px;height:46px;z-index:6;">
+<div id="h_Container" style="width:213px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
+<div id="wb_Text1" style="position:absolute;left:67px;top:6px;width:146px;height:40px;z-index:1;">
+<span style="color:#FFFFFF;font-family:'Comic Sans MS';font-size:29px;">Peliculas</span></div>
+<div id="wb_OverlayMenu1" style="position:absolute;left:10px;top:6px;width:40px;height:37px;z-index:2;">
+<a href="#" id="OverlayMenu1">
+<span class="line"></span>
+<span class="line">
+</span><span class="line"></span>
+</a>
+</div>
+</div>
+</div>
+<div id="Layer2" style="position:fixed;text-align:right;left:auto;right:20px;top:auto;bottom:14px;width:53px;height:51px;z-index:7;">
+<div id="Layer2_Container" style="width:53px;position:relative;margin-left:auto;margin-right:0;text-align:left;">
+<div id="wb_Image2" style="position:absolute;left:0px;top:0px;width:53px;height:51px;z-index:3;">
+<a href="https://t.me/+-RNE8YcFmKtmOTMx" target="_blank"><img src="images/telegrama.png" id="Image2" alt="" width="53" height="53"></a></div>
+</div>
+</div>
+
+<div id="OverlayMenu1-overlay">
+<div class="OverlayMenu1">
+<ul class="drilldown-menu" role="menu">
+<li><a role="menuitem" href="./index.html" class="OverlayMenu1-effect"><i class="fa fa-home overlay-icon"></i>Inicio</a></li>
+<li>
+<a role="menuitem" href="#" class="OverlayMenu1-effect"><i class="fa fa-caret-right overlay-icon"></i>Categorias</a>
+<ul class="drilldown-submenu" role="menu">
+<li><a role="menuitem" href="./Series.html" class="OverlayMenu1-effect"><i class="fa fa-play-circle overlay-icon"></i>Series</a></li>
+<li><a role="menuitem" href="./Peliculas.html" class="OverlayMenu1-effect"><i class="fa fa-play-circle overlay-icon"></i>Peliculas</a></li>
+<li><a role="menuitem" href="./Todas.html" class="OverlayMenu1-effect"><i class="fa fa-play-circle overlay-icon"></i>Ver&nbsp;todas</a></li>
+</ul>
+</li>
+<li><a role="menuitem" href="./buscar.html" class="OverlayMenu1-effect"><i class="fa fa-search overlay-icon"></i>Buscar</a></li>
+<li><a role="menuitem" href="./favoritos.html" class="OverlayMenu1-effect"><i class="fa fa-heart overlay-icon"></i>Favoritos</a></li>
+<li>
+<a role="menuitem" href="#" class="OverlayMenu1-effect"><i class="fa fa-circle overlay-icon"></i>En&nbsp;vivo</a>
+<ul class="drilldown-submenu" role="menu">
+<li><a role="menuitem" href="#" class="OverlayMenu1-effect"><i class="fa fa-circle overlay-icon"></i>Tv&nbsp;Nacional</a></li>
+<li><a role="menuitem" href="https://fudfkzkl.blogspot.com/p/eventos-del-dia.html" class="OverlayMenu1-effect"><i class="fa fa-circle overlay-icon"></i>Futbol&nbsp;en&nbsp;vivo</a></li>
+</ul>
+</li>
+   </ul>
+</div>
+<a class="close-button" id="OverlayMenu1-close" href="#" role="button" aria-hidden="true"><span></span></a>
+</div>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            var disclaimer = document.querySelector("img[alt='www.000webhost.com']");
+            if(disclaimer) {
+                disclaimer.remove();
+            }
+        });
+    </script><div id="preloader"></div>
+</body>
+</html>

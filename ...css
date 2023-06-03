@@ -1,0 +1,235 @@
+body
+{
+   background-color: #131720;
+   color: #000000;
+   font-family: Arial;
+   font-weight: normal;
+   font-size: 13px;
+   line-height: 1.1875;
+   margin: 0;
+   padding: 0;
+}
+#preloader
+{
+   background: #000000 url("images/sssss.gif") no-repeat center center;
+   bottom: 0;
+   position: fixed;
+   top: 0;
+   width: 100%;
+   z-index: 99999;
+}
+#wb_LayoutGrid1
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   border-radius: 0px;
+   box-sizing: border-box;
+   margin: 0;
+}
+#LayoutGrid1
+{
+   box-sizing: border-box;
+   padding: 0;
+   margin-right: auto;
+   margin-left: auto;
+}
+#LayoutGrid1 > .row
+{
+   margin-right: 0;
+   margin-left: 0;
+}
+#LayoutGrid1 > .row > .col-1
+{
+   box-sizing: border-box;
+   font-size: 0;
+   min-height: 1px;
+   padding-right: 0px;
+   padding-left: 0px;
+   position: relative;
+}
+#LayoutGrid1 > .row > .col-1
+{
+   float: left;
+}
+#LayoutGrid1 > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 100%;
+   text-align: center;
+}
+#LayoutGrid1:before,
+#LayoutGrid1:after,
+#LayoutGrid1 .row:before,
+#LayoutGrid1 .row:after
+{
+   display: table;
+   content: " ";
+}
+#LayoutGrid1:after,
+#LayoutGrid1 .row:after
+{
+   clear: both;
+}
+@media (max-width: 480px)
+{
+#LayoutGrid1 > .row > .col-1
+{
+   float: none;
+   width: 100% !important;
+}
+}
+* {
+ padding: 0;
+ margin: 0;
+ box-sizing: border-box;
+}
+
+body {
+  /*JOSEMIGUELVIP*/
+ background: #000;
+ font-family: 'Open Sans', sans-serif;
+}
+
+a {
+ text-decoration: none;
+}
+
+ 
+.contenido-opcion.active .titulo {
+  color: red;
+  font-size: 32px;
+}
+
+  
+  
+.contenedor {
+ width: 100%;
+ max-width: 1000px;
+ margin: auto;
+ padding: 0px 0;
+ margin-top: 190px;
+  position: fixed;
+}
+
+.selectbox {
+ width: 50%;
+ margin: auto;
+ position: relative;
+}
+
+.select {
+ background: #212121;
+ width: 100%;
+ box-shadow: 0px 0px 0px rgba(0, 0, 0, .16);
+ border-radius: 10px;
+ cursor: pointer;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ transition: .2s ease all;
+ margin-bottom: 20px;
+ padding: 30px;
+ position: relative;
+ z-index: 200;
+ border: 1px solid transparent;
+}
+
+.select.active,
+.select:hover {
+ box-shadow: 0px 5px 10px rgba(0, 0, 0, .16);
+ border: 1px solid #213f8f;
+}
+
+.select.active:before {
+ content: "";
+ display: block;
+ height: 0;
+ width: 0;
+ border-top: 15px solid #213f8f;
+ border-right: 15px solid transparent;
+ border-bottom: 15px solid transparent;
+ border-left: 15px solid transparent;
+ position: absolute;
+ bottom: -30px;
+ left: calc(50% - 15px);
+}
+
+.select i {
+ font-size: 30px;
+ margin-left: 30px;
+ color: blue;
+}
+
+.titulo {
+ margin-bottom: 10px;
+ color: white;
+ font-weight: 600;
+ font-size: 25px;
+}
+
+.descripcion {
+ font-size: 15px;
+ color: gray;
+}
+
+.opciones {
+ background: #353535;
+ border-radius: 20px;
+ box-shadow: 0px 5px 10px rgba(0,0,0,.16);
+ max-height: 320px;
+ overflow: auto;
+ z-index: 100;
+ width: 100%;
+ display: none;
+}
+
+.opciones.active {
+ display: block;
+ animation: fadeIn .3s forwards;
+}
+
+@keyframes fadeIn {
+ from {
+  transform: translateY(-200px) scale(.5);
+ }
+ to {
+  transform: translateY(0) scale(1);
+ }
+}
+
+.contenido-opcion {
+ width: 100%;
+ display: flex;
+ align-items: center;
+ transition: .2s ease all;
+}
+
+.opciones .contenido-opcion {
+ padding: 30px;
+}
+
+.contenido-opcion img {
+ width: 90px;
+ height: 90px;
+ margin-right: 50px;
+}
+
+
+
+
+@media screen and (max-width: 800px){
+ .selectbox {
+  width: 100%;
+ }
+}
+ 

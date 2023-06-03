@@ -1,0 +1,252 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Lady, la vendedora de rosas</title>
+<meta name="description" content="Lady es una niña de diez años que roba rosas para venderlas, poder comer y juntar el pago que arriendan en un inquilinato junto con su madre Fátima, una mujer desgastada por los golpes de la vida; y su hermano Didier, de ocho años. El gran amigo de Lady es Alex, un joven algo tímido, quien es hijo de Arnulfo, hermano de Elmer, dueño del inquilinato y quien fue abandonado por su mujer en el altar. Fátima y Lady se disponen a vender en los semáforos las rosas que han robado en el barrio El Poblado, con el fin de pagar lo que le adeudan a don Elmer...
+
+Sofía Soto, una abogada defensora de menores muy ceñida a las normas, está empeñada en separar a Fátima de su hija por ponerla a trabajar de vendedora ambulante, creyendo que así ayudará a rescatar a una niña más en situación de abandono. Con el tiempo, Lady termina en un orfanato en el municipio de La Estrella, cerca de Medellín. Ella hace lo que sea por reencontrarse con su madre, intenta fugarse varias veces, pero es localizada antes de cumplir con su objetivo. Lady les da guerra a las religiosas donde se encuentra internada, hasta el punto de llegar a recibir fuertes castigos.
+
+El tiempo pasa y Fátima, agobiada por la pérdida de Lady, se sumerge cada vez más en el alcohol. Guarda la esperanza que cuando se encuentre con su hija ella sea una mejor persona. La joven a sus catorce años ha aprendido todo sobre valores, pero poco sobre comportamiento. Mientras tanto, Marco García, un director de cine que anda en la búsqueda de actrices, prepara su nueva película: un proyecto sobre niñas que deambulan por la ciudad vendiendo rosas.">
+<meta name="keywords" content="lady,lady la vendedora de rosas">
+<meta name="author" content="RCN Televisión">
+<meta name="categories" content="Drama">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="font-awesome.min.css" rel="stylesheet">
+<link href="SeriesLatino2.css" rel="stylesheet">
+<link href="lady.css" rel="stylesheet">
+<script src="jquery-3.6.0.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="wb.overlay.min.js"></script>
+<script src="wb.drilldownmenu.min.js"></script>
+<script src="wwb18.min.js"></script>
+<script>
+$(document).ready(function()
+{
+   $("a[href*='#intro']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_intro').offset().top-88 }, 600, 'easeOutExpo');
+   });
+   $('#OverlayMenu1-overlay').overlay({hideTransition:true});
+   $('.OverlayMenu1').drilldownmenu({backText: 'Atrás'});
+   $('#OverlayMenu1').on('click', function(e)
+   {
+      $.overlay.show($('#OverlayMenu1-overlay'));
+      return false;
+   });
+   if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {$('#preloader').remove();}
+});
+$(window).on('load', function()
+{
+   $('#preloader').remove();
+});
+</script>
+</head>
+<body>
+<div id="offline-message" class="offline-message">
+  <div class="content">
+    <img src="https://i.ibb.co/Y37PJzt/IMG-20230603-132637-477.jpg" alt="Error de conexión">
+     <p>Revisa tu conexión a internet</p>
+    <p>Se volverá a conectar automáticamente una vez tengas internet.</p>
+  </div>
+</div>
+
+<script>
+  window.addEventListener('load', function() {
+    var offlineMessage = document.getElementById('offline-message');
+
+    function checkConnection() {
+      if (!navigator.onLine) {
+        offlineMessage.style.display = 'block';
+      } else {
+        offlineMessage.style.display = 'none';
+      }
+    }
+
+    window.addEventListener('online', checkConnection);
+    window.addEventListener('offline', checkConnection);
+
+    checkConnection();
+  });
+</script>
+
+
+<div id="wb_intro">
+<div id="intro-overlay"></div>
+<div id="intro">
+<div class="col-1">
+<div id="wb_LayoutGrid2">
+<div id="LayoutGrid2">
+<div class="col-1">
+<div id="wb_fav">
+<div id="fav">
+<div class="row">
+<div class="col-1">
+<div id="Html1" style="display:inline-block;width:100%;height:85px;z-index:1">
+
+<div class="container">
+  <div id="botonFavoritosContainer">
+    <button id="botonFavoritos" class="boton-favoritos">
+      <span class="corazon-icono"></span>Agregar a favoritos
+    </button>
+  </div>
+</div>
+
+<script>
+  var favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+  var paginaActual = {
+    url: window.location.href,
+    titulo: "Lady, la vendedora de rosas",
+    imagen: "./img/ladyop.webp",
+    enlace: "./lady.html",
+  };
+
+  if (favoritos.some(function(favorito) {
+    return favorito.url === paginaActual.url;
+  })) {
+    mostrarBotonEliminar();
+  } else {
+    mostrarBotonAgregar();
+  }
+
+  function mostrarBotonEliminar() {
+    var botonEliminar = document.createElement("button");
+    botonEliminar.innerHTML = '<span class="caneca-icono"></span>Eliminar de favoritos';
+    botonEliminar.className = "boton-eliminar animate-boton";
+    botonEliminar.addEventListener("click", function() {
+      var index = favoritos.findIndex(function(favorito) {
+        return favorito.url === paginaActual.url;
+      });
+      if (index !== -1) {
+        favoritos.splice(index, 1);
+        localStorage.setItem("favoritos", JSON.stringify(favoritos));
+      }
+      mostrarBotonAgregar();
+    });
+
+    var botonFavoritosContainer = document.getElementById("botonFavoritosContainer");
+    botonFavoritosContainer.innerHTML = "";
+    botonFavoritosContainer.appendChild(botonEliminar);
+  }
+
+  function mostrarBotonAgregar() {
+    var botonAgregar = document.createElement("button");
+    botonAgregar.innerHTML = '<span class="corazon-icono"></span>Agregar a favoritos';
+    botonAgregar.className = "boton-favoritos animate-boton";
+    botonAgregar.addEventListener("click", function() {
+      favoritos.push(paginaActual);
+      localStorage.setItem("favoritos", JSON.stringify(favoritos));
+      mostrarBotonEliminar();
+    });
+
+    var botonFavoritosContainer = document.getElementById("botonFavoritosContainer");
+    botonFavoritosContainer.innerHTML = "";
+    botonFavoritosContainer.appendChild(botonAgregar);
+  }
+</script></div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_Card1" style="display:flex;width:calc(100% - 10px);z-index:3;" class="card">
+   <div id="Card1-card-header" class="collapsed" aria-expanded="false" data-bs-toggle="collapse" href="#Card1-card-body">Sinopsis Breve<svg class="icon-collapsed" viewBox="0 0 76 76" version="1.1" xmlns="http://www.w3.org/2000/svg">
+   <path d="M68 34 L68 42 C68 43, 68 44, 67 45 C66 46, 65 46, 64 46 L47 46 L47 64 C47 65, 46 66, 45 67 C45 68, 44 68, 43 68 L34 68 C33 68, 32 68, 32 67 C31 66, 30 65, 30 64 L30 46 L13 46 C12 46, 11 46, 10 45 C9 44, 9 43, 9 42 L9 34 C9 33, 9 32, 10 31 C11 31, 12 30, 13 30 L30 30 L30 12 C30 11, 31 10, 32 10 C32 9, 33 8, 34 8 L43 8 C44 8, 45 9, 45 10 C46 10, 47 11, 47 12 L47 30 L64 30 C65 30, 66 31, 67 31 C68 32, 68 33, 68 34"/>
+</svg>
+<svg class="icon-expanded" viewBox="0 0 76 76" version="1.1" xmlns="http://www.w3.org/2000/svg">
+   <path d="M68 34 L68 42 C68 43, 68 44, 67 45 C66 46, 65 46, 64 46 L13 46 C12 46, 11 46, 10 45 C9 44, 9 43, 9 42 L9 34 C9 33, 9 32, 10 31 C11 31, 12 30, 13 30 L64 30 C65 30, 66 31, 67 31 C68 32, 68 33, 68 34"/>
+</svg>
+</div>
+   <div id="Card1-card-body" class="collapse" data-bs-parent="#wb_Card1">
+      <div id="Card1-card-item1"></div>
+      <hr id="Card1-card-item2">
+      <div id="Card1-card-item3"><br><br>Lady la vendedora de rosas</div>
+      <div id="Card1-card-item4"><h2><br><br>Lady es una niña de diez años que roba rosas para venderlas, poder comer y juntar el pago que arriendan en un inquilinato junto con su madre Fátima, una mujer desgastada por los golpes de la vida; y su hermano Didier, de ocho años. El gran amigo de Lady es Alex, un joven algo tímido, quien es hijo de Arnulfo, hermano de Elmer, dueño del inquilinato y quien fue abandonado por su mujer en el altar. Fátima y Lady se disponen a vender en los semáforos las rosas que han robado en el barrio El Poblado, con el fin de pagar lo que le adeudan a don Elmer...<br>Sofía Soto, una abogada defensora de menores muy ceñida a las normas, está empeñada en separar a Fátima de su hija por ponerla a trabajar de vendedora ambulante, creyendo que así ayudará a rescatar a una niña más en situación de abandono. Con el tiempo, Lady termina en un orfanato en el municipio de La Estrella, cerca de Medellín. Ella hace lo que sea por reencontrarse con su madre, intenta fugarse varias veces, pero es localizada antes de cumplir con su objetivo. Lady les da guerra a las religiosas donde se encuentra internada, hasta el punto de llegar a recibir fuertes castigos.</h2></div>
+      <div id="Card1-card-item5"><br>Biografía - Drama</div>
+   </div>
+</div>
+<div id="wb_Card2" style="display:flex;width:calc(100% - 10px);z-index:4;" class="card">
+   <div id="Card2-card-header" class="collapsed" aria-expanded="false" data-bs-toggle="collapse" href="#Card2-card-body">Ficha Técnica<svg class="icon-collapsed" viewBox="0 0 76 76" version="1.1" xmlns="http://www.w3.org/2000/svg">
+   <path d="M68 34 L68 42 C68 43, 68 44, 67 45 C66 46, 65 46, 64 46 L47 46 L47 64 C47 65, 46 66, 45 67 C45 68, 44 68, 43 68 L34 68 C33 68, 32 68, 32 67 C31 66, 30 65, 30 64 L30 46 L13 46 C12 46, 11 46, 10 45 C9 44, 9 43, 9 42 L9 34 C9 33, 9 32, 10 31 C11 31, 12 30, 13 30 L30 30 L30 12 C30 11, 31 10, 32 10 C32 9, 33 8, 34 8 L43 8 C44 8, 45 9, 45 10 C46 10, 47 11, 47 12 L47 30 L64 30 C65 30, 66 31, 67 31 C68 32, 68 33, 68 34"/>
+</svg>
+<svg class="icon-expanded" viewBox="0 0 76 76" version="1.1" xmlns="http://www.w3.org/2000/svg">
+   <path d="M68 34 L68 42 C68 43, 68 44, 67 45 C66 46, 65 46, 64 46 L13 46 C12 46, 11 46, 10 45 C9 44, 9 43, 9 42 L9 34 C9 33, 9 32, 10 31 C11 31, 12 30, 13 30 L64 30 C65 30, 66 31, 67 31 C68 32, 68 33, 68 34"/>
+</svg>
+</div>
+   <div id="Card2-card-body" class="collapse" data-bs-parent="#wb_Card2">
+      <div id="Card2-card-item1"></div>
+      <div id="Card2-card-item2"><br>Título Original: Lady la vendedora de rosas<br>Dirección: Israel Sánchez, Felipe Cano Ibañez<br>Guion: Lina Maria Arboleda, Pedro Miguel Rozo, Juliana Lema<br>Estado: Finalizado<br>País: Colombia<br>Temporadas: 1<br>Episodios: 53<br>Año: 2015<br></div>
+   </div>
+</div>
+<div id="wb_Icon1" style="display:none;width:139px;height:73px;text-align:center;z-index:5;">
+<a href="./ladyt1.html" target="InlineFrame1" onclick="ShowObjectWithEffect('InlineFrame1', 1, 'dropright', 500);ShowObjectWithEffect('wb_Icon1', 0, 'fade', 500);ShowObjectWithEffect('wb_Card1', 0, 'fade', 1);ShowObjectWithEffect('wb_Card2', 0, 'fade', 0);ShowObjectWithEffect('boton_cloce', 0, 'fade', 500);ShowObjectWithEffect('wb_Icon2', 1, 'fade', 500);ShowObjectWithEffect('h', 0, 'fade', 500);ShowObjectWithEffect('wb_fav', 0, 'fade', 500);ShowObjectWithEffect('Icon3', 1, 'fade', 500);ShowObjectWithEffect('wb_Image1', 0, 'fade', 500);return false;"><div id="Icon1"><i class="fa fa-play-circle"></i></div></a>
+</div>
+<iframe name="InlineFrame1" id="InlineFrame1" src="./ladyt1.html" scrolling="no" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+<div id="wb_Image3" style="display:inline-block;width:195px;height:87px;z-index:8;">
+<a href="#" onclick="ShowObjectWithEffect('InlineFrame1', 1, 'dropright', 500);ShowObjectWithEffect('wb_Image3', 0, 'fade', 500);ShowObjectWithEffect('wb_Card1', 0, 'fade', 1);ShowObjectWithEffect('wb_Card2', 0, 'dropleft', 500);ShowObjectWithEffect('wb_Icon2', 1, 'fade', 500);ShowObjectWithEffect('h', 0, 'fade', 500);ShowObjectWithEffect('wb_fav', 0, 'fade', 500);ShowObjectWithEffect('wb_Image1', 0, 'fade', 500);return false;"><img src="20230529_180338_332 (1).webp" id="Image3" alt=""></a>
+</div>
+</div>
+</div>
+</div>
+<div id="layermenu" style="position:fixed;text-align:center;left:0px;top:20px;width:40px;height:38px;z-index:20;">
+<div id="layermenu_Container" style="width:40px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
+<div id="wb_Icon2" style="position:absolute;left:1px;top:5px;width:35px;height:33px;visibility:hidden;text-align:center;z-index:15;">
+<a href="./index.html" onclick="ShowObjectWithEffect('wb_Icon2', 0, 'fade', 500);ShowObjectWithEffect('boton_cloce', 1, 'fade', 500);ShowObjectWithEffect('InlineFrame1', 0, 'fade', 500);ShowObjectWithEffect('wb_Card1', 1, 'fade', 1);ShowObjectWithEffect('wb_Card2', 1, 'dropleft', 500);ShowObjectWithEffect('h', 1, 'fade', 500);ShowObjectWithEffect('wb_Image3', 1, 'fade', 500);ShowObjectWithEffect('wb_fav', 1, 'fade', 500);ShowObjectWithEffect('Icon3', 0, 'fade', 500);ShowObjectWithEffect('wb_Image1', 1, 'fade', 500);return false;"><div id="Icon2"><i class="fa fa-chevron-circle-left"></i></div></a></div>
+</div>
+</div>
+<div id="h" style="position:fixed;text-align:center;left:0px;top:20px;width:258px;height:43px;z-index:21;">
+<div id="h_Container" style="width:258px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
+<div id="wb_Image2" style="position:absolute;left:70px;top:0px;width:188px;height:43px;z-index:16;">
+<img src="images/8248849621_2e551c55-070d-47aa-9422-2b995658cef6.png" id="Image2" alt="" width="188" height="43"></div>
+<div id="wb_OverlayMenu1" style="position:absolute;left:9px;top:6px;width:40px;height:37px;z-index:17;">
+<a href="#" id="OverlayMenu1">
+<span class="line"></span>
+<span class="line">
+</span><span class="line"></span>
+</a>
+</div>
+</div>
+</div>
+
+<div id="Layer2" style="position:fixed;text-align:right;left:auto;right:20px;top:auto;bottom:14px;width:53px;height:51px;z-index:23;">
+<div id="Layer2_Container" style="width:53px;position:relative;margin-left:auto;margin-right:0;text-align:left;">
+<div id="wb_Image1" style="position:absolute;left:0px;top:0px;width:53px;height:51px;z-index:18;">
+<a href="https://t.me/+-RNE8YcFmKtmOTMx" target="_blank"><img src="images/telegrama.png" id="Image1" alt="" width="53" height="53"></a></div>
+</div>
+</div>
+
+<div id="OverlayMenu1-overlay">
+<div class="OverlayMenu1">
+<ul class="drilldown-menu" role="menu">
+<li><a role="menuitem" href="./index.html" class="OverlayMenu1-effect"><i class="fa fa-home overlay-icon"></i>Inicio</a></li>
+<li><a role="menuitem" href="./categorias.html" class="OverlayMenu1-effect"><i class="fa fa-caret-right overlay-icon"></i>Categorias</a></li>
+<li><a role="menuitem" href="./buscar.html" class="OverlayMenu1-effect"><i class="fa fa-search overlay-icon"></i>Buscar</a></li>
+<li><a role="menuitem" href="./favoritos.html" class="OverlayMenu1-effect"><i class="fa fa-heart overlay-icon"></i>Favoritos</a></li>
+<li>
+<a role="menuitem" href="#" class="OverlayMenu1-effect"><i class="fa fa-circle overlay-icon"></i>En&nbsp;vivo</a>
+<ul class="drilldown-submenu" role="menu">
+<li><a role="menuitem" href="#" class="OverlayMenu1-effect"><i class="fa fa-circle overlay-icon"></i>Tv&nbsp;Nacional</a></li>
+<li><a role="menuitem" href="#" class="OverlayMenu1-effect"><i class="fa fa-circle overlay-icon"></i>Futbol&nbsp;en&nbsp;vivo</a></li>
+</ul>
+</li>
+   </ul>
+</div>
+<a class="close-button" id="OverlayMenu1-close" href="#" role="button" aria-hidden="true"><span></span></a>
+</div>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            var disclaimer = document.querySelector("img[alt='www.000webhost.com']");
+            if(disclaimer) {
+                disclaimer.remove();
+            }
+        });
+    </script>
+    
+    
+  <div id="preloader"></div>
+</body>
+</html>

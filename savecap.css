@@ -1,0 +1,194 @@
+body
+{
+   background-color: #131720;
+   color: #000000;
+   font-family: Arial;
+   font-weight: normal;
+   font-size: 13px;
+   line-height: 1.1875;
+   margin: 0;
+   padding: 0;
+}
+#wb_LayoutGrid1
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   border-radius: 0px;
+   box-sizing: border-box;
+   margin: 0;
+}
+#LayoutGrid1
+{
+   box-sizing: border-box;
+   padding: 0;
+   margin-right: auto;
+   margin-left: auto;
+}
+#LayoutGrid1 > .row
+{
+   margin-right: 0;
+   margin-left: 0;
+}
+#LayoutGrid1 > .row > .col-1
+{
+   box-sizing: border-box;
+   font-size: 0;
+   min-height: 1px;
+   padding-right: 0px;
+   padding-left: 0px;
+   position: relative;
+}
+#LayoutGrid1 > .row > .col-1
+{
+   float: left;
+}
+#LayoutGrid1 > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 100%;
+   text-align: center;
+}
+#LayoutGrid1:before,
+#LayoutGrid1:after,
+#LayoutGrid1 .row:before,
+#LayoutGrid1 .row:after
+{
+   display: table;
+   content: " ";
+}
+#LayoutGrid1:after,
+#LayoutGrid1 .row:after
+{
+   clear: both;
+}
+@media (max-width: 480px)
+{
+#LayoutGrid1 > .row > .col-1
+{
+   float: none;
+   width: 100% !important;
+}
+}
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+}
+
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px 20px;
+  border: 0px solid #ddd;
+  border-radius: 5px;
+  background-color: black;
+}
+
+.input-container {
+  margin-bottom: 20px;
+}
+
+.note-input {
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+textarea {
+  width: 250px;
+  height: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  resize: none;
+  color: black;
+  background-color: white;
+}
+
+textarea:not(:valid) {
+  border-color: red;
+}
+
+button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.error-message {
+  color: red;
+  font-style: italic;
+  display: none;
+}
+
+#notesContainer {
+  margin-top: 20px;
+}
+
+.saved-note {
+  background-color: #f5f5f5;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+}
+
+.saved-note span {
+  flex-grow: 1;
+}
+
+.saved-note .delete-button {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.saved-note .delete-button:hover {
+  background-color: #e60000;
+}
+
+.fa-trash {
+  font-size: 18px;
+}
+
+#messageContainer {
+  margin-top: 10px;
+  color: red;
+  font-style: italic;
+  display: none;
+}
+
+#information {
+  margin-top: 20px;
+  color: white;
+  font-style: italic;
+  font-size: 8px;
+}
+
+  

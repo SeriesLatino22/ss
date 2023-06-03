@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Page</title>
+<meta name="generator" content="WYSIWYG Web Builder 18 - https://www.wysiwygwebbuilder.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="SeriesLatino2.css" rel="stylesheet">
+<link href="savecap.css" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Notas Rápidas</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="toolbar"></div>
+    <div class="input-container">
+      <span style="color:#FFFFFF;font-family:Arial;font-size:13px;">¿Dónde te has quedado?</span>
+      <div class="note-input">
+        <textarea id="seriesInput" placeholder="Titulo" maxlength="8" inputmode="text"></textarea>
+        <textarea id="chapterInput" placeholder="Capitulo" maxlength="3" inputmode="numeric"></textarea>
+        <textarea id="seasonInput" placeholder="Temporada" maxlength="2" inputmode="numeric"></textarea>
+        <textarea id="minuteInput" placeholder="Minuto" maxlength="4" inputmode="numeric"></textarea>
+        <button id="saveButton">Guardar</button>
+      </div>
+      <div id="notesContainer"></div>
+      <div id="messageContainer"></div>
+      <div id="information">
+        <span>Por el hecho de no tener base de datos ni registro, tenemos esta solución de guardar manualmente la información del capítulo y el minuto en el que te quedaste, Para que lo recuerdes después.</span>
+        <span>Recuerda que al borrar los datos de la aplicación, desinstalarla y volverla a instalar, podría borrarse esta información guardada, Estos datos guardados solo los verás tú.</span>
+      </div>
+    </div>
+  </div>
+
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var seriesInput = document.getElementById("seriesInput");
+      var chapterInput = document.getElementById("chapterInput");
+      var seasonInput = document.getElementById("seasonInput");
+      var minuteInput = document.getElementById("minuteInput");
+      var saveButton = document.getElementById("saveButton");
+      var notesContainer = document.getElementById("notesContainer");
+      var errorContainer = document.getElementById("errorContainer");
+      var messageContainer = document.getElementById("messageContainer");
+      var informationContainer = document.getElementById("information");
+
+      loadNotes();
+
+      saveButton.addEventListener("click", function() {
+        var seriesText = seriesInput.value.trim();
+        var chapterText = chapterInput.value.trim();
+        var seasonText = seasonInput.value.trim();
+        var minuteText = minuteInput.value.trim();
+        if (seriesText === "" && chapterText === "" && seasonText === "" && minuteText === "") {
+          showError("Ingresa al menos un campo");
+        } else {
+          var notes = document.getElementsByClassName("saved-note");
+          if (notes.length < 2) {
+            saveNote(seriesText, chapterText, seasonText, minuteText);
+            seriesInput.value = "";
+            chapterInput.value = "";
+            seasonInput.value = "";
+            minuteInput.value = "";
+            errorContainer.innerHTML = "";
+            errorContainer.style.display = "none";
+          } else {
+            showError("Máximo 2 notas");
+          }
+        }
+      });
+      
+      seriesInput.addEventListener("input", function() {
+    if (this.value.length > 8) {
+      this.value = this.value.substring(0, 8);
+    }
+  });
+
+
+      function saveNote(seriesText, chapterText, seasonText, minuteText) {
+        var note = document.createElement("div");
+        note.classList.add("saved-note");
+        var noteContent = "<span>";
+        if (seriesText !== "") {
+          noteContent += " ❥" + seriesText;
+        }
+        if (chapterText !== "") {
+          noteContent += " ❥ Capítulo: " + chapterText;
+        }
+        if (seasonText !== "") {
+          noteContent += " ❥ Temporada: " + seasonText;
+        }
+        if (minuteText !== "") {
+          noteContent += " ❥ Minuto: " + minuteText;
+        }
+        noteContent += "</span><button class=\"delete-button\"><i class=\"fas fa-trash\"></i></button>";
+        note.innerHTML = noteContent;
+        notesContainer.insertBefore(note, notesContainer.firstChild);
+
+        var deleteButton = note.querySelector(".delete-button");
+        deleteButton.addEventListener("click", function() {
+          note.remove();
+          saveNotesToLocalStorage();
+          checkNoteCount();
+        });
+
+        saveNotesToLocalStorage();
+        checkNoteCount();
+      }
+
+      function loadNotes() {
+        var savedNotes = localStorage.getItem("notes");
+        if (savedNotes) {
+          notesContainer.innerHTML = savedNotes;
+          addDeleteButtonListeners();
+          checkNoteCount();
+        }
+      }
+
+      function addDeleteButtonListeners() {
+        var deleteButtons = document.getElementsByClassName("delete-button");
+        for (var i = 0; i < deleteButtons.length; i++) {
+          deleteButtons[i].addEventListener("click", function() {
+            var note = this.parentNode;
+            note.remove();
+            saveNotesToLocalStorage();
+            checkNoteCount();
+          });
+        }
+      }
+
+      function saveNotesToLocalStorage() {
+        localStorage.setItem("notes", notesContainer.innerHTML);
+      }
+
+      function showError(message) {
+        errorContainer.innerHTML = message;
+        errorContainer.style.display = "block";
+      }
+
+      function checkNoteCount() {
+        var notes = document.getElementsByClassName("saved-note");
+        if (notes.length >= 2) {
+          messageContainer.innerHTML = "Máximo 2";
+          messageContainer.style.display = "block";
+        } else {
+          messageContainer.innerHTML = "";
+          messageContainer.style.display = "none";
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+
+</head>
+<body>
+<div id="wb_LayoutGrid1">
+<div id="LayoutGrid1">
+<div class="row">
+<div class="col-1">
+
+</div>
+</div>
+</div>
+</div>
+
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            var disclaimer = document.querySelector("img[alt='www.000webhost.com']");
+            if(disclaimer) {
+                disclaimer.remove();
+            }
+        });
+    </script></body>
+</html>
