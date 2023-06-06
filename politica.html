@@ -26,7 +26,12 @@
       if (!navigator.onLine) {
         offlineMessage.style.display = 'block';
       } else {
-        offlineMessage.style.display = 'none';
+        var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+        if (connection && (connection.type === 'cellular' || connection.type === 'wifi')) {
+          offlineMessage.style.display = 'none';
+        } else {
+          offlineMessage.style.display = 'block';
+        }
       }
     }
 

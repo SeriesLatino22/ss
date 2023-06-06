@@ -1,0 +1,1058 @@
+body
+{
+   background-color: #131720;
+   color: #000000;
+   font-family: Arial;
+   font-weight: normal;
+   font-size: 13px;
+   line-height: 1.1875;
+   margin: 0;
+   padding: 0;
+}
+#preloader
+{
+   background: #000000 url("images/sssss.gif") no-repeat center center;
+   bottom: 0;
+   position: fixed;
+   top: 0;
+   width: 100%;
+   z-index: 99999;
+}
+#wb_fav
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   border-radius: 0px;
+   box-sizing: border-box;
+   margin: 0;
+}
+#fav
+{
+   box-sizing: border-box;
+   padding: 0;
+   margin-right: auto;
+   margin-left: auto;
+}
+#fav > .row
+{
+   margin-right: 0;
+   margin-left: 0;
+}
+#fav > .row > .col-1
+{
+   box-sizing: border-box;
+   font-size: 0;
+   min-height: 1px;
+   padding-right: 0px;
+   padding-left: 0px;
+   position: relative;
+}
+#fav > .row > .col-1
+{
+   float: left;
+}
+#fav > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 100%;
+   text-align: center;
+}
+#fav:before,
+#fav:after,
+#fav .row:before,
+#fav .row:after
+{
+   display: table;
+   content: " ";
+}
+#fav:after,
+#fav .row:after
+{
+   clear: both;
+}
+@media (max-width: 480px)
+{
+#fav > .row > .col-1
+{
+   float: none;
+   width: 100% !important;
+}
+}
+#wb_Image3
+{
+   margin: 0;
+   vertical-align: top;
+}
+#Image3
+{
+   border: 0px solid #000000;
+   border-radius: 0px;
+   padding: 0;
+   display: inline-block;
+   width: 195px;
+   height: 87px;
+   vertical-align: top;
+}
+#wb_intro
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   height: 100vh;
+   background-color: transparent;
+   background-image: url('aaaaaaaaaaaaaaa.webp');
+   background-repeat: no-repeat;
+   background-position: center center;
+   background-attachment: fixed;
+   background-size: cover;
+   border: 0px solid rgba(0,0,0,0.22);
+   border-radius: 0px;
+   box-sizing: border-box;
+   margin: 0;
+}
+#intro
+{
+   box-sizing: border-box;
+   height: 100vh;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   padding: 0;
+   margin-right: auto;
+   margin-left: auto;
+   max-width: 1140px;
+}
+#intro > .col-1
+{
+   box-sizing: border-box;
+   font-size: 0;
+   min-height: 1px;
+   padding-right: 0px;
+   padding-left: 0px;
+   position: relative;
+}
+#intro > .col-1
+{
+   flex: 0 0 auto;
+}
+#intro > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   flex-basis: 100%;
+   max-width: 100%;
+   display: flex;
+   flex-wrap: wrap;
+   align-content: center;
+   align-self: stretch;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+}
+@media (max-width: 480px)
+{
+#intro > .col-1
+{
+   flex-basis: 100% !important;
+   max-width: 100% !important;
+}
+}
+#intro-overlay
+{
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   background-color: #000000;
+   opacity: 0.55;
+}
+#wb_LayoutGrid2
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   border-radius: 0px;
+   box-sizing: border-box;
+   margin: 0;
+}
+#LayoutGrid2
+{
+   box-sizing: border-box;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   padding: 3px 0 3px 0;
+   margin-right: auto;
+   margin-left: auto;
+}
+#LayoutGrid2 > .col-1
+{
+   box-sizing: border-box;
+   font-size: 0;
+   min-height: 1px;
+   padding-right: 4px;
+   padding-left: 4px;
+   position: relative;
+}
+#LayoutGrid2 > .col-1
+{
+   flex: 0 0 auto;
+}
+#LayoutGrid2 > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   flex-basis: 100%;
+   max-width: 100%;
+   display: flex;
+   flex-wrap: wrap;
+   align-content: center;
+   align-self: stretch;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+}
+@media (max-width: 480px)
+{
+#LayoutGrid2 > .col-1
+{
+   flex-basis: 100% !important;
+   max-width: 100% !important;
+}
+}
+#wb_Card1
+{
+   height: auto !important;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   box-sizing: border-box;
+   margin: 5px 5px 5px 5px;
+   max-width: calc(100% - 10px);
+   margin-left: auto !important;
+   margin-right: auto !important;
+   background-color: rgba(0,0,0,0.87);
+   background-image: none;
+   border: 1px solid #DEDEDE;
+   border-radius: 15px;
+   box-shadow: 0px 2px 5px rgba(0,0,0,0.10);
+   text-align: center;
+}
+#Card1-card-body
+{
+   padding: 0;
+   flex: 1 1 auto;
+   font-size: 0;
+}
+.fade
+{
+   opacity: 0;
+   transition: opacity .15s linear;
+}
+.fade.show
+{
+   opacity: 1;
+}
+.collapse:not(.show)
+{
+   display: none;
+}
+.collapsing
+{
+   position: relative;
+   height: 0;
+   overflow: hidden;
+   transition: height 0.35s ease;
+}
+#Card1-card-header
+{
+   box-sizing: border-box;
+   border-bottom: 1px solid #DEDEDE;
+   border-radius: 15px 15px 0 0 !important;
+   margin: 0;
+   padding: 12px 20px 12px 20px;
+   background-color: #FFFFFF;
+   background-image: none;
+   color: #000000;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 19px;
+   text-align: center;
+   cursor: pointer;
+}
+#Card1-card-header .icon-collapsed, #Card1-card-header .icon-expanded
+{
+   cursor: pointer;
+   display: inline-block;
+   fill: #000000;
+   float: right;
+   height: 19px;
+   left: auto;
+   right: 0;
+   position: relative;
+   top: 0;
+   width: 19px;
+}
+#Card1-card-header[aria-expanded=true] .icon-collapsed
+{
+   display: none;
+}
+#Card1-card-header[aria-expanded=false] .icon-expanded
+{
+   display: none;
+}
+#Card1-card-item1
+{
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   color: #000000;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 16px;
+}
+#Card1-card-item2
+{
+   box-sizing: border-box;
+   margin: 0;
+   border-top: 0px #000000 solid;
+   border-width: 0px 0 0 0;
+   height: 0;
+   line-height: 0;
+   visibility: hidden;
+}
+#Card1-card-item3
+{
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   color: #7CFC00;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 16px;
+   text-align: center;
+}
+#Card1-card-item4
+{
+   box-sizing: border-box;
+   margin: 0 10px 0 10px;
+   padding: 0;
+   text-align: left;
+}
+#Card1-card-item4 h2
+{
+   color: #FFFFFF;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 13px;
+   margin: 0;
+}
+#Card1-card-item5
+{
+   box-sizing: border-box;
+   border-radius: 0 0 15px 15px !important;
+   margin: 0;
+   padding: 0;
+   color: #FFFF00;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 11px;
+   text-align: center;
+}
+#wb_Card2
+{
+   height: auto !important;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   box-sizing: border-box;
+   margin: 5px 5px 5px 5px;
+   max-width: calc(100% - 10px);
+   margin-left: auto !important;
+   margin-right: auto !important;
+   background-color: rgba(0,0,0,0.87);
+   background-image: none;
+   border: 1px solid #DEDEDE;
+   border-radius: 15px;
+   box-shadow: 0px 2px 5px rgba(0,0,0,0.10);
+   text-align: center;
+}
+#Card2-card-body
+{
+   padding: 0;
+   flex: 1 1 auto;
+   font-size: 0;
+}
+.fade
+{
+   opacity: 0;
+   transition: opacity .15s linear;
+}
+.fade.show
+{
+   opacity: 1;
+}
+.collapse:not(.show)
+{
+   display: none;
+}
+.collapsing
+{
+   position: relative;
+   height: 0;
+   overflow: hidden;
+   transition: height 0.35s ease;
+}
+#Card2-card-header
+{
+   box-sizing: border-box;
+   border-bottom: 1px solid #DEDEDE;
+   border-radius: 15px 15px 0 0 !important;
+   margin: 0;
+   padding: 12px 20px 12px 20px;
+   background-color: #FFFFFF;
+   background-image: none;
+   color: #000000;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 19px;
+   text-align: center;
+   cursor: pointer;
+}
+#Card2-card-header .icon-collapsed, #Card2-card-header .icon-expanded
+{
+   cursor: pointer;
+   display: inline-block;
+   fill: #000000;
+   float: right;
+   height: 19px;
+   left: auto;
+   right: 0;
+   position: relative;
+   top: 0;
+   width: 19px;
+}
+#Card2-card-header[aria-expanded=true] .icon-collapsed
+{
+   display: none;
+}
+#Card2-card-header[aria-expanded=false] .icon-expanded
+{
+   display: none;
+}
+#Card2-card-item1
+{
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   color: #000000;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 16px;
+}
+#Card2-card-item2
+{
+   box-sizing: border-box;
+   border-radius: 0 0 15px 15px !important;
+   margin: 0;
+   padding: 0;
+   color: #FFFFFF;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 13px;
+   text-align: center;
+}
+#layermenu
+{
+   background-color: transparent;
+   background-image: none;
+   border-radius: 0px;
+}
+#InlineFrame1
+{
+   border: 1px solid #C0C0C0;
+   border-radius: 0px;
+   margin: 0;
+}
+#InlineFrame1
+{
+   display: none;
+   float: left;
+   width: 100%;
+   height: 605px;
+   vertical-align: top;
+}
+#wb_Icon1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FF0000;
+   border-radius: 0px;
+   text-align: center;
+   margin: 0;
+   padding: 0;
+   vertical-align: top;
+   display:inline-block;
+   position:relative;
+}
+#wb_Icon1 a::after
+{
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   z-index: 1;
+   pointer-events: auto;
+   content: "";
+}
+#Icon1
+{
+   height: 73px;
+   width: 139px;
+}
+#Icon1 i
+{
+   color: #FF0000;
+   display: inline-block;
+   font-size: 73px;
+   line-height: 73px;
+   vertical-align: middle;
+   width: 72px;
+}
+#wb_Icon1:hover #Icon1 i
+{
+   color: #FF0000;
+}
+#wb_Icon2
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid transparent;
+   border-radius: 0px;
+   text-align: center;
+   margin: 0;
+   padding: 0;
+   vertical-align: top;
+}
+#wb_Icon2 a::after
+{
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   z-index: 1;
+   pointer-events: auto;
+   content: "";
+}
+#Icon2
+{
+   height: 33px;
+   width: 35px;
+}
+#Icon2 i
+{
+   color: #FFFFFF;
+   display: inline-block;
+   font-size: 33px;
+   line-height: 33px;
+   vertical-align: middle;
+   width: 32px;
+}
+#wb_Icon2:hover #Icon2 i
+{
+   color: #FFFFFF;
+}
+#h
+{
+   background-color: transparent;
+   background-image: none;
+   border-radius: 0px;
+}
+#wb_Image2
+{
+   vertical-align: top;
+}
+#Image2
+{
+   border: 0px solid #000000;
+   border-radius: 0px;
+   padding: 0;
+   margin: 0;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+}
+#Layer2
+{
+   background-color: transparent;
+   background-image: none;
+   border-radius: 0px;
+}
+#wb_Image1
+{
+   vertical-align: top;
+}
+#Image1
+{
+   border: 0px solid #000000;
+   border-radius: 0px;
+   padding: 0;
+   margin: 0;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+}
+#OverlayMenu1
+{
+   background-color: #424242;
+   background-image: none;
+   border: 0px solid #424242;
+   border-radius: 0px;
+   margin: 0;
+}
+#OverlayMenu1:hover
+{
+   background-color: #CCCCCC;
+   background-image: none;
+   border-color: #424242;
+}
+#OverlayMenu1
+{
+   display: block;
+   width: 40px;
+   height: 37px;
+   position: absolute;
+   overflow: hidden;
+}
+#OverlayMenu1 .line
+{
+   width: 28px;
+   height: 5px;
+   position: relative;
+   top: 1px;
+   background: #FFFFFF;
+   display: block;
+   margin: 5px auto;
+}
+#OverlayMenu1:hover .line
+{
+   background: #424242;
+}
+#OverlayMenu1-close
+{
+   background: transparent;
+   font-size: 10px;
+   height: 2.8em; 
+   outline: none;
+   position: absolute;
+   right: 10px;
+   text-align: left;
+   top: 10px;
+   width: 3em; 
+}
+#OverlayMenu1-close:before, #OverlayMenu1-close:after
+{
+   background: #FFFFFF;
+   content: "";
+   display: block;
+   height: 0.6em;
+   left: 0;
+   opacity: 1;
+   position: absolute;
+   top: 0;
+   width: 100%;
+}
+#OverlayMenu1-close span
+{
+   background: #FFFFFF;
+   height: 0.6em;
+   margin-top: -0.3em;
+   position: absolute;
+   top: 50%;
+   transform-origin: 50% 50%;
+   width: 100%;
+}
+#OverlayMenu1-close span::after
+{
+   background: #FFFFFF;
+   content: "";
+   display: block;
+   height: 0.6em;
+   position: absolute;
+   transform-origin: 50% 50%;
+   width: 100%;
+}
+#OverlayMenu1-close:before
+{
+   margin-top: -0.3em;
+   opacity: 0;
+   top: 50%;
+}
+#OverlayMenu1-close:after
+{
+   bottom: 50%;
+   opacity: 0;
+}
+#OverlayMenu1-close span
+{
+   background: #FFFFFF;
+   transform: rotate(-45deg);
+}
+#OverlayMenu1-close span:after
+{
+   background: #FFFFFF;
+   transform: rotate(-90deg);
+}
+#OverlayMenu1-overlay
+{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100%;
+   left: 0;
+   overflow-y: auto;
+   position: fixed;
+   top: 0;
+   width: 100%;
+   z-index: -1;
+   background-color: rgba(122,122,122,0.87);
+}
+#OverlayMenu1-overlay ul
+{
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 35px;
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+.OverlayMenu1
+{
+   height: 60%;
+   width: 100%;
+   max-width: 970px;
+   margin: 0 auto 0 auto;
+}
+.OverlayMenu1 a
+{
+   text-decoration: none;
+}
+.OverlayMenu1 ul
+{
+   list-style: none;
+   padding: 0;
+   text-align: center;
+}
+.OverlayMenu1 li
+{
+   position: relative;
+}
+.OverlayMenu1 li a
+{
+   display: block;
+   position: relative;
+   padding: 10px 15px 10px 15px;
+   color: #FFFFFF;
+   outline: none;
+}
+.OverlayMenu1 li a:hover
+{
+   color: #424242;
+   background-color: #CCCCCC;
+}
+#OverlayMenu1-overlay
+{
+   visibility: hidden;
+   width: 0;
+   left: 50%;
+   transform: translateX(-50%);
+   transition: width 400ms 0.3s, visibility 0s 700ms;
+}
+#OverlayMenu1-overlay.show
+{
+   visibility: visible;
+   width: 100%;
+   transition: width 400ms;
+}
+#OverlayMenu1-overlay .OverlayMenu1
+{
+   opacity: 0;
+   transition: opacity 0.3s 400ms;
+}
+#OverlayMenu1-overlay.show .OverlayMenu1
+{
+   opacity: 1;
+   transition-delay: 400ms;
+}
+#OverlayMenu1-overlay.hide .OverlayMenu1
+{
+   transition-delay: 0s;
+}
+.OverlayMenu1 li.drilldown-back > a 
+{
+   padding-left: 40px;
+   background: rgba(0,0,0,0.1);
+}
+.OverlayMenu1 li.drilldown-back > a:hover
+{
+   background-color: #CCCCCC;
+}
+.OverlayMenu1 li.drilldown-back a:after,
+.OverlayMenu1 li > a:not(:only-child):after
+{
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   display: inline-block;
+   width: 0;
+   height: 0;
+   margin-left: 17px;
+   border-left: 17px solid #FFFFFF;
+   border-top: 15px solid transparent;
+   border-bottom: 15px solid transparent;
+   border-right: 0 dotted;
+   content: " ";
+}
+.OverlayMenu1 li.drilldown-back a:after
+{
+   left: 17px;
+   color: #FFFFFF;
+   transform: translateY(-50%) rotate(180deg);
+}
+.OverlayMenu1 li.drilldown-back a:hover:after,
+.OverlayMenu1 li > a:not(:only-child):hover:after
+{
+   border-left-color: #424242;
+}
+.OverlayMenu1 li > a:after
+{
+   color: rgba(0,0,0,0.15);
+   right: 10px;
+}
+.OverlayMenu1 .drilldown-menu 
+{
+   margin: 0;
+   width: 100%;
+}
+.OverlayMenu1 li .drilldown-submenu 
+{
+   display: none;
+}
+.drilldown-menu.drilldown-subview li,
+.drilldown-menu.drilldown-subview li.drilldown-subviewopen > a,
+.drilldown-menu.drilldown-subview li.drilldown-subview > a 
+{
+   display: none;
+}
+.drilldown-menu.drilldown-subview li.drilldown-subview,
+.drilldown-menu.drilldown-subview li.drilldown-subview .drilldown-submenu,
+.drilldown-menu.drilldown-subview li.drilldown-subviewopen,
+.drilldown-menu.drilldown-subview li.drilldown-subviewopen > .drilldown-submenu,
+.drilldown-menu.drilldown-subview li.drilldown-subviewopen > .drilldown-submenu > li 
+{
+   display: block;
+}
+.OverlayMenu1 > .drilldown-submenu
+{
+   left: 0;
+   margin: 0;
+   position: absolute;
+   top: 50px;
+   width: 100%;
+}
+#OverlayMenu1-overlay .overlay-icon
+{
+   margin: 0 10px 0 0 ;
+}
+#OverlayMenu1-social
+{
+   padding: 40px 0 0 0;
+}
+#OverlayMenu1-social .social-icon 
+{
+   border-radius: 50%;
+   background-color: #FFFFFF;
+   color: #7A7A7A;
+   display: inline-block;
+   font-size: 35px;
+   margin: 0 .5em;
+   padding: 13px;
+   transition: all .2s linear 0s;
+   width: 35px;
+}
+#OverlayMenu1-social .social-icon:hover 
+{
+   background-color: #424242;
+   color: #CCCCCC;
+}
+.OverlayMenu1-effect
+{
+   transition: all 500ms linear;
+}
+  .navbar {
+    display: block;
+  }
+
+  .offline .navbar {
+    display: none;
+  }
+
+  #offline-message {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f2f2f2;
+    z-index: 9999;
+    text-align: center;
+    color: #fff;
+  }
+
+  #offline-message .content {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  #offline-message h2 {
+    margin-top: 10%;
+    font-size: 15px;
+    color: #000;
+  }
+
+  #offline-message img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  #offline-message p {
+    font-size: 12px;
+    margin-top: 20px;
+    color: #000;
+  }
+
+  /* Media Queries */
+  @media screen and (min-width: 768px) {
+    #offline-message p {
+      font-size: 15px;
+    }
+
+    #offline-message p {
+      font-size: 18px;
+    }
+  }
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .boton-favoritos {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .boton-favoritos:hover {
+    background-color: #45a049;
+  }
+
+  .boton-eliminar {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .boton-eliminar:hover {
+    background-color: #e60000;
+  }
+
+  .corazon-icono {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Coraz%C3%B3n.svg/116px-Coraz%C3%B3n.svg.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+
+  .caneca-icono {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url("https://cdn-icons-png.flaticon.com/512/3221/3221897.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+
+  .animate-boton {
+    animation: fade 0.3s;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
