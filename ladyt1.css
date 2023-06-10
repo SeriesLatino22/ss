@@ -288,6 +288,9 @@ body
    font-style: italic;
    font-size: 11px;
 }
+    
+  
+
 .button-container {
   display: inline-block;
 }
@@ -386,6 +389,13 @@ body
 	 transform: rotate(90deg);
 	 transition: all 0.3s ease-in-out;
 }
+
+.video-title {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
  .accordion .a-container .a-panel {
 	 width: 100%;
 	 color: #fff;
@@ -465,6 +475,7 @@ background: black;
 }
 
 }
+
 *, *::after, *::before {
 	 padding: 0;
 	 margin: 0;
@@ -544,3 +555,6 @@ a {text-decoration:none;
     margin-top: 2px;
 text-align: center;
 } 
+
+
+

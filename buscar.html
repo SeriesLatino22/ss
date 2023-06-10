@@ -14,11 +14,11 @@
 <script>
 $(document).ready(function()
 {
-   $('#OverlayMenu1-overlay').overlay({hideTransition:true});
-   $('.OverlayMenu1').drilldownmenu({backText: 'Atrás'});
-   $('#OverlayMenu1').on('click', function(e)
+   $('#OverlayMenu2-overlay').overlay({hideTransition:true});
+   $('.OverlayMenu2').drilldownmenu({backText: 'Atrás'});
+   $('#OverlayMenu2').on('click', function(e)
    {
-      $.overlay.show($('#OverlayMenu1-overlay'));
+      $.overlay.show($('#OverlayMenu2-overlay'));
       return false;
    });
 });
@@ -87,61 +87,37 @@ $(document).ready(function()
     });
 
     function performSearch(searchTerm) {
-      let count = 0;
-      let resultsMessage = `Resultados con la palabra "${searchTerm}":`;
+  let count = 0;
+  let resultsMessage = '';
 
-      images.forEach(function(image) {
-        const tags = image.getAttribute('data-tags').toLowerCase();
+  if (searchTerm !== '') {
+    resultsMessage = `Resultados con la palabra "${searchTerm}":`;
 
-        if (count < maxResults && tags.includes(searchTerm)) {
-          image.style.display = 'block';
-          count++;
-        } else {
-          image.style.display = 'none';
-        }
-      });
+    images.forEach(function(image) {
+      const tags = image.getAttribute('data-tags').toLowerCase();
 
-      searchResults.style.display = 'block';
-      searchResults.textContent = `${resultsMessage} ${count}`;
-    }
+      if (count < maxResults && tags.includes(searchTerm)) {
+        image.style.display = 'block';
+        count++;
+      } else {
+        image.style.display = 'none';
+      }
+    });
+  } else {
+    resultsMessage = 'No ingresaste ninguna palabra';
+    images.forEach(function(image) {
+      image.style.display = 'none';
+    });
+  }
+
+  searchResults.style.display = 'block';
+  searchResults.textContent = `${resultsMessage} ${count}`;
+}
   });
 </script>
 </body>
 </html>
 >
-<div id="offline-message" class="offline-message">
-  <div class="content">
-    <img src="https://i.ibb.co/Y37PJzt/IMG-20230603-132637-477.jpg" alt="Error de conexión">
-     <p>Revisa tu conexión a internet</p>
-    <p>Se volverá a conectar automáticamente una vez tengas internet.</p>
-  </div>
-</div>
-
-<script>
-  window.addEventListener('load', function() {
-    var offlineMessage = document.getElementById('offline-message');
-
-    function checkConnection() {
-      if (!navigator.onLine) {
-        offlineMessage.style.display = 'block';
-      } else {
-        var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-        if (connection && (connection.type === 'cellular' || connection.type === 'wifi')) {
-          offlineMessage.style.display = 'none';
-        } else {
-          offlineMessage.style.display = 'block';
-        }
-      }
-    }
-
-    window.addEventListener('online', checkConnection);
-    window.addEventListener('offline', checkConnection);
-
-    checkConnection();
-  });
-</script>
-
-
 <div id="wb_LayoutGrid1">
 <div id="LayoutGrid1">
 <div class="row">
@@ -151,10 +127,11 @@ $(document).ready(function()
 </div>
 </div>
 </div>
-<div id="layermenu" style="position:fixed;text-align:center;left:0px;top:70px;width:40px;height:37px;z-index:3;">
-<div id="layermenu_Container" style="width:40px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
-<div id="wb_OverlayMenu1" style="position:absolute;left:0px;top:0px;width:40px;height:37px;z-index:1;">
-<a href="#" id="OverlayMenu1">
+
+<div id="h" style="position:fixed;text-align:center;left:0px;top:70px;width:40px;height:37px;z-index:4;">
+<div id="h_Container" style="width:40px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
+<div id="wb_OverlayMenu2" style="position:absolute;left:0px;top:0px;width:40px;height:37px;z-index:1;">
+<a href="#" id="OverlayMenu2">
 <span class="line"></span>
 <span class="line">
 </span><span class="line"></span>
@@ -162,32 +139,30 @@ $(document).ready(function()
 </div>
 </div>
 </div>
-
-
-<div id="OverlayMenu1-overlay">
-<div class="OverlayMenu1">
+<div id="OverlayMenu2-overlay">
+<div class="OverlayMenu2">
 <ul class="drilldown-menu" role="menu">
-<li><a role="menuitem" href="./index.html" class="OverlayMenu1-effect"><i class="fa fa-home overlay-icon"></i>Inicio</a></li>
+<li><a role="menuitem" href="./index.html" class="OverlayMenu2-effect"><i class="fa fa-home overlay-icon"></i>Inicio</a></li>
 <li>
-<a role="menuitem" href="#" class="OverlayMenu1-effect"><i class="fa fa-caret-right overlay-icon"></i>Categorias</a>
+<a role="menuitem" href="#" class="OverlayMenu2-effect"><i class="fa fa-caret-right overlay-icon"></i>Categorias</a>
 <ul class="drilldown-submenu" role="menu">
-<li><a role="menuitem" href="./Series.html" class="OverlayMenu1-effect"><i class="fa fa-play-circle overlay-icon"></i>Series</a></li>
-<li><a role="menuitem" href="./Peliculas.html" class="OverlayMenu1-effect"><i class="fa fa-play-circle overlay-icon"></i>Peliculas</a></li>
-<li><a role="menuitem" href="./Todas.html" class="OverlayMenu1-effect"><i class="fa fa-play-circle overlay-icon"></i>Ver&nbsp;todas</a></li>
+<li><a role="menuitem" href="./Series.html" class="OverlayMenu2-effect"><i class="fa fa-play-circle overlay-icon"></i>Series</a></li>
+<li><a role="menuitem" href="./Peliculas.html" class="OverlayMenu2-effect"><i class="fa fa-play-circle overlay-icon"></i>Peliculas</a></li>
+<li><a role="menuitem" href="./Todas.html" class="OverlayMenu2-effect"><i class="fa fa-play-circle overlay-icon"></i>Ver&nbsp;todas</a></li>
 </ul>
 </li>
-<li><a role="menuitem" href="./buscar.html" class="OverlayMenu1-effect"><i class="fa fa-search overlay-icon"></i>Buscar</a></li>
-<li><a role="menuitem" href="./favoritos.html" class="OverlayMenu1-effect"><i class="fa fa-heart overlay-icon"></i>Favoritos</a></li>
+<li><a role="menuitem" href="./buscar.html" class="OverlayMenu2-effect"><i class="fa fa-search overlay-icon"></i>Buscar</a></li>
+<li><a role="menuitem" href="./favoritos.html" class="OverlayMenu2-effect"><i class="fa fa-heart overlay-icon"></i>Favoritos</a></li>
 <li>
-<a role="menuitem" href="#" class="OverlayMenu1-effect"><i class="fa fa-circle overlay-icon"></i>En&nbsp;vivo</a>
+<a role="menuitem" href="#" class="OverlayMenu2-effect"><i class="fa fa-circle overlay-icon"></i>En&nbsp;vivo</a>
 <ul class="drilldown-submenu" role="menu">
-<li><a role="menuitem" href="#" class="OverlayMenu1-effect"><i class="fa fa-circle overlay-icon"></i>Tv&nbsp;Nacional</a></li>
-<li><a role="menuitem" href="https://fudfkzkl.blogspot.com/p/eventos-del-dia.html" class="OverlayMenu1-effect"><i class="fa fa-circle overlay-icon"></i>Futbol&nbsp;en&nbsp;vivo</a></li>
+<li><a role="menuitem" href="#" class="OverlayMenu2-effect"><i class="fa fa-circle overlay-icon"></i>Tv&nbsp;Nacional</a></li>
+<li><a role="menuitem" href="https://fudfkzkl.blogspot.com/p/eventos-del-dia.html" class="OverlayMenu2-effect"><i class="fa fa-circle overlay-icon"></i>Futbol&nbsp;en&nbsp;vivo</a></li>
 </ul>
 </li>
    </ul>
 </div>
-<a class="close-button" id="OverlayMenu1-close" href="#" role="button" aria-hidden="true"><span></span></a>
+<a class="close-button" id="OverlayMenu2-close" href="#" role="button" aria-hidden="true"><span></span></a>
 </div>
 <script>
         document.addEventListener('DOMContentLoaded', () => {
