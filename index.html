@@ -26,41 +26,9 @@ $(document).ready(function()
    });
 });
 </script>
+<meta name="monetag" content="ea7fe1ddffb80e1ecdfd3db1780e8d73">
 </head>
 <body>
-<div id="offline-message" class="offline-message">
-  <div class="content">
-    <img src="https://i.ibb.co/Y37PJzt/IMG-20230603-132637-477.jpg" alt="Error de conexión">
-     <p>Revisa tu conexión a internet</p>
-    <p>Se volverá a conectar automáticamente una vez tengas internet.</p>
-  </div>
-</div>
-
-<script>
-  window.addEventListener('load', function() {
-    var offlineMessage = document.getElementById('offline-message');
-
-    function checkConnection() {
-      if (!navigator.onLine) {
-        offlineMessage.style.display = 'block';
-      } else {
-        var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-        if (connection && (connection.type === 'cellular' || connection.type === 'wifi')) {
-          offlineMessage.style.display = 'none';
-        } else {
-          offlineMessage.style.display = 'block';
-        }
-      }
-    }
-
-    window.addEventListener('online', checkConnection);
-    window.addEventListener('offline', checkConnection);
-
-    checkConnection();
-  });
-</script>
-
-
 
 <div id="wb_LayoutGrid1">
 <div id="LayoutGrid1">

@@ -1082,6 +1082,76 @@ document.querySelector("#lightbox").addEventListener("click", function(e) {
 </div>
 </div>
 </div>
+<div id="Html4" style="position:absolute;left:358px;top:1074px;width:250px;height:143px;z-index:6">
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bloquear Contenido</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+</head>
+<body>
+<div id="blocker">
+    <div id="container">
+      <button id="unlockButton"><i class="fas fa-lock"></i> Desbloquear contenido</button>
+    </div>
+  </div>
+
+
+<script>
+
+window.addEventListener('DOMContentLoaded', function() {
+  var videos = [
+    'CZXZf7CzSyQ',
+    '8tN9qu4hymA',
+    'G-4zfTIfeGI'
+    // Agrega aquí más ID de videos separados por comas
+  ];
+
+  var randomIndex = Math.floor(Math.random() * videos.length);
+  var randomVideoId = videos[randomIndex];
+
+  var blocker = document.getElementById('blocker');
+  var unlockButton = document.getElementById('unlockButton');
+  var container = document.getElementById('container');
+
+  unlockButton.addEventListener('click', function() {
+    container.innerHTML = '<div id="countdownWrapper">El video se cerrará en: <span id="countdown">40</span></div><div id="videoWrapper"><div id="overlay"></div><iframe width="300" height="300" src="https://www.youtube.com/embed/' + randomVideoId + '?autoplay=1&mute=1&vq=small" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>';
+    var countdown = document.getElementById('countdown');
+    var seconds = 40;
+
+    // Bloquear el reproductor de video
+    var overlay = document.getElementById('overlay');
+    overlay.addEventListener('click', function(event) {
+      event.stopPropagation(); // Evita la propagación del evento clic al reproductor de video
+    });
+
+    var interval = setInterval(function() {
+      seconds--;
+      countdown.textContent = seconds;
+
+      if (seconds === 0) {
+        blocker.style.display = 'none';
+        clearInterval(interval);
+      }
+    }, 1000);
+
+    // Mostrar el mensaje después de hacer clic en el botón
+    var message = document.createElement('div');
+    message.id = 'message';
+    message.textContent = 'Gracias por el apoyo, así evitamos poner publicidad molesta';
+    container.appendChild(message);
+  });
+});
+
+
+
+
+</script>
+  <script src="script.js"></script>
+</body>
+</html>
+</div>
 <script>
         document.addEventListener('DOMContentLoaded', () => {
             var disclaimer = document.querySelector("img[alt='www.000webhost.com']");

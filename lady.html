@@ -43,41 +43,9 @@ $(window).on('load', function()
    $('#preloader').remove();
 });
 </script>
+<meta name="monetag" content="ea7fe1ddffb80e1ecdfd3db1780e8d73">
 </head>
 <body>
-<div id="offline-message" class="offline-message">
-  <div class="content">
-    <img src="https://i.ibb.co/Y37PJzt/IMG-20230603-132637-477.jpg" alt="Error de conexión">
-     <p>Revisa tu conexión a internet</p>
-    <p>Se volverá a conectar automáticamente una vez tengas internet.</p>
-  </div>
-</div>
-
-<script>
-  window.addEventListener('load', function() {
-    var offlineMessage = document.getElementById('offline-message');
-
-    function checkConnection() {
-      if (!navigator.onLine) {
-        offlineMessage.style.display = 'block';
-      } else {
-        var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-        if (connection && (connection.type === 'cellular' || connection.type === 'wifi')) {
-          offlineMessage.style.display = 'none';
-        } else {
-          offlineMessage.style.display = 'block';
-        }
-      }
-    }
-
-    window.addEventListener('online', checkConnection);
-    window.addEventListener('offline', checkConnection);
-
-    checkConnection();
-  });
-</script>
-
-
 <div id="wb_intro">
 <div id="intro-overlay"></div>
 <div id="intro">
@@ -203,11 +171,11 @@ $(window).on('load', function()
 <a href="./index.html" onclick="ShowObjectWithEffect('wb_Icon2', 0, 'fade', 500);ShowObjectWithEffect('boton_cloce', 1, 'fade', 500);ShowObjectWithEffect('InlineFrame1', 0, 'fade', 500);ShowObjectWithEffect('wb_Card1', 1, 'dropright', 500);ShowObjectWithEffect('wb_Card2', 1, 'dropleft', 500);ShowObjectWithEffect('h', 1, 'fade', 500);ShowObjectWithEffect('wb_Image3', 1, 'fade', 500);ShowObjectWithEffect('wb_fav', 1, 'fade', 500);ShowObjectWithEffect('Icon3', 0, 'fade', 500);ShowObjectWithEffect('wb_Image1', 1, 'fade', 500);return false;"><div id="Icon2"><i class="fa fa-chevron-circle-left"></i></div></a></div>
 </div>
 </div>
-<div id="h" style="position:fixed;text-align:center;left:0px;top:20px;width:258px;height:43px;z-index:21;">
-<div id="h_Container" style="width:258px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
-<div id="wb_Image2" style="position:absolute;left:70px;top:0px;width:188px;height:43px;z-index:16;">
+<div id="h" style="position:fixed;text-align:center;left:0px;top:20px;width:249px;height:43px;z-index:21;">
+<div id="h_Container" style="width:249px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
+<div id="wb_Image2" style="position:absolute;left:61px;top:0px;width:188px;height:43px;z-index:16;">
 <img src="images/8248849621_2e551c55-070d-47aa-9422-2b995658cef6.png" id="Image2" alt="" width="188" height="43"></div>
-<div id="wb_OverlayMenu1" style="position:absolute;left:9px;top:6px;width:40px;height:37px;z-index:17;">
+<div id="wb_OverlayMenu1" style="position:absolute;left:0px;top:6px;width:40px;height:37px;z-index:17;">
 <a href="#" id="OverlayMenu1">
 <span class="line"></span>
 <span class="line">
