@@ -46,6 +46,69 @@ $(window).on('load', function()
 <meta name="monetag" content="ea7fe1ddffb80e1ecdfd3db1780e8d73">
 </head>
 <body>
+ <meta name="viewport" content="width=device-width, initial-scale=1"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'><link rel="stylesheet" href="./style.css">
+
+</body>
+
+
+<div class="social-button" title="expand social media options">
+  <i class="fas fa-share-alt" id="social-icon"></i>
+  <a hidden class="social-point" href="https://api.whatsapp.com/send?text=Hello" target="_blank" rel="nofollow" title="Whatsapp"><i class="fab fa-whatsapp"></i></a>
+  <a hidden class="social-point" href="https://www.youtube.com/" title="YouTube"><i class="fab fa-youtube"></i></a>
+  <a hidden class="social-point" href="https://telegram.me/" title="Telegram"><i class="fab fa-telegram"></i></a>
+  <a hidden class="social-point" href="mailto:example@example.com" title="Correo"><i class="fas fa-envelope"></i></a>
+  <a hidden class="social-point" href="https://www.facebook.com/" target="_blank" rel="nofollow" title="Facebook"><i class="fab fa-facebook"></i></a>
+</div>
+
+
+<script>
+
+var social_open = false
+window.addEventListener('load', () => {
+  const menu = document.querySelector('.social-button');
+
+  menu.addEventListener('click', () => {
+    const icon = document.querySelector('#social-icon');
+    if(social_open == true) {
+      social_open = false;
+
+      menu.title = menu.title.replace(/hide/,"expand")
+      menu.classList.remove('social-button-open')
+      icon.classList.remove('fa-times')
+      icon.classList.add('fa-share-alt')
+
+      var menu_point = document.querySelectorAll(".social-point");
+      for (let i = 0; i < menu_point.length; i++) {
+          menu_point[i].classList.remove('social-point-open');
+        setTimeout(function() {
+          menu_point[i].hidden = true;
+        }, 800)
+      }
+    } else {
+      social_open = true;
+
+      menu.title = menu.title.replace(/expand/,"hide")
+      menu.classList.add('social-button-open');
+      icon.classList.remove('fa-share-alt')
+      icon.classList.add('fa-times')
+
+      var menu_point = document.querySelectorAll(".social-point");
+      for (let i = 0; i < menu_point.length; i++) {
+        menu_point[i].hidden = false;
+        setTimeout(function() {
+          menu_point[i].classList.add('social-point-open');
+        }, 200)
+      }
+    }
+  });
+})
+
+
+</script>
+
+</body>
+</html>
+
 <div id="wb_intro">
 <div id="intro-overlay"></div>
 <div id="intro">
@@ -153,25 +216,25 @@ $(window).on('load', function()
    </div>
 </div>
 <div id="wb_Icon1" style="display:none;width:139px;height:73px;text-align:center;z-index:5;">
-<a href="./ladyt1.html" target="InlineFrame1" onclick="ShowObjectWithEffect('InlineFrame1', 1, 'dropright', 500);ShowObjectWithEffect('wb_Icon1', 0, 'fade', 500);ShowObjectWithEffect('wb_Card1', 0, 'fade', 1);ShowObjectWithEffect('wb_Card2', 0, 'fade', 0);ShowObjectWithEffect('boton_cloce', 0, 'fade', 500);ShowObjectWithEffect('wb_Icon2', 1, 'fade', 500);ShowObjectWithEffect('h', 0, 'fade', 500);ShowObjectWithEffect('wb_fav', 0, 'fade', 500);ShowObjectWithEffect('Icon3', 1, 'fade', 500);ShowObjectWithEffect('wb_Image1', 0, 'fade', 500);return false;"><div id="Icon1"><i class="fa fa-play-circle"></i></div></a>
+<a href="./ladyt1.html" target="InlineFrame1" onclick="ShowObjectWithEffect('InlineFrame1', 1, 'dropright', 500);ShowObjectWithEffect('wb_Icon1', 0, 'fade', 500);ShowObjectWithEffect('wb_Card1', 0, 'fade', 1);ShowObjectWithEffect('wb_Card2', 0, 'fade', 0);ShowObjectWithEffect('boton_cloce', 0, 'fade', 500);ShowObjectWithEffect('wb_Icon2', 1, 'fade', 500);ShowObjectWithEffect('h', 0, 'fade', 500);ShowObjectWithEffect('wb_fav', 0, 'fade', 500);ShowObjectWithEffect('Icon3', 1, 'fade', 500);ShowObjectWithEffect('Image1', 0, 'fade', 500);return false;"><div id="Icon1"><i class="fa fa-play-circle"></i></div></a>
 </div>
 <iframe name="InlineFrame1" id="InlineFrame1" src="./ladyt1.html" scrolling="no" allowfullscreen></iframe>
 </div>
 </div>
 </div>
 <div id="wb_Image3" style="display:inline-block;width:195px;height:87px;z-index:8;">
-<a href="#" onclick="ShowObjectWithEffect('InlineFrame1', 1, 'dropright', 500);ShowObjectWithEffect('wb_Image3', 0, 'fade', 500);ShowObjectWithEffect('wb_Card1', 0, 'dropright', 500);ShowObjectWithEffect('wb_Card2', 0, 'dropleft', 500);ShowObjectWithEffect('wb_Icon2', 1, 'fade', 500);ShowObjectWithEffect('h', 0, 'fade', 500);ShowObjectWithEffect('wb_fav', 0, 'fade', 500);ShowObjectWithEffect('wb_Image1', 0, 'fade', 500);return false;"><img src="20230529_180338_332 (1).webp" id="Image3" alt=""></a>
+<a href="#" onclick="ShowObjectWithEffect('InlineFrame1', 1, 'dropright', 500);ShowObjectWithEffect('wb_Image3', 0, 'fade', 500);ShowObjectWithEffect('wb_Card1', 0, 'dropright', 500);ShowObjectWithEffect('wb_Card2', 0, 'dropleft', 500);ShowObjectWithEffect('wb_Icon2', 1, 'fade', 500);ShowObjectWithEffect('h', 0, 'fade', 500);ShowObjectWithEffect('wb_fav', 0, 'fade', 500);return false;"><img src="20230529_180338_332 (1).webp" id="Image3" alt=""></a>
 </div>
 </div>
 </div>
 </div>
-<div id="layermenu" style="position:fixed;text-align:center;left:0px;top:20px;width:40px;height:38px;z-index:20;">
+<div id="layermenu" style="position:fixed;text-align:center;left:0px;top:20px;width:40px;height:38px;z-index:19;">
 <div id="layermenu_Container" style="width:40px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
 <div id="wb_Icon2" style="position:absolute;left:1px;top:5px;width:35px;height:33px;visibility:hidden;text-align:center;z-index:15;">
-<a href="./index.html" onclick="ShowObjectWithEffect('wb_Icon2', 0, 'fade', 500);ShowObjectWithEffect('boton_cloce', 1, 'fade', 500);ShowObjectWithEffect('InlineFrame1', 0, 'fade', 500);ShowObjectWithEffect('wb_Card1', 1, 'dropright', 500);ShowObjectWithEffect('wb_Card2', 1, 'dropleft', 500);ShowObjectWithEffect('h', 1, 'fade', 500);ShowObjectWithEffect('wb_Image3', 1, 'fade', 500);ShowObjectWithEffect('wb_fav', 1, 'fade', 500);ShowObjectWithEffect('Icon3', 0, 'fade', 500);ShowObjectWithEffect('wb_Image1', 1, 'fade', 500);return false;"><div id="Icon2"><i class="fa fa-chevron-circle-left"></i></div></a></div>
+<a href="./index.html" onclick="ShowObjectWithEffect('wb_Icon2', 0, 'fade', 500);ShowObjectWithEffect('boton_cloce', 1, 'fade', 500);ShowObjectWithEffect('InlineFrame1', 0, 'fade', 500);ShowObjectWithEffect('wb_Card1', 1, 'dropright', 500);ShowObjectWithEffect('wb_Card2', 1, 'dropleft', 500);ShowObjectWithEffect('h', 1, 'fade', 500);ShowObjectWithEffect('wb_Image3', 1, 'fade', 500);ShowObjectWithEffect('wb_fav', 1, 'fade', 500);ShowObjectWithEffect('Icon3', 0, 'fade', 500);ShowObjectWithEffect('Image1', 1, 'fade', 500);return false;"><div id="Icon2"><i class="fa fa-chevron-circle-left"></i></div></a></div>
 </div>
 </div>
-<div id="h" style="position:fixed;text-align:center;left:0px;top:20px;width:249px;height:43px;z-index:21;">
+<div id="h" style="position:fixed;text-align:center;left:0px;top:20px;width:249px;height:43px;z-index:20;">
 <div id="h_Container" style="width:249px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
 <div id="wb_Image2" style="position:absolute;left:61px;top:0px;width:188px;height:43px;z-index:16;">
 <img src="images/8248849621_2e551c55-070d-47aa-9422-2b995658cef6.png" id="Image2" alt="" width="188" height="43"></div>
@@ -185,12 +248,7 @@ $(window).on('load', function()
 </div>
 </div>
 
-<div id="Layer2" style="position:fixed;text-align:right;left:auto;right:20px;top:auto;bottom:14px;width:53px;height:51px;z-index:23;">
-<div id="Layer2_Container" style="width:53px;position:relative;margin-left:auto;margin-right:0;text-align:left;">
-<div id="wb_Image1" style="position:absolute;left:0px;top:0px;width:53px;height:51px;z-index:18;">
-<a href="https://t.me/+-RNE8YcFmKtmOTMx" target="_blank"><img src="images/telegrama.png" id="Image1" alt="" width="53" height="53"></a></div>
-</div>
-</div>
+
 
 <div id="OverlayMenu1-overlay">
 <div class="OverlayMenu1">
