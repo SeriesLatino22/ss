@@ -44,5 +44,6 @@ function SearchDatabase()
    this[database_length++] = new SearchPage("publicidad2xsurve.html", "Series y Peliculas Colombianas", " ", "Series y peliculas colombianas completas audio latino.");
    this[database_length++] = new SearchPage("publicidad3.html", "Series y Peliculas Colombianas", " ", "Series y peliculas colombianas completas audio latino.");
    this[database_length++] = new SearchPage("publicidad4.html", "Series y Peliculas Colombianas", " ", "Series y peliculas colombianas completas audio latino.");
+   this[database_length++] = new SearchPage("publi5Only1.html", "Series y Peliculas Colombianas", " ", "Series y peliculas colombianas completas audio latino.");
    return this;
 }
