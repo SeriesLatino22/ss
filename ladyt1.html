@@ -33,6 +33,82 @@ $(window).on('load', function()
 <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
 
     
+
+<div id="blocker">
+    <div id="container">
+      <button id="unlockButton"><i class="fas fa-lock"></i> Desbloquear contenido</button>
+    </div>
+  </div>
+
+
+<script>
+
+window.addEventListener('DOMContentLoaded', function() {
+  var webPages = [
+    './publicidad1.html',
+    './publicidad3.html',
+    'https://kiksajex.com/4/6055282',
+    './publicidad4.html',
+    'https://kiksajex.com/4/6051547',
+    './publi5Only1.html',
+    'https://zaltaumi.net/4/6055282',
+    './publicidad1.html',
+    './publicidad1.html',
+    './publicidad3.html'
+    // Agrega aquí más URL de páginas web separadas por comas
+  ];
+
+  var currentIndex = 0;
+  var iframeInterval;
+
+  var blocker = document.getElementById('blocker');
+  var unlockButton = document.getElementById('unlockButton');
+  var container = document.getElementById('container');
+
+  unlockButton.addEventListener('click', function() {
+    container.innerHTML = '<div id="countdownWrapper">La publicidad se cerrará en: <span id="countdown">45</span></div><div id="iframeWrapper"><iframe id="contentFrame" width="100%" height="500px" src="" frameborder="0"></iframe></div>';
+    var countdown = document.getElementById('countdown');
+    var seconds = 45;
+
+    var iframeWrapper = document.getElementById('iframeWrapper');
+    iframeWrapper.style.display = 'block';
+
+    var message = document.createElement('div');
+    message.id = 'message';
+    message.textContent = 'Espera a que termine el tiempo, si te sale algo de enlaces externos dale cancelar, NO aceptes, descarges ni instales nada.';
+    container.appendChild(message);
+
+    function changeWebPage() {
+      if (currentIndex >= webPages.length) {
+        currentIndex = 0;
+      }
+      var randomWebPage = webPages[currentIndex];
+      var contentFrame = document.getElementById('contentFrame');
+      contentFrame.src = randomWebPage;
+      currentIndex++;
+    }
+
+    changeWebPage(); // Cambiar a la primera página de inmediato
+
+    iframeInterval = setInterval(changeWebPage, 5000); // Cambiar cada 8 segundos
+
+    var interval = setInterval(function() {
+      seconds--;
+      countdown.textContent = seconds;
+
+      if (seconds === 0) {
+        blocker.style.display = 'none';
+        clearInterval(interval);
+        clearInterval(iframeInterval);
+      }
+    }, 1000);
+  });
+});
+
+</script>
+
+
+
   </head>
   <body>
 
@@ -70,9 +146,7 @@ $(window).on('load', function()
         </h3>
         <p class="paragraph">
     
-    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Capitulo 1"><span style="color: yellow;">Opcion 1</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://streamlare.com/e/eLMEmnAavvkngPvq" data-titulo="Capitulo 1"><span style="color: red;">Opcion 2</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Capitulo 1"><span style="color: blue;">Opcion 3</span></a>
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687177583215" data-titulo="Capitulo 1"><span style="color: yellow;">Opcion 1</span></a>
 
    </p>
       </div>
@@ -86,9 +160,7 @@ $(window).on('load', function()
         </h3>
         <p class="paragraph">
     
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687177779823" data-titulo="Capitulo 2"><span style="color: yellow;">Opcion 1</span></a>
 
  </p> 
 	 
@@ -104,9 +176,7 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687177910895" data-titulo="Capitulo 3"><span style="color: yellow;">Opcion 1</span></a>
 
 
      </p> 
@@ -124,9 +194,7 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687178041967" data-titulo="Capitulo 4"><span style="color: yellow;">Opcion 1</span></a>
 
  </p> 
 	 
@@ -143,9 +211,7 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687178173039" data-titulo="Capitulo 5"><span style="color: yellow;">Opcion 1</span></a>
 
      </p> 
 	 
@@ -162,9 +228,7 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687178238575" data-titulo="Capitulo 6"><span style="color: yellow;">Opcion 1</span></a>
 
      </p> 
 	 
@@ -181,9 +245,7 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687178304111" data-titulo="Capitulo 7"><span style="color: yellow;">Opcion 1</span></a>
 
 
  </p> 
@@ -201,9 +263,7 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687178369647" data-titulo="Capitulo 8"><span style="color: yellow;">Opcion 1</span></a>
 
 	 
 	 </p> 
@@ -221,9 +281,7 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687178435183" data-titulo="Capitulo 9"><span style="color: yellow;">Opcion 1</span></a>
 
      </p> 
 	 
@@ -240,9 +298,7 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
+      <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687178500719" data-titulo="Capitulo 10"><span style="color: yellow;">Opcion 1</span></a>
 
      </p> 
 	 
@@ -259,9 +315,7 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687178631791" data-titulo="Capitulo 11"><span style="color: yellow;">Opcion 1</span></a>
 
 
  </p> 
@@ -279,9 +333,7 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
+       <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687178697327" data-titulo="Capitulo 12"><span style="color: yellow;">Opcion 1</span></a>
 
 	 
 	 </p> 
@@ -299,8 +351,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687179483759"><span>Youtube</span></a> 
-    
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687179483759" data-titulo="Capitulo 13"><span style="color: yellow;">Opcion 1</span></a>
+
      </p> 
 	 
 	  
@@ -316,8 +368,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687179549295"><span>Youtube</span></a> 
-    
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687179549295" data-titulo="Capitulo 14"><span style="color: yellow;">Opcion 1</span></a>
+
      </p> 
 	 
 	  
@@ -333,8 +385,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687179811439"><span>Youtube</span></a> 
-    
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687179811439" data-titulo="Capitulo 15"><span style="color: yellow;">Opcion 1</span></a>
+
 
  </p> 
 	 
@@ -351,8 +403,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687180073583"><span>Youtube</span></a> 
-    
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687180073583" data-titulo="Capitulo 16"><span style="color: yellow;">Opcion 1</span></a>
+
 	 
 	 </p> 
 	 
@@ -369,8 +421,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687180139119"><span>Youtube</span></a> 
-    
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687180139119" data-titulo="Capitulo 17"><span style="color: yellow;">Opcion 1</span></a>
+
      </p> 
 	 
 	  
@@ -386,8 +438,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687180270191"><span>Youtube</span></a> 
-    
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687180270191" data-titulo="Capitulo 18"><span style="color: yellow;">Opcion 1</span></a>
+
      </p> 
 	 
 	  
@@ -403,8 +455,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687180663407"><span>Youtube</span></a> 
-    
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687180663407" data-titulo="Capitulo 19"><span style="color: yellow;">Opcion 1</span></a>
+
 
  </p> 
 	 
@@ -421,8 +473,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687181843055"><span>Youtube</span></a> 
-    
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687181843055" data-titulo="Capitulo 20"><span style="color: yellow;">Opcion 1</span></a>
+
 	 
 	 </p> 
 	 
@@ -439,8 +491,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687182563951"><span>Youtube</span></a> 
-    
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687182563951" data-titulo="Capitulo 21"><span style="color: yellow;">Opcion 1</span></a>
+
      </p> 
 	 
 	  
@@ -456,8 +508,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687183219311"><span>Youtube</span></a> 
-    
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687183219311" data-titulo="Capitulo 22"><span style="color: yellow;">Opcion 1</span></a>
+
      </p> 
 	 
 	  
@@ -473,8 +525,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687183350383"><span>Youtube</span></a> 
-    
+      <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687183350383" data-titulo="Capitulo 23"><span style="color: yellow;">Opcion 1</span></a>
+
 
  </p> 
 	 
@@ -491,8 +543,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688148695663"><span>Youtube</span></a> 
-    
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688148695663" data-titulo="Capitulo 24"><span style="color: yellow;">Opcion 1</span></a>
+
     </p> 
 	 
 	  
@@ -508,8 +560,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688148826735"><span>Youtube</span></a> 
-    
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688148826735" data-titulo="Capitulo 25"><span style="color: yellow;">Opcion 1</span></a>
+
      </p> 
 	 
 	  
@@ -525,8 +577,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688148957807"><span>Youtube</span></a> 
-    
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688148957807" data-titulo="Capitulo 26"><span style="color: yellow;">Opcion 1</span></a>
+
      </p> 
 	 
 	  
@@ -542,8 +594,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879"><span>Youtube</span></a> 
-    
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Capitulo 27"><span style="color: yellow;">Opcion 1</span></a>
+
 
  </p> 
 	 
@@ -560,8 +612,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149219951"><span>Youtube</span></a> 
-    
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149219951" data-titulo="Capitulo 28"><span style="color: yellow;">Opcion 1</span></a>
+
 	 </p> 
 	 
 	  
@@ -577,8 +629,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688150989423"><span>Youtube</span></a> 
-    
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688150989423" data-titulo="Capitulo 29"><span style="color: yellow;">Opcion 1</span></a>
+
 
  </p> 
 	 
@@ -593,8 +645,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688151775855"><span>Youtube</span></a> 
-    
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688151775855" data-titulo="Capitulo 30"><span style="color: yellow;">Opcion 1</span></a>
+
 
  </p> 
  
@@ -609,8 +661,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688153741935"><span>Youtube</span></a> 
-    
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688153741935" data-titulo="Capitulo 31"><span style="color: yellow;">Opcion 1</span></a>
+
 
  </p> 
  
@@ -625,8 +677,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688155249263"><span>Youtube</span></a> 
-    
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688155249263" data-titulo="Capitulo 32"><span style="color: yellow;">Opcion 1</span></a>
+
 
  </p> 
  
@@ -642,8 +694,9 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688338356847"><span>Youtube</span></a> 
-    
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688338356847" data-titulo="Capitulo 33"><span style="color: yellow;">Opcion 1</span></a>
+
+
 
  </p> 
  
@@ -659,8 +712,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688340519535"><span>Youtube</span></a> 
-    
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688340519535" data-titulo="Capitulo 34"><span style="color: yellow;">Opcion 1</span></a>
+
 
  </p> 
  
@@ -676,8 +729,9 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688340716143"><span>Youtube</span></a> 
-    
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688340716143" data-titulo="Capitulo 35"><span style="color: yellow;">Opcion 1</span></a>
+
+
 
  </p> 
  
@@ -693,8 +747,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688340847215"><span>Youtube</span></a> 
-    
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688340847215" data-titulo="Capitulo 36"><span style="color: yellow;">Opcion 1</span></a>
+
 
  </p> 
  
@@ -710,8 +764,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688342026863"><span>Youtube</span></a> 
-    
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688342026863" data-titulo="Capitulo 37"><span style="color: yellow;">Opcion 1</span></a>
+
 
  </p> 
  
@@ -727,8 +781,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688342944367"><span>Youtube</span></a> 
-    
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688342944367" data-titulo="Capitulo 38"><span style="color: yellow;">Opcion 1</span></a>
+
 
  </p> 
  
@@ -744,8 +798,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688343403119"><span>Youtube</span></a> 
-    
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688343403119" data-titulo="Capitulo 39"><span style="color: yellow;">Opcion 1</span></a>
+
 
  </p> 
  
@@ -761,8 +815,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4696420780655"><span>Youtube</span></a> 
-    
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4696420780655" data-titulo="Capitulo 40"><span style="color: yellow;">Opcion 1</span></a>
+
 
  </p> 
  
@@ -778,8 +832,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879"><span>Youtube</span></a> 
-    
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4696420846191" data-titulo="Capitulo 41"><span style="color: yellow;">Opcion 1</span></a>
+
 
  </p> 
  
@@ -795,8 +849,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879"><span>Youtube</span></a> 
-    
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4696460429935" data-titulo="Capitulo 42"><span style="color: yellow;">Opcion 1</span></a>
+
 
  </p> 
  
@@ -812,8 +866,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879"><span>Youtube</span></a> 
-    
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4696460954223" data-titulo="Capitulo 43"><span style="color: yellow;">Opcion 1</span></a>
+
 
  </p> 
  
@@ -829,8 +883,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879"><span>Youtube</span></a> 
-    
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4696461609583" data-titulo="Capitulo 44"><span style="color: yellow;">Opcion 1</span></a>
+
 
  </p> 
  
@@ -846,8 +900,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879"><span>Youtube</span></a> 
-    
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4696462199407" data-titulo="Capitulo 45"><span style="color: yellow;">Opcion 1</span></a>
+
 
  </p> 
  
@@ -863,8 +917,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879"><span>Youtube</span></a> 
-    
+      <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4696462789231" data-titulo="Capitulo 46"><span style="color: yellow;">Opcion 1</span></a>
+
 
  </p> 
  
@@ -879,8 +933,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879"><span>Youtube</span></a> 
-    
+      <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4696463116911" data-titulo="Capitulo 47"><span style="color: yellow;">Opcion 1</span></a>
+
 
  </p> 
  
@@ -896,8 +950,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879"><span>Youtube</span></a> 
-    
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4696463247983" data-titulo="Capitulo 48"><span style="color: yellow;">Opcion 1</span></a>
+
 
  </p> 
  
@@ -913,8 +967,8 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879"><span>Youtube</span></a> 
-    
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4696463772271" data-titulo="Capitulo 49"><span style="color: yellow;">Opcion 1</span></a>
+
 
  </p> 
  
@@ -930,11 +984,414 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879"><span>Youtube</span></a> 
-    
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4696464689775" data-titulo="Capitulo 50"><span style="color: yellow;">Opcion 1</span></a>
 
  </p> 
+ 
+ </p> 
+ 
+ </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 51</span>
+          <div class="button-container">
+    <button class="button" id="button49">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4696465672815" data-titulo="Capitulo 51"><span style="color: yellow;">Opcion 1</span></a>
 
+
+ </p> 
+ 
+ 
+ </p>
+  </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 52</span>
+          <div class="button-container">
+    <button class="button" id="button50">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4696466524783" data-titulo="Capitulo 52"><span style="color: yellow;">Opcion 1</span></a>
+
+ </p> 
+ 
+ </p> 
+ 
+  </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 53</span>
+          <div class="button-container">
+    <button class="button" id="button50">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4696689805935" data-titulo="Capitulo 53"><span style="color: yellow;">Opcion 1</span></a>
+
+ </p> 
+ 
+ </p> 
+ 
+  </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 54</span>
+          <div class="button-container">
+    <button class="button" id="button50">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4696690723439" data-titulo="Capitulo 54"><span style="color: yellow;">Opcion 1</span></a>
+
+ </p> 
+ 
+ </p> 
+ 
+  </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 55</span>
+          <div class="button-container">
+    <button class="button" id="button50">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4696690985583" data-titulo="Capitulo 55"><span style="color: yellow;">Opcion 1</span></a>
+
+ </p> 
+ 
+ </p> 
+ 
+  </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 56</span>
+          <div class="button-container">
+    <button class="button" id="button50">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4696691247727" data-titulo="Capitulo 56"><span style="color: yellow;">Opcion 1</span></a>
+
+ </p> 
+ 
+ </p> 
+ 
+  </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 57</span>
+          <div class="button-container">
+    <button class="button" id="button50">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4696691772015" data-titulo="Capitulo 57"><span style="color: yellow;">Opcion 1</span></a>
+
+ </p> 
+ 
+ </p> 
+ 
+  </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 58</span>
+          <div class="button-container">
+    <button class="button" id="button50">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4696692558447" data-titulo="Capitulo 58"><span style="color: yellow;">Opcion 1</span></a>
+
+ </p> 
+ 
+ </p> 
+ 
+  </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 59</span>
+          <div class="button-container">
+    <button class="button" id="button50">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4696693017199" data-titulo="Capitulo 59"><span style="color: yellow;">Opcion 1</span></a>
+
+ </p> 
+ 
+ </p> 
+ 
+  </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 60</span>
+          <div class="button-container">
+    <button class="button" id="button50">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4696693607023" data-titulo="Capitulo 60"><span style="color: yellow;">Opcion 1</span></a>
+
+ </p> 
+ 
+ </p> 
+ 
+  </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 61</span>
+          <div class="button-container">
+    <button class="button" id="button50">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4696695245423" data-titulo="Capitulo 61"><span style="color: yellow;">Opcion 1</span></a>
+
+ </p> 
+ 
+ </p> 
+ 
+  </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 62</span>
+          <div class="button-container">
+    <button class="button" id="button50">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4696698194543" data-titulo="Capitulo 62"><span style="color: yellow;">Opcion 1</span></a>
+
+ </p> 
+ 
+ </p> 
+ 
+  </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 63</span>
+          <div class="button-container">
+    <button class="button" id="button50">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4711357811311" data-titulo="Capitulo 63"><span style="color: yellow;">Opcion 1</span></a>
+
+ </p> 
+ 
+ </p> 
+ 
+  </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 64</span>
+          <div class="button-container">
+    <button class="button" id="button50">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4711363512943" data-titulo="Capitulo 64"><span style="color: yellow;">Opcion 1</span></a>
+
+ </p> 
+ 
+ </p> 
+
+</div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 65</span>
+          <div class="button-container">
+    <button class="button" id="button50">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4711363578479" data-titulo="Capitulo 65"><span style="color: yellow;">Opcion 1</span></a>
+
+ </p> 
+ 
+ </p> 
+ 
+ </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 66</span>
+          <div class="button-container">
+    <button class="button" id="button50">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4711407946351" data-titulo="Capitulo 66"><span style="color: yellow;">Opcion 1</span></a>
+
+ </p> 
+ 
+ </p> 
+ 
+ </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 67</span>
+          <div class="button-container">
+    <button class="button" id="button50">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4711408011887" data-titulo="Capitulo 67"><span style="color: yellow;">Opcion 1</span></a>
+
+ </p> 
+ 
+ </p> 
+ 
+ </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 68</span>
+          <div class="button-container">
+    <button class="button" id="button50">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4711408077423" data-titulo="Capitulo 68"><span style="color: yellow;">Opcion 1</span></a>
+
+ </p> 
+ 
+ </p> 
+ 
+ </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 69</span>
+          <div class="button-container">
+    <button class="button" id="button50">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4711408208495" data-titulo="Capitulo 69"><span style="color: yellow;">Opcion 1</span></a>
+
+ </p> 
+ 
+ </p> 
+ 
+ </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 70</span>
+          <div class="button-container">
+    <button class="button" id="button50">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4711408274031" data-titulo="Capitulo 70"><span style="color: yellow;">Opcion 1</span></a>
+
+ </p> 
+ 
+ </p> 
+ 
+ </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 71</span>
+          <div class="button-container">
+    <button class="button" id="button50">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4711408470639" data-titulo="Capitulo 71"><span style="color: yellow;">Opcion 1</span></a>
+
+ </p> 
+ 
+ </p> 
+ 
+ </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 72</span>
+          <div class="button-container">
+    <button class="button" id="button50">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4711408536175" data-titulo="Capitulo 72"><span style="color: yellow;">Opcion 1</span></a>
+
+ </p> 
+ 
+ </p> 
+ 
+ </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 73</span>
+          <div class="button-container">
+    <button class="button" id="button50">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4711408667247" data-titulo="Capitulo 73"><span style="color: yellow;">Opcion 1</span></a>
+
+ </p> 
+ 
+ </p> 
+ 
+ </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 74</span>
+          <div class="button-container">
+    <button class="button" id="button50">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4711408863855" data-titulo="Capitulo 74"><span style="color: yellow;">Opcion 1</span></a>
+
+ </p> 
+ 
+ </p> 
+ 
+ </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 75</span>
+          <div class="button-container">
+    <button class="button" id="button50">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4711408994927" data-titulo="Capitulo 75"><span style="color: yellow;">Opcion 1</span></a>
+
+ </p> 
+ 
+ </p> 
+ 
+ 
 
   
       </div>
@@ -1104,90 +1561,6 @@ document.querySelector("#lightbox").addEventListener("click", function (e) {
 </div>
 </div>
 </div>
-</div>
-<div id="Html4" style="position:absolute;left:264px;top:1037px;width:250px;height:143px;z-index:6">
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Bloquear Contenido</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
-</head>
-<body>
-<div id="blocker">
-    <div id="container">
-      <button id="unlockButton"><i class="fas fa-lock"></i> Desbloquear contenido</button>
-    </div>
-  </div>
-
-
-<script>
-
-window.addEventListener('DOMContentLoaded', function() {
-  var webPages = [
-    './publicidad1.html',
-    './publicidad3.html',
-    'https://kiksajex.com/4/6051547',
-    './publicidad4.html',
-    'https://kiksajex.com/4/6051547',
-    './publi5Only1.html',
-    'https://zaltaumi.net/4/6055282',
-    './publicidad1.html',
-    './publicidad1.html',
-    './publicidad3.html'
-    // Agrega aquí más URL de páginas web separadas por comas
-  ];
-
-  var currentIndex = 0;
-  var iframeInterval;
-
-  var blocker = document.getElementById('blocker');
-  var unlockButton = document.getElementById('unlockButton');
-  var container = document.getElementById('container');
-
-  unlockButton.addEventListener('click', function() {
-    container.innerHTML = '<div id="countdownWrapper">La publicidad se cerrará en: <span id="countdown">45</span></div><div id="iframeWrapper"><iframe id="contentFrame" width="100%" height="500px" src="" frameborder="0"></iframe></div>';
-    var countdown = document.getElementById('countdown');
-    var seconds = 45;
-
-    var iframeWrapper = document.getElementById('iframeWrapper');
-    iframeWrapper.style.display = 'block';
-
-    var message = document.createElement('div');
-    message.id = 'message';
-    message.textContent = 'Espera a que termine el tiempo, si te sale algo de enlaces externos dale cancelar, NO aceptes, descarges ni instales nada.';
-    container.appendChild(message);
-
-    function changeWebPage() {
-      if (currentIndex >= webPages.length) {
-        currentIndex = 0;
-      }
-      var randomWebPage = webPages[currentIndex];
-      var contentFrame = document.getElementById('contentFrame');
-      contentFrame.src = randomWebPage;
-      currentIndex++;
-    }
-
-    changeWebPage(); // Cambiar a la primera página de inmediato
-
-    iframeInterval = setInterval(changeWebPage, 5000); // Cambiar cada 8 segundos
-
-    var interval = setInterval(function() {
-      seconds--;
-      countdown.textContent = seconds;
-
-      if (seconds === 0) {
-        blocker.style.display = 'none';
-        clearInterval(interval);
-        clearInterval(iframeInterval);
-      }
-    }, 1000);
-  });
-});
-
-</script>
-</body>
-</html>
 </div>
 <script>
         document.addEventListener('DOMContentLoaded', () => {

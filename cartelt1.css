@@ -288,6 +288,9 @@ body
    font-style: italic;
    font-size: 11px;
 }
+    
+  
+
 .button-container {
   display: inline-block;
 }
@@ -386,6 +389,13 @@ body
 	 transform: rotate(90deg);
 	 transition: all 0.3s ease-in-out;
 }
+
+.video-title {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
  .accordion .a-container .a-panel {
 	 width: 100%;
 	 color: #fff;
@@ -465,6 +475,7 @@ background: black;
 }
 
 }
+
 *, *::after, *::before {
 	 padding: 0;
 	 margin: 0;
@@ -544,58 +555,8 @@ a {text-decoration:none;
     margin-top: 2px;
 text-align: center;
 } 
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
 
-#blocker {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
 
-#container {
-  text-align: center;
-}
-
-#unlockButton {
-  font-size: 18px;
-  padding: 10px 20px;
-}
-
-#countdown {
-  color: white;
-  font-size: 19px;
-}
-
-#countdownWrapper {
-  color: white;
-  font-size: 19px;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-#videoWrapper {
-  position: relative;
-}
-
-#overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-}
 
 html, body {
   height: 100%;
@@ -611,7 +572,6 @@ html, body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   z-index: 9999;
@@ -631,10 +591,27 @@ html, body {
   cursor: pointer;
 }
 
+#countdown {
+  color: white;
+  font-size: 19px;
+}
+
+#countdownWrapper {
+  color: white;
+  font-size: 19px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#iframeWrapper {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
 #message {
   color: white;
   font-size: 10px;
   margin-top: 10px;
 }
-
 
