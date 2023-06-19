@@ -204,7 +204,7 @@ body
    background-clip: padding-box;
    background-color: transparent;
    background-image: none;
-   color: #808080;
+   color: #A9A9A9;
    font-family: Arial;
    font-weight: normal;
    font-style: normal;
@@ -216,7 +216,7 @@ body
 {
    cursor: pointer;
    display: inline-block;
-   fill: #808080;
+   fill: #A9A9A9;
    float: right;
    height: 15px;
    left: auto;
