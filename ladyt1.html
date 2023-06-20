@@ -34,78 +34,7 @@ $(window).on('load', function()
 
     
 
-<div id="blocker">
-    <div id="container">
-      <button id="unlockButton"><i class="fas fa-lock"></i> Desbloquear contenido</button>
-    </div>
-  </div>
 
-
-<script>
-
-window.addEventListener('DOMContentLoaded', function() {
-  var webPages = [
-    'https://www.highrevenuegate.com/rw39en4xm?key=c971ef99c8eff73874d3ba2316df1f06',
-    './publicidad1.html',
-    'https://www.highrevenuegate.com/rw39en4xm?key=c971ef99c8eff73874d3ba2316df1f06',
-    './publicidad1.html',
-    'https://www.highrevenuegate.com/rw39en4xm?key=c971ef99c8eff73874d3ba2316df1f06',
-    './publicidad1.html',
-    'https://www.highrevenuegate.com/rw39en4xm?key=c971ef99c8eff73874d3ba2316df1f06',
-    './publicidad1.html'
-    // Agrega aquí más URL de páginas web separadas por comas
-  ];
-
-  var currentIndex = 0;
-  var iframeInterval;
-
-  var blocker = document.getElementById('blocker');
-  var unlockButton = document.getElementById('unlockButton');
-  var container = document.getElementById('container');
-
-  unlockButton.addEventListener('click', function() {
-    container.innerHTML = '<div id="countdownWrapper">La publicidad se cerrará en: <span id="countdown">45</span></div><div id="iframeWrapper"><iframe id="contentFrame" width="100%" height="500px" src="" frameborder="0"></iframe></div>';
-    var countdown = document.getElementById('countdown');
-    var seconds = 45;
-
-    var iframeWrapper = document.getElementById('iframeWrapper');
-    iframeWrapper.style.display = 'block';
-
-    var message = document.createElement('div');
-    message.id = 'message';
-    message.textContent = 'Espera a que termine el tiempo, si te sale algo de enlaces externos dale cancelar, NO aceptes, descarges ni instales nada.';
-    container.appendChild(message);
-
-    function changeWebPage() {
-      if (currentIndex >= webPages.length) {
-        currentIndex = 0;
-      }
-      var randomWebPage = webPages[currentIndex];
-      var contentFrame = document.getElementById('contentFrame');
-      contentFrame.src = randomWebPage;
-      currentIndex++;
-    }
-
-    changeWebPage(); // Cambiar a la primera página de inmediato
-
-    iframeInterval = setInterval(changeWebPage, 5000); // Cambiar cada 8 segundos
-
-    var interval = setInterval(function() {
-      seconds--;
-      countdown.textContent = seconds;
-
-      if (seconds === 0) {
-        blocker.style.display = 'none';
-        clearInterval(interval);
-        clearInterval(iframeInterval);
-      }
-    }, 1000);
-  });
-});
-
-</script>
-
-<script type='text/javascript' src='//pl19791376.highrevenuegate.com/43/f5/2f/43f52fd0cfa509cccd986803aaa6e2cf.js'></script>
 
   </head>
   <body>
