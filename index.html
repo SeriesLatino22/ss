@@ -26,78 +26,6 @@ $(document).ready(function()
    });
 });
 </script>
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Ventana emergente</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div id="overlay"></div>
-  
-  <div id="popup" style="width: 300px; border-radius: 10px;>">
-    <br>
-    <p style="color: black; text-align: center;">Publicidad. Por favor espera un momento...</p>
-    <div id="countdown" style="color: black; text-align: center; margin-bottom: 20px;">20</div>
-    <div id="buttonContainer" style="display: flex; justify-content: center;">
-      <button id="closeButton" style="display: none; padding: 10px 20px; background-color: #ff0000; color: #fff; border: none; cursor: pointer;">Cerrar</button>
-    </div>
-    
-    <script async="async" data-cfasync="false" src="//pl19762075.highrevenuegate.com/7362b479b11e1a02e3ccfff12e2c63e6/invoke.js"></script> <div id="container-7362b479b11e1a02e3ccfff12e2c63e6"></div>
-    
-    
-  </div>
-
-  <script>
-  
-  // URL del enlace que se abrirá en la ventana emergente
-    var enlace = "https://www.highrevenuegate.com/rw39en4xm?key=c971ef99c8eff73874d3ba2316df1f06";
-
-    // Contador de clics
-    var contadorClics = 0;
-
-    // Función para abrir la ventana emergente solo en el primer clic
-    function abrirVentanaEmergente() {
-      if (contadorClics === 0) {
-        window.open(enlace, "_blank", "width=500,height=500");
-        contadorClics++;
-      }
-    }
-
-    // Evento para detectar el clic en cualquier parte de la página
-    document.addEventListener("click", abrirVentanaEmergente);
-    
-    
-    window.addEventListener('DOMContentLoaded', function() {
-      var overlay = document.getElementById('overlay');
-      var popup = document.getElementById('popup');
-      var countdown = document.getElementById('countdown');
-      var closeButton = document.getElementById('closeButton'); // Obtener el botón de cerrar
-      var timeLeft = 20;
-
-      overlay.style.display = 'block';
-      popup.style.display = 'block';
-
-      var countdownInterval = setInterval(function() {
-        timeLeft--;
-        countdown.textContent = timeLeft;
-
-        if (timeLeft <= 0) {
-          clearInterval(countdownInterval);
-          closeButton.style.display = 'block'; // Mostrar el botón de cerrar
-        }
-      }, 1000);
-
-      closeButton.addEventListener('click', function() {
-        overlay.style.display = 'none';
-        popup.style.display = 'none';
-      });
-    });
-  </script>
-
-  </body>
-</html>
-
 </head>
 <body>
  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'><link rel="stylesheet" href="./style.css">
@@ -874,7 +802,6 @@ window.addEventListener('load', () => {
 <img src="images/logo.png" id="Image5" alt="" width="218" height="78"></div>
 </div>
 </div>
-
 
 <div id="OverlayMenu2-overlay">
 <div class="OverlayMenu2">
