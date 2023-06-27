@@ -20,6 +20,8 @@ $(document).ready(function()
    });
 });
 </script>
+<script type='text/javascript' src='//pl19796401.highrevenuegate.com/bd/f5/a3/bdf5a3e139a53757a041c0039da4ea6b.js'></script>
+
 </head>
 <body>
 <div id="h" style="position:fixed;text-align:center;left:0px;top:20px;width:258px;height:43px;z-index:2;">
@@ -35,6 +37,43 @@ $(document).ready(function()
 </div>
 </div>
 </div>
+<div id="Html4" style="position:absolute;left:499px;top:308px;width:293px;height:118px;z-index:3">
+<div id="blocker">
+  <div id="container">
+    <button id="unlockButton"><i class="fas fa-lock"></i> Desbloquear contenido</button>
+    <div id="message">Debes darle 3 veces al botón</div>
+    <div id="adMessage">Se abrirá publicidad, solo ciérrala, ¡Gracias!</div>
+  </div>
+</div>
+
+
+<script>
+  var unlockButton = document.getElementById("unlockButton");
+  var message = document.getElementById("message");
+  var adMessage = document.getElementById("adMessage");
+  var clickCount = 0;
+  var urls = [
+    "https://www.highrevenuegate.com/gr68y57qs2?key=a12e88d2a2a8205d6611e540ddf0ae52",
+    "https://www.highrevenuegate.com/gr68y57qs2?key=a12e88d2a2a8205d6611e540ddf0ae52",
+    "https://www.highrevenuegate.com/gr68y57qs2?key=a12e88d2a2a8205d6611e540ddf0ae52"
+  ];
+
+  unlockButton.addEventListener("click", function() {
+    clickCount++;
+    if (clickCount <= urls.length) {
+      window.open(urls[clickCount - 1], "_blank");
+      if (clickCount < urls.length) {
+        message.textContent = "Debes darle " + (urls.length - clickCount) + " veces más al botón";
+      } else {
+        message.textContent = "Se abrieron todas las páginas. ¡Cerrando todo!";
+        adMessage.style.display = "none";
+        document.getElementById("blocker").style.display = "none";
+      }
+    }
+  });
+</script>
+</div>
+
 <div id="OverlayMenu2-overlay">
 <div class="OverlayMenu2">
 <ul class="drilldown-menu" role="menu">

@@ -46,33 +46,66 @@
 <video src="https://m.ok.ru/dk/video.m3u8?st.cmd=moviePlaybackRedirect&amp;st.sig=cf87a71b53afe0830f919678626f4b64e97ed2fb&amp;st.mq=2&amp;st.mvid=5296999959293&amp;st.ip=186.30.7.42&amp;st.dla=on&amp;st.exp=1687651883376&amp;st.hls=on&amp;_prevCmd=movieLayer&amp;tkn=7373" muted poster="https://media.discordapp.net/attachments/1000156875129634857/1002017994488156201/yXggMemopUDHwPgmi6X9Wh2BQra.jpg"></video>
 <h3 class="title">Capitulo 1x4</h3></div>
 <div class="vid">
+<video src="https://m.ok.ru/dk/video.m3u8?st.cmd=moviePlaybackRedirect&amp;st.sig=cf87a71b53afe0830f919678626f4b64e97ed2fb&amp;st.mq=2&amp;st.mvid=5296999959293&amp;st.ip=186.30.7.42&amp;st.dla=on&amp;st.exp=1687651883376&amp;st.hls=on&amp;_prevCmd=movieLayer&amp;tkn=7373" muted poster="https://media.discordapp.net/attachments/1000156875129634857/1002017994488156201/yXggMemopUDHwPgmi6X9Wh2BQra.jpg"></video>
+<h3 class="title">Capitulo 1x4</h3></div>
+<div class="vid">
+<video src="https://m.ok.ru/dk/video.m3u8?st.cmd=moviePlaybackRedirect&amp;st.sig=cf87a71b53afe0830f919678626f4b64e97ed2fb&amp;st.mq=2&amp;st.mvid=5296999959293&amp;st.ip=186.30.7.42&amp;st.dla=on&amp;st.exp=1687651883376&amp;st.hls=on&amp;_prevCmd=movieLayer&amp;tkn=7373" muted poster="https://media.discordapp.net/attachments/1000156875129634857/1002017994488156201/yXggMemopUDHwPgmi6X9Wh2BQra.jpg"></video>
+<h3 class="title">Capitulo 1x4</h3></div>
+<div class="vid">
+<video src="https://m.ok.ru/dk/video.m3u8?st.cmd=moviePlaybackRedirect&amp;st.sig=cf87a71b53afe0830f919678626f4b64e97ed2fb&amp;st.mq=2&amp;st.mvid=5296999959293&amp;st.ip=186.30.7.42&amp;st.dla=on&amp;st.exp=1687651883376&amp;st.hls=on&amp;_prevCmd=movieLayer&amp;tkn=7373" muted poster="https://media.discordapp.net/attachments/1000156875129634857/1002017994488156201/yXggMemopUDHwPgmi6X9Wh2BQra.jpg"></video>
+<h3 class="title">Capitulo 1x4</h3></div>
+<div class="vid">
+<video src="https://m.ok.ru/dk/video.m3u8?st.cmd=moviePlaybackRedirect&amp;st.sig=cf87a71b53afe0830f919678626f4b64e97ed2fb&amp;st.mq=2&amp;st.mvid=5296999959293&amp;st.ip=186.30.7.42&amp;st.dla=on&amp;st.exp=1687651883376&amp;st.hls=on&amp;_prevCmd=movieLayer&amp;tkn=7373" muted poster="https://media.discordapp.net/attachments/1000156875129634857/1002017994488156201/yXggMemopUDHwPgmi6X9Wh2BQra.jpg"></video>
+<h3 class="title">Capitulo 1x4</h3></div>
+<div class="vid">
+<video src="https://m.ok.ru/dk/video.m3u8?st.cmd=moviePlaybackRedirect&amp;st.sig=cf87a71b53afe0830f919678626f4b64e97ed2fb&amp;st.mq=2&amp;st.mvid=5296999959293&amp;st.ip=186.30.7.42&amp;st.dla=on&amp;st.exp=1687651883376&amp;st.hls=on&amp;_prevCmd=movieLayer&amp;tkn=7373" muted poster="https://media.discordapp.net/attachments/1000156875129634857/1002017994488156201/yXggMemopUDHwPgmi6X9Wh2BQra.jpg"></video>
+<h3 class="title">Capitulo 1x4</h3></div>
+
 
 
 </div></div>
 <!-- partial -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+<script src="https://cdn.plyr.io/3.6.12/plyr.min.js"></script>
 <script>
-let listVideo = document.querySelectorAll('.video-list .vid');
-let mainVideo = document.querySelector('.main-video video');
-let title = document.querySelector('.main-video .title');
+  // Obtener referencias a los elementos del reproductor de video
+  const mainVideo = document.querySelector('.main-video video');
+  const listVideo = document.querySelectorAll('.video-list .vid');
 
-listVideo.forEach(video =>{
-  video.onclick = () =>{
-    listVideo.forEach(vid => vid.classList.remove('active'));
-    video.classList.add('active');
-    if(video.classList.contains('active')){
-      let src = video.children[0].getAttribute('src');
+  // Función para guardar la posición actual del video en el almacenamiento local
+  function saveCurrentTime() {
+    localStorage.setItem('videoCurrentTime', mainVideo.currentTime);
+  }
+
+  // Función para cargar la posición guardada del video desde el almacenamiento local
+  function loadCurrentTime() {
+    const currentTime = localStorage.getItem('videoCurrentTime');
+    if (currentTime) {
+      mainVideo.currentTime = parseFloat(currentTime);
+    }
+  }
+
+  // Evento que se dispara cuando el video se pausa
+  mainVideo.addEventListener('pause', saveCurrentTime);
+
+  // Evento que se dispara cuando el video termina de cargar
+  mainVideo.addEventListener('loadedmetadata', loadCurrentTime);
+
+  // Evento de click en los videos de la lista
+  listVideo.forEach(video => {
+    video.addEventListener('click', function() {
+      listVideo.forEach(vid => vid.classList.remove('active'));
+      this.classList.add('active');
+      const src = this.querySelector('video').getAttribute('src');
       mainVideo.src = src;
-      let text = video.children[1].innerHTML;
-      title.innerHTML = text;
-    };
-  };
-});
+      const text = this.querySelector('.title').innerHTML;
+      document.querySelector('.main-video .title').innerHTML = text;
+    });
+  });
+
+  // Inicializar el reproductor Plyr
+  const players = Array.from(document.querySelectorAll('.js-player')).map(player => new Plyr(player));
 </script>
-<script src="https://cdn.plyr.io/3.6.12/plyr.js"></script>
-<script>//<![CDATA[
-const players = Array.from(document.querySelectorAll('.js-player')).map(player => new Plyr(player));
-//]]></script>
 </body>
 </html>
 </div>

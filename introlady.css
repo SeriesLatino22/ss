@@ -1,0 +1,310 @@
+body
+{
+   background-color: #131720;
+   color: #000000;
+   font-family: Arial;
+   font-weight: normal;
+   font-size: 13px;
+   line-height: 1.1875;
+   margin: 0;
+   padding: 0;
+}
+#preloader
+{
+   background: #000000 url("images/sssss.gif") no-repeat center center;
+   bottom: 0;
+   position: fixed;
+   top: 0;
+   width: 100%;
+   z-index: 99999;
+}
+#wb_LayoutGrid1
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   border-radius: 0px;
+   box-sizing: border-box;
+   margin: 0;
+}
+#LayoutGrid1
+{
+   box-sizing: border-box;
+   padding: 35px 0 5px 0;
+   margin-right: auto;
+   margin-left: auto;
+}
+#LayoutGrid1 > .row
+{
+   margin-right: 0;
+   margin-left: 0;
+}
+#LayoutGrid1 > .row > .col-1
+{
+   box-sizing: border-box;
+   font-size: 0;
+   min-height: 1px;
+   padding-right: 0px;
+   padding-left: 0px;
+   position: relative;
+}
+#LayoutGrid1 > .row > .col-1
+{
+   float: left;
+}
+#LayoutGrid1 > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 100%;
+   text-align: center;
+}
+#LayoutGrid1:before,
+#LayoutGrid1:after,
+#LayoutGrid1 .row:before,
+#LayoutGrid1 .row:after
+{
+   display: table;
+   content: " ";
+}
+#LayoutGrid1:after,
+#LayoutGrid1 .row:after
+{
+   clear: both;
+}
+@media (max-width: 480px)
+{
+#LayoutGrid1 > .row > .col-1
+{
+   float: none;
+   width: 100% !important;
+}
+}
+#GoMenu1-select
+{
+   border: 1px solid #F5F5F5;
+   border-radius: 8px;
+   background-color: #FFFFFF;
+   background-image: none;
+   color: #000000;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 13px;
+}
+#GoMenu1-select
+{
+   float: left;
+   height: 100%;
+   width: 100%;
+}
+#GoMenu1
+{
+   height: 100%;
+   margin: 0;
+}
+#wb_pronmnb
+{
+   height: auto !important;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   box-sizing: border-box;
+   margin: 5px 5px 5px 5px;
+   max-width: calc(100% - 10px);
+   margin-left: auto !important;
+   margin-right: auto !important;
+   background-clip: padding-box;
+   background-color: transparent;
+   background-image: none;
+   border: 1px solid #4F4F4F;
+   border-radius: 0px;
+   box-shadow: 0px 2px 5px rgba(0,0,0,0.10);
+   text-align: center;
+}
+#pronmnb-card-body
+{
+   padding: 0;
+   flex: 1 1 auto;
+   font-size: 0;
+}
+.fade
+{
+   opacity: 0;
+   transition: opacity .15s linear;
+}
+.fade.show
+{
+   opacity: 1;
+}
+.collapse:not(.show)
+{
+   display: none;
+}
+.collapsing
+{
+   position: relative;
+   height: 0;
+   overflow: hidden;
+   transition: height 0.35s ease;
+}
+#pronmnb-card-header
+{
+   box-sizing: border-box;
+   border-bottom: 1px solid #4F4F4F;
+   margin: 0;
+   padding: 12px 3px 3px 20px;
+   background-clip: padding-box;
+   background-color: transparent;
+   background-image: none;
+   color: #808080;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 15px;
+   text-align: center;
+   cursor: pointer;
+}
+#pronmnb-card-header .icon-collapsed, #pronmnb-card-header .icon-expanded
+{
+   cursor: pointer;
+   display: inline-block;
+   fill: #808080;
+   float: right;
+   height: 15px;
+   left: auto;
+   right: 0;
+   position: relative;
+   top: 0;
+   width: 15px;
+}
+#pronmnb-card-header[aria-expanded=true] .icon-collapsed
+{
+   display: none;
+}
+#pronmnb-card-header[aria-expanded=false] .icon-expanded
+{
+   display: none;
+}
+#pronmnb-card-item1
+{
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   color: #000000;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 16px;
+}
+#pronmnb-card-item2
+{
+   box-sizing: border-box;
+   margin: 0;
+   border-top: 0px #000000 solid;
+   border-width: 0px 0 0 0;
+   height: 0;
+   line-height: 0;
+   visibility: hidden;
+}
+#pronmnb-card-item3
+{
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   color: #FFFFFF;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 15px;
+   text-align: left;
+}
+#pronmnb-card-item4
+{
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   color: #000000;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 16px;
+}
+#wb_LayoutGrid2
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   border-radius: 0px;
+   box-sizing: border-box;
+   margin: 0;
+}
+#LayoutGrid2
+{
+   box-sizing: border-box;
+   padding: 25px 0 0 0;
+   margin-right: auto;
+   margin-left: auto;
+}
+#LayoutGrid2 > .row
+{
+   margin-right: 0;
+   margin-left: 0;
+}
+#LayoutGrid2 > .row > .col-1
+{
+   box-sizing: border-box;
+   font-size: 0;
+   min-height: 1px;
+   padding-right: 0px;
+   padding-left: 0px;
+   position: relative;
+}
+#LayoutGrid2 > .row > .col-1
+{
+   float: left;
+}
+#LayoutGrid2 > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 100%;
+   text-align: center;
+}
+#LayoutGrid2:before,
+#LayoutGrid2:after,
+#LayoutGrid2 .row:before,
+#LayoutGrid2 .row:after
+{
+   display: table;
+   content: " ";
+}
+#LayoutGrid2:after,
+#LayoutGrid2 .row:after
+{
+   clear: both;
+}
+@media (max-width: 480px)
+{
+#LayoutGrid2 > .row > .col-1
+{
+   float: none;
+   width: 100% !important;
+}
+}
