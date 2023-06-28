@@ -9,28 +9,73 @@ body
    margin: 0;
    padding: 0;
 }
-#Button1
+#wb_LayoutGrid1
 {
-   box-sizing: border-box;
-   line-height: 83px;
-   text-decoration: none;
-   vertical-align: top;
-   border: 1px solid #2E6DA4;
-   border-radius: 4px;
-   background-color: #3370B7;
-   background-image: none;
-   color: #FFFFFF;
-   font-family: Arial;
-   font-weight: normal;
-   font-style: normal;
-   font-size: 13px;
-   padding: 1px 6px 1px 6px;
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
    text-align: center;
-   -webkit-appearance: none;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   border-radius: 0px;
+   box-sizing: border-box;
    margin: 0;
 }
-}
-#Button1:focus
+#LayoutGrid1
 {
-   outline: 0;
+   box-sizing: border-box;
+   padding: 0 15px 0 15px;
+   margin-right: auto;
+   margin-left: auto;
+}
+#LayoutGrid1 > .row
+{
+   margin-right: -15px;
+   margin-left: -15px;
+}
+#LayoutGrid1 > .row > .col-1
+{
+   box-sizing: border-box;
+   font-size: 0;
+   min-height: 1px;
+   padding-right: 15px;
+   padding-left: 15px;
+   position: relative;
+}
+#LayoutGrid1 > .row > .col-1
+{
+   float: left;
+}
+#LayoutGrid1 > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 100%;
+   text-align: center;
+}
+#LayoutGrid1:before,
+#LayoutGrid1:after,
+#LayoutGrid1 .row:before,
+#LayoutGrid1 .row:after
+{
+   display: table;
+   content: " ";
+}
+#LayoutGrid1:after,
+#LayoutGrid1 .row:after
+{
+   clear: both;
+}
+@media (max-width: 480px)
+{
+#LayoutGrid1 > .row > .col-1
+{
+   float: none;
+   width: 100% !important;
+}
 }
