@@ -25,6 +25,8 @@ $(window).on('load', function()
   </head>
 <body>
   <div class="container">
+
+
     <div class="menu-container">
       <label for="capitulo">Capítulo:</label>
       <select id="capitulo">
@@ -43,137 +45,154 @@ $(window).on('load', function()
     </div>
 
     <button id="continuar" disabled>Aceptar</button>
-
+    
+<h2 id="titulo-capitulo-servidor"></h2>
     <div class="iframe-container" id="contenido-iframe">
       <iframe id="inlineFrameResult" src="" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
 
   <script>
-    const capituloSelect = document.getElementById('capitulo');
-    const servidorSelect = document.getElementById('servidor');
-    const continuarButton = document.getElementById('continuar');
-    const resultIframe = document.getElementById('inlineFrameResult');
-    const contenidoIframe = document.getElementById('contenido-iframe');
+const capituloSelect = document.getElementById('capitulo');
+const servidorSelect = document.getElementById('servidor');
+const continuarButton = document.getElementById('continuar');
+const resultIframe = document.getElementById('inlineFrameResult');
+const contenidoIframe = document.getElementById('contenido-iframe');
+let capituloAnterior = "";
 
-    const opcionesServidor = {
-      capitulo1: [
-        { servidor: 'servidor1', url: 'https://sblona.com/e/ntw1vw90j9el.html' },
-        { servidor: 'servidor2', url: 'https://sblona.com/e/235i4n8iva5i.html' },
-        { servidor: 'servidor3', url: 'https://servidor3.com/capitulo1' }
-      ],
-      capitulo2: [
-        { servidor: 'servidor1', url: 'https://servidor1.com/capitulo2' },
-        { servidor: 'servidor2', url: 'https://servidor2.com/capitulo2' },
-        { servidor: 'servidor3', url: 'https://servidor3.com/capitulo2' }
-      ],
-      capitulo3: [
-        { servidor: 'servidor1', url: 'https://servidor1.com/capitulo3' },
-        { servidor: 'servidor2', url: 'https://servidor2.com/capitulo3' },
-        { servidor: 'servidor3', url: 'https://servidor3.com/capitulo3' }
-      ]
-    };
+const opcionesServidor = {
+  capitulo1: [
+    { servidor: 'Servidor 1', url: 'https://sblona.com/e/ntw1vw90j9el.html' },
+    { servidor: 'Servidor 2', url: 'https://sblona.com/e/235i4n8iva5i.html' },
+    { servidor: 'Servidor 3', url: 'https://servidor3.com/capitulo1' }
+  ],
+  capitulo2: [
+    { servidor: 'Servidor 1', url: 'https://servidor1.com/capitulo2' },
+    { servidor: 'Servidor 2', url: 'https://servidor2.com/capitulo2' },
+    { servidor: 'Servidor 3', url: 'https://servidor3.com/capitulo2' }
+  ],
+  capitulo3: [
+    { servidor: 'Servidor 1', url: 'https://servidor1.com/capitulo3' },
+    { servidor: 'Servidor 2', url: 'https://servidor2.com/capitulo3' },
+    { servidor: 'Servidor 3', url: 'https://servidor3.com/capitulo3' }
+  ]
+};
 
-    capituloSelect.addEventListener('change', actualizarOpcionesServidor);
-    servidorSelect.addEventListener('change', validarSeleccion);
-    continuarButton.addEventListener('click', abrirUrl);
+capituloSelect.addEventListener('change', actualizarOpcionesServidor);
+servidorSelect.addEventListener('change', validarSeleccion);
+continuarButton.addEventListener('click', abrirUrl);
 
-    function actualizarOpcionesServidor() {
-      const capituloSeleccionado = capituloSelect.value;
+function actualizarOpcionesServidor() {
+  const capituloSeleccionado = capituloSelect.value;
 
-      if (!capituloSeleccionado) {
-        reiniciarMenus();
-        return;
-      }
+  if (!capituloSeleccionado) {
+    reiniciarMenus();
+    servidorSelect.disabled = true;
+    return;
+  }
 
-      // Limpiar las opciones anteriores
-      while (servidorSelect.firstChild) {
-        servidorSelect.removeChild(servidorSelect.firstChild);
-      }
+  // Limpiar las opciones anteriores
+  while (servidorSelect.firstChild) {
+    servidorSelect.removeChild(servidorSelect.firstChild);
+  }
 
-      // Agregar la opción predeterminada "Seleccionar..." al menú de servidores
-      const defaultOption = document.createElement('option');
-      defaultOption.value = "";
-      defaultOption.textContent = "Seleccionar...";
-      servidorSelect.appendChild(defaultOption);
+  // Agregar la opción predeterminada "Seleccionar..." al menú de servidores
+  const defaultOption = document.createElement('option');
+  defaultOption.value = "";
+  defaultOption.textContent = "Seleccionar...";
+  servidorSelect.appendChild(defaultOption);
 
-      // Obtener las opciones de servidor para el capítulo seleccionado
-      const opciones = opcionesServidor[capituloSeleccionado];
+  // Obtener las opciones de servidor para el capítulo seleccionado
+  const opciones = opcionesServidor[capituloSeleccionado];
 
-      if (opciones) {
-        // Agregar las nuevas opciones al menú desplegable de servidores
-        opciones.forEach(opcion => {
-          const optionElement = document.createElement('option');
-          optionElement.value = opcion.servidor;
-          optionElement.textContent = opcion.servidor;
-          servidorSelect.appendChild(optionElement);
-        });
-      }
+  if (opciones) {
+    // Agregar las nuevas opciones al menú desplegable de servidores
+    opciones.forEach(opcion => {
+      const optionElement = document.createElement('option');
+      optionElement.value = opcion.servidor;
+      optionElement.textContent = opcion.servidor;
+      servidorSelect.appendChild(optionElement);
+    });
 
-      // Reiniciar el iframe y el botón
-      resultIframe.src = "";
-      continuarButton.disabled = true;
-      contenidoIframe.style.display = "none"; // Ocultar el contenido del iframe
+    // Habilitar el menú de selección de servidor
+    servidorSelect.disabled = false;
+  } else {
+    // Bloquear el menú de selección de servidor si no hay opciones disponibles
+    servidorSelect.disabled = true;
+  }
+
+  // Reiniciar el iframe solo si el capítulo seleccionado cambia
+  if (capituloSeleccionado !== capituloAnterior) {
+    resultIframe.src = "";
+    contenidoIframe.style.display = "none"; // Ocultar el contenido del iframe
+    document.getElementById('titulo-capitulo-servidor').textContent = "";
+  }
+
+  capituloAnterior = capituloSeleccionado;
+}
+
+function validarSeleccion() {
+  const capituloSeleccionado = capituloSelect.value;
+  const servidorSeleccionado = servidorSelect.value;
+
+  if (capituloSeleccionado && servidorSeleccionado) {
+    continuarButton.disabled = false;
+
+    // Obtener la URL del iframe según el capítulo y el servidor seleccionados
+    const url = obtenerUrlCapituloServidor(capituloSeleccionado, servidorSeleccionado);
+
+    // Actualizar el atributo src del iframe
+    resultIframe.src = url;
+  } else {
+    continuarButton.disabled = true;
+    resultIframe.src = "";
+  }
+}
+
+function obtenerUrlCapituloServidor(capitulo, servidor) {
+  const opciones = opcionesServidor[capitulo];
+
+  if (opciones) {
+    const opcionSeleccionada = opciones.find(opcion => opcion.servidor === servidor);
+
+    if (opcionSeleccionada) {
+      return opcionSeleccionada.url;
     }
+  }
 
-    function validarSeleccion() {
-      const capituloSeleccionado = capituloSelect.value;
-      const servidorSeleccionado = servidorSelect.value;
+  return "";
+}
 
-      if (capituloSeleccionado && servidorSeleccionado) {
-        continuarButton.disabled = false;
+function reiniciarMenus() {
+  while (servidorSelect.firstChild) {
+    servidorSelect.removeChild(servidorSelect.firstChild);
+  }
+  servidorSelect.appendChild(document.createElement('option'));
+  servidorSelect.firstChild.value = "";
+  servidorSelect.firstChild.textContent = "Seleccionar...";
+  resultIframe.src = "";
+  continuarButton.disabled = true;
+  contenidoIframe.style.display = "none"; // Ocultar el contenido del iframe
+  document.getElementById('titulo-capitulo-servidor').textContent = "";
+  capituloAnterior = "";
+  servidorSelect.disabled = true; // Bloquear el menú de selección de servidor
+}
 
-        // Obtener la URL del iframe según el capítulo y el servidor seleccionados
-        const url = obtenerUrlCapituloServidor(capituloSeleccionado, servidorSeleccionado);
+function abrirUrl() {
+  const capituloSeleccionado = capituloSelect.value;
+  const servidorSeleccionado = servidorSelect.value;
+  const capituloTexto = capituloSelect.options[capituloSelect.selectedIndex].text;
+  const servidorTexto = servidorSelect.options[servidorSelect.selectedIndex].text;
 
-        // Actualizar el atributo src del iframe
-        resultIframe.src = url;
-      } else {
-        continuarButton.disabled = true;
-        resultIframe.src = "";
-      }
-    }
+  if (capituloSeleccionado && servidorSeleccionado) {
+    const url = obtenerUrlCapituloServidor(capituloSeleccionado, servidorSeleccionado);
+    resultIframe.src = url;
+    continuarButton.disabled = true;
+    contenidoIframe.style.display = "block"; // Mostrar el contenido del iframe
+    document.getElementById('titulo-capitulo-servidor').textContent = ` ${capituloTexto}   ${servidorTexto}`;
+  }
+}
 
-    function obtenerUrlCapituloServidor(capitulo, servidor) {
-      const opciones = opcionesServidor[capitulo];
-
-      if (opciones) {
-        const opcionSeleccionada = opciones.find(opcion => opcion.servidor === servidor);
-
-        if (opcionSeleccionada) {
-          return opcionSeleccionada.url;
-        }
-      }
-
-      return "";
-    }
-
-    function reiniciarMenus() {
-      capituloSelect.value = "";
-      while (servidorSelect.firstChild) {
-        servidorSelect.removeChild(servidorSelect.firstChild);
-      }
-      servidorSelect.appendChild(document.createElement('option'));
-      servidorSelect.firstChild.value = "";
-      servidorSelect.firstChild.textContent = "Seleccionar...";
-      resultIframe.src = "";
-      continuarButton.disabled = true;
-      contenidoIframe.style.display = "none"; // Ocultar el contenido del iframe
-    }
-
-    function abrirUrl() {
-      const capituloSeleccionado = capituloSelect.value;
-      const servidorSeleccionado = servidorSelect.value;
-
-      if (capituloSeleccionado && servidorSeleccionado) {
-        const url = obtenerUrlCapituloServidor(capituloSeleccionado, servidorSeleccionado);
-        resultIframe.src = url;
-        capituloSelect.value = "";
-        servidorSelect.value = "";
-        continuarButton.disabled = true;
-        contenidoIframe.style.display = "block"; // Mostrar el contenido del iframe
-      }
-    }
   </script>
 </body>
 </html>

@@ -99,6 +99,10 @@ body
       text-align: center;
     }
 
+    h2 {
+      text-align: center;
+    }
+
     .container {
       max-width: 600px;
       margin: 0 auto;
@@ -148,6 +152,11 @@ body
       font-size: 16px;
       cursor: pointer;
     }
+    
+    #titulo-capitulo-servidor {
+  font-size: 20px;
+  padding-top: 11px;
+}
 
     button:disabled {
       background-color: #ccc;
