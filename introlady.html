@@ -7,11 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="SeriesLatino2.css" rel="stylesheet">
 <link href="introlady.css" rel="stylesheet">
-<script src="bootstrap.min.js"></script>
 <script src="jquery-3.6.0.min.js"></script>
-<script>
-function onChangeGoMenu1(){var a=document.getElementById('GoMenu1-select'),b=a.options[a.selectedIndex].value,c=a.options[a.selectedIndex].className;a.selectedIndex=0;a.blur();b&&(NewWin=window.open(b,c),window.NewWin.focus())};
-</script>
 <script>
 $(document).ready(function()
 {
@@ -22,44 +18,176 @@ $(window).on('load', function()
    $('#preloader').remove();
 });
 </script>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menús desplegables</title>
+  </head>
+<body>
+  <div class="container">
+
+    <h1>Menús desplegables</h1>
+
+    <div class="menu-container">
+      <label for="capitulo">Capítulo:</label>
+      <select id="capitulo">
+        <option value="">Seleccionar...</option>
+        <option value="capitulo1">Capítulo 1</option>
+        <option value="capitulo2">Capítulo 2</option>
+        <option value="capitulo3">Capítulo 3</option>
+      </select>
+    </div>
+
+    <div class="menu-container">
+      <label for="servidor">Servidor:</label>
+      <select id="servidor">
+        <option value="">Seleccionar...</option>
+      </select>
+    </div>
+
+    <button id="continuar" disabled>Aceptar</button>
+
+    <div class="iframe-container" id="contenido-iframe">
+      <iframe id="inlineFrameResult" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <script>
+    const capituloSelect = document.getElementById('capitulo');
+    const servidorSelect = document.getElementById('servidor');
+    const continuarButton = document.getElementById('continuar');
+    const resultIframe = document.getElementById('inlineFrameResult');
+    const contenidoIframe = document.getElementById('contenido-iframe');
+
+    const opcionesServidor = {
+      capitulo1: [
+        { servidor: 'servidor1', url: 'https://sblona.com/e/ntw1vw90j9el.html' },
+        { servidor: 'servidor2', url: 'https://sblona.com/e/235i4n8iva5i.html' },
+        { servidor: 'servidor3', url: 'https://servidor3.com/capitulo1' }
+      ],
+      capitulo2: [
+        { servidor: 'servidor1', url: 'https://servidor1.com/capitulo2' },
+        { servidor: 'servidor2', url: 'https://servidor2.com/capitulo2' },
+        { servidor: 'servidor3', url: 'https://servidor3.com/capitulo2' }
+      ],
+      capitulo3: [
+        { servidor: 'servidor1', url: 'https://servidor1.com/capitulo3' },
+        { servidor: 'servidor2', url: 'https://servidor2.com/capitulo3' },
+        { servidor: 'servidor3', url: 'https://servidor3.com/capitulo3' }
+      ]
+    };
+
+    capituloSelect.addEventListener('change', actualizarOpcionesServidor);
+    servidorSelect.addEventListener('change', validarSeleccion);
+    continuarButton.addEventListener('click', abrirUrl);
+
+    function actualizarOpcionesServidor() {
+      const capituloSeleccionado = capituloSelect.value;
+
+      if (!capituloSeleccionado) {
+        reiniciarMenus();
+        return;
+      }
+
+      // Limpiar las opciones anteriores
+      while (servidorSelect.firstChild) {
+        servidorSelect.removeChild(servidorSelect.firstChild);
+      }
+
+      // Agregar la opción predeterminada "Seleccionar..." al menú de servidores
+      const defaultOption = document.createElement('option');
+      defaultOption.value = "";
+      defaultOption.textContent = "Seleccionar...";
+      servidorSelect.appendChild(defaultOption);
+
+      // Obtener las opciones de servidor para el capítulo seleccionado
+      const opciones = opcionesServidor[capituloSeleccionado];
+
+      if (opciones) {
+        // Agregar las nuevas opciones al menú desplegable de servidores
+        opciones.forEach(opcion => {
+          const optionElement = document.createElement('option');
+          optionElement.value = opcion.servidor;
+          optionElement.textContent = opcion.servidor;
+          servidorSelect.appendChild(optionElement);
+        });
+      }
+
+      // Reiniciar el iframe y el botón
+      resultIframe.src = "";
+      continuarButton.disabled = true;
+      contenidoIframe.style.display = "none"; // Ocultar el contenido del iframe
+    }
+
+    function validarSeleccion() {
+      const capituloSeleccionado = capituloSelect.value;
+      const servidorSeleccionado = servidorSelect.value;
+
+      if (capituloSeleccionado && servidorSeleccionado) {
+        continuarButton.disabled = false;
+
+        // Obtener la URL del iframe según el capítulo y el servidor seleccionados
+        const url = obtenerUrlCapituloServidor(capituloSeleccionado, servidorSeleccionado);
+
+        // Actualizar el atributo src del iframe
+        resultIframe.src = url;
+      } else {
+        continuarButton.disabled = true;
+        resultIframe.src = "";
+      }
+    }
+
+    function obtenerUrlCapituloServidor(capitulo, servidor) {
+      const opciones = opcionesServidor[capitulo];
+
+      if (opciones) {
+        const opcionSeleccionada = opciones.find(opcion => opcion.servidor === servidor);
+
+        if (opcionSeleccionada) {
+          return opcionSeleccionada.url;
+        }
+      }
+
+      return "";
+    }
+
+    function reiniciarMenus() {
+      capituloSelect.value = "";
+      while (servidorSelect.firstChild) {
+        servidorSelect.removeChild(servidorSelect.firstChild);
+      }
+      servidorSelect.appendChild(document.createElement('option'));
+      servidorSelect.firstChild.value = "";
+      servidorSelect.firstChild.textContent = "Seleccionar...";
+      resultIframe.src = "";
+      continuarButton.disabled = true;
+      contenidoIframe.style.display = "none"; // Ocultar el contenido del iframe
+    }
+
+    function abrirUrl() {
+      const capituloSeleccionado = capituloSelect.value;
+      const servidorSeleccionado = servidorSelect.value;
+
+      if (capituloSeleccionado && servidorSeleccionado) {
+        const url = obtenerUrlCapituloServidor(capituloSeleccionado, servidorSeleccionado);
+        resultIframe.src = url;
+        capituloSelect.value = "";
+        servidorSelect.value = "";
+        continuarButton.disabled = true;
+        contenidoIframe.style.display = "block"; // Mostrar el contenido del iframe
+      }
+    }
+  </script>
+</body>
+</html>
+
 </head>
 <body>
 <div id="wb_LayoutGrid1">
 <div id="LayoutGrid1">
 <div class="row">
 <div class="col-1">
-<div id="wb_GoMenu1" style="display:inline-block;width:240px;height:30px;z-index:0;">
-<form id="GoMenu1" role="menu">
-<select id="GoMenu1-select" name="GoMenu1" onchange="onChangeGoMenu1()">
-<option class="_self" value="#" selected>Seleccionar temporada</option>
-<option class="_self" value="./ladyt1-o1.html" role="menuitem">Temporada 1</option>
-</select>
-</form>
 
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="wb_LayoutGrid2">
-<div id="LayoutGrid2">
-<div class="row">
-<div class="col-1">
-<div id="wb_pronmnb" style="display:flex;width:calc(100% - 10px);z-index:1;" class="card">
-   <div id="pronmnb-card-header" class="collapsed" aria-expanded="false" data-bs-toggle="collapse" href="#pronmnb-card-body">Preguntas Frecuentes<svg class="icon-collapsed" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg">
-   <path d="M54 28 L54 34 C54 35, 54 36, 53 36 C53 37, 52 37, 51 37 L37 37 L37 51 C37 52, 37 53, 36 53 C35 54, 35 54, 34 54 L27 54 C26 54, 26 54, 25 53 C24 53, 24 52, 24 51 L24 37 L10 37 C9 37, 9 37, 8 36 C7 36, 7 35, 7 34 L7 28 C7 27, 7 26, 8 25 C9 25, 9 24, 10 24 L24 24 L24 10 C24 10, 24 9, 25 8 C26 8, 26 7, 27 7 L34 7 C35 7, 35 8, 36 8 C37 9, 37 10, 37 10 L37 24 L51 24 C52 24, 53 25, 53 25 C54 26, 54 27, 54 28"/>
-</svg>
-<svg class="icon-expanded" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg">
-   <path d="M54 28 L54 34 C54 35, 54 36, 53 36 C53 37, 52 37, 51 37 L10 37 C9 37, 9 37, 8 36 C7 36, 7 35, 7 34 L7 28 C7 27, 7 26, 8 25 C9 25, 9 24, 10 24 L51 24 C52 24, 53 25, 53 25 C54 26, 54 27, 54 28"/>
-</svg>
-</div>
-   <div id="pronmnb-card-body" class="collapse" data-bs-parent="#wb_pronmnb">
-      <div id="pronmnb-card-item1"></div>
-      <hr id="pronmnb-card-item2">
-      <div id="pronmnb-card-item3"><br><br>¿Cómo le cambio la calidad?<br><br>Dado que tenemos un reproductor nativo, no es posible,el reproductor se adapta a tu conexión a internet.<br><br><br><br>¿Cómo transmito en mi TV?<br><br>No es posible por el momento, la solución más fácil es entrando al navegador de tu TV e ir a la página web.<br><br><br><br>¿Algún capítulo ha dejado de funcionar?<br><br>Repórtalo por Telegram, lo repondremos lo más rápido posible.<br><br><br>Si se congela el reproductor, Simplemente vuelve a seleccionar el capítulo.</div>
-      <div id="pronmnb-card-item4"></div>
-   </div>
-</div>
 </div>
 </div>
 </div>
