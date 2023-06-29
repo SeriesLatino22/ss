@@ -59,7 +59,6 @@ const continuarButton = document.getElementById('continuar');
 const resultIframe = document.getElementById('inlineFrameResult');
 const contenidoIframe = document.getElementById('contenido-iframe');
 let capituloAnterior = "";
-const localStorageKey = "seleccion";
 
 const opcionesServidor = {
   capitulo1: [
@@ -82,7 +81,6 @@ const opcionesServidor = {
 capituloSelect.addEventListener('change', actualizarOpcionesServidor);
 servidorSelect.addEventListener('change', validarSeleccion);
 continuarButton.addEventListener('click', abrirUrl);
-window.addEventListener('beforeunload', guardarSeleccion);
 
 function actualizarOpcionesServidor() {
   const capituloSeleccionado = capituloSelect.value;
@@ -125,6 +123,10 @@ function actualizarOpcionesServidor() {
 
   // Reiniciar el título cuando se selecciona un nuevo capítulo
   document.getElementById('titulo-capitulo-servidor').textContent = "";
+  capituloAnterior = capituloSeleccionado;
+  
+  // Ocultar el contenido del servidor al cambiar de capítulo
+  contenidoIframe.style.display = "none";
 }
 
 function validarSeleccion() {
@@ -181,34 +183,8 @@ function reiniciarMenus() {
   servidorSelect.disabled = true;
 }
 
-function guardarSeleccion() {
-  const capituloSeleccionado = capituloSelect.value;
-  const servidorSeleccionado = servidorSelect.value;
-  const seleccion = {
-    capitulo: capituloSeleccionado,
-    servidor: servidorSeleccionado
-  };
-  localStorage.setItem(localStorageKey, JSON.stringify(seleccion));
-}
-
-function restaurarSeleccion() {
-  const seleccionGuardada = localStorage.getItem(localStorageKey);
-
-  if (seleccionGuardada) {
-    const seleccion = JSON.parse(seleccionGuardada);
-    capituloSelect.value = seleccion.capitulo;
-    servidorSelect.value = seleccion.servidor;
-    actualizarOpcionesServidor();
-    validarSeleccion();
-    abrirUrl();
-  }
-}
-
 // Reiniciar los menús al cargar la página
 reiniciarMenus();
-
-// Restaurar la selección guardada desde el almacenamiento local
-restaurarSeleccion();
 
   </script>
 </body>
