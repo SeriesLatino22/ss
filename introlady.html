@@ -59,6 +59,7 @@ const continuarButton = document.getElementById('continuar');
 const resultIframe = document.getElementById('inlineFrameResult');
 const contenidoIframe = document.getElementById('contenido-iframe');
 let capituloAnterior = "";
+const localStorageKey = "seleccion";
 
 const opcionesServidor = {
   capitulo1: [
@@ -121,14 +122,15 @@ function actualizarOpcionesServidor() {
     servidorSelect.disabled = true;
   }
 
-  // Reiniciar el iframe solo si el capítulo seleccionado cambia
-  if (capituloSeleccionado !== capituloAnterior) {
-    resultIframe.src = "";
-    contenidoIframe.style.display = "none"; // Ocultar el contenido del iframe
-    document.getElementById('titulo-capitulo-servidor').textContent = "";
-  }
-
+  // Reiniciar el título cuando se selecciona un nuevo capítulo
+  document.getElementById('titulo-capitulo-servidor').textContent = "";
   capituloAnterior = capituloSeleccionado;
+  
+  // Ocultar el contenido del servidor al cambiar de capítulo
+  contenidoIframe.style.display = "none";
+  
+  // Guardar la selección actual en el almacenamiento local
+  guardarSeleccion(capituloSeleccionado, servidorSelect.value);
 }
 
 function validarSeleccion() {
@@ -137,15 +139,25 @@ function validarSeleccion() {
 
   if (capituloSeleccionado && servidorSeleccionado) {
     continuarButton.disabled = false;
-
-    // Obtener la URL del iframe según el capítulo y el servidor seleccionados
-    const url = obtenerUrlCapituloServidor(capituloSeleccionado, servidorSeleccionado);
-
-    // Actualizar el atributo src del iframe
-    resultIframe.src = url;
   } else {
     continuarButton.disabled = true;
-    resultIframe.src = "";
+  }
+}
+
+function abrirUrl() {
+  const capituloSeleccionado = capituloSelect.value;
+  const servidorSeleccionado = servidorSelect.value;
+  const capituloTexto = capituloSelect.options[capituloSelect.selectedIndex].text;
+  const servidorTexto = servidorSelect.options[servidorSelect.selectedIndex].text;
+
+  if (capituloSeleccionado && servidorSeleccionado) {
+    const url = obtenerUrlCapituloServidor(capituloSeleccionado, servidorSeleccionado);
+    resultIframe.src = url;
+    contenidoIframe.style.display = "block";
+    document.getElementById('titulo-capitulo-servidor').textContent = `${capituloTexto} - ${servidorTexto}`;
+    
+    // Guardar la selección actual en el almacenamiento local
+    guardarSeleccion(capituloSeleccionado, servidorSeleccionado);
   }
 }
 
@@ -172,26 +184,38 @@ function reiniciarMenus() {
   servidorSelect.firstChild.textContent = "Seleccionar...";
   resultIframe.src = "";
   continuarButton.disabled = true;
-  contenidoIframe.style.display = "none"; // Ocultar el contenido del iframe
+  contenidoIframe.style.display = "none";
   document.getElementById('titulo-capitulo-servidor').textContent = "";
   capituloAnterior = "";
-  servidorSelect.disabled = true; // Bloquear el menú de selección de servidor
+  servidorSelect.disabled = true;
 }
 
-function abrirUrl() {
-  const capituloSeleccionado = capituloSelect.value;
-  const servidorSeleccionado = servidorSelect.value;
-  const capituloTexto = capituloSelect.options[capituloSelect.selectedIndex].text;
-  const servidorTexto = servidorSelect.options[servidorSelect.selectedIndex].text;
+function guardarSeleccion(capitulo, servidor) {
+  const seleccion = {
+    capitulo: capitulo,
+    servidor: servidor
+  };
+  localStorage.setItem(localStorageKey, JSON.stringify(seleccion));
+}
 
-  if (capituloSeleccionado && servidorSeleccionado) {
-    const url = obtenerUrlCapituloServidor(capituloSeleccionado, servidorSeleccionado);
-    resultIframe.src = url;
-    continuarButton.disabled = true;
-    contenidoIframe.style.display = "block"; // Mostrar el contenido del iframe
-    document.getElementById('titulo-capitulo-servidor').textContent = ` ${capituloTexto}   ${servidorTexto}`;
+function restaurarSeleccion() {
+  const seleccionGuardada = localStorage.getItem(localStorageKey);
+
+  if (seleccionGuardada) {
+    const seleccion = JSON.parse(seleccionGuardada);
+    capituloSelect.value = seleccion.capitulo;
+    servidorSelect.value = seleccion.servidor;
+    actualizarOpcionesServidor();
+    validarSeleccion();
+    abrirUrl();
   }
 }
+
+// Reiniciar los menús al cargar la página
+reiniciarMenus();
+
+// Restaurar la selección guardada desde el almacenamiento local
+restaurarSeleccion();
 
   </script>
 </body>
