@@ -151,6 +151,9 @@ function abrirUrl() {
     resultIframe.src = url;
     contenidoIframe.style.display = "block";
     document.getElementById('titulo-capitulo-servidor').textContent = `${capituloTexto} - ${servidorTexto}`;
+    
+    // Guardar la selección actual en el almacenamiento local
+    guardarSeleccion();
   }
 }
 
@@ -183,8 +186,34 @@ function reiniciarMenus() {
   servidorSelect.disabled = true;
 }
 
+function guardarSeleccion() {
+  const capituloSeleccionado = capituloSelect.value;
+  const servidorSeleccionado = servidorSelect.value;
+  const seleccion = {
+    capitulo: capituloSeleccionado,
+    servidor: servidorSeleccionado
+  };
+  localStorage.setItem('seleccion', JSON.stringify(seleccion));
+}
+
+function restaurarSeleccion() {
+  const seleccionGuardada = localStorage.getItem('seleccion');
+
+  if (seleccionGuardada) {
+    const seleccion = JSON.parse(seleccionGuardada);
+    capituloSelect.value = seleccion.capitulo;
+    servidorSelect.value = seleccion.servidor;
+    actualizarOpcionesServidor();
+    validarSeleccion();
+    abrirUrl();
+  }
+}
+
 // Reiniciar los menús al cargar la página
 reiniciarMenus();
+
+// Restaurar la selección guardada desde el almacenamiento local
+restaurarSeleccion();
 
   </script>
 </body>
