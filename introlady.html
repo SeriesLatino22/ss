@@ -82,6 +82,7 @@ const opcionesServidor = {
 capituloSelect.addEventListener('change', actualizarOpcionesServidor);
 servidorSelect.addEventListener('change', validarSeleccion);
 continuarButton.addEventListener('click', abrirUrl);
+window.addEventListener('beforeunload', guardarSeleccion);
 
 function actualizarOpcionesServidor() {
   const capituloSeleccionado = capituloSelect.value;
@@ -124,13 +125,6 @@ function actualizarOpcionesServidor() {
 
   // Reiniciar el título cuando se selecciona un nuevo capítulo
   document.getElementById('titulo-capitulo-servidor').textContent = "";
-  capituloAnterior = capituloSeleccionado;
-  
-  // Ocultar el contenido del servidor al cambiar de capítulo
-  contenidoIframe.style.display = "none";
-  
-  // Guardar la selección actual en el almacenamiento local
-  guardarSeleccion(capituloSeleccionado, servidorSelect.value);
 }
 
 function validarSeleccion() {
@@ -155,9 +149,6 @@ function abrirUrl() {
     resultIframe.src = url;
     contenidoIframe.style.display = "block";
     document.getElementById('titulo-capitulo-servidor').textContent = `${capituloTexto} - ${servidorTexto}`;
-    
-    // Guardar la selección actual en el almacenamiento local
-    guardarSeleccion(capituloSeleccionado, servidorSeleccionado);
   }
 }
 
@@ -190,10 +181,12 @@ function reiniciarMenus() {
   servidorSelect.disabled = true;
 }
 
-function guardarSeleccion(capitulo, servidor) {
+function guardarSeleccion() {
+  const capituloSeleccionado = capituloSelect.value;
+  const servidorSeleccionado = servidorSelect.value;
   const seleccion = {
-    capitulo: capitulo,
-    servidor: servidor
+    capitulo: capituloSeleccionado,
+    servidor: servidorSeleccionado
   };
   localStorage.setItem(localStorageKey, JSON.stringify(seleccion));
 }
