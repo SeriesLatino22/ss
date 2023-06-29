@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Page</title>
+<meta name="generator" content="WYSIWYG Web Builder 18 - https://www.wysiwygwebbuilder.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="Untitled1.css" rel="stylesheet">
+<link href="queso.css" rel="stylesheet">
+</head>
+<body <!DOCTYPE html>
+<html>
+<head>
+  <title>Menús desplegables</title>
+  </head>
+<body>
+  <div class="container">
+    <h1>Menús desplegables</h1>
+
+    <div class="menu-container">
+      <label for="capitulo">Seleccionar Capítulo:</label>
+      <select id="capitulo">
+        <option value="">Seleccionar...</option>
+        <option value="capitulo1">Capítulo 1</option>
+        <option value="capitulo2">Capítulo 2</option>
+        <option value="capitulo3">Capítulo 3</option>
+      </select>
+    </div>
+
+    <div class="menu-container">
+      <label for="servidor">Seleccionar Servidor:</label>
+      <select id="servidor">
+        <option value="">Seleccionar...</option>
+      </select>
+    </div>
+
+    <button id="continuar" disabled target="inlineFrameResult">Aceptar</button>
+
+    <div class="iframe-container">
+      <iframe id="inlineFrameResult" src="" frameborder="0"></iframe>
+    </div>
+  </div>
+
+  <script>
+    const capituloSelect = document.getElementById('capitulo');
+    const servidorSelect = document.getElementById('servidor');
+    const continuarButton = document.getElementById('continuar');
+    const resultIframe = document.getElementById('inlineFrameResult');
+
+    const opcionesServidor = {
+      capitulo1: [
+        { servidor: 'servidor1', url: 'https://sblona.com/e/ntw1vw90j9el.html' },
+        { servidor: 'servidor2', url: 'https://servidor2.com/capitulo1' },
+        { servidor: 'servidor3', url: 'https://servidor3.com/capitulo1' }
+      ],
+      capitulo2: [
+        { servidor: 'servidor1', url: 'https://servidor1.com/capitulo2' },
+        { servidor: 'servidor2', url: 'https://servidor2.com/capitulo2' },
+        { servidor: 'servidor3', url: 'https://servidor3.com/capitulo2' }
+      ],
+      capitulo3: [
+        { servidor: 'servidor1', url: 'https://servidor1.com/capitulo3' },
+        { servidor: 'servidor2', url: 'https://servidor2.com/capitulo3' },
+        { servidor: 'servidor3', url: 'https://servidor3.com/capitulo3' }
+      ]
+    };
+
+    capituloSelect.addEventListener('change', actualizarOpcionesServidor);
+    servidorSelect.addEventListener('change', validarSeleccion);
+    continuarButton.addEventListener('click', abrirUrl);
+
+    function actualizarOpcionesServidor() {
+      const capituloSeleccionado = capituloSelect.value;
+
+      if (!capituloSeleccionado) {
+        reiniciarMenus();
+        return;
+      }
+
+      // Limpiar las opciones anteriores
+      while (servidorSelect.firstChild) {
+        servidorSelect.removeChild(servidorSelect.firstChild);
+      }
+
+      // Agregar la opción predeterminada "Seleccionar..." al menú de servidores
+      const defaultOption = document.createElement('option');
+      defaultOption.value = "";
+      defaultOption.textContent = "Seleccionar...";
+      servidorSelect.appendChild(defaultOption);
+
+      // Obtener las opciones de servidor para el capítulo seleccionado
+      const opciones = opcionesServidor[capituloSeleccionado];
+
+      if (opciones) {
+        // Agregar las nuevas opciones al menú desplegable de servidores
+        opciones.forEach(opcion => {
+          const optionElement = document.createElement('option');
+          optionElement.value = opcion.servidor;
+          optionElement.textContent = opcion.servidor;
+          servidorSelect.appendChild(optionElement);
+        });
+      }
+
+      // Reiniciar el iframe y el botón
+      resultIframe.src = "";
+      continuarButton.disabled = true;
+    }
+
+    function validarSeleccion() {
+      const capituloSeleccionado = capituloSelect.value;
+      const servidorSeleccionado = servidorSelect.value;
+
+      if (capituloSeleccionado && servidorSeleccionado) {
+        continuarButton.disabled = false;
+
+        // Obtener la URL del iframe según el capítulo y el servidor seleccionados
+        const url = obtenerUrlCapituloServidor(capituloSeleccionado, servidorSeleccionado);
+
+        // Actualizar el atributo src del iframe
+        resultIframe.src = url;
+      } else {
+        continuarButton.disabled = true;
+        resultIframe.src = "";
+      }
+    }
+
+    function obtenerUrlCapituloServidor(capitulo, servidor) {
+      const opciones = opcionesServidor[capitulo];
+
+      if (opciones) {
+        const opcionSeleccionada = opciones.find(opcion => opcion.servidor === servidor);
+
+        if (opcionSeleccionada) {
+          return opcionSeleccionada.url;
+        }
+      }
+
+      return "";
+    }
+
+    function reiniciarMenus() {
+      capituloSelect.value = "";
+      while (servidorSelect.firstChild) {
+        servidorSelect.removeChild(servidorSelect.firstChild);
+      }
+      servidorSelect.appendChild(document.createElement('option'));
+      servidorSelect.firstChild.value = "";
+      servidorSelect.firstChild.textContent = "Seleccionar...";
+      resultIframe.src = "";
+      continuarButton.disabled = true;
+    }
+
+    function abrirUrl() {
+      const capituloSeleccionado = capituloSelect.value;
+      const servidorSeleccionado = servidorSelect.value;
+
+      if (capituloSeleccionado && servidorSeleccionado) {
+        const url = obtenerUrlCapituloServidor(capituloSeleccionado, servidorSeleccionado);
+        resultIframe.src = url;
+        capituloSelect.value = "";
+        servidorSelect.value = "";
+        continuarButton.disabled = true;
+      }
+    }
+  </script>
+</body>
+</html>
+>
+<div id="wb_LayoutGrid1">
+<div id="LayoutGrid1">
+<div class="row">
+<div class="col-1">
+
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
