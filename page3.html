@@ -9,12 +9,93 @@
 <link href="page3.css" rel="stylesheet">
 </head>
 <body>
-<div id="Html1" style="position:absolute;left:215px;top:105px;width:100%;height:135px;z-index:0">
-<div class="fb-video" data-href="https://www.facebook.com/113378271368957/videos/1685424231919328/" data-width="500" data-show-text="true"><blockquote cite="https://www.facebook.com/113378271368957/videos/1685424231919328/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/113378271368957/videos/1685424231919328/"></a><p></p>Publicada por <a href="https://www.facebook.com/Test-113378271368957/">Test</a> en Martes, 27 de junio de 2023</blockquote></div></div>
 <div id="wb_LayoutGrid1">
 <div id="LayoutGrid1">
 <div class="row">
 <div class="col-1">
+<div id="Html1" style="display:inline-block;width:100%;height:159px;z-index:0">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contenido Bloqueado</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    </head>
+<body>
+    <div class="container">
+        <div class="video-container">
+            <iframe src="https://mega.nz/embed/DphknZwa#2vKGNT43BSwZASVy1uhjlRbYlB73fDo7wzEUTRVFxYM" frameborder="0" allowfullscreen></iframe>
+            <div class="blocked-overlay">
+                <p>Contenido bloqueado</p>
+                <button class="unlock-button">
+                    <i class="fas fa-lock"></i>
+                    Desbloquear
+                </button>
+                <p class="click-count-text"></p>
+                <span class="additional-message">It will open an advertisement, just close it and come back.</span>
+            </div>
+        </div>
+
+        <div class="video-container">
+            <iframe src="https://mega.nz/embed/DphknZwa#2vKGNT43BSwZASVy1uhjlRbYlB73fDo7wzEUTRVFxYM" frameborder="0" allowfullscreen></iframe>
+            <div class="blocked-overlay">
+                <p>Contenido bloqueado</p>
+                <button class="unlock-button">
+                    <i class="fas fa-lock"></i>
+                    Desbloquear
+                </button>
+                <p class="click-count-text"></p>
+                <span class="additional-message">It will open an advertisement, just close it and come back.</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script>
+      var unlockButtons = document.querySelectorAll('.unlock-button');
+        var clickCounts = [2, 2]; // Número de clicks restantes para cada contenido
+        var clickCountTexts = document.querySelectorAll('.click-count-text');
+        var additionalMessages = document.querySelectorAll('.additional-message');
+        var blockedOverlays = document.querySelectorAll('.blocked-overlay');
+        var urls = [
+            ['https://www.example.com/pagina1a', 'https://www.example.com/pagina1b'], // URLs para el primer contenido
+            ['https://www.example.com/pagina2a', 'https://www.example.com/pagina2b'] // URLs para el segundo contenido
+        ];
+        var currentIndexs = [0, 0]; // Índice actual para cada contenido
+
+        unlockButtons.forEach(function(unlockButton, index) {
+            var clickCountText = clickCountTexts[index];
+            var additionalMessage = additionalMessages[index];
+            var blockedOverlay = blockedOverlays[index];
+            var currentUrls = urls[index];
+
+            unlockButton.addEventListener('click', function() {
+                var clickCount = clickCounts[index];
+
+                if (clickCount === 0) {
+                    return;
+                }
+
+                var newWindow = window.open(currentUrls[currentIndexs[index]], '_blank');
+                if (newWindow) {
+                    newWindow.focus();
+                }
+
+                clickCount--;
+                clickCountText.textContent = 'Clicks restantes: ' + clickCount;
+                clickCounts[index] = clickCount;
+
+                if (clickCount === 0) {
+                    blockedOverlay.classList.add('hidden');
+                    document.querySelectorAll('.video-container iframe')[index].style.filter = 'none'; // Remueve el efecto de difuminado
+                }
+            });
+
+            clickCountText.textContent = 'Clicks restantes: ' + clickCounts[index];
+        });
+    </script>
+</body>
+</html>
+</div>
 </div>
 </div>
 </div>
