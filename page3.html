@@ -62,47 +62,18 @@
             </div>
         </div>
 
-    
-     <div class="video-container">
-            <iframe src="https://mega.nz/embed/DphknZwa#2vKGNT43BSwZASVy1uhjlRbYlB73fDo7wzEUTRVFxYM" frameborder="0" allowfullscreen></iframe>
-            <div class="blocked-overlay">
-                <p>Contenido bloqueado</p>
-                <button class="unlock-button">
-                    <i class="fas fa-lock"></i>
-                    Desbloquear
-                </button>
-                <p class="click-count-text"></p>
-                <span class="additional-message">It will open an advertisement, just close it and come back.</span>
-            </div>
-        </div>
-
-    
-     <div class="video-container">
-            <iframe src="https://mega.nz/embed/DphknZwa#2vKGNT43BSwZASVy1uhjlRbYlB73fDo7wzEUTRVFxYM" frameborder="0" allowfullscreen></iframe>
-            <div class="blocked-overlay">
-                <p>Contenido bloqueado</p>
-                <button class="unlock-button">
-                    <i class="fas fa-lock"></i>
-                    Desbloquear
-                </button>
-                <p class="click-count-text"></p>
-                <span class="additional-message">It will open an advertisement, just close it and come back.</span>
-            </div>
-        </div>
-
-
-     <div class="video-container">
-            <iframe src="https://mega.nz/embed/DphknZwa#2vKGNT43BSwZASVy1uhjlRbYlB73fDo7wzEUTRVFxYM" frameborder="0" allowfullscreen></iframe>
-            <div class="blocked-overlay">
-                <p>Contenido bloqueado</p>
-                <button class="unlock-button">
-                    <i class="fas fa-lock"></i>
-                    Desbloquear
-                </button>
-                <p class="click-count-text"></p>
-                <span class="additional-message">It will open an advertisement, just close it and come back.</span>
-            </div>
-        </div>
+    <div class="video-container">
+    <iframe src="URL_DEL_IFRAME" frameborder="0" allowfullscreen></iframe>
+    <div class="blocked-overlay">
+        <p>Contenido bloqueado</p>
+        <button class="unlock-button">
+            <i class="fas fa-lock"></i>
+            Desbloquear
+        </button>
+        <p class="click-count-text"></p>
+        <span class="additional-message">It will open an advertisement, just close it and come back.</span>
+    </div>
+</div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
@@ -112,11 +83,14 @@
         var clickCountTexts = document.querySelectorAll('.click-count-text');
         var additionalMessages = document.querySelectorAll('.additional-message');
         var blockedOverlays = document.querySelectorAll('.blocked-overlay');
-        var urls = [
-            ['https://www.example.com/pagina1a', 'https://www.example.com/pagina1b'], // URLs para el primer contenido
-            ['https://www.example.com/pagina2a', 'https://www.example.com/pagina2b'] // URLs para el segundo contenido
-        ];
-        var currentIndexs = [0, 0]; // Índice actual para cada contenido
+       var urls = [
+    ['https://www.example.com/pagina1a', 'https://www.example.com/pagina1b'], // URLs para el primer contenido
+    ['https://www.example.com/pagina2a', 'https://www.example.com/pagina2b'], // URLs para el segundo contenido
+    ['https://www.example.com/pagina3a', 'https://www.example.com/pagina3b']  // URLs para el tercer contenido
+];
+var clickCounts = [2, 2, 2]; // Número de clicks restantes para cada contenido
+var currentIndexs = [0, 0, 0]; // Índice actual para cada contenido
+
 
         unlockButtons.forEach(function(unlockButton, index) {
             var clickCountText = clickCountTexts[index];
