@@ -22,6 +22,11 @@
     </head>
 <body>
     <div class="container">
+
+        <a class="next-button" href="#video-container-2">
+            <i class="fas fa-arrow-down"></i>
+        </a>
+
         <div class="video-container">
             <iframe src="https://mega.nz/embed/DphknZwa#2vKGNT43BSwZASVy1uhjlRbYlB73fDo7wzEUTRVFxYM" frameborder="0" allowfullscreen></iframe>
             <div class="blocked-overlay">
@@ -31,7 +36,20 @@
                     Desbloquear
                 </button>
                 <p class="click-count-text"></p>
-                <span class="additional-message">It will open an advertisement, just close it and come back.</span>
+                <span class="additional-message">Se abrirá un anuncio, simplemente ciérralo y vuelve.</span>
+            </div>
+        </div>
+
+        <div id="video-container-2" class="video-container">
+            <iframe src="https://mega.nz/embed/DphknZwa#2vKGNT43BSwZASVy1uhjlRbYlB73fDo7wzEUTRVFxYM" frameborder="0" allowfullscreen></iframe>
+            <div class="blocked-overlay">
+                <p>Contenido bloqueado</p>
+                <button class="unlock-button">
+                    <i class="fas fa-lock"></i>
+                    Desbloquear
+                </button>
+                <p class="click-count-text"></p>
+                <span class="additional-message">Se abrirá un anuncio, simplemente ciérralo y vuelve.</span>
             </div>
         </div>
 
@@ -44,12 +62,11 @@
                     Desbloquear
                 </button>
                 <p class="click-count-text"></p>
-                <span class="additional-message">It will open an advertisement, just close it and come back.</span>
+                <span class="additional-message">Se abrirá un anuncio, simplemente ciérralo y vuelve.</span>
             </div>
         </div>
- 
-    
-     <div class="video-container">
+
+        <div class="video-container">
             <iframe src="https://mega.nz/embed/DphknZwa#2vKGNT43BSwZASVy1uhjlRbYlB73fDo7wzEUTRVFxYM" frameborder="0" allowfullscreen></iframe>
             <div class="blocked-overlay">
                 <p>Contenido bloqueado</p>
@@ -58,84 +75,81 @@
                     Desbloquear
                 </button>
                 <p class="click-count-text"></p>
-                <span class="additional-message">It will open an advertisement, just close it and come back.</span>
+                <span class="additional-message">Se abrirá un anuncio, simplemente ciérralo y vuelve.</span>
             </div>
         </div>
 
-    <div class="video-container">
-    <iframe src="https://mega.nz/embed/DphknZwa#2vKGNT43BSwZASVy1uhjlRbYlB73fDo7wzEUTRVFxYM" frameborder="0" allowfullscreen></iframe>
-    <div class="blocked-overlay">
-        <p>Contenido bloqueado</p>
-        <button class="unlock-button">
-            <i class="fas fa-lock"></i>
-            Desbloquear
-        </button>
-        <p class="click-count-text"></p>
-        <span class="additional-message">It will open an advertisement, just close it and come back.</span>
     </div>
-</div>
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
     <script>
-      var unlockButtons = document.querySelectorAll('.unlock-button');
-        var clickCounts = [2, 2]; // Número de clicks restantes para cada contenido
-        var clickCountTexts = document.querySelectorAll('.click-count-text');
-        var additionalMessages = document.querySelectorAll('.additional-message');
-        var blockedOverlays = document.querySelectorAll('.blocked-overlay');
-       var urls = [
+       var unlockButtons = document.querySelectorAll('.unlock-button');
+var clickCounts = [2, 2, 2, 2]; // Número de clicks restantes para cada contenido
+var clickCountTexts = document.querySelectorAll('.click-count-text');
+var additionalMessages = document.querySelectorAll('.additional-message');
+var blockedOverlays = document.querySelectorAll('.blocked-overlay');
+var urls = [
     ['https://www.example.com/pagina1a', 'https://www.example.com/pagina1b'], // URLs para el primer contenido
     ['https://www.example.com/pagina2a', 'https://www.example.com/pagina2b'], // URLs para el segundo contenido
-    ['https://www.example.com/pagina3a', 'https://www.example.com/pagina3b']  // URLs para el tercer contenido
+    ['https://www.example.com/pagina3a', 'https://www.example.com/pagina3b'], // URLs para el tercer contenido
+    ['https://www.example.com/pagina4a', 'https://www.example.com/pagina4b']  // URLs para el cuarto contenido
 ];
-var clickCounts = [2, 2, 2, 2]; // Número de clicks restantes para cada contenido
 var currentIndexs = [0, 0, 0, 0]; // Índice actual para cada contenido
 
+unlockButtons.forEach(function (unlockButton, index) {
+    var clickCountText = clickCountTexts[index];
+    var additionalMessage = additionalMessages[index];
+    var blockedOverlay = blockedOverlays[index];
+    var currentUrls = urls[index];
 
-        unlockButtons.forEach(function(unlockButton, index) {
-            var clickCountText = clickCountTexts[index];
-            var additionalMessage = additionalMessages[index];
-            var blockedOverlay = blockedOverlays[index];
-            var currentUrls = urls[index];
+    unlockButton.addEventListener('click', function () {
+        var clickCount = clickCounts[index];
 
-            unlockButton.addEventListener('click', function() {
-                var clickCount = clickCounts[index];
+        if (clickCount === 0) {
+            return;
+        }
 
-                if (clickCount === 0) {
-                    return;
-                }
+        var newWindow = window.open(currentUrls[currentIndexs[index]], '_blank');
+        if (newWindow) {
+            newWindow.focus();
+        }
 
-                var newWindow = window.open(currentUrls[currentIndexs[index]], '_blank');
-                if (newWindow) {
-                    newWindow.focus();
-                }
+        clickCount--;
+        clickCountText.textContent = 'Clicks restantes: ' + clickCount;
+        clickCounts[index] = clickCount;
 
-                clickCount--;
-                clickCountText.textContent = 'Clicks restantes: ' + clickCount;
-                clickCounts[index] = clickCount;
+        if (clickCount === 0) {
+            blockedOverlay.classList.add('hidden');
+            document.querySelectorAll('.video-container iframe')[index].style.filter = 'none'; // Remueve el efecto de difuminado
+        }
+    });
 
-                if (clickCount === 0) {
-                    blockedOverlay.classList.add('hidden');
-                    document.querySelectorAll('.video-container iframe')[index].style.filter = 'none'; // Remueve el efecto de difuminado
-                }
-            });
+    clickCountText.textContent = 'Clicks restantes: ' + clickCounts[index];
+});
 
-            clickCountText.textContent = 'Clicks restantes: ' + clickCounts[index];
-        });
+var nextButton = document.querySelector('.next-button');
+nextButton.addEventListener('click', function (event) {
+    event.preventDefault();
+    var videoContainers = document.querySelectorAll('.video-container');
+    var currentIndex = 0;
+    var windowHeight = window.innerHeight;
+
+    for (var i = 0; i < videoContainers.length; i++) {
+        var rect = videoContainers[i].getBoundingClientRect();
+        if (rect.top > windowHeight) {
+            currentIndex = i;
+            break;
+        }
+    }
+
+    var nextVideoContainer = videoContainers[currentIndex];
+    nextVideoContainer.scrollIntoView({ behavior: 'smooth', block: 'end' });
+});
+
     </script>
 </body>
-</html>
-</div>
-<div id="wb_Pagination1" style="display:inline-block;width:263px;height:34px;z-index:1;">
-<ul id="Pagination1">
-<li><a href="./page2.html">&laquo; Prev</a></li>
-<li><a href="">1</a></li>
-<li><a href="">2</a></li>
-<li><a href="">3</a></li>
-<li><a href="">4</a></li>
-<li class="disabled"><a href="#">Next &raquo;</a></li>
-</ul>
 
+</html>
 </div>
 </div>
 </div>
