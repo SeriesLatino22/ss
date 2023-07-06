@@ -1,0 +1,101 @@
+body
+{
+   background-color: #FFFFFF;
+   color: #000000;
+   font-family: Arial;
+   font-weight: normal;
+   font-size: 13px;
+   line-height: 1.1875;
+   margin: 0;
+   padding: 0;
+}
+.ui-dialog.ui-widget
+{
+      z-index: 9999 !important;
+}
+.Dialog1.ui-dialog
+{
+   background-color: #FFFFFF;
+   background-image: none;
+   border: 1px solid #DDDDDD;
+   display: none;
+   margin: 0;
+   padding: 4px 4px 4px 4px;
+}
+.Dialog1.ui-dialog .ui-dialog-title
+{
+   color: #333333;
+   font-family: Arial;
+   font-weight: normal;
+   font-size: 13px;
+   font-style: normal;
+   margin: 0;
+}
+.Dialog1.ui-dialog .ui-dialog-titlebar
+{
+   background-color: #E9E9E9;
+   background-image: none;
+   border: 1px solid #DDDDDD;
+   font-weight: normal;
+   padding: 10px 10px 10px 10px;
+}
+.Dialog1.ui-dialog .ui-dialog-titlebar-close
+{
+   background: none;
+   border: none;
+   outline: 0;
+   right: 13px;
+   font-family: Arial;
+   font-size: 13px;
+}
+.Dialog1.ui-dialog .ui-dialog-titlebar-close:after
+{
+   align-items: center;
+   color: #333333;
+   content: "\00d7";
+   display: flex;
+   font-size: 1.5em;
+   font-weight: bold;
+   height: 100%;
+   justify-content: center;
+   position: absolute;
+   left: 0;
+   text-indent: 0;
+   top: 0;
+   width: 100%;
+}
+.Dialog1.ui-dialog .ui-dialog-titlebar-close .ui-icon
+{
+   display: none;
+}
+.Dialog1, .Dialog1 .ui-corner-all
+{
+   border-radius: 0px;
+}
+#Dialog1.ui-dialog-content
+{
+   overflow: visible;
+   padding: 0;
+}
+.Dialog1 .ui-dialog-buttonpane .ui-dialog-buttonset
+{
+   float: right;
+}
+.Dialog1 .ui-dialog-buttonpane
+{
+   text-align: right;
+}
+#wb_Text1 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   border-radius: 0px;
+   padding: 0;
+   margin: 0;
+   text-align: left;
+}
+#wb_Text1 div
+{
+   text-align: left;
+}

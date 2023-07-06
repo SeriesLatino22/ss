@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Page</title>
+<meta name="generator" content="WYSIWYG Web Builder 18 - https://www.wysiwygwebbuilder.com">
+<link href="SeriesLatino2.css" rel="stylesheet">
+<link href="Intro-lady.css" rel="stylesheet">
+<script src="jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function()
+{
+   if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {$('#preloader').remove();}
+});
+$(window).on('load', function()
+{
+   $('#preloader').remove();
+});
+</script>
+</head>
+<body>
+<div id="Html4" style="position:absolute;left:297px;top:96px;width:293px;height:118px;z-index:0">
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Desbloquear contenido</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  </head>
+<body>
+  <div id="blocker">
+    <div id="container">
+      <button id="unlockButton"><i class="fas fa-lock"></i> Desbloquear contenido</button>
+      <button id="openLockButton" style="display: none;"><i class="fas fa-lock-open"></i> Contenido desbloqueado</button>
+      <div id="message">Debes darle 3 veces al botón</div>
+      <div id="adMessage">Se abrirá publicidad, solo ciérrala, ¡Gracias!</div>
+    </div>
+  </div>
+
+  <script>
+    var unlockButton = document.getElementById("unlockButton");
+    var openLockButton = document.getElementById("openLockButton");
+    var message = document.getElementById("message");
+    var adMessage = document.getElementById("adMessage");
+    var clickCount = 0;
+    var urls = [
+      "https://www.highrevenuegate.com/gr68y57qs2?key=a12e88d2a2a8205d6611e540ddf0ae52",
+      "https://www.highrevenuegate.com/gr68y57qs2?key=a12e88d2a2a8205d6611e540ddf0ae52",
+      "https://www.highrevenuegate.com/gr68y57qs2?key=a12e88d2a2a8205d6611e540ddf0ae52"
+    ];
+
+    function startCountdown() {
+      var countdown = 3; // Cantidad inicial del countdown
+
+      var countdownInterval = setInterval(function() {
+        countdown--; // Disminuye el contador en 1
+
+        if (countdown === 0) {
+          // Oculta el botón de bloqueo y muestra el botón de candado abierto
+          unlockButton.style.display = "none";
+          openLockButton.style.display = "inline-block";
+
+          //```
+          // Centra verticalmente el contenido
+          var blocker = document.getElementById("blocker");
+          blocker.style.display = "flex";
+          blocker.style.alignItems = "center";
+          blocker.style.justifyContent = "center";
+
+          // Detiene el intervalo del countdown
+          clearInterval(countdownInterval);
+
+          // Agrega el evento de clic al botón para la redirección
+          openLockButton.addEventListener("click", function() {
+            window.location.href = "./ladytem1.html"; // Reemplaza la URL con tu enlace deseado
+          });
+        }
+      }, 1000); // Intervalo de tiempo en milisegundos (en este caso, 1 segundo)
+    }
+
+    unlockButton.addEventListener("click", function() {
+      clickCount++;
+
+      if (clickCount <= urls.length) {
+        window.open(urls[clickCount - 1], "_blank"); // Abre la página en una nueva pestaña
+
+        if (clickCount < urls.length) {
+          message.textContent = "Debes darle " + (urls.length - clickCount) + " veces más al botón";
+        } else {
+          message.textContent = "Vuelve a darle al botón, se completó todo, ¡Gracias!.";
+          adMessage.style.display = "none";
+        }
+
+        if (clickCount === 3) {
+          startCountdown(); // Inicia el countdown después de abrir la última página
+        }
+      }
+    });
+
+    if (clickCount === 3) {
+      startCountdown(); // Inicia el countdown si ya se abrieron las 3 páginas desde el inicio
+    }
+  </script>
+</body>
+</html>
+</div>
+<div id="preloader"></div>
+</body>
+</html>
