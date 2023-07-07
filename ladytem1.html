@@ -213,6 +213,44 @@ reiniciarMenus();
 </div>
 </div>
 </div>
+<div id="Html4" style="position:absolute;left:376px;top:280px;width:293px;height:118px;z-index:2">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<div id="blocker">
+  <div id="container">
+    <button id="unlockButton"><i class="fas fa-lock"></i> Desbloquear contenido</button>
+    <div id="message">↑↑ Debes darle 3 veces al botón ↑↑</div>
+    <div id="adMessage">Se abrirá publicidad, solo ciérrala, ¡Gracias!</div>
+  </div>
+</div>
+
+
+<script>
+  var unlockButton = document.getElementById("unlockButton");
+  var message = document.getElementById("message");
+  var adMessage = document.getElementById("adMessage");
+  var clickCount = 0;
+  var urls = [
+    "https://www.highrevenuegate.com/gr68y57qs2?key=a12e88d2a2a8205d6611e540ddf0ae52",
+    "https://www.highrevenuegate.com/gr68y57qs2?key=a12e88d2a2a8205d6611e540ddf0ae52",
+    "https://www.highrevenuegate.com/gr68y57qs2?key=a12e88d2a2a8205d6611e540ddf0ae52"
+  ];
+
+  unlockButton.addEventListener("click", function() {
+    clickCount++;
+    if (clickCount <= urls.length) {
+      window.open(urls[clickCount - 1], "_blank");
+      if (clickCount < urls.length) {
+        message.textContent = "Debes darle " + (urls.length - clickCount) + " veces más al botón";
+      } else {
+        message.textContent = "Se abrieron todas las páginas. ¡Cerrando todo!";
+        adMessage.style.display = "none";
+        document.getElementById("blocker").style.display = "none";
+      }
+    }
+  });
+</script>
+</div>
 <div id="preloader"></div>
 </body>
 </html>
