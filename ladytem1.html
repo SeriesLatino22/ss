@@ -45,9 +45,7 @@ $(window).on('load', function()
     <button id="continuar" disabled>Aceptar</button>
     
     <h2 id="titulo-capitulo-servidor"></h2>
-    <div class="iframe-container" id="contenido-iframe">
-       <iframe id="inlineFrameResult" src="" frameborder="0" allowfullscreen></iframe>
-    </div>
+    <div class="iframe-container" id="contenido-iframe"></div>
 
     <p style="font-size: 16px; font-weight: bold;">
       Instrucciones:
@@ -71,9 +69,9 @@ $(window).on('load', function()
     const capituloSelect = document.getElementById('capitulo');
     const servidorSelect = document.getElementById('servidor');
     const continuarButton = document.getElementById('continuar');
-    const resultIframe = document.getElementById('inlineFrameResult');
     const contenidoIframe = document.getElementById('contenido-iframe');
     let capituloAnterior = "";
+    let currentIframe = null;
 
     const opcionesServidor = {
       capitulo1: [
@@ -102,7 +100,7 @@ $(window).on('load', function()
     function actualizarOpcionesServidor() {
       const capituloSeleccionado = capituloSelect.value;
 
-      if (!capituloSeleccionado) {
+     if (!capituloSeleccionado) {
         reiniciarMenus();
         servidorSelect.disabled = true;
         return;
@@ -142,6 +140,12 @@ $(window).on('load', function()
       document.getElementById('titulo-capitulo-servidor').textContent = "";
       capituloAnterior = "";
 
+      // Eliminar el iframe actual
+      if (currentIframe) {
+        contenidoIframe.removeChild(currentIframe);
+        currentIframe = null;
+      }
+
       // Ocultar el contenido del servidor al cambiar de capítulo
       contenidoIframe.style.display = "none";
     }
@@ -159,18 +163,27 @@ $(window).on('load', function()
 
     function abrirUrl() {
       const capituloSeleccionado = capituloSelect.value;
-     const servidorSeleccionado = servidorSelect.value;
+      const servidorSeleccionado = servidorSelect.value;
       const capituloTexto = capituloSelect.options[capituloSelect.selectedIndex].text;
       const servidorTexto = servidorSelect.options[servidorSelect.selectedIndex].text;
 
       if (capituloSeleccionado && servidorSeleccionado) {
         const url = obtenerUrlCapituloServidor(capituloSeleccionado, servidorSeleccionado);
 
-        // Detener la reproducción del video anterior
-        resultIframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+        // Eliminar el iframe actual
+        if (currentIframe) {
+          contenidoIframe.removeChild(currentIframe);
+          currentIframe = null;
+        }
 
-        // Cargar el nuevo video
-        resultIframe.src = url;
+        // Crear un nuevo iframe para cargar el video
+        const newIframe = document.createElement('iframe');
+        newIframe.id = "inlineFrameResult";
+        newIframe.src = url;
+        newIframe.frameBorder = 0;
+        newIframe.allowFullscreen = true;
+        contenidoIframe.appendChild(newIframe);
+        currentIframe = newIframe;
 
         // Mostrar el contenido del servidor
         contenidoIframe.style.display = "block";
@@ -199,7 +212,6 @@ $(window).on('load', function()
       servidorSelect.appendChild(document.createElement('option'));
       servidorSelect.firstChild.value = "";
       servidorSelect.firstChild.textContent = "Seleccionar...";
-      resultIframe.src = "";
       continuarButton.disabled = true;
       contenidoIframe.style.display = "none";
       document.getElementById('titulo-capitulo-servidor').textContent = "";
