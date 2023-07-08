@@ -159,7 +159,7 @@ $(window).on('load', function()
 
     function abrirUrl() {
       const capituloSeleccionado = capituloSelect.value;
-      const servidorSeleccionado = servidorSelect.value;
+     const servidorSeleccionado = servidorSelect.value;
       const capituloTexto = capituloSelect.options[capituloSelect.selectedIndex].text;
       const servidorTexto = servidorSelect.options[servidorSelect.selectedIndex].text;
 
@@ -167,7 +167,7 @@ $(window).on('load', function()
         const url = obtenerUrlCapituloServidor(capituloSeleccionado, servidorSeleccionado);
 
         // Detener la reproducción del video anterior
-        resultIframe.src = "";
+        resultIframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
 
         // Cargar el nuevo video
         resultIframe.src = url;
