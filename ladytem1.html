@@ -20,8 +20,8 @@ $(window).on('load', function() {
 });
 
 // Redirigir al usuario a la página anterior al presionar el botón de retroceso
-window.addEventListener('popstate', function(event) {
-   window.location.href = document.referrer;
+window.addEventListener('beforeunload', function(event) {
+   history.go(-1);
 });
 </script>
 <script>
@@ -171,7 +171,8 @@ reiniciarMenus();
 </div>
 </div>
 </div>
-<div id="Html4" style="position:absolute;left:376px;top:280px;width:293px;height:118px;z-index:2```html
+<div id="Html4" style="position:absolute;left:376px;top:280px;width:293px;height:118px;z-index:2">
+<link rel```html
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 <div id="blocker">
