@@ -1,4 +1,4 @@
- <!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -9,70 +9,22 @@
 <link href="ladytem1.css" rel="stylesheet">
 <script src="jquery-3.6.0.min.js"></script>
 <script>
-$(document).ready(function()
-{
-   if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {$('#preloader').remove();}
+$(document).ready(function() {
+   if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
+      $('#preloader').remove();
+   }
 });
-$(window).on('load', function()
-{
+
+$(window).on('load', function() {
    $('#preloader').remove();
 });
+
+// Redirigir al usuario a la página anterior al presionar el botón de retroceso
+window.addEventListener('popstate', function(event) {
+   window.location.href = document.referrer;
+});
 </script>
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Menús desplegables</title>
-  </head>
-<body>
-  <div class="container">
-
-
-    <div class="menu-container">
-      <label for="capitulo">Capítulo:</label>
-      <select id="capitulo">
-        <option value="">Seleccionar...</option>
-        <option value="capitulo1">Capítulo 1</option>
-        <option value="capitulo2">Capítulo 2</option>
-        <option value="capitulo3">Capítulo 3</option>
-      </select>
-    </div>
-
-    <div class="menu-container">
-      <label for="servidor">Servidor:</label>
-      <select id="servidor">
-        <option value="">Seleccionar...</option>
-      </select>
-    </div>
-
-    <button id="continuar" disabled>Aceptar</button>
-    
-<h2 id="titulo-capitulo-servidor"></h2>
-    <div class="iframe-container" id="contenido-iframe">
-       <iframe id="inlineFrameResult" src="" frameborder="0" allowfullscreen></iframe>
-  </div>
-
-<p style="font-size: 16px; font-weight: bold;">
-Instrucciones:
-</p>
-  <p>
-Primero selecciona un capítulo, y después selecciona el servidor y presiona aceptar.
-</p>
-
-<p>
-• El servidor seguido con [R] significa que es servidor Recomendado.
-
-</p>
-     <p>
-• El servidor seguido con [Ads] significa que es servidor con anuncios.
-
-</p>
-     <p>
-Recuerda qué aunque los reproductores se parezcan, son servidores distintos, por ende tienen mayor o menor velocidad, la velocidad de reproducción dependerá de tu internet.
-</p>
-</div>
-  </div>
-
-  <script>
+<script>
 const capituloSelect = document.getElementById('capitulo');
 const servidorSelect = document.getElementById('servidor');
 const continuarButton = document.getElementById('continuar');
@@ -207,11 +159,7 @@ function reiniciarMenus() {
 
 // Reiniciar los menús al cargar la página
 reiniciarMenus();
-
-  </script>
-</body>
-</html>
-
+</script>
 </head>
 <body>
 <div id="wb_LayoutGrid1">
@@ -223,7 +171,7 @@ reiniciarMenus();
 </div>
 </div>
 </div>
-<div id="Html4" style="position:absolute;left:376px;top:280px;width:293px;height:118px;z-index:2">
+<div id="Html4" style="position:absolute;left:376px;top:280px;width:293px;height:118px;z-index:2```html
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 <div id="blocker">
