@@ -5,7 +5,7 @@
 <title>Untitled Page</title>
 <meta name="generator" content="WYSIWYG Web Builder 18 - https://www.wysiwygwebbuilder.com">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="SeriesLatino2.css" rel="stylesheet">
+<link href="SeriesLatino3.css" rel="stylesheet">
 <link href="cartelt1.css" rel="stylesheet">
 <script src="bootstrap.min.js"></script>
 <script src="jquery-3.6.0.min.js"></script>
@@ -19,7 +19,6 @@ $(window).on('load', function()
    $('#preloader').remove();
 });
 </script>
-<meta name="referrer" content="never" />
 </head>
 <body>
 <div id="wb_LayoutGrid1">
@@ -33,79 +32,6 @@ $(window).on('load', function()
 <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
 
     
-
-<div id="blocker">
-    <div id="container">
-      <button id="unlockButton"><i class="fas fa-lock"></i> Desbloquear contenido</button>
-    </div>
-  </div>
-
-
-<script>
-
-window.addEventListener('DOMContentLoaded', function() {
-  var webPages = [
-    './publicidad1.html',
-    './publicidad3.html',
-    'https://kiksajex.com/4/6055282',
-    './publicidad4.html',
-    'https://kiksajex.com/4/6051547',
-    './publi5Only1.html',
-    'https://zaltaumi.net/4/6055282',
-    './publicidad1.html',
-    './publicidad1.html',
-    './publicidad3.html'
-    // Agrega aquí más URL de páginas web separadas por comas
-  ];
-
-  var currentIndex = 0;
-  var iframeInterval;
-
-  var blocker = document.getElementById('blocker');
-  var unlockButton = document.getElementById('unlockButton');
-  var container = document.getElementById('container');
-
-  unlockButton.addEventListener('click', function() {
-    container.innerHTML = '<div id="countdownWrapper">La publicidad se cerrará en: <span id="countdown">45</span></div><div id="iframeWrapper"><iframe id="contentFrame" width="100%" height="500px" src="" frameborder="0"></iframe></div>';
-    var countdown = document.getElementById('countdown');
-    var seconds = 45;
-
-    var iframeWrapper = document.getElementById('iframeWrapper');
-    iframeWrapper.style.display = 'block';
-
-    var message = document.createElement('div');
-    message.id = 'message';
-    message.textContent = 'Espera a que termine el tiempo, si le sale algo de abrir enlaces externos dale Cancelar, NO aceptes, descarges ni instales nada.';
-    container.appendChild(message);
-
-    function changeWebPage() {
-      if (currentIndex >= webPages.length) {
-        currentIndex = 0;
-      }
-      var randomWebPage = webPages[currentIndex];
-      var contentFrame = document.getElementById('contentFrame');
-      contentFrame.src = randomWebPage;
-      currentIndex++;
-    }
-
-    changeWebPage(); // Cambiar a la primera página de inmediato
-
-    iframeInterval = setInterval(changeWebPage, 5000); // Cambiar cada 8 segundos
-
-    var interval = setInterval(function() {
-      seconds--;
-      countdown.textContent = seconds;
-
-      if (seconds === 0) {
-        blocker.style.display = 'none';
-        clearInterval(interval);
-        clearInterval(iframeInterval);
-      }
-    }, 1000);
-  });
-});
-
-</script>
 
 
 
@@ -146,9 +72,11 @@ window.addEventListener('DOMContentLoaded', function() {
         </h3>
         <p class="paragraph">
     
-    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Capitulo 1"><span style="color: yellow;">Opcion 1</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Capitulo 1"><span style="color: red;">Opcion 2</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Capitulo 1"><span style="color: blue;">Opcion 3</span></a>
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://player.odycdn.com/api/v3/streams/free/01CartelSps/5c12a5ae9148d2e129619b972bb6acf2b36724a0/cd32e0.mp4" data-titulo="Capitulo 1"><span style="color: yellow;">Opcion 1</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/5467125451269" data-titulo="Capitulo 1"><span style="color: blue;">Opcion 2</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ia902700.us.archive.org/12/items/11-cartel-sps/01CartelSps.mp4" data-titulo="Capitulo 1"><span style="color: red;">Opcion 3</span></a>
+<a class="fs-abrir-lightbox1" href="https://hqq.ac/e/bTY3SEo2dGNYNkRLS1FxK093MFpkUT09" target="_blank" data-titulo="Título del video 4"><span style="color: white;">Alternativo</span></a>
+<a class="fs-abrir-lightbox1" href="https://sblona.com/e/c53gljjzkb9s.html" target="_blank" data-titulo="Título del video 4"><span style="color: white;">Alternativo</span></a>
 
    </p>
       </div>
@@ -225,142 +153,6 @@ window.addEventListener('DOMContentLoaded', function() {
 
      </p> 
 	 
-	  
-	 
-	 </p>
-      </div>
-      <div class="accordion-item">
-        <h3 class="title">
-          <span>Capitulo 6 &nbsp;</span>
-          <div class="button-container">
-    <button class="button" id="button6ll">No visto</button>
-  </div>
-          <i class="fas fa-chevron-down"></i>
-        </h3>
-        <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
-
-     </p> 
-	 
-	  
-	 
-	 </p>
-      </div>
-      <div class="accordion-item">
-        <h3 class="title">
-          <span>Capitulo 7 &nbsp;</span>
-          <div class="button-container">
-    <button class="button" id="button7ll">No visto</button>
-  </div>
-          <i class="fas fa-chevron-down"></i>
-        </h3>
-        <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
-
-
- </p> 
-	 
-	  
-	 
-	 </p>
-      </div>
-      <div class="accordion-item">
-        <h3 class="title">
-          <span>Capitulo 8 &nbsp;</span>
-          <div class="button-container">
-    <button class="button" id="button8ll">No visto</button>
-  </div>
-          <i class="fas fa-chevron-down"></i>
-        </h3>
-        <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
-
-	 
-	 </p> 
-	 
-	  
-	 
-	 </p>
-      </div>
-      <div class="accordion-item">
-        <h3 class="title">
-          <span>Capitulo 9 &nbsp;</span>
-          <div class="button-container">
-    <button class="button" id="button9ll">No visto</button>
-  </div>
-          <i class="fas fa-chevron-down"></i>
-        </h3>
-        <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
-
-     </p> 
-	 
-	  
-	 
-	 </p>
-      </div>
-      <div class="accordion-item">
-        <h3 class="title">
-          <span>Capitulo 10</span>
-          <div class="button-container">
-    <button class="button" id="button10ll">No visto</button>
-  </div>
-          <i class="fas fa-chevron-down"></i>
-        </h3>
-        <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
-
-     </p> 
-	 
-	  
-	 
-	 </p>
-      </div>
-      <div class="accordion-item">
-        <h3 class="title">
-          <span>Capitulo 11</span>
-          <div class="button-container">
-    <button class="button" id="button11">No visto</button>
-  </div>
-          <i class="fas fa-chevron-down"></i>
-        </h3>
-        <p class="paragraph">
-    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
-
-
- </p> 
-	 
-	  
-	 
-	 </p>
-      </div>
-      <div class="accordion-item">
-        <h3 class="title">
-          <span>Capitulo 12</span>
-          <div class="button-container">
-    <button class="button" id="button12">No visto</button>
-  </div>
-          <i class="fas fa-chevron-down"></i>
-        </h3>
-        <p class="paragraph">
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
-
-	 
-	 </p> 
 	 
 	  
 	 
@@ -1155,8 +947,6 @@ document.querySelector("#lightbox").addEventListener("click", function (e) {
 </div>
 </div>
 </div>
-
-
 <div id="wb_LayoutGrid2">
 <div id="LayoutGrid2">
 <div class="row">
@@ -1181,13 +971,6 @@ document.querySelector("#lightbox").addEventListener("click", function (e) {
 </div>
 </div>
 </div>
-<script>
-        document.addEventListener('DOMContentLoaded', () => {
-            var disclaimer = document.querySelector("img[alt='www.000webhost.com']");
-            if(disclaimer) {
-                disclaimer.remove();
-            }
-        });
-    </script><div id="preloader"></div>
+<div id="preloader"></div>
 </body>
 </html>
