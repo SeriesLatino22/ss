@@ -1,12 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>Untitled Page</title>
 <meta name="generator" content="WYSIWYG Web Builder 18 - https://www.wysiwygwebbuilder.com">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="SeriesLatino2.css" rel="stylesheet">
+<link href="Sintv.css" rel="stylesheet">
 <link href="ladytem1.css" rel="stylesheet">
+<script src="bootstrap.min.js"></script>
 <script src="jquery-3.6.0.min.js"></script>
 <script>
 $(document).ready(function()
@@ -18,209 +19,1130 @@ $(window).on('load', function()
    $('#preloader').remove();
 });
 </script>
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Menús desplegables</title>
 </head>
 <body>
-  <div class="container">
-    <div class="menu-container">
-      <label for="capitulo">Capítulo:</label>
-      <select id="capitulo">
-        <option value="">Seleccionar...</option>
-        <option value="capitulo1">Capítulo 1</option>
-        <option value="capitulo2">Capítulo 2</option>
-        <option value="capitulo3">Capítulo 3</option>
-      </select>
-    </div>
+<div id="wb_LayoutGrid1">
+<div id="LayoutGrid1">
+<div class="col-1">
+<html>
+  <head>
+      <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
 
-    <div class="menu-container">
-      <label for="servidor">Servidor:</label>
-      <select id="servidor">
-        <option value="">Seleccionar...</option>
-      </select>
-    </div>
-
-    <button id="continuar" disabled>Aceptar</button>
     
-    <h2 id="titulo-capitulo-servidor"></h2>
-    <div class="iframe-container" id="contenido-iframe"></div>
 
-    <p style="font-size: 16px; font-weight: bold;">
-      Instrucciones:
-    </p>
-    <p>
-      Primero selecciona un capítulo, y después selecciona el servidor y presiona aceptar.
-    </p>
 
-    <p>
-      • El servidor seguido con [R] significa que es servidor Recomendado.
-    </p>
-    <p>
-      • El servidor seguido con [Ads] significa que es servidor con anuncios.
-    </p>
-    <p>
-      Recuerda qué aunque los reproductores se parezcan, son servidores distintos, por ende tienen mayor o menor velocidad, la velocidad de reproducción dependerá de tu internet.
-    </p>
+  </head>
+  <body>
+
+<div class="ConjuntoHeadCont">
+</div></div>
+<div class="xs">
+</div>
+<div class="titulo">
+</div>
+<i></i>
+
+<i></i>
+</info><br>
+<h3 style="color:#cc0000;padding:7px;font-size:20px"></h3>
+<p style="color:#fff;padding:7px;text-align: justify;line-height:18px;">
+    
+
+</p>
+
+<div class="container">
+  <div class="accordion v2">
+    <div class="a-container">
+      <p class="a-btn">Temporada 1<span></span></p>
+      <div class="a-panel">
+<main class="main">
+  <div class="container">
+    <div class="accordion">
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 1 &nbsp;</span>
+          <div class="button-container">
+    <button class="button" id="button1ll">No visto</button>
   </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+    
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://player.odycdn.com/api/v3/streams/free/01CartelSps/5c12a5ae9148d2e129619b972bb6acf2b36724a0/cd32e0.mp4" data-titulo="Capitulo 1"><span style="color: yellow;">Opcion 1</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/5467125451269" data-titulo="Capitulo 1"><span style="color: blue;">Opcion 2</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ia902700.us.archive.org/12/items/11-cartel-sps/01CartelSps.mp4" data-titulo="Capitulo 1"><span style="color: red;">Opcion 3</span></a>
+<a class="fs-abrir-lightbox1" href="https://sblona.com/e/c53gljjzkb9s.html" target="_blank" data-titulo="Capitulo 1"><span style="color: white;">Alternativo</span></a>
 
-  <script>
-    const capituloSelect = document.getElementById('capitulo');
-    const servidorSelect = document.getElementById('servidor');
-    const continuarButton = document.getElementById('continuar');
-    const contenidoIframe = document.getElementById('contenido-iframe');
-    let capituloAnterior = "";
-    let currentIframe = null;
+   </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 2 &nbsp;</span>
+          <div class="button-container">
+    <button class="button" id="button2ll">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+    
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
 
-    const opcionesServidor = {
-      capitulo1: [
-        { servidor: 'Servidor 1 [R]', url: 'https://player.odycdn.com/api/v3/streams/free/01CartelSps/5c12a5ae9148d2e129619b972bb6acf2b36724a0/cd32e0.mp4' },
-        { servidor: 'Servidor 2 [R]', url: 'https://ia902700.us.archive.org/12/items/11-cartel-sps/01CartelSps.mp4' },
-        { servidor: 'Servidor 3 [R]', url: 'https://ok.ru/videoembed/5467125451269' },
-        { servidor: 'Servidor 4 [Ads]', url: 'https://hqq.ac/e/bTY3SEo2dGNYNkRLS1FxK093MFpkUT09' },
-        { servidor: 'Servidor 5 [Ads]', url: 'https://sblona.com/e/c53gljjzkb9s.html' }
-      ],
-      capitulo2: [
-        { servidor: 'Servidor 1', url: 'https://ok.ru/videoembed/5467125451269' },
-        { servidor: 'Servidor 2', url: 'https://servidor2.com/capitulo2' },
-        { servidor: 'Servidor 3', url: 'https://servidor3.com/capitulo2' }
-      ],
-      capitulo3: [
-        { servidor: 'Servidor 1', url: 'https://servidor1.com/capitulo3' },
-        { servidor: 'Servidor 2', url: 'https://servidor2.com/capitulo3' },
-        { servidor: 'Servidor 3', url: 'https://servidor3.com/capitulo3' }
-      ]
+ </p> 
+	 
+	 
+	 </p>
+       </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 3 &nbsp;</span>
+          <div class="button-container">
+    <button class="button" id="button3ll">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
+
+
+     </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 4 &nbsp;</span>
+          <div class="button-container">
+    <button class="button" id="button4ll">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
+
+ </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 5 &nbsp;</span>
+          <div class="button-container">
+    <button class="button" id="button5ll">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
+
+     </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 6 &nbsp;</span>
+          <div class="button-container">
+    <button class="button" id="button6ll">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
+
+     </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 7 &nbsp;</span>
+          <div class="button-container">
+    <button class="button" id="button7ll">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
+
+
+ </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 8 &nbsp;</span>
+          <div class="button-container">
+    <button class="button" id="button8ll">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
+
+	 
+	 </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 9 &nbsp;</span>
+          <div class="button-container">
+    <button class="button" id="button9ll">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
+
+     </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 10</span>
+          <div class="button-container">
+    <button class="button" id="button10ll">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
+
+     </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 11</span>
+          <div class="button-container">
+    <button class="button" id="button11">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
+
+
+ </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 12</span>
+          <div class="button-container">
+    <button class="button" id="button12">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
+
+	 
+	 </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 13</span>
+          <div class="button-container">
+    <button class="button" id="button13">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687179483759"><span>Youtube</span></a> 
+    
+     </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 14</span>
+          <div class="button-container">
+    <button class="button" id="button14">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687179549295"><span>Youtube</span></a> 
+    
+     </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 15</span>
+          <div class="button-container">
+    <button class="button" id="button15">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687179811439"><span>Youtube</span></a> 
+    
+
+ </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 16</span>
+          <div class="button-container">
+    <button class="button" id="button16">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687180073583"><span>Youtube</span></a> 
+    
+	 
+	 </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 17</span>
+          <div class="button-container">
+    <button class="button" id="button17">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687180139119"><span>Youtube</span></a> 
+    
+     </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 18</span>
+          <div class="button-container">
+    <button class="button" id="button18">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687180270191"><span>Youtube</span></a> 
+    
+     </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 19</span>
+          <div class="button-container">
+    <button class="button" id="button19">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687180663407"><span>Youtube</span></a> 
+    
+
+ </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 20</span>
+          <div class="button-container">
+    <button class="button" id="button20">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687181843055"><span>Youtube</span></a> 
+    
+	 
+	 </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 21</span>
+          <div class="button-container">
+    <button class="button" id="button21">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687182563951"><span>Youtube</span></a> 
+    
+     </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 22</span>
+          <div class="button-container">
+    <button class="button" id="button22">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687183219311"><span>Youtube</span></a> 
+    
+     </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 23</span>
+          <div class="button-container">
+    <button class="button" id="button23">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687183350383"><span>Youtube</span></a> 
+    
+
+ </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 24</span>
+          <div class="button-container">
+    <button class="button" id="button24">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688148695663"><span>Youtube</span></a> 
+    
+    </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 25</span>
+          <div class="button-container">
+    <button class="button" id="button25">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688148826735"><span>Youtube</span></a> 
+    
+     </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 26</span>
+          <div class="button-container">
+    <button class="button" id="button26">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688148957807"><span>Youtube</span></a> 
+    
+     </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 27</span>
+          <div class="button-container">
+    <button class="button" id="button27">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879"><span>Youtube</span></a> 
+    
+
+ </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 28</span>
+          <div class="button-container">
+    <button class="button" id="button28">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149219951"><span>Youtube</span></a> 
+    
+	 </p> 
+	 
+	  
+	 
+      </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 29</span>
+          <div class="button-container">
+    <button class="button" id="button29">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688150989423"><span>Youtube</span></a> 
+    
+
+ </p> 
+	 
+      </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 30</span>
+          <div class="button-container">
+    <button class="button" id="button30">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688151775855"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 31</span>
+          <div class="button-container">
+    <button class="button" id="button31">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688153741935"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 32</span>
+          <div class="button-container">
+    <button class="button" id="button32">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688155249263"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 33</span>
+          <div class="button-container">
+    <button class="button" id="button33">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688338356847"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 34</span>
+          <div class="button-container">
+    <button class="button" id="button34">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688340519535"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 35</span>
+          <div class="button-container">
+    <button class="button" id="button35">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688340716143"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 36</span>
+          <div class="button-container">
+    <button class="button" id="button36">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688340847215"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 37</span>
+          <div class="button-container">
+    <button class="button" id="button37">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688342026863"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 38</span>
+          <div class="button-container">
+    <button class="button" id="button38">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688342944367"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 39</span>
+          <div class="button-container">
+    <button class="button" id="button39">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688343403119"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 40</span>
+          <div class="button-container">
+    <button class="button" id="button40">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4696420780655"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 41</span>
+          <div class="button-container">
+    <button class="button" id="button41">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 42</span>
+          <div class="button-container">
+    <button class="button" id="button42">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 43</span>
+          <div class="button-container">
+    <button class="button" id="button43">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 44</span>
+          <div class="button-container">
+    <button class="button" id="button44">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 45</span>
+          <div class="button-container">
+    <button class="button" id="button45">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 46</span>
+          <div class="button-container">
+    <button class="button" id="button46">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 47</span>
+          <div class="button-container">
+    <button class="button" id="button47">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 48</span>
+          <div class="button-container">
+    <button class="button" id="button48">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 49</span>
+          <div class="button-container">
+    <button class="button" id="button49">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 50</span>
+          <div class="button-container">
+    <button class="button" id="button50">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879"><span>Youtube</span></a> 
+    
+
+ </p> 
+
+
+  
+      </div>
+    </div>
+    
+       
+
+
+ 
+
+<div id="lightbox">
+  <div id="lightbox-content">
+    <div id="fechar">× </div>
+  </div>
+</div>   
+    
+    <script>
+      
+    // Obtener todos los botones
+const buttons = document.querySelectorAll('.button');
+
+// Iterar sobre cada botón
+buttons.forEach(button => {
+  const id = button.id + '-' + 'ladyt11'; // Agregar un identificador único manual para cada página
+
+  // Recuperar el estado del botón del almacenamiento local
+  const savedState = localStorage.getItem(id);
+  if (savedState === 'visto') {
+    button.classList.add('visto');
+    button.textContent = 'Visto';
+  }
+
+  // Agregar el evento click al botón
+  button.addEventListener('click', () => {
+    toggleButtonState(button);
+
+    // Guardar el estado actual del botón en el almacenamiento local
+    saveButtonState(id, button.classList.contains('visto') ? 'visto' : 'no-visto');
+  });
+});
+
+// Función para cambiar el estado del botón
+function toggleButtonState(button) {
+  button.classList.toggle('visto');
+  button.textContent = button.classList.contains('visto') ? 'Visto' : 'No visto';
+}
+
+// Función para guardar el estado del botón en el almacenamiento local
+function saveButtonState(id, state) {
+  localStorage.setItem(id, state);
+}
+
+function initAcc(elem, option) {
+  document.addEventListener('click', function (e) {
+    if (!e.target.matches(elem + ' .a-btn')) return;
+    else {
+      if (!e.target.parentElement.classList.contains('active')) {
+        if (option == true) {
+          var elementList = document.querySelectorAll(elem + ' .a-container');
+          Array.prototype.forEach.call(elementList, function (e) {
+            e.classList.remove('active');
+          });
+        }
+        e.target.parentElement.classList.add('active');
+      } else {
+        e.target.parentElement.classList.remove('active');
+      }
+    }
+  });
+}
+
+initAcc('.accordion.v1', true);
+initAcc('.accordion.v2', false);
+
+// Accordion Action
+const accordionItem = document.querySelectorAll(".accordion-item");
+
+accordionItem.forEach((el) =>
+  el.addEventListener("click", () => {
+    if (el.classList.contains("active")) {
+      el.classList.remove("active");
+    } else {
+      accordionItem.forEach((el2) => el2.classList.remove("active"));
+      el.classList.add("active");
+    }
+  })
+);
+
+const fs_BotoesLightbox = document.querySelectorAll(".fs-abrir-lightbox");
+
+if (fs_BotoesLightbox) {
+  for (var i = 0; i < fs_BotoesLightbox.length; i++) {
+    fs_BotoesLightbox[i].onclick = function (fs_VideoAtual) {
+      const fs_VideoLightbox = fs_VideoAtual.currentTarget.getAttribute(
+        "data-video"
+      );
+      const fs_TituloVideo = fs_VideoAtual.currentTarget.getAttribute(
+        "data-titulo"
+      );
+      
+      console.log(fs_TituloVideo); // Agrega esta línea para depurar
+
+      const fs_UrlVideo = "" + fs_VideoLightbox;
+
+      const fs_ContentVideo = document.querySelector("#lightbox-content");
+
+      // Eliminar título anterior si existe
+      const existingTitle = fs_ContentVideo.querySelector("h2.title");
+      if (existingTitle) {
+        existingTitle.remove();
+      }
+
+      fs_ContentVideo.innerHTML +=
+        '<h2 class="title" style="color: white;">' + fs_TituloVideo + '</h2>' +
+        '<iframe id="video-adicionado" width="100%" height="100%" sandbox="allow-same-origin allow-scripts" scrolling="no" src="' +
+        fs_UrlVideo +
+        '" frameborder="0" allowfullscreen></iframe>';
+
+      document.querySelector("#lightbox").className = "abrir";
     };
+  }
+}
 
-    capituloSelect.addEventListener('change', actualizarOpcionesServidor);
-    servidorSelect.addEventListener('change', validarSeleccion);
-    continuarButton.addEventListener('click', abrirUrl);
 
-    function actualizarOpcionesServidor() {
-      const capituloSeleccionado = capituloSelect.value;
+document.querySelector("#lightbox").addEventListener("click", function (e) {
+  if (e.target.id == "fechar") {
+    document.querySelector("#lightbox").className = "";
+    document.querySelector("#video-adicionado").remove();
+  }
+});
 
-     if (!capituloSeleccionado) {
-        reiniciarMenus();
-        servidorSelect.disabled = true;
-        return;
-      }
+document.querySelector("#lightbox").addEventListener("click", function (e) {
+  if (e.target.id == "lightbox") {
+    document.querySelector("#lightbox").className = "";
+    document.querySelector("#video-adicionado").remove();
+  }
+});
 
-      // Limpiar las opciones anteriores
-      while (servidorSelect.firstChild) {
-        servidorSelect.removeChild(servidorSelect.firstChild);
-      }
+    </script>
+  </body>
+</html>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid2">
+<div id="LayoutGrid2">
+<div class="row">
+<div class="col-1">
+<div id="wb_pronmnb" style="display:flex;width:calc(100% - 10px);z-index:1;" class="card">
+   <div id="pronmnb-card-header" class="collapsed" aria-expanded="false" data-bs-toggle="collapse" href="#pronmnb-card-body">Preguntas Frecuentes<svg class="icon-collapsed" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg">
+   <path d="M54 28 L54 34 C54 35, 54 36, 53 36 C53 37, 52 37, 51 37 L37 37 L37 51 C37 52, 37 53, 36 53 C35 54, 35 54, 34 54 L27 54 C26 54, 26 54, 25 53 C24 53, 24 52, 24 51 L24 37 L10 37 C9 37, 9 37, 8 36 C7 36, 7 35, 7 34 L7 28 C7 27, 7 26, 8 25 C9 25, 9 24, 10 24 L24 24 L24 10 C24 10, 24 9, 25 8 C26 8, 26 7, 27 7 L34 7 C35 7, 35 8, 36 8 C37 9, 37 10, 37 10 L37 24 L51 24 C52 24, 53 25, 53 25 C54 26, 54 27, 54 28"/>
+</svg>
+<svg class="icon-expanded" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg">
+   <path d="M54 28 L54 34 C54 35, 54 36, 53 36 C53 37, 52 37, 51 37 L10 37 C9 37, 9 37, 8 36 C7 36, 7 35, 7 34 L7 28 C7 27, 7 26, 8 25 C9 25, 9 24, 10 24 L51 24 C52 24, 53 25, 53 25 C54 26, 54 27, 54 28"/>
+</svg>
+</div>
+   <div id="pronmnb-card-body" class="collapse" data-bs-parent="#wb_pronmnb">
+      <div id="pronmnb-card-item1"></div>
+      <hr id="pronmnb-card-item2">
+      <div id="pronmnb-card-item3"><br><br>Para reproducir un video en opción 1, debes darle varias veces al botón "Play" hasta que el video inicie a cargar, <br><br>Si por algún motivo el botón de carga no desaparece, cierra el video y ábrelo nuevamente.<br>Intentaremos agregar varias opciones para reproducir.<br><br><br>¿No te aparece el reproductor?<br><br><br>El reproductor aparece dependiendo la velocidad de tu internet, y lo mismo con la  velocidad de reproducción, solo debes esperar.<br>Si tienes algún problema deja un comentario o por medio de telegram.</div>
+      <div id="pronmnb-card-item4"></div>
+      <div id="pronmnb-card-item5"><br><br><br>El botón "Visto" y "No visto" debe ser agregado manualmente, Al ser una aplicación libre sin registro ni base de datos. Al borrar los datos de la aplicación o desinstalar la app y volverla a instalar, podría borrar tus capitulos vistos y no vistos guardados.</div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="Html4" style="position:absolute;left:259px;top:1063px;width:293px;height:118px;z-index:4">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-      // Agregar la opción predeterminada "Seleccionar..." al menú de servidores
-      const defaultOption = document.createElement('option');
-      defaultOption.value = "";
-      defaultOption.textContent = "Seleccionar...";
-      servidorSelect.appendChild(defaultOption);
+<div id="blocker">
+  <div id="container">
+    <button id="unlockButton"><i class="fas fa-lock"></i> Desbloquear contenido</button>
+    <div id="message">↑↑ Debes darle 3 veces al botón ↑↑</div>
+    <div id="adMessage">Se abrirá publicidad, solo ciérrala, ¡Gracias!</div>
+  </div>
+</div>
 
-      // Obtener las opciones de servidor para el capítulo seleccionado
-      const opciones = opcionesServidor[capituloSeleccionado];
 
-      if (opciones) {
-        // Agregar las nuevas opciones al menú desplegable de servidores
-        opciones.forEach(opcion => {
-          const optionElement = document.createElement('option');
-          optionElement.value = opcion.servidor;
-          optionElement.textContent = opcion.servidor;
-          servidorSelect.appendChild(optionElement);
-        });
+<script>
+  var unlockButton = document.getElementById("unlockButton");
+  var message = document.getElementById("message");
+  var adMessage = document.getElementById("adMessage");
+  var clickCount = 0;
+  var urls = [
+    "https://www.highrevenuegate.com/gr68y57qs2?key=a12e88d2a2a8205d6611e540ddf0ae52",
+    "https://www.highrevenuegate.com/gr68y57qs2?key=a12e88d2a2a8205d6611e540ddf0ae52",
+    "https://www.highrevenuegate.com/gr68y57qs2?key=a12e88d2a2a8205d6611e540ddf0ae52"
+  ];
 
-        // Habilitar el menú de selección de servidor
-        servidorSelect.disabled = false;
+  unlockButton.addEventListener("click", function() {
+    clickCount++;
+    if (clickCount <= urls.length) {
+      window.open(urls[clickCount - 1], "_blank");
+      if (clickCount < urls.length) {
+        message.textContent = "Debes darle " + (urls.length - clickCount) + " veces más al botón";
       } else {
-        // Bloquear el menú de selección de servidor si no hay opciones disponibles
-        servidorSelect.disabled = true;
-      }
-
-      // Reiniciar el título cuando se selecciona un nuevo capítulo
-      document.getElementById('titulo-capitulo-servidor').textContent = "";
-      capituloAnterior = "";
-
-      // Eliminar el iframe actual
-      if (currentIframe) {
-        contenidoIframe.removeChild(currentIframe);
-        currentIframe = null;
-      }
-
-      // Ocultar el contenido del servidor al cambiar de capítulo
-      contenidoIframe.style.display = "none";
-    }
-
-    function validarSeleccion() {
-      const capituloSeleccionado = capituloSelect.value;
-      const servidorSeleccionado = servidorSelect.value;
-
-      if (capituloSeleccionado && servidorSeleccionado) {
-        continuarButton.disabled = false;
-      } else {
-        continuarButton.disabled = true;
+        message.textContent = "Se abrieron todas las páginas. ¡Cerrando todo!";
+        adMessage.style.display = "none";
+        document.getElementById("blocker").style.display = "none";
       }
     }
-
-    function abrirUrl() {
-      const capituloSeleccionado = capituloSelect.value;
-      const servidorSeleccionado = servidorSelect.value;
-      const capituloTexto = capituloSelect.options[capituloSelect.selectedIndex].text;
-      const servidorTexto = servidorSelect.options[servidorSelect.selectedIndex].text;
-
-      if (capituloSeleccionado && servidorSeleccionado) {
-        const url = obtenerUrlCapituloServidor(capituloSeleccionado, servidorSeleccionado);
-
-        // Eliminar el iframe actual
-        if (currentIframe) {
-          contenidoIframe.removeChild(currentIframe);
-          currentIframe = null;
-        }
-
-        // Crear un nuevo iframe para cargar el video
-        const newIframe = document.createElement('iframe');
-        newIframe.id = "inlineFrameResult";
-        newIframe.src = url;
-        newIframe.frameBorder = 0;
-        newIframe.allowFullscreen = true;
-        contenidoIframe.appendChild(newIframe);
-        currentIframe = newIframe;
-
-        // Mostrar el contenido del servidor
-        contenidoIframe.style.display = "block";
-        document.getElementById('titulo-capitulo-servidor').textContent = `${capituloTexto} - ${servidorTexto}`;
-      }
-    }
-
-    function obtenerUrlCapituloServidor(capitulo, servidor) {
-      const opciones = opcionesServidor[capitulo];
-
-      if (opciones) {
-        const opcionSeleccionada = opciones.find(opcion => opcion.servidor === servidor);
-
-        if (opcionSeleccionada) {
-          return opcionSeleccionada.url;
-        }
-      }
-
-      return "";
-    }
-
-    function reiniciarMenus() {
-      while (servidorSelect.firstChild) {
-        servidorSelect.removeChild(servidorSelect.firstChild);
-      }
-      servidorSelect.appendChild(document.createElement('option'));
-      servidorSelect.firstChild.value = "";
-      servidorSelect.firstChild.textContent = "Seleccionar...";
-      continuarButton.disabled = true;
-      contenidoIframe.style.display = "none";
-      document.getElementById('titulo-capitulo-servidor').textContent = "";
-      capituloAnterior = "";
-      servidorSelect.disabled = true;
-    }
-
-    // Reiniciar los menús al cargar la página
-    reiniciarMenus();
-  </script>
+  });
+</script>
+</div>
+<div id="preloader"></div>
 </body>
 </html>

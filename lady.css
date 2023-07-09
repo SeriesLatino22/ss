@@ -196,7 +196,7 @@ body
    bottom: 0;
    left: 0;
    background-color: #000000;
-   opacity: 0.78;
+   opacity: 0.84;
 }
 #wb_LayoutGrid2
 {
@@ -524,7 +524,7 @@ body
 }
 #InlineFrame1
 {
-   display: block;
+   display: none;
    float: left;
    width: 100%;
    height: 605px;
