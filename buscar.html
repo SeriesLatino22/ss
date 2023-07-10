@@ -5,24 +5,8 @@
 <title>Untitled Page</title>
 <meta name="generator" content="WYSIWYG Web Builder 18 - https://www.wysiwygwebbuilder.com">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="font-awesome.min.css" rel="stylesheet">
 <link href="Sintv2.css" rel="stylesheet">
 <link href="buscar.css" rel="stylesheet">
-<script src="jquery-3.6.0.min.js"></script>
-<script src="wb.overlay.min.js"></script>
-<script src="wb.drilldownmenu.min.js"></script>
-<script>
-$(document).ready(function()
-{
-   $('#OverlayMenu2-overlay').overlay({hideTransition:true});
-   $('.OverlayMenu2').drilldownmenu({backText: 'Atrás'});
-   $('#OverlayMenu2').on('click', function(e)
-   {
-      $.overlay.show($('#OverlayMenu2-overlay'));
-      return false;
-   });
-});
-</script>
 </head>
 <body <!DOCTYPE html>
 <html>
@@ -39,82 +23,85 @@ $(document).ready(function()
     </div>
     <p id="searchResults" style="display: none;"></p>
     <div id="gallery" class="gallery">
-      <a class="image" href="https://example.com/pagina1.html" data-tags="lady la vendedora de rosas">
+      <a class="image" href="#" onclick="openLink('https://example.com/pagina1.html')" data-tags="lady la vendedora de rosas">
         <img src="https://i.ibb.co/Zmx9K9s/IMG-20220907-004449-955.jpg" alt="la">
         <p class="title">Lady, la vendedora de rosas</p>
       </a>
-      <a class="image" href="https://example.com/pagina2.html" data-tags="li">
+      <a class="image" href="#" onclick="openLink('https://example.com/pagina2.html')" data-tags="lady la vendedora de rosas">
         <img src="https://i.ibb.co/Zmx9K9s/IMG-20220907-004449-955.jpg" alt="le">
         <p class="title">Lady, la vendedora de rosas</p>
       </a>
-      <a class="image" href="https://example.com/pagina3.html" data-tags="l9">
+      <a class="image" href="#" onclick="openLink('https://example.com/pagina3.html')" data-tags="lady la vendedora de rosas">
         <img src="https://i.ibb.co/Zmx9K9s/IMG-20220907-004449-955.jpg" alt="li">
         <p class="title">Lady, la vendedora de rosas</p>
       </a>
-      <a class="image" href="https://example.com/pagina4.html" data-tags="li3">
+      <a class="image" href="#" onclick="openLink('https://example.com/pagina4.html')" data-tags="lady la vendedora de rosas">
         <img src="https://i.ibb.co/Zmx9K9s/IMG-20220907-004449-955.jpg" alt="lo">
         <p class="title">Lady, la vendedora de rosas</p>
       </a>
     </div>
   </div>
 
+  
+  <script>
+    function openLink(url) {
+      window.top.location.href = url;
+    }
 
+    document.addEventListener('DOMContentLoaded', function() {
+      const searchTerm = 'money'; // Término de búsqueda predeterminado
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const searchTerm = 'money'; // Término de búsqueda predeterminado
+      const searchInput = document.getElementById('search');
+      const searchButton = document.getElementById('searchBtn');
+      const gallery = document.getElementById('gallery');
+      const searchResults = document.getElementById('searchResults');
+      const images = Array.from(document.querySelectorAll('.image'));
+      const maxResults = 2; // Máximo de resultados a mostrar
 
-    const searchInput = document.getElementById('search');
-    const searchButton = document.getElementById('searchBtn');
-    const gallery = document.getElementById('gallery');
-    const searchResults = document.getElementById('searchResults');
-    const images = Array.from(document.querySelectorAll('.image'));
-    const maxResults = 5; // Máximo de resultados a mostrar
-
-    searchInput.value = searchTerm;
-    performSearch(searchTerm);
-
-    searchButton.addEventListener('click', function() {
-      const searchTerm = searchInput.value.toLowerCase();
+      searchInput.value = searchTerm;
       performSearch(searchTerm);
-    });
 
-    searchInput.addEventListener('keyup', function(event) {
-      if (event.key === 'Enter' || event.keyCode === 13) {
+      searchButton.addEventListener('click', function() {
         const searchTerm = searchInput.value.toLowerCase();
         performSearch(searchTerm);
+      });
+
+      searchInput.addEventListener('keyup', function(event) {
+        if (event.key === 'Enter' || event.keyCode === 13) {
+          const searchTerm = searchInput.value.toLowerCase();
+          performSearch(searchTerm);
+        }
+      });
+
+      function performSearch(searchTerm) {
+        let count = 0;
+        let resultsMessage = '';
+
+        if (searchTerm !== '') {
+          resultsMessage = `Resultados con la palabra "${searchTerm}":`;
+
+          images.forEach(function(image) {
+            const tags = image.getAttribute('data-tags').toLowerCase();
+
+            if (count < maxResults && tags.includes(searchTerm)) {
+              image.style.display = 'block';
+              count++;
+            } else {
+              image.style.display = 'none';
+            }
+          });
+        } else {
+          resultsMessage = 'No ingresaste ninguna palabra';
+          images.forEach(function(image) {
+            image.style.display = 'none';
+          });
+        }
+
+        searchResults.style.display = 'block';
+        searchResults.textContent = `${resultsMessage} ${count}`;
       }
     });
-
-    function performSearch(searchTerm) {
-  let count = 0;
-  let resultsMessage = '';
-
-  if (searchTerm !== '') {
-    resultsMessage = `Resultados con la palabra "${searchTerm}":`;
-
-    images.forEach(function(image) {
-      const tags = image.getAttribute('data-tags').toLowerCase();
-
-      if (count < maxResults && tags.includes(searchTerm)) {
-        image.style.display = 'block';
-        count++;
-      } else {
-        image.style.display = 'none';
-      }
-    });
-  } else {
-    resultsMessage = 'No ingresaste ninguna palabra';
-    images.forEach(function(image) {
-      image.style.display = 'none';
-    });
-  }
-
-  searchResults.style.display = 'block';
-  searchResults.textContent = `${resultsMessage} ${count}`;
-}
-  });
-</script>
+  </script>
 </body>
 </html>
 >
@@ -128,42 +115,6 @@ $(document).ready(function()
 </div>
 </div>
 
-<div id="h" style="position:fixed;text-align:center;left:0px;top:70px;width:40px;height:37px;z-index:4;">
-<div id="h_Container" style="width:40px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
-<div id="wb_OverlayMenu2" style="position:absolute;left:0px;top:0px;width:40px;height:37px;z-index:1;">
-<a href="#" id="OverlayMenu2">
-<span class="line"></span>
-<span class="line">
-</span><span class="line"></span>
-</a>
-</div>
-</div>
-</div>
-<div id="OverlayMenu2-overlay">
-<div class="OverlayMenu2">
-<ul class="drilldown-menu" role="menu">
-<li><a role="menuitem" href="./index.html" class="OverlayMenu2-effect"><i class="fa fa-home overlay-icon"></i>Inicio</a></li>
-<li>
-<a role="menuitem" href="#" class="OverlayMenu2-effect"><i class="fa fa-caret-right overlay-icon"></i>Categorias</a>
-<ul class="drilldown-submenu" role="menu">
-<li><a role="menuitem" href="./Series.html" class="OverlayMenu2-effect"><i class="fa fa-play-circle overlay-icon"></i>Series</a></li>
-<li><a role="menuitem" href="./Peliculas.html" class="OverlayMenu2-effect"><i class="fa fa-play-circle overlay-icon"></i>Peliculas</a></li>
-<li><a role="menuitem" href="./Todas.html" class="OverlayMenu2-effect"><i class="fa fa-play-circle overlay-icon"></i>Ver&nbsp;todas</a></li>
-</ul>
-</li>
-<li><a role="menuitem" href="./buscar.html" class="OverlayMenu2-effect"><i class="fa fa-search overlay-icon"></i>Buscar</a></li>
-<li><a role="menuitem" href="./favoritos.html" class="OverlayMenu2-effect"><i class="fa fa-heart overlay-icon"></i>Favoritos</a></li>
-<li>
-<a role="menuitem" href="#" class="OverlayMenu2-effect"><i class="fa fa-circle overlay-icon"></i>En&nbsp;vivo</a>
-<ul class="drilldown-submenu" role="menu">
-<li><a role="menuitem" href="#" class="OverlayMenu2-effect"><i class="fa fa-circle overlay-icon"></i>Tv&nbsp;Nacional</a></li>
-<li><a role="menuitem" href="https://fudfkzkl.blogspot.com/p/eventos-del-dia.html" class="OverlayMenu2-effect"><i class="fa fa-circle overlay-icon"></i>Futbol&nbsp;en&nbsp;vivo</a></li>
-</ul>
-</li>
-   </ul>
-</div>
-<a class="close-button" id="OverlayMenu2-close" href="#" role="button" aria-hidden="true"><span></span></a>
-</div>
 <script>
         document.addEventListener('DOMContentLoaded', () => {
             var disclaimer = document.querySelector("img[alt='www.000webhost.com']");

@@ -9,6 +9,20 @@ body
    margin: 0;
    padding: 0;
 }
+#InlineFrame1
+{
+   border: 0px solid transparent;
+   border-radius: 0px;
+   margin: 0;
+}
+#InlineFrame1
+{
+   display: none;
+   float: left;
+   width: 100%;
+   height: 425px;
+   vertical-align: top;
+}
 #wb_LayoutGrid1
 {
    clear: both;
@@ -373,21 +387,99 @@ body
 {
    transition: all 500ms linear;
 }
-#wb_Image5
+#wb_Image1
 {
    vertical-align: top;
 }
-#Image5
+#Image1
 {
    border: 0px solid #000000;
    border-radius: 0px;
    padding: 0;
-   filter: drop-shadow(0px 3px 10px rgba(255,255,255,1.00));
    margin: 0;
    left: 0;
    top: 0;
    width: 100%;
    height: 100%;
+}
+#Layer2
+{
+   background-color: transparent;
+   background-image: none;
+   border-radius: 0px;
+}
+#wb_Icon1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #245580;
+   border-radius: 0px;
+   text-align: center;
+   margin: 0;
+   padding: 0;
+   vertical-align: top;
+}
+#Icon1
+{
+   height: 35px;
+   width: 41px;
+}
+#Icon1 i
+{
+   color: #F5F5F5;
+   display: inline-block;
+   font-size: 35px;
+   line-height: 35px;
+   vertical-align: middle;
+   width: 34px;
+}
+#wb_Icon1:hover #Icon1 i
+{
+   color: #FFFFFF;
+}
+#Layer1
+{
+   background-color: transparent;
+   background-image: none;
+   border-radius: 10px;
+   opacity: 0.95;
+   padding: 0;
+}
+#Layer1
+{
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   justify-content: center;
+}
+#wb_Icon2
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #245580;
+   border-radius: 0px;
+   text-align: center;
+   margin: 0;
+   padding: 0;
+   vertical-align: top;
+}
+#Icon2
+{
+   height: 49px;
+   width: 47px;
+}
+#Icon2 i
+{
+   color: #FF0000;
+   display: inline-block;
+   font-size: 47px;
+   line-height: 49px;
+   vertical-align: middle;
+   width: 46px;
+}
+#wb_Icon2:hover #Icon2 i
+{
+   color: #FF0000;
 }
 
 .social-button {
