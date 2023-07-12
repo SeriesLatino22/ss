@@ -26,7 +26,7 @@ function SearchDatabase()
    this[database_length++] = new SearchPage("Series.html", "Untitled Page", "Series   ", "");
    this[database_length++] = new SearchPage("Todas.html", "Untitled Page", "Todas   ", "");
    this[database_length++] = new SearchPage("favoritos.html", "Untitled Page", "Favoritos  Al ser una aplicación libre sin registro ni base de datos Al borrar los datos de la aplicación o desinstalar la app y volverla a instalar, podría borrar tus favoritos   ", "");
-   this[database_length++] = new SearchPage("buscar.html", "Untitled Page", " ", "");
+   this[database_length++] = new SearchPage("results.html", "Untitled Page", " ", "");
    this[database_length++] = new SearchPage("master.html", "Untitled Page", " ", "");
    this[database_length++] = new SearchPage("Temporadasalasdy2.1.html", "Untitled Page", " ", "");
    this[database_length++] = new SearchPage("savecap.html", "Untitled Page", " ", "");
@@ -40,5 +40,6 @@ function SearchDatabase()
    this[database_length++] = new SearchPage("page2.html", "Untitled Page", " ", "");
    this[database_length++] = new SearchPage("page3.html", "Untitled Page", " ", "");
    this[database_length++] = new SearchPage("page4.html", "Untitled Page", "Instructions  Click the unblock button, it will open advertisement, just close it and repeat the step     Instrucciones  Dale clic al botón desbloquear, se abrirá publicidad, solo ciérrala y repite el paso   ", "");
+   this[database_length++] = new SearchPage("buscador.html", "Untitled Page", " ", "");
    return this;
 }

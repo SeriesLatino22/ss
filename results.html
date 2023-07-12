@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Page</title>
+<meta name="generator" content="WYSIWYG Web Builder 18 - https://www.wysiwygwebbuilder.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="Sintv2.css" rel="stylesheet">
+<link href="results.css" rel="stylesheet">
+</head>
+<body <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Resultados de búsqueda</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="search-container">
+      <input type="text" id="search" placeholder="Buscar..." maxlength="30">
+      <button id="searchBtn">Buscar</button>
+    </div>
+    <p id="searchResults" style="display: none;"></p>
+    <div id="gallery" class="gallery">
+      <a class="image" href="https://example.com/pagina1.html" data-tags="lady la vendedora de rosas">
+        <img src="https://i.ibb.co/Zmx9K9s/IMG-20220907-004449-955.jpg" alt="la">
+        <p class="title">Lady, la vendedora de rosas</p>
+      </a>
+      <a class="image" href="https://example.com/pagina2.html" data-tags="li">
+        <img src="https://i.ibb.co/Zmx9K9s/IMG-20220907-004449-955.jpg" alt="le">
+        <p class="title">Lady, la vendedora de rosas</p>
+      </a>
+      <a class="image" href="https://example.com/pagina3.html" data-tags="l9">
+        <img src="https://i.ibb.co/Zmx9K9s/IMG-20220907-004449-955.jpg" alt="li">
+        <p class="title">Lady, la vendedora de rosas</p>
+      </a>
+      <a class="image" href="https://example.com/pagina4.html" data-tags="li3">
+        <img src="https://i.ibb.co/Zmx9K9s/IMG-20220907-004449-955.jpg" alt="lo">
+        <p class="title">Lady, la vendedora de rosas</p>
+      </a>
+    </div>
+  </div>
+
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const searchParams = new URLSearchParams(window.location.search);
+      const searchTerm = searchParams.get('searchTerm');
+
+      const searchInput = document.getElementById('search');
+      const searchButton = document.getElementById('searchBtn');
+      const gallery = document.getElementById('gallery');
+      const searchResults = document.getElementById('searchResults');
+      const images = Array.from(document.querySelectorAll('.image'));
+      const maxResults = 5;
+
+      searchInput.value = searchTerm;
+      performSearch(searchTerm);
+
+      searchButton.addEventListener('click', function() {
+        const searchTerm = searchInput.value.toLowerCase();
+        performSearch(searchTerm);
+      });
+
+      searchInput.addEventListener('keyup', function(event) {
+        if (event.key === 'Enter' || event.keyCode === 13) {
+          const searchTerm = searchInput.value.toLowerCase();
+          performSearch(searchTerm);
+        }
+      });
+
+      function performSearch(searchTerm) {
+        let count = 0;
+        let resultsMessage = '';
+
+        if (searchTerm !== '') {
+          resultsMessage = `Resultados con la palabra "${searchTerm}":`;
+
+          images.forEach(function(image) {
+            const tags = image.getAttribute('data-tags').toLowerCase();
+
+            if (count < maxResults && tags.includes(searchTerm)) {
+              image.style.display = 'block';
+              count++;
+            } else {
+              image.style.display = 'none';
+            }
+          });
+        } else {
+          resultsMessage = 'No ingresaste ninguna palabra';
+          images.forEach(function(image) {
+            image.style.display = 'none';
+          });
+        }
+
+        searchResults.style.display = 'block';
+        searchResults.textContent = `${resultsMessage} ${count}`;
+      }
+    });
+  </script>
+</body>
+</html>
+>
+<div id="wb_LayoutGrid1">
+<div id="LayoutGrid1">
+<div class="row">
+<div class="col-1">
+
+</div>
+</div>
+</div>
+</div>
+
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            var disclaimer = document.querySelector("img[alt='www.000webhost.com']");
+            if(disclaimer) {
+                disclaimer.remove();
+            }
+        });
+    </script></body>
+</html>
