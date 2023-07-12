@@ -12,7 +12,10 @@ body
 #wb_LayoutGrid2
 {
    clear: both;
-   position: relative;
+   position: fixed;
+   left: 0;
+   top: 0;
+   z-index: 7777;
    table-layout: fixed;
    display: table;
    text-align: center;
@@ -197,7 +200,7 @@ body
 }
 #OverlayMenu2:hover .line
 {
-   background: #424242;
+   background: #A9A9A9;
 }
 #OverlayMenu2-close
 {
@@ -482,20 +485,22 @@ body
    margin: 0;
    padding: 0;
    vertical-align: top;
+   display:inline-block;
+   position:relative;
 }
 #Icon2
 {
-   height: 26px;
-   width: 34px;
+   height: 32px;
+   width: 39px;
 }
 #Icon2 i
 {
    color: #FF0000;
    display: inline-block;
-   font-size: 26px;
-   line-height: 26px;
+   font-size: 32px;
+   line-height: 32px;
    vertical-align: middle;
-   width: 25px;
+   width: 31px;
 }
 #wb_Icon2:hover #Icon2 i
 {
@@ -507,40 +512,20 @@ body
    background-image: none;
    border-radius: 0px;
 }
-#wb_Icon3
+#wb_Image4
 {
-   background-color: transparent;
-   background-image: none;
-   border: 0px solid #245580;
-   border-radius: 0px;
-   text-align: center;
-   margin: 0;
-   padding: 0;
    vertical-align: top;
 }
-#Icon3
+#Image4
 {
-   height: 35px;
-   width: 41px;
-}
-#Icon3 i
-{
-   color: #F5F5F5;
-   display: inline-block;
-   font-size: 35px;
-   line-height: 35px;
-   vertical-align: middle;
-   width: 34px;
-}
-#wb_Icon3:hover #Icon3 i
-{
-   color: #FFFFFF;
-}
-#cerrar
-{
-   background-color: transparent;
-   background-image: none;
+   border: 0px solid #000000;
    border-radius: 0px;
+   padding: 0;
+   margin: 0;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
 }
 
 .social-button {

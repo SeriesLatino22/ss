@@ -102,24 +102,25 @@ body
     #search {
       padding: 10px;
       margin-right: 10px;
-      background-color: transparent;
-      border: 1px solid #fff;
-      color: #fff;
+      background-color: white; /* Cambiar el fondo a blanco */
+      color: black; /* Cambiar el color del texto a negro */
       font-weight: bold;
       font-size: 16px;
       outline: none;
       width: 250px;
       transition: all 0.3s ease;
+      border: 1px solid #fff;
+      border-radius: 4px; /* Agregar borde redondeado de 4px */
     }
 
     #search::placeholder {
-      color: #fff;
+      color: #aaa; /* Cambiar el color del marcador de posición */
       font-weight: bold;
       font-size: 16px;
     }
 
-    #search:focus {
-      border: 1px solid #4caf50;
+    #search:focus::placeholder {
+      color: transparent; /* Ocultar el marcador de posición cuando se hace clic en el campo */
     }
 
     #searchBtn {

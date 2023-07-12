@@ -11,7 +11,6 @@
 <html>
 <head>
   <meta charset="UTF-8">
-
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -39,6 +38,18 @@
           const searchTerm = searchInput.value.toLowerCase();
           const url = `results.html?searchTerm=${searchTerm}`;
           window.open(url, '_blank');
+        }
+      });
+
+      searchInput.addEventListener('focus', function() {
+        if (searchInput.value === 'Buscar...') {
+          searchInput.value = ''; /* Limpiar el campo cuando se hace clic en él */
+        }
+      });
+
+      searchInput.addEventListener('blur', function() {
+        if (searchInput.value === '') {
+          searchInput.value = 'Buscar...'; /* Restaurar el marcador de posición si el campo está vacío */
         }
       });
     });
