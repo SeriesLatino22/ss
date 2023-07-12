@@ -9,6 +9,76 @@ body
    margin: 0;
    padding: 0;
 }
+#wb_LayoutGrid2
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   border-radius: 0px;
+   box-sizing: border-box;
+   margin: 0;
+}
+#LayoutGrid2
+{
+   box-sizing: border-box;
+   padding: 10px 0 10px 0;
+   margin-right: auto;
+   margin-left: auto;
+}
+#LayoutGrid2 > .row
+{
+   margin-right: 0;
+   margin-left: 0;
+}
+#LayoutGrid2 > .row > .col-1
+{
+   box-sizing: border-box;
+   font-size: 0;
+   min-height: 1px;
+   padding-right: 0px;
+   padding-left: 0px;
+   position: relative;
+}
+#LayoutGrid2 > .row > .col-1
+{
+   float: left;
+}
+#LayoutGrid2 > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 100%;
+   text-align: center;
+}
+#LayoutGrid2:before,
+#LayoutGrid2:after,
+#LayoutGrid2 .row:before,
+#LayoutGrid2 .row:after
+{
+   display: table;
+   content: " ";
+}
+#LayoutGrid2:after,
+#LayoutGrid2 .row:after
+{
+   clear: both;
+}
+@media (max-width: 480px)
+{
+#LayoutGrid2 > .row > .col-1
+{
+   float: none;
+   width: 100% !important;
+}
+}
 #InlineFrame1
 {
    border: 0px solid #C0C0C0;
@@ -465,6 +535,12 @@ body
 #wb_Icon3:hover #Icon3 i
 {
    color: #FFFFFF;
+}
+#cerrar
+{
+   background-color: transparent;
+   background-image: none;
+   border-radius: 0px;
 }
 
 .social-button {
