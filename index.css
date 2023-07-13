@@ -170,7 +170,7 @@ body
 {
    background-color: #424242;
    background-image: none;
-   border: 0px solid #424242;
+   border: 0px solid #FFFFFF;
    border-radius: 0px;
    margin: 0;
 }
@@ -190,10 +190,10 @@ body
 }
 #OverlayMenu2 .line
 {
-   width: 28px;
+   width: 27px;
    height: 5px;
    position: relative;
-   top: 1px;
+   top: 2px;
    background: #FFFFFF;
    display: block;
    margin: 5px auto;
@@ -327,103 +327,74 @@ body
 }
 #OverlayMenu2-overlay
 {
+   opacity: 0;
    visibility: hidden;
-   width: 0;
-   left: 50%;
-   transform: translateX(-50%);
-   transition: width 400ms 0.3s, visibility 0s 700ms;
+   transition: opacity 400ms, visibility 0s 400ms;
 }
 #OverlayMenu2-overlay.show
 {
+   opacity: 1;
    visibility: visible;
-   width: 100%;
-   transition: width 400ms;
+   transition: opacity 400ms;
 }
-#OverlayMenu2-overlay .OverlayMenu2
+#OverlayMenu2-overlay ul li a
 {
    opacity: 0;
-   transition: opacity 0.3s 400ms;
+   transform: translateY(100px);
+   transition: transform 400ms, opacity 400ms;
 }
-#OverlayMenu2-overlay.show .OverlayMenu2
+#OverlayMenu2-overlay.show ul li a
 {
    opacity: 1;
-   transition-delay: 400ms;
+   transform: translateY(0);
 }
-#OverlayMenu2-overlay.hide .OverlayMenu2
+#OverlayMenu2-overlay.show ul li:nth-child(2) a
 {
-   transition-delay: 0s;
+   transition-delay: 50ms;
 }
-.OverlayMenu2 li.drilldown-back > a 
+#OverlayMenu2-overlay.show ul li:nth-child(3) a
 {
-   padding-left: 40px;
-   background: rgba(0,0,0,0.1);
+   transition-delay: 100ms;
 }
-.OverlayMenu2 li.drilldown-back > a:hover
+#OverlayMenu2-overlay.show ul li:nth-child(4) a
 {
-   background-color: #CCCCCC;
+   transition-delay: 150ms;
 }
-.OverlayMenu2 li.drilldown-back a:after,
-.OverlayMenu2 li > a:not(:only-child):after
+#OverlayMenu2-overlay.show ul li:nth-child(5) a
 {
-   position: absolute;
-   top: 50%;
-   transform: translateY(-50%);
-   display: inline-block;
-   width: 0;
-   height: 0;
-   margin-left: 17px;
-   border-left: 17px solid #FFFFFF;
-   border-top: 15px solid transparent;
-   border-bottom: 15px solid transparent;
-   border-right: 0 dotted;
-   content: " ";
+   transition-delay: 200ms;
 }
-.OverlayMenu2 li.drilldown-back a:after
+.OverlayMenu2 .sub-menu
 {
-   left: 17px;
-   color: #FFFFFF;
-   transform: translateY(-50%) rotate(180deg);
-}
-.OverlayMenu2 li.drilldown-back a:hover:after,
-.OverlayMenu2 li > a:not(:only-child):hover:after
-{
-   border-left-color: #424242;
-}
-.OverlayMenu2 li > a:after
-{
-   color: rgba(0,0,0,0.15);
-   right: 10px;
-}
-.OverlayMenu2 .drilldown-menu 
-{
-   margin: 0;
-   width: 100%;
-}
-.OverlayMenu2 li .drilldown-submenu 
-{
+   padding-top: 0;
+   padding-left: 15px !important;
    display: none;
 }
-.drilldown-menu.drilldown-subview li,
-.drilldown-menu.drilldown-subview li.drilldown-subviewopen > a,
-.drilldown-menu.drilldown-subview li.drilldown-subview > a 
+.OverlayMenu2 .item-has-children > a 
 {
-   display: none;
+   position: relative;
 }
-.drilldown-menu.drilldown-subview li.drilldown-subview,
-.drilldown-menu.drilldown-subview li.drilldown-subview .drilldown-submenu,
-.drilldown-menu.drilldown-subview li.drilldown-subviewopen,
-.drilldown-menu.drilldown-subview li.drilldown-subviewopen > .drilldown-submenu,
-.drilldown-menu.drilldown-subview li.drilldown-subviewopen > .drilldown-submenu > li 
+.OverlayMenu2 .item-has-children > a::after
 {
+   background: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%228%22%20height%3D%2211%22%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M8%205.5L1.9%2011%20.1%209.4l4.3-3.8L.1%201.8%202%20.1l6%205.4%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E') no-repeat center center;
+   background-size: 8px 11px;
+   bottom: auto;
+   content: "";
    display: block;
-}
-.OverlayMenu2 > .drilldown-submenu
-{
-   left: 0;
-   margin: 0;
+   height: 11px;
    position: absolute;
-   top: 50px;
-   width: 100%;
+   right: 1em;
+   top: 50%;
+   width: 8px;
+   transform: translateY(-50%);
+}
+.OverlayMenu2 .item-has-children > a.submenu-open::after
+{
+   transform: translateY(-50%) rotate(90deg);
+}
+.OverlayMenu2 .item-has-children > a:hover::after
+{
+   background: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%228%22%20height%3D%2211%22%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cpath%20fill%3D%22%23424242%22%20d%3D%22M8%205.5L1.9%2011%20.1%209.4l4.3-3.8L.1%201.8%202%20.1l6%205.4%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E') no-repeat center center;
 }
 #OverlayMenu2-overlay .overlay-icon
 {

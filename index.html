@@ -13,14 +13,17 @@
 <link href="index.css" rel="stylesheet">
 <script src="jquery-3.6.0.min.js"></script>
 <script src="wb.overlay.min.js"></script>
-<script src="wb.drilldownmenu.min.js"></script>
 <script src="jquery-ui.min.js"></script>
 <script src="wwb18.min.js"></script>
 <script>
 $(document).ready(function()
 {
    $('#OverlayMenu2-overlay').overlay({hideTransition:true});
-   $('.OverlayMenu2').drilldownmenu({backText: 'Atrás'});
+   $('.OverlayMenu2 .item-has-children').children('a').on('click', function(event)
+   {
+      event.preventDefault();
+      $(this).toggleClass('submenu-open').next('.sub-menu').slideToggle(0,'linear').end().parent('.item-has-children').siblings('.item-has-children').children('a').removeClass('submenu-open').next('.sub-menu').slideUp(0,'linear');
+   });
    $('#OverlayMenu2').on('click', function(e)
    {
       $.overlay.show($('#OverlayMenu2-overlay'));
@@ -856,16 +859,16 @@ doScroller(messages[0], 0, 1);
 <div id="Layer2" style="position:fixed;text-align:center;left:auto;right:2px;top:30px;width:62px;height:34px;z-index:12;">
 <div id="Layer2_Container" style="width:62px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
 <div id="wb_Image4" style="position:absolute;left:0px;top:0px;width:62px;height:34px;z-index:6;">
-<a href="#" onclick="ShowObjectWithEffect('h', 0, 'fade', 0);ShowObjectWithEffect('wb_Icon2', 1, 'fade', 500);ShowObjectWithEffect('wb_Image4', 0, 'fade', 500);ShowObjectWithEffect('InlineFrame1', 1, 'shake', 500, 'swing');return false;"><img src="images/image-removebg-preview.png" id="Image4" alt="" width="62" height="35"></a></div>
+<a href="#" onclick="ShowObjectWithEffect('h', 0, 'fade', 0);ShowObjectWithEffect('wb_Icon2', 1, 'fade', 500);ShowObjectWithEffect('wb_Image4', 0, 'fade', 500);ShowObjectWithEffect('InlineFrame1', 1, 'puff', 500, 'swing');return false;"><img src="images/image-removebg-preview.png" id="Image4" alt="" width="62" height="35"></a></div>
 </div>
 </div>
 <div id="OverlayMenu2-overlay">
 <div class="OverlayMenu2">
-<ul class="drilldown-menu" role="menu">
+<ul class="OverlayMenu2" role="menu">
 <li><a role="menuitem" href="./index.html" class="OverlayMenu2-effect"><i class="fa fa-home overlay-icon"></i>Inicio</a></li>
-<li>
+<li class="item-has-children">
 <a role="menuitem" href="#" class="OverlayMenu2-effect"><i class="fa fa-caret-right overlay-icon"></i>Categorias</a>
-<ul class="drilldown-submenu" role="menu">
+<ul class="sub-menu" role="menu">
 <li><a role="menuitem" href="./Series.html" class="OverlayMenu2-effect"><i class="fa fa-play-circle overlay-icon"></i>Series</a></li>
 <li><a role="menuitem" href="./Peliculas.html" class="OverlayMenu2-effect"><i class="fa fa-play-circle overlay-icon"></i>Peliculas</a></li>
 <li><a role="menuitem" href="./Todas.html" class="OverlayMenu2-effect"><i class="fa fa-play-circle overlay-icon"></i>Ver&nbsp;todas</a></li>
@@ -873,9 +876,9 @@ doScroller(messages[0], 0, 1);
 </li>
 <li><a role="menuitem" href="./results.html" class="OverlayMenu2-effect"><i class="fa fa-search overlay-icon"></i>Buscar</a></li>
 <li><a role="menuitem" href="./favoritos.html" class="OverlayMenu2-effect"><i class="fa fa-heart overlay-icon"></i>Favoritos</a></li>
-<li>
+<li class="item-has-children">
 <a role="menuitem" href="#" class="OverlayMenu2-effect"><i class="fa fa-circle overlay-icon"></i>En&nbsp;vivo</a>
-<ul class="drilldown-submenu" role="menu">
+<ul class="sub-menu" role="menu">
 <li><a role="menuitem" href="#" class="OverlayMenu2-effect"><i class="fa fa-circle overlay-icon"></i>Tv&nbsp;Nacional</a></li>
 <li><a role="menuitem" href="https://fudfkzkl.blogspot.com/p/eventos-del-dia.html" class="OverlayMenu2-effect"><i class="fa fa-circle overlay-icon"></i>Futbol&nbsp;en&nbsp;vivo</a></li>
 </ul>
