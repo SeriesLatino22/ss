@@ -184,13 +184,21 @@ $(window).on('load', function() {
         newIframe.src = url;
         newIframe.frameBorder = 0;
         newIframe.allowFullscreen = true;
-        newIframe.sandbox = "allow-scripts allow-same-origin";
         contenidoIframe.appendChild(newIframe);
         currentIframe = newIframe;
 
         // Mostrar el contenido del servidor
         contenidoIframe.style.display = "block";
         document.getElementById('titulo-capitulo-servidor').textContent = `${capituloTexto} - ${servidorTexto}`;
+
+        // Bloquear las ventanas emergentes en el nuevo iframe
+        newIframe.addEventListener('load', function() {
+          newIframe.contentWindow.open = function() {
+            // Realizar acciones que desees realizar en lugar de abrir la ventana emergente
+            // Por ejemplo, mostrar un mensaje de advertencia o redirigir a otra página
+            console.log('Se intentó abrir una ventana emergente');
+          };
+        });
       }
     }
 
@@ -224,18 +232,6 @@ $(window).on('load', function() {
 
     // Reiniciar los menús al cargar la página
     reiniciarMenus();
-  </script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const enlaces = document.querySelectorAll('a');
-      enlaces.forEach(function(enlace) {
-        enlace.addEventListener('click', function(event) {
-          event.preventDefault(); // Evita la acción predeterminada del enlace
-          // Realiza otras acciones que desees realizar en lugar de abrir la ventana emergente
-        });
-      });
-    });
   </script>
 </body>
 </html>
