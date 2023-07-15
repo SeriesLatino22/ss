@@ -8,7 +8,6 @@
 <link href="Sintv2.css" rel="stylesheet">
 <link href="cartltemp1.css" rel="stylesheet">
 <script src="jquery-3.6.0.min.js"></script>
-<script src="iframe-sandbox.min.js"></script>
 <script>
 $(document).ready(function() {
    if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
@@ -185,7 +184,29 @@ $(window).on('load', function() {
         newIframe.src = url;
         newIframe.frameBorder = 0;
         newIframe.allowFullscreen = true;
-        contenidoIframe.appendChild(newIframe);
+        newIframe.style.position = "relative";
+        newIframe.style.zIndex = 1;
+        newIframe.style.pointerEvents = "none";
+
+        const iframeContainer = document.createElement('div');
+        iframeContainer.style.position = "relative";
+        iframeContainer.style.width = "100%";
+        iframeContainer.style.height = "100%";
+        iframeContainer.appendChild(newIframe);
+
+        const clickjackingOverlay = document.createElement('div');
+        clickjackingOverlay.style.position = "absolute";
+        clickjackingOverlay.style.top = 0;
+        clickjackingOverlay.style.left = 0;
+        clickjackingOverlay.style.width = "100%";
+        clickjackingOverlay.style.height = "100%";
+        clickjackingOverlay.style.background = "transparent";
+        clickjackingOverlay.style.pointerEvents = "auto";
+        clickjackingOverlay.addEventListener('click', handleOverlayClick);
+
+        iframeContainer.appendChild(clickjackingOverlay);
+
+        contenidoIframe.appendChild(iframeContainer);
         currentIframe = newIframe;
 
         // Mostrar el contenido del servidor
@@ -222,20 +243,13 @@ $(window).on('load', function() {
       servidorSelect.disabled = true;
     }
 
+    function handleOverlayClick(event) {
+      event.preventDefault(); // Evitar la acción predeterminada del click
+      // Realizar otras acciones que desees realizar en lugar de abrir la ventana emergente
+    }
+
     // Reiniciar los menús al cargar la página
     reiniciarMenus();
-  </script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const enlaces = document.querySelectorAll('a');
-      enlaces.forEach(function(enlace) {
-        enlace.addEventListener('click', function(event) {
-          event.preventDefault(); // Evita la acción predeterminada del enlace
-          // Realiza otras acciones que desees realizar en lugar de abrir la ventana emergente
-        });
-      });
-    });
   </script>
 </body>
 </html>
