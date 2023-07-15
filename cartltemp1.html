@@ -246,6 +246,21 @@ $(window).on('load', function()
     // Reiniciar los menús al cargar la página
     reiniciarMenus();
   </script>
+
+   <script>
+
+document.addEventListener('DOMContentLoaded', function() {
+  const enlaces = document.querySelectorAll('a');
+  enlaces.forEach(function(enlace) {
+    enlace.addEventListener('click', function(event) {
+      event.preventDefault(); // Evita la acción predeterminada del enlace
+      // Realiza otras acciones que desees realizar en lugar de abrir la ventana emergente
+    });
+  });
+});
+
+      
+   </script>
 </body>
 </html>
 </head>
