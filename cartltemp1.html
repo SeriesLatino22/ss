@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -8,8 +8,6 @@
 <link href="Sintv2.css" rel="stylesheet">
 <link href="cartltemp1.css" rel="stylesheet">
 <script src="jquery-3.6.0.min.js"></script>
-   <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
-<script src="https://unpkg.com/@popperjs/core@2"></script>
 <script>
 $(document).ready(function()
 {
@@ -20,15 +18,7 @@ $(window).on('load', function()
    $('#preloader').remove();
 });
 </script>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Untitled Page</title>
-<meta name="generator" content="WYSIWYG Web Builder 18 - https://www.wysiwygwebbuilder.com">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="SeriesLatino2.css" rel="stylesheet">
-<link href="ladytem1.css" rel="stylesheet">
+
 <script src="jquery-3.6.0.min.js"></script>
 <script>
 $(document).ready(function()
@@ -40,6 +30,7 @@ $(window).on('load', function()
    $('#preloader').remove();
 });
 </script>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -206,6 +197,7 @@ $(window).on('load', function()
         newIframe.src = url;
         newIframe.frameBorder = 0;
         newIframe.allowFullscreen = true;
+        newIframe.sandbox = "allow-scripts";
         contenidoIframe.appendChild(newIframe);
         currentIframe = newIframe;
 
@@ -247,71 +239,16 @@ $(window).on('load', function()
     reiniciarMenus();
   </script>
 
-   <script>
-
-document.addEventListener('DOMContentLoaded', function() {
-  const enlaces = document.querySelectorAll('a');
-  enlaces.forEach(function(enlace) {
-    enlace.addEventListener('click', function(event) {
-      event.preventDefault(); // Evita la acción predeterminada del enlace
-      // Realiza otras acciones que desees realizar en lugar de abrir la ventana emergente
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const enlaces = document.querySelectorAll('a');
+      enlaces.forEach(function(enlace) {
+        enlace.addEventListener('click', function(event) {
+          event.preventDefault(); // Evita la acción predeterminada del enlace
+          // Realiza otras acciones que desees realizar en lugar de abrir la ventana emergente
+        });
+      });
     });
-  });
-});
-
-      
-   </script>
-</body>
-</html>
-</head>
-<body>
-<div id="wb_LayoutGrid1">
-<div id="LayoutGrid1">
-<div class="row">
-<div class="col-1">
-
-</div>
-</div>
-</div>
-</div>
-<div id="Html4" style="position:absolute;left:358px;top:279px;width:293px;height:118px;z-index:2">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-<div id="blocker">
-  <div id="container">
-    <button id="unlockButton"><i class="fas fa-lock"></i> Desbloquear contenido</button>
-    <div id="message">↑↑ Debes darle 3 veces al botón ↑↑</div>
-    <div id="adMessage">Se abrirá publicidad, solo ciérrala, ¡Gracias!</div>
-  </div>
-</div>
-
-
-<script>
-  var unlockButton = document.getElementById("unlockButton");
-  var message = document.getElementById("message");
-  var adMessage = document.getElementById("adMessage");
-  var clickCount = 0;
-  var urls = [
-    "https://www.highrevenuegate.com/gr68y57qs2?key=a12e88d2a2a8205d6611e540ddf0ae52",
-    "https://www.highrevenuegate.com/gr68y57qs2?key=a12e88d2a2a8205d6611e540ddf0ae52",
-    "https://www.highrevenuegate.com/gr68y57qs2?key=a12e88d2a2a8205d6611e540ddf0ae52"
-  ];
-
-  unlockButton.addEventListener("click", function() {
-    clickCount++;
-    if (clickCount <= urls.length) {
-      window.open(urls[clickCount - 1], "_blank");
-      if (clickCount < urls.length) {
-        message.textContent = "Debes darle " + (urls.length - clickCount) + " veces más al botón";
-      } else {
-        message.textContent = "Se abrieron todas las páginas. ¡Cerrando todo!";
-        adMessage.style.display = "none";
-        document.getElementById("blocker").style.display = "none";
-      }
-    }
-  });
-</script>
-</div>
-<div id="preloader"></div>
+  </script>
 </body>
 </html>
