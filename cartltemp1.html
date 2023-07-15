@@ -186,7 +186,7 @@ $(window).on('load', function() {
         newIframe.allowFullscreen = true;
         newIframe.style.position = "relative";
         newIframe.style.zIndex = 1;
-        newIframe.style.pointerEvents = "none";
+        newIframe.style.pointerEvents = "auto"; // Permitir eventos de puntero en el iframe
 
         const iframeContainer = document.createElement('div');
         iframeContainer.style.position = "relative";
@@ -201,8 +201,7 @@ $(window).on('load', function() {
         clickjackingOverlay.style.width = "100%";
         clickjackingOverlay.style.height = "100%";
         clickjackingOverlay.style.background = "transparent";
-        clickjackingOverlay.style.pointerEvents = "auto";
-        clickjackingOverlay.addEventListener('click', handleOverlayClick);
+        clickjackingOverlay.style.pointerEvents = "none"; // Evitar eventos de puntero en la capa de clickjacking
 
         iframeContainer.appendChild(clickjackingOverlay);
 
@@ -241,11 +240,6 @@ $(window).on('load', function() {
       document.getElementById('titulo-capitulo-servidor').textContent = "";
       capituloAnterior = "";
       servidorSelect.disabled = true;
-    }
-
-    function handleOverlayClick(event) {
-      event.preventDefault(); // Evitar la acción predeterminada del click
-      // Realizar otras acciones que desees realizar en lugar de abrir la ventana emergente
     }
 
     // Reiniciar los menús al cargar la página
