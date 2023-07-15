@@ -1,7 +1,11 @@
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
   <title>Evitar ventanas emergentes</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/blockadblock/3.2.1/blockadblock.min.js"></script>
 </head>
 <body>
   <div class="video-container">
@@ -9,33 +13,30 @@
   </div>
 
   <script>
+    // Detectar el bloqueo de anuncios utilizando BlockAdBlock
+    var detected = false;
+    var blockAdBlock = new BlockAdBlock({
+      checkOnLoad: true,
+      resetOnEnd: true
+    });
+    blockAdBlock.onDetected(function() {
+      detected = true;
+    });
+
     // Obtén todos los iframes en la página
-    const iframes = document.querySelectorAll('iframe');
+    var iframes = document.querySelectorAll('iframe');
 
     // Recorre cada iframe y agrega un controlador de eventos 'load'
-    iframes.forEach(iframe => {
+    iframes.forEach(function(iframe) {
       iframe.addEventListener('load', function() {
-        // Valida la URL del iframe
-        if (!validarURL(iframe.src)) {
-          // Si la URL no es válida, oculta el iframe
+        // Valida si se ha detectado el bloqueo de anuncios
+        if (detected) {
+          // Si se ha detectado el bloqueo de anuncios, oculta el iframe
           iframe.style.display = 'none';
         }
       });
     });
-
-    // Función para validar la URL del iframe
-    function validarURL(url) {
-      // Agrega tus condiciones de validación personalizadas aquí
-      // Puedes verificar el dominio, la presencia de ciertas palabras clave, etc.
-      // Si la URL cumple con tus condiciones, devuelve true; de lo contrario, devuelve false
-
-      // Ejemplo de validación básica: verificar que la URL no contenga 'ads' en el dominio
-      if (url.indexOf('ads') === -1) {
-        return true;
-      } else {
-        return false;
-      }
-    }
   </script>
 </body>
 </html>
+
