@@ -9,24 +9,13 @@
 <link href="cartltemp1.css" rel="stylesheet">
 <script src="jquery-3.6.0.min.js"></script>
 <script>
-$(document).ready(function()
-{
-   if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {$('#preloader').remove();}
+$(document).ready(function() {
+   if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
+      $('#preloader').remove();
+   }
 });
-$(window).on('load', function()
-{
-   $('#preloader').remove();
-});
-</script>
 
-<script src="jquery-3.6.0.min.js"></script>
-<script>
-$(document).ready(function()
-{
-   if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {$('#preloader').remove();}
-});
-$(window).on('load', function()
-{
+$(window).on('load', function() {
    $('#preloader').remove();
 });
 </script>
@@ -80,7 +69,6 @@ $(window).on('load', function()
     </p>
   </div>
 
-  <script src="blockadblock.js"></script>
   <script>
     const capituloSelect = document.getElementById('capitulo');
     const servidorSelect = document.getElementById('servidor');
@@ -116,7 +104,7 @@ $(window).on('load', function()
     function actualizarOpcionesServidor() {
       const capituloSeleccionado = capituloSelect.value;
 
-     if (!capituloSeleccionado) {
+      if (!capituloSeleccionado) {
         reiniciarMenus();
         servidorSelect.disabled = true;
         return;
@@ -235,39 +223,9 @@ $(window).on('load', function()
       capituloAnterior = "";
       servidorSelect.disabled = true;
     }
-  </script>
 
-  <script src="blockadblock.js"></script>
-  <script>
-    // Bloquear Adblock
-    function adBlockDetected() {
-      // Aquí puedes agregar el código que deseas ejecutar cuando se detecte un bloqueador de anuncios
-      alert("Se ha detectado un bloqueador de anuncios. Por favor, desactívalo para continuar.");
-    }
-
-    function adBlockNotDetected() {
-      // Aquí puedes agregar el código que deseas ejecutar cuando no se detecta un bloqueador de anuncios
-      // Por ejemplo, cargar tu reproductor de video
-      cargarReproductor();
-    }
-
-    if (typeof blockAdBlock === 'undefined') {
-      // Si no se detecta la biblioteca blockAdBlock, carga tu reproductor de video
-      cargarReproductor();
-    } else {
-      blockAdBlock.onDetected(adBlockDetected);
-      blockAdBlock.onNotDetected(adBlockNotDetected);
-      blockAdBlock.on(true, adBlockDetected);
-      blockAdBlock.on(false, adBlockNotDetected);
-      blockAdBlock.check();
-    }
-
-    function cargarReproductor() {
-      // Aquí puedes agregar el código para cargar tu reproductor de video sin ventanas emergentes no deseadas
-      // Por ejemplo:
-      // const reproductor = document.getElementById('reproductor');
-      // reproductor.src = 'URL_DEL_REPRODUCTOR';
-    }
+    // Reiniciar los menús al cargar la página
+    reiniciarMenus();
   </script>
 
   <script>
