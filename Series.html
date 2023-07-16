@@ -81,36 +81,38 @@ $(window).on('load', function()
       -->
       <div class="movies-grid">
 
-          <div class="movie-card">
+       <div class="movie-card">
+  <a href="#" onclick="openLink('./lady.html')">
 
-            <div class="card-head">
-              <img data-src="./img/ladyop.webp" alt="Lady" class="card-img lazy">
+    <div class="card-head">
+      <img data-src="./img/ladyop.webp" alt="Lady" class="card-img lazy">
 
-              <div class="card-overlay">
+      <div class="card-overlay">
 
-                <div class="rating">
-                  <ion-icon name="star-outline"></ion-icon>
-                  <span>6.4</span>
-                </div>
+        <div class="rating">
+          <ion-icon name="star-outline"></ion-icon>
+          <span>6.4</span>
+        </div>
 
-                <div class="play">
-                 <a href="./lady.html"><ion-icon name="play-circle-outline"></ion-icon>
-                 </a>
-                </div>
+        <div class="play">
+          <ion-icon name="play-circle-outline"></ion-icon>
+        </div>
 
-              </div>
-            </div>
+      </div>
+    </div>
 
-            <div class="card-body">
-              <a href="./lady.html"><h3 class="card-title">Lady, la vendedora de rosas</h3>
+    <div class="card-body">
+      <h3 class="card-title">Lady, la vendedora de rosas</h3>
 
-              <div class="card-info">
-                <span class="genre">    </span>
-                <span class="year">     </span>
-              </div>
-            </div>
-</a>
-          </div>
+      <div class="card-info">
+        <span class="genre"> </span>
+        <span class="year"> </span>
+      </div>
+    </div>
+
+  </a>
+</div>
+
 
           <div class="movie-card">
 
@@ -643,5 +645,12 @@ $(window).on('load', function()
             }
         });
     </script><div id="preloader"></div>
+
+   <script>
+function openLink(url) {
+  window.top.location.href = url;
+}
+</script>
+
 </body>
 </html>
