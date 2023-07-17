@@ -71,37 +71,38 @@ $(window).on('load', function()
       -->
       <div class="movies-grid">
 
-       <div class="movie-card">
-  <a href="#" onclick="openLink('./lady.html')">
+          <div class="movie-card">
 
-    <div class="card-head">
-      <img data-src="./img/ladyop.webp" alt="Lady" class="card-img lazy">
+            <div class="card-head">
+              <img data-src="./img/ladyop.webp" alt="Lady" class="card-img lazy">
 
-      <div class="card-overlay">
+              <div class="card-overlay">
 
-        <div class="rating">
-          <ion-icon name="star-outline"></ion-icon>
-          <span>6.4</span>
-        </div>
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>6.4</span>
+                </div>
 
-        <div class="play">
-          <ion-icon name="play-circle-outline"></ion-icon>
-        </div>
+                <div class="play">
+                <a href="#" onclick="openLink('./lady.html')">
+                 <ion-icon name="play-circle-outline"></ion-icon>
+                 </a>
+                </div>
 
-      </div>
-    </div>
+              </div>
+            </div>
 
-<div class="card-body">
-      <h3 class="card-title">Lady, la vendedora de rosas</h3>
+            <div class="card-body">
+            <a href="#" onclick="openLink('./lady.html')">
+              <h3 class="card-title">Lady, la vendedora de rosas</h3>
 
-      <div class="card-info">
-        <span class="genre"> </span>
-        <span class="year"> </span>
-      </div>
-    </div>
-
-  </a>
-</div>
+              <div class="card-info">
+                <span class="genre">    </span>
+                <span class="year">     </span>
+              </div>
+            </div>
+</a>
+          </div>
 
           <div class="movie-card">
 
@@ -117,7 +118,8 @@ $(window).on('load', function()
                 </div>
 
                 <div class="play">
-                  <a href="./cartel.html"><ion-icon name="play-circle-outline"></ion-icon>
+                <a href="#" onclick="openLink('./cartel.html')">
+                  <ion-icon name="play-circle-outline"></ion-icon>
                   </a>
                 </div>
 
@@ -126,7 +128,8 @@ $(window).on('load', function()
 
 
             <div class="card-body">
-              <a href="./cartel.html"><h3 class="card-title">El cartel de los sapos</h3>
+            <a href="#" onclick="openLink('./cartel.html')">
+              <h3 class="card-title">El cartel de los sapos</h3>
 
               <div class="card-info">
                 <span class="genre"></span>
@@ -148,7 +151,8 @@ $(window).on('load', function()
                   <span>7.6</span>
                 </div>
 
-                <a href="./muñecas.html"><div class="play">
+                <div class="play">
+                <a href="#" onclick="openLink('./cartel.html')">
                   <ion-icon name="play-circle-outline"></ion-icon>
                   </a>
                 </div>
@@ -157,7 +161,8 @@ $(window).on('load', function()
             </div>
 
             <div class="card-body">
-              <a href="./muñecas.html"><h3 class="card-title">Las muñecas de la mafia</h3>
+            <a href="#" onclick="openLink('./cartel.html')">
+              <h3 class="card-title">Las muñecas de la mafia</h3>
 
               <div class="card-info">
                 <span class="genre"></span>
@@ -564,7 +569,11 @@ $(window).on('load', function()
   
   </script>
   
-  
+  <script>
+function openLink(url) {
+  window.top.location.href = url;
+}
+</script>
   
   
   <script src="./assets/js/main.js"></script>
