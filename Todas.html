@@ -5,22 +5,12 @@
 <title>Untitled Page</title>
 <meta name="generator" content="WYSIWYG Web Builder 18 - https://www.wysiwygwebbuilder.com">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="font-awesome.min.css" rel="stylesheet">
 <link href="Sintv2.css" rel="stylesheet">
 <link href="Todas.css" rel="stylesheet">
 <script src="jquery-3.6.0.min.js"></script>
-<script src="wb.overlay.min.js"></script>
-<script src="wb.drilldownmenu.min.js"></script>
 <script>
 $(document).ready(function()
 {
-   $('#OverlayMenu1-overlay').overlay({hideTransition:true});
-   $('.OverlayMenu1').drilldownmenu({backText: 'Atrás'});
-   $('#OverlayMenu1').on('click', function(e)
-   {
-      $.overlay.show($('#OverlayMenu1-overlay'));
-      return false;
-   });
    if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {$('#preloader').remove();}
 });
 $(window).on('load', function()
@@ -590,58 +580,6 @@ $(window).on('load', function()
 </div>
 </div>
 </div>
-
-<div id="h" style="position:fixed;text-align:center;left:0px;top:20px;width:164px;height:44px;z-index:6;">
-<div id="h_Container" style="width:164px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
-<div id="wb_Text1" style="position:absolute;left:68px;top:4px;width:86px;height:40px;z-index:1;">
-<span style="color:#FFFFFF;font-family:'Comic Sans MS';font-size:29px;">Todas</span></div>
-<div id="wb_OverlayMenu1" style="position:absolute;left:9px;top:6px;width:40px;height:37px;z-index:2;">
-<a href="#" id="OverlayMenu1">
-<span class="line"></span>
-<span class="line">
-</span><span class="line"></span>
-</a>
-</div>
-</div>
-</div>
-<div id="Layer2" style="position:fixed;text-align:right;left:auto;right:20px;top:auto;bottom:14px;width:53px;height:51px;z-index:7;">
-<div id="Layer2_Container" style="width:53px;position:relative;margin-left:auto;margin-right:0;text-align:left;">
-<div id="wb_Image2" style="position:absolute;left:0px;top:0px;width:53px;height:51px;z-index:3;">
-<a href="https://t.me/+-RNE8YcFmKtmOTMx" target="_blank"><img src="images/telegrama.png" id="Image2" alt="" width="53" height="53"></a></div>
-</div>
-</div>
-<div id="OverlayMenu1-overlay">
-<div class="OverlayMenu1">
-<ul class="drilldown-menu" role="menu">
-<li><a role="menuitem" href="./index.html" class="OverlayMenu1-effect"><i class="fa fa-home overlay-icon"></i>Inicio</a></li>
-<li>
-<a role="menuitem" href="#" class="OverlayMenu1-effect"><i class="fa fa-caret-right overlay-icon"></i>Categorias</a>
-<ul class="drilldown-submenu" role="menu">
-<li><a role="menuitem" href="./Series.html" class="OverlayMenu1-effect"><i class="fa fa-play-circle overlay-icon"></i>Series</a></li>
-<li><a role="menuitem" href="./Peliculas.html" class="OverlayMenu1-effect"><i class="fa fa-play-circle overlay-icon"></i>Peliculas</a></li>
-<li><a role="menuitem" href="./Todas.html" class="OverlayMenu1-effect"><i class="fa fa-play-circle overlay-icon"></i>Ver&nbsp;todas</a></li>
-</ul>
-</li>
-<li><a role="menuitem" href="./results.html" class="OverlayMenu1-effect"><i class="fa fa-search overlay-icon"></i>Buscar</a></li>
-<li><a role="menuitem" href="./favoritos.html" class="OverlayMenu1-effect"><i class="fa fa-heart overlay-icon"></i>Favoritos</a></li>
-<li>
-<a role="menuitem" href="#" class="OverlayMenu1-effect"><i class="fa fa-circle overlay-icon"></i>En&nbsp;vivo</a>
-<ul class="drilldown-submenu" role="menu">
-<li><a role="menuitem" href="#" class="OverlayMenu1-effect"><i class="fa fa-circle overlay-icon"></i>Tv&nbsp;Nacional</a></li>
-<li><a role="menuitem" href="https://fudfkzkl.blogspot.com/p/eventos-del-dia.html" class="OverlayMenu1-effect"><i class="fa fa-circle overlay-icon"></i>Futbol&nbsp;en&nbsp;vivo</a></li>
-</ul>
-</li>
-   </ul>
-</div>
-<a class="close-button" id="OverlayMenu1-close" href="#" role="button" aria-hidden="true"><span></span></a>
-</div>
-<script>
-        document.addEventListener('DOMContentLoaded', () => {
-            var disclaimer = document.querySelector("img[alt='www.000webhost.com']");
-            if(disclaimer) {
-                disclaimer.remove();
-            }
-        });
-    </script><div id="preloader"></div>
+<div id="preloader"></div>
 </body>
 </html>
