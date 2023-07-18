@@ -1,1 +1,300 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Untitled Page</title><meta name="generator" content="WYSIWYG Web Builder 18 - https://www.wysiwygwebbuilder.com"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="Sintv2.css" rel="stylesheet"><link href="cartltemp1.css" rel="stylesheet"><script src="jquery-3.6.0.min.js"></script><script>$(document).ready(function(){ if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {$('#preloader').remove();}});$(window).on('load', function(){ $('#preloader').remove();});</script><!DOCTYPE html><html><head><meta charset="utf-8"><title>Untitled Page</title><meta name="generator" content="WYSIWYG Web Builder 18 - https://www.wysiwygwebbuilder.com"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="SeriesLatino2.css" rel="stylesheet"><link href="ladytem1.css" rel="stylesheet"><script src="jquery-3.6.0.min.js"></script><script>$(document).ready(function(){ if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {$('#preloader').remove();}});$(window).on('load', function(){ $('#preloader').remove();});</script><!DOCTYPE html><html><head> <title>Menús desplegables</title> </head><body> <div class="container"> <div class="menu-container"> <label for="capitulo">Capítulo:</label> <select id="capitulo"> <option value="">Seleccionar...</option> <option value="capitulo1">Capítulo 1</option> <option value="capitulo2">Capítulo 2</option> <option value="capitulo3">Capítulo 3</option> </select> </div> <div class="menu-container"> <label for="servidor">Servidor:</label> <select id="servidor"> <option value="">Seleccionar...</option> </select> </div> <button id="continuar" disabled>Aceptar</button> <h2 id="titulo-capitulo-servidor"></h2> <div class="iframe-container" id="contenido-iframe"></div> <p style="font-size: 16px; font-weight: bold;"> Instrucciones: </p> <p> Primero selecciona un capítulo, y después selecciona el servidor y presiona aceptar. </p> <p> • El servidor seguido con [R] significa que es servidor Recomendado. </p> <p> • El servidor seguido con [Ads] significa que es servidor con anuncios. </p> <p> Recuerda qué aunque los reproductores se parezcan, son servidores distintos, por ende tienen mayor o menor velocidad, la velocidad de reproducción dependerá de tu internet. </p> </div> <script> const capituloSelect = document.getElementById('capitulo'); const servidorSelect = document.getElementById('servidor'); const continuarButton = document.getElementById('continuar'); const contenidoIframe = document.getElementById('contenido-iframe'); let capituloAnterior = ""; let currentIframe = null; const opcionesServidor = { capitulo1: [ { servidor: 'Servidor 1 [R]', url: 'https://streamtape.com/e/yVMQrDyMbjt1PGO' }, { servidor: 'Servidor 2 [R]', url: 'https://ok.ru/videoembed/5467125451269' }, { servidor: 'Servidor 3 ', url: 'https://ia902700.us.archive.org/12/items/11-cartel-sps/01CartelSps.mp4' }, { servidor: 'Servidor 4 [Ads]', url: 'https://hqq.ac/e/bTY3SEo2dGNYNkRLS1FxK093MFpkUT09' }, { servidor: 'Servidor 5 [Ads]', url: 'https://sblona.com/e/c53gljjzkb9s.html' } ], capitulo2: [ { servidor: 'Servidor 1', url: 'https://ok.ru/videoembed/5467125451269' }, { servidor: 'Servidor 2', url: 'https://servidor2.com/capitulo2' }, { servidor: 'Servidor 3', url: 'https://servidor3.com/capitulo2' } ], capitulo3: [ { servidor: 'Servidor 1', url: 'https://servidor1.com/capitulo3' }, { servidor: 'Servidor 2', url: 'https://servidor2.com/capitulo3' }, { servidor: 'Servidor 3', url: 'https://servidor3.com/capitulo3' } ] }; capituloSelect.addEventListener('change', actualizarOpcionesServidor); servidorSelect.addEventListener('change', validarSeleccion); continuarButton.addEventListener('click', abrirUrl); function actualizarOpcionesServidor() { const capituloSeleccionado = capituloSelect.value; if (!capituloSeleccionado) { reiniciarMenus(); servidorSelect.disabled = true; return; } // Limpiar las opciones anteriores while (servidorSelect.firstChild) { servidorSelect.removeChild(servidorSelect.firstChild); } // Agregar la opción predeterminada "Seleccionar..." al menú de servidores const defaultOption = document.createElement('option'); defaultOption.value = ""; defaultOption.textContent = "Seleccionar..."; servidorSelect.appendChild(defaultOption); // Obtener las opciones de servidor para el capítulo seleccionado const opciones = opcionesServidor[capituloSeleccionado]; if (opciones) { // Agregar las nuevas opciones al menú desplegable de servidores opciones.forEach(opcion => { const optionElement = document.createElement('option'); optionElement.value = opcion.servidor; optionElement.textContent = opcion.servidor; servidorSelect.appendChild(optionElement); }); // Habilitar el menú de selección de servidor servidorSelect.disabled = false; } else { // Bloquear el menú de selección de servidor si no hay opciones disponibles servidorSelect.disabled = true; } // Reiniciar el título cuando se selecciona un nuevo capítulo document.getElementById('titulo-capitulo-servidor').textContent = ""; capituloAnterior = ""; // Eliminar el iframe actual if (currentIframe) { contenidoIframe.removeChild(currentIframe); currentIframe = null; } // Ocultar el contenido del servidor al cambiar de capítulo contenidoIframe.style.display = "none"; } function validarSeleccion() { const capituloSeleccionado = capituloSelect.value; const servidorSeleccionado = servidorSelect.value; if (capituloSeleccionado && servidorSeleccionado) { continuarButton.disabled = false; } else { continuarButton.disabled = true; } } function abrirUrl() { const capituloSeleccionado = capituloSelect.value; const servidorSeleccionado = servidorSelect.value; const capituloTexto = capituloSelect.options[capituloSelect.selectedIndex].text; const servidorTexto = servidorSelect.options[servidorSelect.selectedIndex].text; if (capituloSeleccionado && servidorSeleccionado) { const url = obtenerUrlCapituloServidor(capituloSeleccionado, servidorSeleccionado); // Eliminar el iframe actual if (currentIframe) { contenidoIframe.removeChild(currentIframe); currentIframe = null; } // Crear un nuevo iframe para cargar el video const newIframe = document.createElement('iframe'); newIframe.id = "inlineFrameResult"; newIframe.src = url; newIframe.frameBorder = 0; newIframe.allowFullscreen = true; contenidoIframe.appendChild(newIframe); currentIframe = newIframe; // Mostrar el contenido del servidor contenidoIframe.style.display = "block"; document.getElementById('titulo-capitulo-servidor').textContent = `${capituloTexto} - ${servidorTexto}`; } } function obtenerUrlCapituloServidor(capitulo, servidor) { const opciones = opcionesServidor[capitulo]; if (opciones) { const opcionSeleccionada = opciones.find(opcion => opcion.servidor === servidor); if (opcionSeleccionada) { return opcionSeleccionada.url; } } return ""; } function reiniciarMenus() { while (servidorSelect.firstChild) { servidorSelect.removeChild(servidorSelect.firstChild); } servidorSelect.appendChild(document.createElement('option')); servidorSelect.firstChild.value = ""; servidorSelect.firstChild.textContent = "Seleccionar..."; continuarButton.disabled = true; contenidoIframe.style.display = "none"; document.getElementById('titulo-capitulo-servidor').textContent = ""; capituloAnterior = ""; servidorSelect.disabled = true; } // Reiniciar los menús al cargar la página reiniciarMenus(); </script></body></html></head><body><div id="wb_LayoutGrid1"><div id="LayoutGrid1"><div class="row"><div class="col-1"></div></div></div></div><div id="Html4" style="position:absolute;left:358px;top:279px;width:293px;height:118px;z-index:2"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"><div id="blocker"> <div id="container"> <button id="unlockButton"><i class="fas fa-lock"></i> Desbloquear contenido</button> <div id="message">↑↑ Debes darle 3 veces al botón ↑↑</div> <div id="adMessage">Se abrirá publicidad, solo ciérrala, ¡Gracias!</div> </div></div><script> var unlockButton = document.getElementById("unlockButton"); var message = document.getElementById("message"); var adMessage = document.getElementById("adMessage"); var clickCount = 0; var urls = [ "https://www.highrevenuegate.com/gr68y57qs2?key=a12e88d2a2a8205d6611e540ddf0ae52", "https://www.highrevenuegate.com/gr68y57qs2?key=a12e88d2a2a8205d6611e540ddf0ae52", "https://www.highrevenuegate.com/gr68y57qs2?key=a12e88d2a2a8205d6611e540ddf0ae52" ]; unlockButton.addEventListener("click", function() { clickCount++; if (clickCount <= urls.length) { window.open(urls[clickCount - 1], "_blank"); if (clickCount < urls.length) { message.textContent = "Debes darle " + (urls.length - clickCount) + " veces más al botón"; } else { message.textContent = "Se abrieron todas las páginas. ¡Cerrando todo!"; adMessage.style.display = "none"; document.getElementById("blocker").style.display = "none"; } } });</script></div><div id="preloader"></div></body></html>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Page</title>
+<meta name="generator" content="WYSIWYG Web Builder 18 - https://www.wysiwygwebbuilder.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="Sintv2.css" rel="stylesheet">
+<link href="cartltemp1.css" rel="stylesheet">
+<script src="jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function()
+{
+   if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {$('#preloader').remove();}
+});
+$(window).on('load', function()
+{
+   $('#preloader').remove();
+});
+</script>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Page</title>
+<meta name="generator" content="WYSIWYG Web Builder 18 - https://www.wysiwygwebbuilder.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="SeriesLatino2.css" rel="stylesheet">
+<link href="ladytem1.css" rel="stylesheet">
+<script src="jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function()
+{
+   if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {$('#preloader').remove();}
+});
+$(window).on('load', function()
+{
+   $('#preloader').remove();
+});
+</script>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menús desplegables</title>
+  
+    
+</head>
+<body>
+  <div class="container">
+    <div class="menu-container">
+      <label for="capitulo">Capítulo:</label>
+      <select id="capitulo">
+        <option value="">Seleccionar...</option>
+        <option value="capitulo1">Capítulo 1</option>
+        <option value="capitulo2">Capítulo 2</option>
+        <option value="capitulo3">Capítulo 3</option>
+      </select>
+    </div>
+
+    <div class="menu-container">
+      <label for="servidor">Servidor:</label>
+      <select id="servidor">
+        <option value="">Seleccionar...</option>
+      </select>
+    </div>
+
+    <button id="continuar" disabled>Aceptar</button>
+    
+    <h2 id="titulo-capitulo-servidor"></h2>
+    <div class="iframe-container" id="contenido-iframe"></div>
+
+    <p style="font-size: 16px; font-weight: bold;">
+      Instrucciones:
+    </p>
+    <p>
+      Primero selecciona un capítulo, y después selecciona el servidor y presiona aceptar.
+    </p>
+
+    <p>
+      • El servidor seguido con [R] significa que es servidor Recomendado.
+    </p>
+    <p>
+      • El servidor seguido con [Ads] significa que es servidor con anuncios.
+    </p>
+    <p>
+      Recuerda qué aunque los reproductores se parezcan, son servidores distintos, por ende tienen mayor o menor velocidad, la velocidad de reproducción dependerá de tu internet.
+    </p>
+  </div>
+
+  <script>
+    const capituloSelect = document.getElementById('capitulo');
+    const servidorSelect = document.getElementById('servidor');
+    const continuarButton = document.getElementById('continuar');
+    const contenidoIframe = document.getElementById('contenido-iframe');
+    let capituloAnterior = "";
+    let currentIframe = null;
+
+    const opcionesServidor = {
+      capitulo1: [
+        { servidor: 'Servidor 1 [R]', url: 'https://streamtape.com/e/yVMQrDyMbjt1PGO' },
+        { servidor: 'Servidor 2 [R]', url: 'https://ok.ru/videoembed/5467125451269' },
+        { servidor: 'Servidor 3 ', url: 'https://ia902700.us.archive.org/12/items/11-cartel-sps/01CartelSps.mp4' },
+        { servidor: 'Servidor 4 [Ads]', url: 'https://hqq.ac/e/bTY3SEo2dGNYNkRLS1FxK093MFpkUT09' },
+        { servidor: 'Servidor 5 [Ads]', url: 'https://sblona.com/e/c53gljjzkb9s.html' }
+      ],
+      capitulo2: [
+        { servidor: 'Servidor 1', url: 'https://ok.ru/videoembed/5467125451269' },
+        { servidor: 'Servidor 2', url: 'https://servidor2.com/capitulo2' },
+        { servidor: 'Servidor 3', url: 'https://servidor3.com/capitulo2' }
+      ],
+      capitulo3: [
+        { servidor: 'Servidor 1', url: 'https://servidor1.com/capitulo3' },
+        { servidor: 'Servidor 2', url: 'https://servidor2.com/capitulo3' },
+        { servidor: 'Servidor 3', url: 'https://servidor3.com/capitulo3' }
+      ]
+    };
+
+    capituloSelect.addEventListener('change', actualizarOpcionesServidor);
+    servidorSelect.addEventListener('change', validarSeleccion);
+    continuarButton.addEventListener('click', abrirUrl);
+
+    function actualizarOpcionesServidor() {
+      const capituloSeleccionado = capituloSelect.value;
+
+     if (!capituloSeleccionado) {
+        reiniciarMenus();
+        servidorSelect.disabled = true;
+        return;
+      }
+
+      // Limpiar las opciones anteriores
+      while (servidorSelect.firstChild) {
+        servidorSelect.removeChild(servidorSelect.firstChild);
+      }
+
+      // Agregar la opción predeterminada "Seleccionar..." al menú de servidores
+      const defaultOption = document.createElement('option');
+      defaultOption.value = "";
+      defaultOption.textContent = "Seleccionar...";
+      servidorSelect.appendChild(defaultOption);
+
+      // Obtener las opciones de servidor para el capítulo seleccionado
+      const opciones = opcionesServidor[capituloSeleccionado];
+
+      if (opciones) {
+        // Agregar las nuevas opciones al menú desplegable de servidores
+        opciones.forEach(opcion => {
+          const optionElement = document.createElement('option');
+          optionElement.value = opcion.servidor;
+          optionElement.textContent = opcion.servidor;
+          servidorSelect.appendChild(optionElement);
+        });
+
+        // Habilitar el menú de selección de servidor
+        servidorSelect.disabled = false;
+      } else {
+        // Bloquear el menú de selección de servidor si no hay opciones disponibles
+        servidorSelect.disabled = true;
+      }
+
+      // Reiniciar el título cuando se selecciona un nuevo capítulo
+      document.getElementById('titulo-capitulo-servidor').textContent = "";
+      capituloAnterior = "";
+
+      // Eliminar el iframe actual
+      if (currentIframe) {
+        contenidoIframe.removeChild(currentIframe);
+        currentIframe = null;
+      }
+
+      // Ocultar el contenido del servidor al cambiar de capítulo
+      contenidoIframe.style.display = "none";
+    }
+
+    function validarSeleccion() {
+      const capituloSeleccionado = capituloSelect.value;
+      const servidorSeleccionado = servidorSelect.value;
+
+      if (capituloSeleccionado && servidorSeleccionado) {
+        continuarButton.disabled = false;
+      } else {
+        continuarButton.disabled = true;
+      }
+    }
+
+    function abrirUrl() {
+      const capituloSeleccionado = capituloSelect.value;
+      const servidorSeleccionado = servidorSelect.value;
+      const capituloTexto = capituloSelect.options[capituloSelect.selectedIndex].text;
+      const servidorTexto = servidorSelect.options[servidorSelect.selectedIndex].text;
+
+      if (capituloSeleccionado && servidorSeleccionado) {
+        const url = obtenerUrlCapituloServidor(capituloSeleccionado, servidorSeleccionado);
+
+        // Eliminar el iframe actual
+        if (currentIframe) {
+          contenidoIframe.removeChild(currentIframe);
+          currentIframe = null;
+        }
+
+        // Crear un nuevo iframe para cargar el video
+        const newIframe = document.createElement('iframe');
+        newIframe.id = "inlineFrameResult";
+        newIframe.src = url;
+        newIframe.frameBorder = 0;
+        newIframe.allowFullscreen = true;
+        contenidoIframe.appendChild(newIframe);
+        currentIframe = newIframe;
+
+        // Mostrar el contenido del servidor
+        contenidoIframe.style.display = "block";
+        document.getElementById('titulo-capitulo-servidor').textContent = `${capituloTexto} - ${servidorTexto}`;
+      }
+    }
+
+    function obtenerUrlCapituloServidor(capitulo, servidor) {
+      const opciones = opcionesServidor[capitulo];
+
+      if (opciones) {
+        const opcionSeleccionada = opciones.find(opcion => opcion.servidor === servidor);
+
+        if (opcionSeleccionada) {
+          return opcionSeleccionada.url;
+        }
+      }
+
+      return "";
+    }
+
+    function reiniciarMenus() {
+      while (servidorSelect.firstChild) {
+        servidorSelect.removeChild(servidorSelect.firstChild);
+      }
+      servidorSelect.appendChild(document.createElement('option'));
+      servidorSelect.firstChild.value = "";
+      servidorSelect.firstChild.textContent = "Seleccionar...";
+      continuarButton.disabled = true;
+      contenidoIframe.style.display = "none";
+      document.getElementById('titulo-capitulo-servidor').textContent = "";
+      capituloAnterior = "";
+      servidorSelect.disabled = true;
+    }
+
+    // Reiniciar los menús al cargar la página
+    reiniciarMenus();
+  </script>
+</body>
+</html>
+</head>
+<body>
+<div id="wb_LayoutGrid1">
+<div id="LayoutGrid1">
+<div class="row">
+<div class="col-1">
+
+</div>
+</div>
+</div>
+</div>
+<div id="Html4" style="position:absolute;left:358px;top:279px;width:293px;height:118px;z-index:2">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<div id="blocker">
+  <div id="container">
+    <button id="unlockButton"><i class="fas fa-lock"></i> Desbloquear contenido</button>
+    <div id="message">↑↑ Debes darle 3 veces al botón ↑↑</div>
+    <div id="adMessage">Se abrirá publicidad, solo ciérrala, ¡Gracias!</div>
+  </div>
+</div>
+
+
+<script>
+  var unlockButton = document.getElementById("unlockButton");
+  var message = document.getElementById("message");
+  var adMessage = document.getElementById("adMessage");
+  var clickCount = 0;
+  var urls = [
+    "https://www.highrevenuegate.com/gr68y57qs2?key=a12e88d2a2a8205d6611e540ddf0ae52",
+    "https://www.highrevenuegate.com/gr68y57qs2?key=a12e88d2a2a8205d6611e540ddf0ae52",
+    "https://www.highrevenuegate.com/gr68y57qs2?key=a12e88d2a2a8205d6611e540ddf0ae52"
+  ];
+
+  unlockButton.addEventListener("click", function() {
+    clickCount++;
+    if (clickCount <= urls.length) {
+      window.open(urls[clickCount - 1], "_blank");
+      if (clickCount < urls.length) {
+        message.textContent = "Debes darle " + (urls.length - clickCount) + " veces más al botón";
+      } else {
+        message.textContent = "Se abrieron todas las páginas. ¡Cerrando todo!";
+        adMessage.style.display = "none";
+        document.getElementById("blocker").style.display = "none";
+      }
+    }
+  });
+</script>
+</div>
+<div id="preloader"></div>
+</body>
+</html>
