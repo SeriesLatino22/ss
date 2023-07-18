@@ -360,10 +360,6 @@ body
 {
    transition-delay: 150ms;
 }
-#OverlayMenu2-overlay.show ul li:nth-child(5) a
-{
-   transition-delay: 200ms;
-}
 .OverlayMenu2 .sub-menu
 {
    padding-top: 0;
