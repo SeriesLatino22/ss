@@ -40,5 +40,6 @@ function SearchDatabase()
    this[database_length++] = new SearchPage("Series2.html", "Untitled Page", " ", "");
    this[database_length++] = new SearchPage("Series3.html", "Untitled Page", " ", "");
    this[database_length++] = new SearchPage("Peliculas.html", "Untitled Page", " ", "");
+   this[database_length++] = new SearchPage("page1.html", "Untitled Page", " ", "");
    return this;
 }
