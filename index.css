@@ -93,7 +93,7 @@ body
    display: none;
    float: left;
    width: 100%;
-   height: 1031px;
+   height: 53px;
    vertical-align: top;
 }
 #wb_LayoutGrid1
@@ -168,10 +168,10 @@ body
 }
 #OverlayMenu2
 {
-   background-color: #424242;
+   background-color: #FFFFFF;
    background-image: none;
    border: 0px solid #FFFFFF;
-   border-radius: 0px;
+   border-radius: 3px;
    margin: 0;
 }
 #OverlayMenu2:hover
@@ -190,17 +190,17 @@ body
 }
 #OverlayMenu2 .line
 {
-   width: 27px;
+   width: 26px;
    height: 5px;
    position: relative;
    top: 2px;
-   background: #FFFFFF;
+   background: #454545;
    display: block;
    margin: 5px auto;
 }
 #OverlayMenu2:hover .line
 {
-   background: #A9A9A9;
+   background: #FFFFFF;
 }
 #OverlayMenu2-close
 {
