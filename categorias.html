@@ -85,25 +85,24 @@ doScroller(messages[0], 0, 1);
 </div>
 
    
-
-  
-  <script>
+<script>
     // Función para manejar el evento del botón "Atrás" del navegador
     function handleBackButton() {
-      var <script>
-    // Escucha mensajes enviados desde el iframe
-    window.addEventListener("message", function(event) {
-      // Verifica que el mensaje provenga del iframe
-      if (event.source === document.getElementById("Seriesiframe").contentWindow) {
-        // Verifica si el mensaje es para retroceder una página
-        if (event.data === "goBack") {
-          // Redirige a la página anterior fuera del iframe
-          window.history.back();
-        }
+      // Comprueba si la página se encuentra dentro de un iframe
+      if (window.self !== window.top) {
+        // Si la página está dentro de un iframe, redirige al padre del iframe (página principal)
+        window.top.location.href = document.referrer;
+      } else {
+        // Si la página no está dentro de un iframe, simplemente retrocede una página en el historial
+        window.history.back();
       }
-    });
+    }
+
+    // Agrega un evento para detectar cuando el usuario presiona el botón "Atrás" del navegador
+    window.addEventListener("popstate", handleBackButton);
   </script>
-  </script>
+  
+  
 
 
 <div id="wb_OverlayMenu2" style="position:absolute;left:18px;top:30px;width:40px;height:37px;z-index:25;">
