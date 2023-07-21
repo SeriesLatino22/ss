@@ -84,52 +84,36 @@ doScroller(messages[0], 0, 1);
 </script>
 </div>
 
-   
+   <script>
+    $(document).ready(function() {
+      $("a[href*='#LayoutGrid2']").click(function(event) {
+        event.preventDefault();
+        $('html, body').stop().animate({ scrollTop: $('#wb_LayoutGrid2').offset().top }, 600, 'linear');
+      });
 
-Enviar a URL anterior
+      $('#OverlayMenu2-overlay').overlay({hideTransition:true});
 
-User
-Tengo este código, me gustaría que al darle atras en envíe a la página anterior, no a la URL que le di en el iframe, si no, que me saque de toda la página por completo
+      $('.OverlayMenu2 .item-has-children').children('a').on('click', function(event) {
+        event.preventDefault();
+        $(this).toggleClass('submenu-open').next('.sub-menu').slideToggle(0,'linear').end().parent('.item-has-children').siblings('.item-has-children').children('a').removeClass('submenu-open').next('.sub-menu').slideUp(0,'linear');
+      });
+
+      $('#OverlayMenu2').on('click', function(e) {
+        $.overlay.show($('#OverlayMenu2-overlay'));
+        return false;
+      });
+
+      // Agregar un evento onpopstate para manejar el botón "atrás" del navegador
+      window.onpopstate = function(event) {
+        // Volver a la página anterior
+        window.location.href = document.referrer;
+      };
+    });
+  </script>
 
 
-<!doctype html>
-<html lang="es-ar">
-<head>
-<meta charset="utf-8">
-<title>Series y Peliculas Colombianas</title>
-<meta name="description" content="Series y peliculas colombianas completas audio latino.">
-<meta name="keywords" content="Series colombianas, Series latinas, narco series,  series mexicanas,peliculas colombianas, descargar series colombianas, peliculas audio latino, pablo escobar. lady la vendedora de rosas ">
-<meta name="author" content="Series Latino">
-<meta name="categories" content="series">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="font-awesome.min.css" rel="stylesheet">
-<link href="Sintv2.css" rel="stylesheet">
-<link href="categorias.css" rel="stylesheet">
-<script src="jquery-3.6.0.min.js"></script>
-<script src="jquery-ui.min.js"></script>
-<script src="wb.overlay.min.js"></script>
-<script src="wwb18.min.js"></script>
-<script>
-$(document).ready(function()
-{
-   $("a[href*='#LayoutGrid2']").click(function(event)
-   {
-      event.preventDefault();
-      $('html, body').stop().animate({ scrollTop: $('#wb_LayoutGrid2').offset().top }, 600, 'linear');
-   });
-   $('#OverlayMenu2-overlay').overlay({hideTransition:true});
-   $('.OverlayMenu2 .item-has-children').children('a').on('click', function(event)
-   {
-      event.preventDefault();
-      $(this).toggleClass('submenu-open').next('.sub-menu').slideToggle(0,'linear').end().parent('.item-has-children').siblings('.item-has-children').children('a').removeClass('submenu-open').next('.sub-menu').slideUp(0,'linear');
-   });
-   $('#OverlayMenu2').on('click', function(e)
-   {
-      $.overlay.show($('#OverlayMenu2-overlay'));
-      return false;
-   });
-});
-</script>
+
+
 </head>
 <body>
 <div id="Layer3" style="position:relative;text-align:center;width:62px;height:68px;float:right;display:inline-block;z-index:57;">
