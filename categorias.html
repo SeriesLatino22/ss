@@ -86,7 +86,7 @@ doScroller(messages[0], 0, 1);
 </div>
 
    
- <script>
+  <script>
     $(document).ready(function() {
       $("a[href*='#LayoutGrid2']").click(function(event) {
         event.preventDefault();
@@ -105,10 +105,11 @@ doScroller(messages[0], 0, 1);
         return false;
       });
 
-      // Agregar un evento onpopstate para manejar el botón "atrás" del navegador
-      window.onpopstate = function(event) {
-        // Volver a la página anterior en el navegador principal (fuera del iframe)
-        window.parent.history.back();
+      // Agregar un evento onhashchange para manejar la navegación dentro del iframe
+      window.onhashchange = function() {
+        // Actualizar la URL del iframe para que siempre apunte a la página inicial dentro del iframe
+        var iframe = document.getElementById('Seriesiframe');
+        iframe.src = './series1.html';
       };
     });
   </script>
