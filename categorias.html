@@ -84,83 +84,8 @@ doScroller(messages[0], 0, 1);
 </script>
 </div>
 
-   <script>
-    $(document).ready(function() {
-      $("a[href*='#LayoutGrid2']").click(function(event) {
-        event.preventDefault();
-        $('html, body').stop().animate({ scrollTop: $('#wb_LayoutGrid2').offset().top }, 600, 'linear');
-      });
-
-      $('#OverlayMenu2-overlay').overlay({hideTransition:true});
-
-      $('.OverlayMenu2 .item-has-children').children('a').on('click', function(event) {
-        event.preventDefault();
-        $(this).toggleClass('submenu-open').next('.sub-menu').slideToggle(0,'linear').end().parent('.item-has-children').siblings('.item-has-children').children('a').removeClass('submenu-open').next('.sub-menu').slideUp(0,'linear');
-      });
-
-      $('#OverlayMenu2').on('click', function(e) {
-        $.overlay.show($('#OverlayMenu2-overlay'));
-        return false;
-      });
-
-      // Agregar un evento onpopstate para manejar el botón "atrás" del navegador
-      window.onpopstate = function(event) {
-        // Volver a la página anterior
-        window.location.href = document.referrer;
-      };
-    });
-  </script>
-
-
-
-
-</head>
-<body>
-<div id="Layer3" style="position:relative;text-align:center;width:62px;height:68px;float:right;display:inline-block;z-index:57;">
-<div id="Layer3_Container" style="width:62px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
-<div id="wb_Image4" style="position:absolute;left:0px;top:34px;width:62px;height:34px;z-index:23;">
-<a href="#" onclick="ShowObjectWithEffect('Layer1', 0, 'fade', 0);ShowObjectWithEffect('wb_Icon2', 1, 'fade', 500);ShowObjectWithEffect('wb_Image4', 0, 'fade', 500);ShowObjectWithEffect('InlineFrame1', 1, 'puff', 500, 'swing');ShowObjectWithEffect('wb_Selecci', 0, 'fade', 500);return false;"><img src="images/image-removebg-preview.png" id="Image4" alt="" width="62" height="35"></a></div>
-</div>
-</div>
-<div id="Layer1" style="position:relative;text-align:center;width:263px;height:96px;float:left;display:inline-block;z-index:58;">
-<div id="Layer1_Container" style="width:263px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
-<div id="wb_JavaScript1" style="position:absolute;left:30px;top:73px;width:208px;height:23px;z-index:24;">
-<div style="color:#FFFFFF;font-size:12px;font-family:Arial;font-weight:normal;font-style:normal;text-align:left;text-decoration:none;" id="text_scroller"></div>
-<script>
-var messages = new Array
-(
-   '  Series Colombianas  ',
-   '  Apoyanos en las redes sociales!  ',
-   '    sintv.co    '
-);
-var speed = 50;
-var currentMsg = 0;
-function doScroller(text, pos, direction)
-{
-   var text_scroller = document.getElementById('text_scroller');
-   text_scroller.innerText = '[' + text.substring(0, pos) + ']';
-
-   pos += direction;
-   if (pos > text.length)
-   {
-      setTimeout('doScroller("'+text+'",'+pos+','+(-direction)+')', speed*10);
-   }
-   else
-   {
-     if (pos < 0)
-     {
-        currentMsg++;
-        if(currentMsg >= messages.length)
-          currentMsg = 0;
-        text = messages[currentMsg];
-        direction = -direction;
-     }
-     setTimeout('doScroller("'+text+'",'+pos+','+direction+')', speed);
-   }
-}
-doScroller(messages[0], 0, 1);
-</script>
-</div>
+   
+      
 
    
 
