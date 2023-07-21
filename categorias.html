@@ -86,16 +86,21 @@ doScroller(messages[0], 0, 1);
 
    
 
+  
   <script>
     // Función para manejar el evento del botón "Atrás" del navegador
     function handleBackButton() {
-      // Comprueba si el historial del navegador está vacío
-      if (window.history.length <= 1) {
-        // Si el historial está vacío, redirige a la página anterior
-        window.location.href = document.referrer;
+      var currentUrl = window.location.href;
+      var index = currentUrl.indexOf("#");
+      if (index !== -1) {
+        var fragment = currentUrl.substring(index + 1);
+        if (fragment) {
+          window.location.href = "#" + fragment;
+        } else {
+          window.location.href = document.referrer;
+        }
       } else {
-        // Si el historial no está vacío, simplemente retrocede una página en el historial
-        window.history.back();
+        window.location.href = document.referrer;
       }
     }
 
@@ -110,13 +115,17 @@ doScroller(messages[0], 0, 1);
 
       for (var i = 0; i < links.length; i++) {
         links[i].addEventListener("click", function(event) {
-          // Cuando se hace clic en un enlace dentro del iframe, actualiza la URL del navegador y agrega una entrada al historial
+          // Cuando se hace clic en un enlace dentro del iframe, actualiza el fragmento de la URL
           event.preventDefault();
-          window.history.pushState(null, null, event.target.href);
+          var href = event.target.href;
+          var index = href.indexOf("#");
+          var fragment = index !== -1 ? href.substring(index + 1) : "";
+          window.location.hash = fragment;
         });
       }
     };
   </script>
+
 
 <div id="wb_OverlayMenu2" style="position:absolute;left:18px;top:30px;width:40px;height:37px;z-index:25;">
 <a href="#" id="OverlayMenu2">
