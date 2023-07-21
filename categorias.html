@@ -86,7 +86,32 @@ doScroller(messages[0], 0, 1);
 </div>
 
    
+ <script>
+    $(document).ready(function() {
+      $("a[href*='#LayoutGrid2']").click(function(event) {
+        event.preventDefault();
+        $('html, body').stop().animate({ scrollTop: $('#wb_LayoutGrid2').offset().top }, 600, 'linear');
+      });
 
+      $('#OverlayMenu2-overlay').overlay({hideTransition:true});
+
+      $('.OverlayMenu2 .item-has-children').children('a').on('click', function(event) {
+        event.preventDefault();
+        $(this).toggleClass('submenu-open').next('.sub-menu').slideToggle(0,'linear').end().parent('.item-has-children').siblings('.item-has-children').children('a').removeClass('submenu-open').next('.sub-menu').slideUp(0,'linear');
+      });
+
+      $('#OverlayMenu2').on('click', function(e) {
+        $.overlay.show($('#OverlayMenu2-overlay'));
+        return false;
+      });
+
+      // Agregar un evento onpopstate para manejar el botón "atrás" del navegador
+      window.onpopstate = function(event) {
+        // Volver a la página anterior
+        window.location.href = document.referrer;
+      };
+    });
+  </script>
   
   
 
