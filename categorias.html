@@ -85,21 +85,309 @@ doScroller(messages[0], 0, 1);
 </div>
 
    
-<script>
-    // Función para manejar el evento del botón "Atrás" del navegador
-    function handleBackButton() {
-      // Comprueba si la página se encuentra dentro de un iframe
-      if (window.self !== window.top) {
-        // Si la página está dentro de un iframe, redirige al padre del iframe (página principal)
-        window.top.location.href = document.referrer;
-      } else {
-        // Si la página no está dentro de un iframe, simplemente retrocede una página en el historial
-        window.history.back();
-      }
-    }
 
-    // Agrega un evento para detectar cuando el usuario presiona el botón "Atrás" del navegador
-    window.addEventListener("popstate", handleBackButton);
+Enviar a URL anterior
+
+User
+Tengo este código, me gustaría que al darle atras en envíe a la página anterior, no a la URL que le di en el iframe, si no, que me saque de toda la página por completo
+
+
+<!doctype html>
+<html lang="es-ar">
+<head>
+<meta charset="utf-8">
+<title>Series y Peliculas Colombianas</title>
+<meta name="description" content="Series y peliculas colombianas completas audio latino.">
+<meta name="keywords" content="Series colombianas, Series latinas, narco series,  series mexicanas,peliculas colombianas, descargar series colombianas, peliculas audio latino, pablo escobar. lady la vendedora de rosas ">
+<meta name="author" content="Series Latino">
+<meta name="categories" content="series">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="font-awesome.min.css" rel="stylesheet">
+<link href="Sintv2.css" rel="stylesheet">
+<link href="categorias.css" rel="stylesheet">
+<script src="jquery-3.6.0.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+<script src="wb.overlay.min.js"></script>
+<script src="wwb18.min.js"></script>
+<script>
+$(document).ready(function()
+{
+   $("a[href*='#LayoutGrid2']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_LayoutGrid2').offset().top }, 600, 'linear');
+   });
+   $('#OverlayMenu2-overlay').overlay({hideTransition:true});
+   $('.OverlayMenu2 .item-has-children').children('a').on('click', function(event)
+   {
+      event.preventDefault();
+      $(this).toggleClass('submenu-open').next('.sub-menu').slideToggle(0,'linear').end().parent('.item-has-children').siblings('.item-has-children').children('a').removeClass('submenu-open').next('.sub-menu').slideUp(0,'linear');
+   });
+   $('#OverlayMenu2').on('click', function(e)
+   {
+      $.overlay.show($('#OverlayMenu2-overlay'));
+      return false;
+   });
+});
+</script>
+</head>
+<body>
+<div id="Layer3" style="position:relative;text-align:center;width:62px;height:68px;float:right;display:inline-block;z-index:57;">
+<div id="Layer3_Container" style="width:62px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
+<div id="wb_Image4" style="position:absolute;left:0px;top:34px;width:62px;height:34px;z-index:23;">
+<a href="#" onclick="ShowObjectWithEffect('Layer1', 0, 'fade', 0);ShowObjectWithEffect('wb_Icon2', 1, 'fade', 500);ShowObjectWithEffect('wb_Image4', 0, 'fade', 500);ShowObjectWithEffect('InlineFrame1', 1, 'puff', 500, 'swing');ShowObjectWithEffect('wb_Selecci', 0, 'fade', 500);return false;"><img src="images/image-removebg-preview.png" id="Image4" alt="" width="62" height="35"></a></div>
+</div>
+</div>
+<div id="Layer1" style="position:relative;text-align:center;width:263px;height:96px;float:left;display:inline-block;z-index:58;">
+<div id="Layer1_Container" style="width:263px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
+<div id="wb_JavaScript1" style="position:absolute;left:30px;top:73px;width:208px;height:23px;z-index:24;">
+<div style="color:#FFFFFF;font-size:12px;font-family:Arial;font-weight:normal;font-style:normal;text-align:left;text-decoration:none;" id="text_scroller"></div>
+<script>
+var messages = new Array
+(
+   '  Series Colombianas  ',
+   '  Apoyanos en las redes sociales!  ',
+   '    sintv.co    '
+);
+var speed = 50;
+var currentMsg = 0;
+function doScroller(text, pos, direction)
+{
+   var text_scroller = document.getElementById('text_scroller');
+   text_scroller.innerText = '[' + text.substring(0, pos) + ']';
+
+   pos += direction;
+   if (pos > text.length)
+   {
+      setTimeout('doScroller("'+text+'",'+pos+','+(-direction)+')', speed*10);
+   }
+   else
+   {
+     if (pos < 0)
+     {
+        currentMsg++;
+        if(currentMsg >= messages.length)
+          currentMsg = 0;
+        text = messages[currentMsg];
+        direction = -direction;
+     }
+     setTimeout('doScroller("'+text+'",'+pos+','+direction+')', speed);
+   }
+}
+doScroller(messages[0], 0, 1);
+</script>
+</div>
+
+   
+
+  
+  
+
+
+<div id="wb_OverlayMenu2" style="position:absolute;left:18px;top:30px;width:40px;height:37px;z-index:25;">
+<a href="#" id="OverlayMenu2">
+<span class="line"></span>
+<span class="line">
+</span><span class="line"></span>
+</a>
+</div>
+<div id="wb_Image2" style="position:absolute;left:67px;top:28px;width:182px;height:41px;z-index:26;">
+<img src="images/8248849621_2e551c55-070d-47aa-9422-2b995658cef6.png" id="Image2" alt="" width="182" height="42"></div>
+</div>
+</div>
+<div id="wb_LayoutGrid3">
+<div id="LayoutGrid3">
+<div class="row">
+<div class="col-1">
+<div id="wb_Selecci">
+<div id="Selecci">
+<div class="row">
+<div class="col-1">
+<button type="submit" id="botonseries" onclick="ShowObjectWithEffect('Seriesiframe', 1, 'fade', 500);ShowObjectWithEffect('wb_pag-series', 1, 'fade', 500);ShowObjectWithEffect('peliculasiframe', 0, 'fade', 500);ShowObjectWithEffect('wb_botonpelis', 0, 'fade', 500);ShowObjectWithEffect('wb_botoncerrar', 1, 'fade', 500);ShowObjectWithEffect('Layer1', 0, 'fade', 500);ShowObjectWithEffect('Layer3', 0, 'fade', 500);ShowObjectWithEffect('wb_LayoutGrid2', 0, 'fade', 500);return false;" name="" value="Series" class="ui-button ui-corner-all" style="display:inline-block;width:152px;height:34px;z-index:27;"><span class="ui-button-icon ui-icon ui-primary"></span><span class="ui-button-icon-space"> </span>Series</button>
+<div id="wb_botoncerrar" style="display:none;width:33px;height:32px;text-align:center;z-index:28;">
+<a href="#" onclick="ShowObjectWithEffect('wb_botonpelis', 1, 'fade', 500);ShowObjectWithEffect('Seriesiframe', 0, 'fade', 500);ShowObjectWithEffect('wb_botoncerrar', 0, 'fade', 500);ShowObjectWithEffect('wb_pag-series', 0, 'fade', 500);ShowObjectWithEffect('Layer1', 1, 'fade', 500);ShowObjectWithEffect('Layer3', 1, 'fade', 500);ShowObjectWithEffect('wb_LayoutGrid2', 1, 'fade', 500);return false;"><div id="botoncerrar"><i class="fa fa-times"></i></div></a>
+</div>
+<div id="wb_Shape2" style="display:inline-block;width:21px;height:47px;opacity:0.00;z-index:29;position:relative;">
+<img src="images/img0002.png" id="Shape2" alt="" width="21" height="47" style="width:21px;height:47px;">
+</div>
+<div id="wb_botonpelis" style="display:inline-block;width:152px;height:34px;z-index:30;">
+<a class="ui-button ui-corner-all" id="botonpelis" href="./Peliculas.html" target="InlineFrame2" onclick="ShowObjectWithEffect('Seriesiframe', 0, 'fade', 0);ShowObjectWithEffect('peliculasiframe', 1, 'fade', 500);ShowObjectWithEffect('wb_pag-pelis', 1, 'fade', 500);ShowObjectWithEffect('botonseries', 0, 'fade', 500);ShowObjectWithEffect('wb_Botoncerrarpelis', 1, 'fade', 500);ShowObjectWithEffect('Layer1', 0, 'fade', 500);ShowObjectWithEffect('Layer3', 0, 'fade', 500);ShowObjectWithEffect('wb_LayoutGrid2', 0, 'fade', 500);return false;" style="width:100%;height:100%;">Peliculas<span class="ui-button-icon-space"> </span><span class="ui-button-icon ui-icon ui-secondary"></span></a>
+</div>
+<div id="wb_Botoncerrarpelis" style="display:none;width:33px;height:32px;text-align:center;z-index:31;">
+<a href="#" onclick="ShowObjectWithEffect('botonseries', 1, 'fade', 500);ShowObjectWithEffect('wb_Botoncerrarpelis', 0, 'fade', 500);ShowObjectWithEffect('wb_pag-pelis', 0, 'fade', 500);ShowObjectWithEffect('peliculasiframe', 0, 'fade', 500);ShowObjectWithEffect('Layer1', 1, 'fade', 500);ShowObjectWithEffect('Layer3', 1, 'fade', 500);ShowObjectWithEffect('wb_LayoutGrid2', 1, 'fade', 500);return false;"><div id="Botoncerrarpelis"><i class="fa fa-times"></i></div></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_pag-pelis">
+<div id="pag-pelis">
+<div class="row">
+<div class="col-1">
+<input type="submit" id="Button5" name="" value="1" style="display:inline-block;width:23px;height:22px;z-index:32;">
+<div id="wb_Shape5" style="display:inline-block;width:9px;height:29px;z-index:33;position:relative;">
+<img src="images/img0006.png" id="Shape5" alt="" width="9" height="29" style="width:9px;height:29px;">
+</div>
+<input type="submit" id="Button6" name="" value="2" style="display:inline-block;width:23px;height:22px;z-index:34;">
+<div id="wb_Shape6" style="display:inline-block;width:9px;height:29px;z-index:35;position:relative;">
+<img src="images/img0007.png" id="Shape6" alt="" width="9" height="29" style="width:9px;height:29px;">
+</div>
+<input type="submit" id="Button7" name="" value="3" style="display:inline-block;width:23px;height:22px;z-index:36;">
+<div id="wb_Shape7" style="display:inline-block;width:9px;height:29px;z-index:37;position:relative;">
+<img src="images/img0008.png" id="Shape7" alt="" width="9" height="29" style="width:9px;height:29px;">
+</div>
+<input type="submit" id="Button8" name="" value="4" style="display:inline-block;width:23px;height:22px;z-index:38;">
+<div id="wb_Shape8" style="display:inline-block;width:9px;height:29px;z-index:39;position:relative;">
+<img src="images/img0009.png" id="Shape8" alt="" width="9" height="29" style="width:9px;height:29px;">
+</div>
+<input type="submit" id="Button9" name="" value="5" style="display:inline-block;width:23px;height:22px;z-index:40;">
+</div>
+</div>
+</div>
+</div>
+<div id="wb_pag-series">
+<div id="pag-series">
+<div class="row">
+<div class="col-1">
+<a id="Button16" href="./series1.html" target="InlineFrame2" style="display:inline-block;width:23px;height:22px;z-index:41;">1</a>
+<div id="wb_Shape21" style="display:inline-block;width:9px;height:29px;z-index:42;position:relative;">
+<img src="images/img0001.png" id="Shape21" alt="" width="9" height="29" style="width:9px;height:29px;">
+</div>
+<a id="Button1" href="./index.html" target="InlineFrame2" style="display:inline-block;width:23px;height:22px;z-index:43;">2</a>
+<div id="wb_Shape1" style="display:inline-block;width:9px;height:29px;z-index:44;position:relative;">
+<img src="images/img0003.png" id="Shape1" alt="" width="9" height="29" style="width:9px;height:29px;">
+</div>
+<input type="submit" id="Button2" name="" value="3" style="display:inline-block;width:23px;height:22px;z-index:45;">
+<div id="wb_Shape3" style="display:inline-block;width:9px;height:29px;z-index:46;position:relative;">
+<img src="images/img0004.png" id="Shape3" alt="" width="9" height="29" style="width:9px;height:29px;">
+</div>
+<input type="submit" id="Button3" name="" value="4" style="display:inline-block;width:23px;height:22px;z-index:47;">
+<div id="wb_Shape4" style="display:inline-block;width:9px;height:29px;z-index:48;position:relative;">
+<img src="images/img0005.png" id="Shape4" alt="" width="9" height="29" style="width:9px;height:29px;">
+</div>
+<input type="submit" id="Button4" name="" value="5" style="display:inline-block;width:23px;height:22px;z-index:49;">
+</div>
+</div>
+</div>
+</div>
+<iframe name="InlineFrame2" id="Seriesiframe" src="./series1.html" loading="lazy" allowfullscreen></iframe>
+<iframe name="InlineFrame2" id="peliculasiframe" src="./Peliculas.html" loading="lazy" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid2">
+<div id="LayoutGrid2">
+<div class="row">
+<div class="col-1">
+<iframe name="InlineFrame1" id="InlineFrame1" src="./buscador.html" allowfullscreen></iframe>
+<div id="wb_Icon2" style="display:none;width:39px;height:32px;text-align:center;z-index:56;">
+<a href="#" onclick="ShowObjectWithEffect('InlineFrame1', 0, 'fade', 0);ShowObjectWithEffect('wb_Icon2', 0, 'fade', 0);ShowObjectWithEffect('wb_Image4', 1, 'fade', 0);ShowObjectWithEffect('Layer1', 1, 'fade', 0);ShowObjectWithEffect('wb_Selecci', 1, 'fade', 500);return false;"><div id="Icon2"><i class="fa fa-times"></i></div></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="OverlayMenu2-overlay">
+<div class="OverlayMenu2">
+<ul class="OverlayMenu2" role="menu">
+<li><a role="menuitem" href="./index.html" class="OverlayMenu2-effect"><i class="fa fa-home overlay-icon"></i>Inicio</a></li>
+<li><a role="menuitem" href="./categorias.html" class="OverlayMenu2-effect"><i class="fa fa-angle-right overlay-icon"></i>Categorias</a></li>
+<li><a role="menuitem" href="./favoritos.html" class="OverlayMenu2-effect"><i class="fa fa-heart overlay-icon"></i>Favoritos</a></li>
+<li class="item-has-children">
+<a role="menuitem" href="#" class="OverlayMenu2-effect"><i class="fa fa-circle overlay-icon"></i>En&nbsp;vivo</a>
+<ul class="sub-menu" role="menu">
+<li><a role="menuitem" href="#" class="OverlayMenu2-effect"><i class="fa fa-circle overlay-icon"></i>Tv&nbsp;Nacional</a></li>
+<li><a role="menuitem" href="https://fudfkzkl.blogspot.com/p/eventos-del-dia.html" class="OverlayMenu2-effect"><i class="fa fa-circle overlay-icon"></i>Futbol&nbsp;en&nbsp;vivo</a></li>
+</ul>
+</li>
+   </ul>
+</div>
+<a class="close-button" id="OverlayMenu2-close" href="#" role="button" aria-hidden="true"><span></span></a>
+</div>
+</body>
+</html>
+
+ChatGPT
+Para hacer que el botón "Atrás" del navegador regrese a la página anterior y no solo dentro del iframe, puedes agregar un poco de JavaScript en la página que contiene el iframe. Puedes usar la función window.history.back() para lograr esto.
+
+Modifica el código de tu página que contiene el iframe de la siguiente manera:
+
+Agrega un ID único al botón "Atrás" (por ejemplo, "btn-atras") para que sea fácil de seleccionar mediante JavaScript.
+Agrega el siguiente script en la sección <script> de tu página:
+html
+Copy code
+<script>
+$(document).ready(function() {
+  // Obtener el botón "Atrás" por su ID
+  var btnAtras = document.getElementById('btn-atras');
+
+  // Agregar un evento click al botón
+  btnAtras.addEventListener('click', function(event) {
+    event.preventDefault();
+    // Volver a la página anterior
+    window.history.back();
+  });
+});
+</script>
+Asegúrate de colocar el script después de cargar jQuery (jquery-3.6.0.min.js) en tu página.
+
+Con este cambio, cuando se haga clic en el botón "Atrás" con el ID "btn-atras", se ejecutará la función que regresará a la página anterior en lugar de solo dentro del iframe.
+
+
+
+
+User
+Dame el código completo, con mi codigo
+
+ChatGPT
+Por supuesto, aquí tienes el código completo con las modificaciones para que el botón "Atrás" regrese a la página anterior en lugar de solo dentro del iframe:
+
+html
+Copy code
+<!doctype html>
+<html lang="es-ar">
+<head>
+  <meta charset="utf-8">
+  <title>Series y Peliculas Colombianas</title>
+  <!-- Resto de tus metadatos y enlaces CSS -->
+
+  <!-- Tu script existente -->
+  <script src="jquery-3.6.0.min.js"></script>
+  <script src="jquery-ui.min.js"></script>
+  <script src="wb.overlay.min.js"></script>
+  <script src="wwb18.min.js"></script>
+
+  <!-- Nuevo script para el botón "Atrás" -->
+  <script>
+    $(document).ready(function() {
+      $("a[href*='#LayoutGrid2']").click(function(event) {
+        event.preventDefault();
+        $('html, body').stop().animate({ scrollTop: $('#wb_LayoutGrid2').offset().top }, 600, 'linear');
+      });
+
+      $('#OverlayMenu2-overlay').overlay({hideTransition:true});
+
+      $('.OverlayMenu2 .item-has-children').children('a').on('click', function(event) {
+        event.preventDefault();
+        $(this).toggleClass('submenu-open').next('.sub-menu').slideToggle(0,'linear').end().parent('.item-has-children').siblings('.item-has-children').children('a').removeClass('submenu-open').next('.sub-menu').slideUp(0,'linear');
+      });
+
+      $('#OverlayMenu2').on('click', function(e) {
+        $.overlay.show($('#OverlayMenu2-overlay'));
+        return false;
+      });
+
+      // Obtener el botón "Atrás" por su ID
+      var btnAtras = document.getElementById('btn-atras');
+
+      // Agregar un evento click al botón
+      btnAtras.addEventListener('click', function(event) {
+        event.preventDefault();
+        // Volver a la página anterior
+        window.history.back();
+      });
+    });
   </script>
   
   
