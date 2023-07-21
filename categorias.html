@@ -105,12 +105,16 @@ doScroller(messages[0], 0, 1);
         return false;
       });
 
-      // Agregar un evento onhashchange para manejar la navegación dentro del iframe
-      window.onhashchange = function() {
-        // Actualizar la URL del iframe para que siempre apunte a la página inicial dentro del iframe
-        var iframe = document.getElementById('Seriesiframe');
-        iframe.src = './series1.html';
+      // Agregar un evento onpopstate para manejar el botón "atrás" del navegador
+      window.onpopstate = function(event) {
+        // Si no hay historial previo, salir por completo de la página
+        if (!event.state) {
+          window.location.href = document.referrer;
+        }
       };
+
+      // Agregar un estado al historial para asegurar que siempre haya un estado previo
+      window.history.replaceState({ page: 1 }, '', '');
     });
   </script>
   
