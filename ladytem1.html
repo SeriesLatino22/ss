@@ -34,6 +34,45 @@ $(window).on('load', function()
 <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
 
     
+<script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
+<script>
+    // Función para abrir el lightbox y reproducir el video con Plyr
+    function abrirLightbox(videoUrl) {
+        var videoPlayer = new Plyr('#videoPlayer', {
+            controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
+        });
+
+        // Carga la nueva fuente del video
+        videoPlayer.source = {
+            type: 'video',
+            sources: [
+                {
+                    src: videoUrl,
+                    type: 'video/mp4'
+                    // También puedes agregar otros formatos compatibles aquí
+                }
+            ]
+        };
+
+        // Muestra el lightbox
+        document.getElementById('videoLightbox').style.display = 'block';
+
+        // Inicia la reproducción del video
+        videoPlayer.play();
+    }
+
+    // Función para cerrar el lightbox y pausar el video
+    function cerrarLightbox() {
+        var videoPlayer = Plyr.get('#videoPlayer');
+        videoPlayer.pause();
+        document.getElementById('videoLightbox').style.display = 'none';
+    }
+
+    // Evento clic para cerrar el lightbox
+    document.getElementById('videoLightbox').addEventListener('click', function () {
+        cerrarLightbox();
+    });
+</script>
 
 
   </head>
