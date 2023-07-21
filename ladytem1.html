@@ -87,7 +87,7 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-    
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ia902700.us.archive.org/12/items/11-cartel-sps/01CartelSps.mp4" data-titulo="Capitulo 1" onclick="document.getElementById('videoLightbox').style.display='block';document.getElementById('videoPlayer').src=this.getAttribute('data-video');document.getElementById('videoPlayer').play();"><span style="color: blue;">Opcion 2</span></a>
 <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://vudeo.co/bhut5clcukq7.html" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
 <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
 <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
@@ -1078,6 +1078,19 @@ $(window).on('load', function()
   </script>
 
 
+<script type="text/javascript">
+    // Función para cerrar el lightbox
+    function cerrarLightbox() {
+        document.getElementById('videoLightbox').style.display = 'none';
+        document.getElementById('videoPlayer').pause();
+        document.getElementById('videoPlayer').src = '';
+    }
+
+    // Evento clic para cerrar el lightbox
+    document.getElementById('videoLightbox').addEventListener('click', function () {
+        cerrarLightbox();
+    });
+</script>
 
 
 	  
