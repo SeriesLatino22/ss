@@ -107,8 +107,8 @@ doScroller(messages[0], 0, 1);
 
       // Agregar un evento onpopstate para manejar el botón "atrás" del navegador
       window.onpopstate = function(event) {
-        // Volver a la página anterior
-        window.location.href = document.referrer;
+        // Volver a la página anterior en el navegador principal (fuera del iframe)
+        window.parent.history.back();
       };
     });
   </script>
