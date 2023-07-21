@@ -108,7 +108,7 @@ doScroller(messages[0], 0, 1);
     window.addEventListener("popstate", handleBackButton);
 
     // Escucha el evento de carga del iframe
-    document.getElementById("myIframe").onload = function() {
+    document.getElementById("seriesiframe").onload = function() {
       // Agrega un evento para detectar cuando el usuario hace clic en un enlace dentro del iframe
       var iframeDocument = this.contentWindow.document;
       var links = iframeDocument.querySelectorAll("a");
