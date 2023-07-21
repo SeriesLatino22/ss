@@ -5,9 +5,9 @@
 <title>Untitled Page</title>
 <meta name="generator" content="WYSIWYG Web Builder 18 - https://www.wysiwygwebbuilder.com">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
-<script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
-
+<link href="https://vjs.zencdn.net/7.15.4/video-js.css" rel="stylesheet">
+<script src="https://vjs.zencdn.net/7.15.4/video.min.js"></script>
+	
 <link href="Sintv2.css" rel="stylesheet">
 <link href="ladytem1.css" rel="stylesheet">
 <script src="bootstrap.min.js"></script>
@@ -1093,17 +1093,28 @@ $(window).on('load', function()
 
 
 <script type="text/javascript">
-    // Función para cerrar el lightbox
-    function cerrarLightbox() {
-        document.getElementById('videoLightbox').style.display = 'none';
-        document.getElementById('videoPlayer').pause();
-        document.getElementById('videoPlayer').src = '';
-    }
+    /// Crea el contenedor del lightbox y el reproductor de Video.js
+var lightboxContainer = document.createElement('div');
+lightboxContainer.id = 'videoLightbox';
+lightboxContainer.style.display = 'none';
+lightboxContainer.className = 'lightbox-contenedor';
 
-    // Evento clic para cerrar el lightbox
-    document.getElementById('videoLightbox').addEventListener('click', function () {
-        cerrarLightbox();
-    });
+var videoPlayer = document.createElement('video');
+videoPlayer.id = 'videoPlayer';
+videoPlayer.className = 'video-js vjs-default-skin';
+videoPlayer.controls = true;
+
+// Crea la fuente del video
+var videoSource = document.createElement('source');
+videoSource.type = 'video/mp4';
+videoPlayer.appendChild(videoSource);
+
+// Agrega el videoPlayer al lightboxContainer
+lightboxContainer.appendChild(videoPlayer);
+
+// Agrega el lightboxContainer al cuerpo del documento
+document.body.appendChild(lightboxContainer);
+
 </script>
 
 
