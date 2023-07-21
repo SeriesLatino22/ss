@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://vjs.zencdn.net/7.15.4/video-js.css" rel="stylesheet">
 <script src="https://vjs.zencdn.net/7.15.4/video.min.js"></script>
-	
 <link href="Sintv2.css" rel="stylesheet">
 <link href="ladytem1.css" rel="stylesheet">
 <script src="bootstrap.min.js"></script>
@@ -100,6 +99,7 @@ $(window).on('load', function()
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
+		<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ia902700.us.archive.org/12/items/11-cartel-sps/01CartelSps.mp4" data-titulo="Título del video 2" onclick="abrirLightbox(this.getAttribute('data-video'));"><span style="color: blue;">Opcion 2</span></a>
     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ia902700.us.archive.org/12/items/11-cartel-sps/01CartelSps.mp4" data-titulo="Capitulo 1" onclick="abrirLightbox(this);"><span style="color: yellow;">Opcion 1</span></a>
 <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ia902700.us.archive.org/12/items/11-cartel-sps/01CartelSps.mp4" data-titulo="Título del video 2" onclick="abrirLightbox(this.getAttribute('data-video'));"><span style="color: blue;">Opcion 2</span></a>
 <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://vudeo.co/bhut5clcukq7.html" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
@@ -1093,28 +1093,35 @@ $(window).on('load', function()
 
 
 <script type="text/javascript">
-    /// Crea el contenedor del lightbox y el reproductor de Video.js
-var lightboxContainer = document.createElement('div');
-lightboxContainer.id = 'videoLightbox';
-lightboxContainer.style.display = 'none';
-lightboxContainer.className = 'lightbox-contenedor';
+     // Función para abrir el lightbox y reproducir el video con Video.js
+    function abrirLightbox(videoUrl) {
+        var videoPlayer = videojs('videoPlayer');
 
-var videoPlayer = document.createElement('video');
-videoPlayer.id = 'videoPlayer';
-videoPlayer.className = 'video-js vjs-default-skin';
-videoPlayer.controls = true;
+        // Configura el reproductor de Video.js
+        videoPlayer.src({
+            src: videoUrl,
+            type: 'video/mp4'
+            // También puedes agregar otros formatos compatibles aquí
+        });
 
-// Crea la fuente del video
-var videoSource = document.createElement('source');
-videoSource.type = 'video/mp4';
-videoPlayer.appendChild(videoSource);
+        // Muestra el lightbox
+        document.getElementById('videoLightbox').style.display = 'block';
 
-// Agrega el videoPlayer al lightboxContainer
-lightboxContainer.appendChild(videoPlayer);
+        // Inicializa el reproductor de Video.js
+        videoPlayer.play();
+    }
 
-// Agrega el lightboxContainer al cuerpo del documento
-document.body.appendChild(lightboxContainer);
+    // Función para cerrar el lightbox y pausar el video
+    function cerrarLightbox() {
+        var videoPlayer = videojs('videoPlayer');
+        videoPlayer.pause();
+        document.getElementById('videoLightbox').style.display = 'none';
+    }
 
+    // Evento clic para cerrar el lightbox
+    document.getElementById('videoLightbox').addEventListener('click', function () {
+        cerrarLightbox();
+    });
 </script>
 
 
