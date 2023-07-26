@@ -5,9 +5,6 @@
 <title>Untitled Page</title>
 <meta name="generator" content="WYSIWYG Web Builder 18 - https://www.wysiwygwebbuilder.com">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css">
-<script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
-
 <link href="Sintv2.css" rel="stylesheet">
 <link href="ladytem1.css" rel="stylesheet">
 <script src="bootstrap.min.js"></script>
@@ -35,648 +32,10 @@ $(window).on('load', function()
 <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
 
     
-<script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
-<script>
-    // Función para abrir el lightbox y reproducir el video con Plyr
-    function abrirLightbox(videoUrl) {
-        var videoPlayer = new Plyr('#videoPlayer', {
-            controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
-        });
-
-        // Carga la nueva fuente del video
-        videoPlayer.source = {
-            type: 'video',
-            sources: [
-                {
-                    src: videoUrl,
-                    type: 'video/mp4'
-                    // También puedes agregar otros formatos compatibles aquí
-                }
-            ]
-        };
-
-        // Muestra el lightbox
-        document.getElementById('videoLightbox').style.display = 'block';
-
-        // Inicia la reproducción del video
-        videoPlayer.play();
-    }
-
-    // Función para cerrar el lightbox y pausar el video
-    function cerrarLightbox() {
-        var videoPlayer = Plyr.get('#videoPlayer');
-        videoPlayer.pause();
-        document.getElementById('videoLightbox').style.display = 'none';
-    }
-
-    // Evento clic para cerrar el lightbox
-    document.getElementById('videoLightbox').addEventListener('click', function () {
-        cerrarLightbox();
-    });
-</script>
-<style>
-body
-{
-   background-color: #131720;
-   color: #000000;
-   font-family: Arial;
-   font-weight: normal;
-   font-size: 13px;
-   line-height: 1.1875;
-   margin: 0;
-   padding: 0;
-}
-#preloader
-{
-   background: #000000 url("images/sssss.gif") no-repeat center center;
-   bottom: 0;
-   position: fixed;
-   top: 0;
-   width: 100%;
-   z-index: 99999;
-}
-#wb_LayoutGrid1
-{
-   clear: both;
-   position: relative;
-   table-layout: fixed;
-   display: table;
-   text-align: center;
-   width: 100%;
-   background-color: transparent;
-   background-image: none;
-   border: 0px solid #CCCCCC;
-   border-radius: 0px;
-   box-sizing: border-box;
-   margin: 0;
-}
-#LayoutGrid1
-{
-   box-sizing: border-box;
-   display: flex;
-   flex-direction: row;
-   flex-wrap: wrap;
-   padding: 0;
-   margin-right: auto;
-   margin-left: auto;
-}
-#LayoutGrid1 > .col-1
-{
-   box-sizing: border-box;
-   font-size: 0;
-   min-height: 1px;
-   padding-right: 0px;
-   padding-left: 0px;
-   position: relative;
-}
-#LayoutGrid1 > .col-1
-{
-   flex: 0 0 auto;
-}
-#LayoutGrid1 > .col-1
-{
-   background-color: transparent;
-   background-image: none;
-   border: 0px solid #FFFFFF;
-   border-radius: 0px;
-   flex-basis: 100%;
-   max-width: 100%;
-   display: flex;
-   flex-wrap: wrap;
-   align-content: center;
-   align-self: stretch;
-   align-items: center;
-   justify-content: center;
-   text-align: center;
-}
-@media (max-width: 480px)
-{
-#LayoutGrid1 > .col-1
-{
-   flex-basis: 100% !important;
-   max-width: 100% !important;
-}
-}
-#wb_LayoutGrid2
-{
-   clear: both;
-   position: relative;
-   table-layout: fixed;
-   display: table;
-   text-align: center;
-   width: 100%;
-   background-color: transparent;
-   background-image: none;
-   border: 0px solid #CCCCCC;
-   border-radius: 0px;
-   box-sizing: border-box;
-   margin: 0;
-}
-#LayoutGrid2
-{
-   box-sizing: border-box;
-   padding: 2px 0 10px 0;
-   margin-right: auto;
-   margin-left: auto;
-}
-#LayoutGrid2 > .row
-{
-   margin-right: 0;
-   margin-left: 0;
-}
-#LayoutGrid2 > .row > .col-1
-{
-   box-sizing: border-box;
-   font-size: 0;
-   min-height: 1px;
-   padding-right: 0px;
-   padding-left: 0px;
-   position: relative;
-}
-#LayoutGrid2 > .row > .col-1
-{
-   float: left;
-}
-#LayoutGrid2 > .row > .col-1
-{
-   background-color: transparent;
-   background-image: none;
-   border: 0px solid #FFFFFF;
-   border-radius: 0px;
-   width: 100%;
-   text-align: center;
-}
-#LayoutGrid2:before,
-#LayoutGrid2:after,
-#LayoutGrid2 .row:before,
-#LayoutGrid2 .row:after
-{
-   display: table;
-   content: " ";
-}
-#LayoutGrid2:after,
-#LayoutGrid2 .row:after
-{
-   clear: both;
-}
-@media (max-width: 480px)
-{
-#LayoutGrid2 > .row > .col-1
-{
-   float: none;
-   width: 100% !important;
-}
-}
-#wb_pronmnb
-{
-   height: auto !important;
-   position: relative;
-   display: flex;
-   flex-direction: column;
-   box-sizing: border-box;
-   margin: 5px 5px 5px 5px;
-   max-width: calc(100% - 10px);
-   margin-left: auto !important;
-   margin-right: auto !important;
-   background-clip: padding-box;
-   background-color: transparent;
-   background-image: none;
-   border: 1px solid #4F4F4F;
-   border-radius: 0px;
-   box-shadow: 0px 2px 5px rgba(0,0,0,0.10);
-   text-align: center;
-}
-#pronmnb-card-body
-{
-   padding: 0;
-   flex: 1 1 auto;
-   font-size: 0;
-}
-.fade
-{
-   opacity: 0;
-   transition: opacity .15s linear;
-}
-.fade.show
-{
-   opacity: 1;
-}
-.collapse:not(.show)
-{
-   display: none;
-}
-.collapsing
-{
-   position: relative;
-   height: 0;
-   overflow: hidden;
-   transition: height 0.35s ease;
-}
-#pronmnb-card-header
-{
-   box-sizing: border-box;
-   border-bottom: 1px solid #4F4F4F;
-   margin: 0;
-   padding: 12px 3px 3px 20px;
-   background-clip: padding-box;
-   background-color: transparent;
-   background-image: none;
-   color: #808080;
-   font-family: Arial;
-   font-weight: normal;
-   font-style: normal;
-   font-size: 15px;
-   text-align: center;
-   cursor: pointer;
-}
-#pronmnb-card-header .icon-collapsed, #pronmnb-card-header .icon-expanded
-{
-   cursor: pointer;
-   display: inline-block;
-   fill: #808080;
-   float: right;
-   height: 15px;
-   left: auto;
-   right: 0;
-   position: relative;
-   top: 0;
-   width: 15px;
-}
-#pronmnb-card-header[aria-expanded=true] .icon-collapsed
-{
-   display: none;
-}
-#pronmnb-card-header[aria-expanded=false] .icon-expanded
-{
-   display: none;
-}
-#pronmnb-card-item1
-{
-   box-sizing: border-box;
-   margin: 0;
-   padding: 0;
-   color: #000000;
-   font-family: Arial;
-   font-weight: normal;
-   font-style: normal;
-   font-size: 16px;
-}
-#pronmnb-card-item2
-{
-   box-sizing: border-box;
-   margin: 0;
-   border-top: 0px #000000 solid;
-   border-width: 0px 0 0 0;
-   height: 0;
-   line-height: 0;
-   visibility: hidden;
-}
-#pronmnb-card-item3
-{
-   box-sizing: border-box;
-   margin: 0;
-   padding: 0;
-   color: #FFFFFF;
-   font-family: Arial;
-   font-weight: normal;
-   font-style: normal;
-   font-size: 15px;
-   text-align: left;
-}
-#pronmnb-card-item4
-{
-   box-sizing: border-box;
-   margin: 0;
-   padding: 0;
-   color: #000000;
-   font-family: Arial;
-   font-weight: normal;
-   font-style: normal;
-   font-size: 16px;
-}
-#pronmnb-card-item5
-{
-   box-sizing: border-box;
-   margin: 0;
-   padding: 0;
-   color: #FFFFFF;
-   font-family: Arial;
-   font-weight: normal;
-   font-style: italic;
-   font-size: 11px;
-}
-    
-     #loading-message {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: rgba(0, 0, 0, 0.6);
-      color: white;
-      padding: 10px;
-      font-size: 16px;
-      border-radius: 5px;
-    }
-    iframe {
-      /* Asegurar que el iframe esté por encima del mensaje */
-      position: relative;
-      z-index: 2;
-    }
-
-  
-
-.button-container {
-  display: inline-block;
-}
-
-.button {
-  display: inline-block;
-  padding: 5px 5px;
-  font-size: 10px;
-  font-weight: bold;
-  border-radius: 10px;
-  text-align: center;
-  text-decoration: none;
-  color: #000000;
-  cursor: pointer;
-}
-
-.button.visto {
-  background-color: #00FF00;
-}
 
 
-.title {
-  margin-bottom: 0px;
-}
-
-
- 
- .container {
-	 display: flex;
-	 flex-direction: column;
-	 width: 100%;
-	 max-width: 100%;
-	 margin: 0 auto;
-    margin-top: -40px;
-}
- .container h1 {
-	 text-align: center;
-	 margin-bottom: 30px;
-	 font-weight: 500;
-}
- .container h2 {
-	 font-weight: 500;
-}
- .accordion {
-	 display: flex;
-	 flex-direction: column;
-	 width: 100%;
-	 height: auto;
-}
- .accordion .a-container {
-	 display: flex;
-	 flex-direction: column;
-	 width: 100%;
-	 padding-bottom: 5px;
-}
- .accordion .a-container .a-btn {
-	 margin: 0;
-	 position: relative;
-	 padding: 15px 30px;
-	 width: 100%;
-	 color: #bdbdbd;
-	 font-weight: 400;
-	 display: block;
-	 font-weight: 500;
-	 background-color: #262626;
-	 cursor: pointer;
-	 transition: all 0.3s ease-in-out;
-	 border-radius: 5px;
-	 box-shadow: 0 20px 25px -5px rgba(0, 0, 0, .15), 0 10px 10px -5px rgba(0, 0, 0, .1) !important;
-}
- .accordion .a-container .a-btn span {
-	 display: block;
-	 position: absolute;
-	 height: 14px;
-	 width: 14px;
-	 right: 20px;
-	 top: 18px;
-}
- .accordion .a-container .a-btn span:after {
-	 content: '';
-	 width: 14px;
-	 height: 3px;
-	 border-radius: 2px;
-	 background-color: #fff;
-	 position: absolute;
-	 top: 6px;
-}
- .accordion .a-container .a-btn span:before {
-	 content: '';
-	 width: 14px;
-	 height: 3px;
-	 border-radius: 2px;
-	 background-color: #fff;
-	 position: absolute;
-	 top: 6px;
-	 transform: rotate(90deg);
-	 transition: all 0.3s ease-in-out;
-}
-
-.video-title {
-    color: #fff;
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
- .accordion .a-container .a-panel {
-	 width: 100%;
-	 color: #fff;
-	 transition: all 0.2s ease-in-out;
-	 opacity: 0;
-	 height: auto;
-	 max-height: 0;
-	 overflow: scroll;
-	 padding: 0px 10px;
-}
- .accordion .a-container.active .a-btn {
-	 color: #fff;
-}
- .accordion .a-container.active .a-btn span::before {
-	 transform: rotate(0deg);
-}
- .accordion .a-container.active .a-panel {
-	 padding: 15px 10px 10px 10px;
-	 opacity: 1;
-	 max-height: 500px;
-}
-      
- .fs-abrir-lightbox1{
-background: linear-gradient(to bottom, #414142, #040404);
-width:100%; 	
-}
-
-
-.fs-abrir-lightbox{
-background: linear-gradient(to bottom, #414142, #040404);
-	width:100%; 	
-}
-#lightbox {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0px;
-  left: 0px;
-  background: rgba(0, 0, 0, 0.8);
-  display: none;
-}
-
-#lightbox.abrir {
-  display: block;
-}
-
-#lightbox-content {
-  position: absolute;
-  width: 95%;
-  height: 50vh;
- border-radius:5px;
-
-  top: 22%;
-  margin-left: 2.4%;
-background: black;
-  text-align: center;
-  padding-top: 0px;
-}
-
-#fechar {
-  position: absolute;
-  right: 0;
-  top: -60px;
-    font-size: 55px;
-  height: 20px;
-  width: 20px;
-  text-align: center;
-  color: #ff0000;
-  cursor: pointer;
-}
-
-@media(orientation:landscape){
-#lightbox-content {
-  height: 70vh;
-  top: 15%;
-}
-
-#fechar {
-  top: -50px;
-  font-size: 70px;
-}
-
-}
-
-*, *::after, *::before {
-	 padding: 0;
-	 margin: 0;
-	 box-sizing: border-box;
-	 list-style: none;
-	 list-style-type: none;
-	 text-decoration: none;
-	 text-rendering: optimizeLegibility;
-}
-
- .container {
-	 max-width: 100%;
-	 width: 100%;
-	 height: auto;
-	 margin: 0 auto;
-}
- .main .accordion {
-	 max-width: 100%;
-	 height: auto;
-	 margin: 0 auto;
-}
- .main .accordion-item {
-	 padding: 7px 0;
-	 margin: 7;
-	 overflow: hidden;
-	 border: none;
-	 outline: none;
-	 border-bottom: 8px solid #000000;
-         background-color: #524d4d;
-         border-radius: 10px;
-}
- .main .accordion-item .title {
-	 display: flex;
-	 justify-content: space-between;
-	 align-items: center;
-	 font-family: inherit;
-	 font-size: 20px;
-	 font-weight: 600;
-	 line-height: inherit;
-	 cursor: pointer;
-	 color: #fff;
-         margin-left: 20px;
-}
- .main .accordion-item .title i.fas {
-	 font-size: 20px;
-	 color: #fff;
-	 transform: translateX(-50%) rotate(0);
-	 transition: transform 0.15s ease;
-}
- .main .accordion-item .paragraph {
-	 font-family: inherit;
-	 font-size: 1rem;
-	 font-weight: normal;
-	 line-height: inherit;
-	 color: #ff0000;
-	 display: none;
-	 padding: 10px;
-         background-color: #66666A;
-}
- .main .accordion-item.active .title i.fas {
-	 color: #1a9de1;
-	 transform: translateX(-50%) rotate(180deg);
-         content:"\f078"
-}
- .main .accordion-item.active .paragraph {
-	 display: block;
-} 
-
-a {text-decoration:none; 
-  display: block; 
-
- line-height: 40px;
- color: #ff0000;
- border-radius: 8px;
- font-size: 18px;
- margin: 3px;
-    margin-top: 2px;
-text-align: center;
-} 
-
-
-iframe.blocked-click {
-      /* Asegura que el iframe bloqueado cubra todo el contenedor */
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-</style>
   </head>
   <body>
-
-<div id="videoLightbox" style="display: none;" class="lightbox-contenedor">
-    <video id="videoPlayer" controls>
-        <!-- Fuentes del video -->
-        <source src="" type="video/mp4">
-        <!-- También puedes agregar otros formatos compatibles aquí -->
-    </video>
-</div>
-
-	  
 
 <div class="ConjuntoHeadCont">
 </div></div>
@@ -712,9 +71,9 @@ iframe.blocked-click {
         </h3>
         <p class="paragraph">
      <span id="loading-message" style="color: white; display: none;">El reproductor se está cargando, espera...</span>
-     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://vk.com/video_ext.php?oid=813698000&id=456239020&hd=2" data-titulo="Capitulo 1"><span style="color: yellow;">Opcion 1</span></a>
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://player.odycdn.com/api/v3/streams/free/01CartelSps/5c12a5ae9148d2e129619b972bb6acf2b36724a0/cd32e0.mp4" data-titulo="Capitulo 1"><span style="color: yellow;">Opcion 1</span></a>
 <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/5467125451269" data-titulo="Capitulo 1"><span style="color: blue;">Opcion 2</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://www.bitchute.com/embed/GlN47w4FNfDN/" data-titulo="Capitulo 1"><span style="color: red;">Opcion 3</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ia902700.us.archive.org/12/items/11-cartel-sps/01CartelSps.mp4" data-titulo="Capitulo 1"><span style="color: red;">Opcion 3</span></a>
 <a class="fs-abrir-lightbox1" href="https://sblona.com/e/c53gljjzkb9s.html" target="_blank" data-titulo="Capitulo 1"><span style="color: white;">Alternativo</span></a>
 
    </p>
@@ -728,13 +87,8 @@ iframe.blocked-click {
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://delivery---1001.cdn-stack.com/hls2/01/00002/wilvlbt3v5n6_o/index-v1-a1.m3u8?t=0fTztfhWy-hfWyyola-boK6ayVDXTi5niVaPapaIDrw&s=1690242669&e=21600&f=12838&i=0.0&sp=0" data-titulo="Título del video 2" onclick="abrirLightbox(this.getAttribute('data-video'));"><span style="color: blue;">Opcion i2</span></a>
-		
-		<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://filemoon.sx/e/pqeweay3dyup/LadCap15_SinTV.com_.mp4" data-titulo="Título del video 2" onclick="abrirLightbox(this.getAttribute('data-video'));"><span style="color: blue;">Opcion 2</span></a>
-   
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ia902700.us.archive.org/12/items/11-cartel-sps/01CartelSps.mp4" data-titulo="Capitulo 1" onclick="abrirLightbox(this);"><span style="color: yellow;">Opcion 1</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ia902700.us.archive.org/12/items/11-cartel-sps/01CartelSps.mp4" data-titulo="Título del video 2" onclick="abrirLightbox(this.getAttribute('data-video'));"><span style="color: blue;">Opcion 2</span></a>
-<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://vudeo.co/bhut5clcukq7.html" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
+    
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
 <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
 <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
 
@@ -795,7 +149,610 @@ iframe.blocked-click {
 <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
 <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
 
-     </p>
+     </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 6 &nbsp;</span>
+          <div class="button-container">
+    <button class="button" id="button6ll">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
+
+     </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 7 &nbsp;</span>
+          <div class="button-container">
+    <button class="button" id="button7ll">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
+
+
+ </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 8 &nbsp;</span>
+          <div class="button-container">
+    <button class="button" id="button8ll">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
+
+	 
+	 </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 9 &nbsp;</span>
+          <div class="button-container">
+    <button class="button" id="button9ll">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
+
+     </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 10</span>
+          <div class="button-container">
+    <button class="button" id="button10ll">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
+
+     </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 11</span>
+          <div class="button-container">
+    <button class="button" id="button11">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+    <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
+
+
+ </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 12</span>
+          <div class="button-container">
+    <button class="button" id="button12">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 2"><span style="color: yellow;">Opcion 1</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 3"><span style="color: red;">Opcion 2</span></a>
+<a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879" data-titulo="Título del video 4"><span style="color: blue;">Opcion 3</span></a>
+
+	 
+	 </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 13</span>
+          <div class="button-container">
+    <button class="button" id="button13">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687179483759"><span>Youtube</span></a> 
+    
+     </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 14</span>
+          <div class="button-container">
+    <button class="button" id="button14">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687179549295"><span>Youtube</span></a> 
+    
+     </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 15</span>
+          <div class="button-container">
+    <button class="button" id="button15">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687179811439"><span>Youtube</span></a> 
+    
+
+ </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 16</span>
+          <div class="button-container">
+    <button class="button" id="button16">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687180073583"><span>Youtube</span></a> 
+    
+	 
+	 </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 17</span>
+          <div class="button-container">
+    <button class="button" id="button17">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687180139119"><span>Youtube</span></a> 
+    
+     </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 18</span>
+          <div class="button-container">
+    <button class="button" id="button18">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687180270191"><span>Youtube</span></a> 
+    
+     </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 19</span>
+          <div class="button-container">
+    <button class="button" id="button19">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687180663407"><span>Youtube</span></a> 
+    
+
+ </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 20</span>
+          <div class="button-container">
+    <button class="button" id="button20">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687181843055"><span>Youtube</span></a> 
+    
+	 
+	 </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 21</span>
+          <div class="button-container">
+    <button class="button" id="button21">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687182563951"><span>Youtube</span></a> 
+    
+     </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 22</span>
+          <div class="button-container">
+    <button class="button" id="button22">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687183219311"><span>Youtube</span></a> 
+    
+     </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 23</span>
+          <div class="button-container">
+    <button class="button" id="button23">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4687183350383"><span>Youtube</span></a> 
+    
+
+ </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 24</span>
+          <div class="button-container">
+    <button class="button" id="button24">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688148695663"><span>Youtube</span></a> 
+    
+    </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 25</span>
+          <div class="button-container">
+    <button class="button" id="button25">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688148826735"><span>Youtube</span></a> 
+    
+     </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 26</span>
+          <div class="button-container">
+    <button class="button" id="button26">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688148957807"><span>Youtube</span></a> 
+    
+     </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 27</span>
+          <div class="button-container">
+    <button class="button" id="button27">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879"><span>Youtube</span></a> 
+    
+
+ </p> 
+	 
+	  
+	 
+	 </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 28</span>
+          <div class="button-container">
+    <button class="button" id="button28">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149219951"><span>Youtube</span></a> 
+    
+	 </p> 
+	 
+	  
+	 
+      </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 29</span>
+          <div class="button-container">
+    <button class="button" id="button29">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688150989423"><span>Youtube</span></a> 
+    
+
+ </p> 
+	 
+      </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 30</span>
+          <div class="button-container">
+    <button class="button" id="button30">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688151775855"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 31</span>
+          <div class="button-container">
+    <button class="button" id="button31">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688153741935"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 32</span>
+          <div class="button-container">
+    <button class="button" id="button32">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688155249263"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 33</span>
+          <div class="button-container">
+    <button class="button" id="button33">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688338356847"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 34</span>
+          <div class="button-container">
+    <button class="button" id="button34">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688340519535"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 35</span>
+          <div class="button-container">
+    <button class="button" id="button35">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688340716143"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 36</span>
+          <div class="button-container">
+    <button class="button" id="button36">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688340847215"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 37</span>
+          <div class="button-container">
+    <button class="button" id="button37">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688342026863"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 38</span>
+          <div class="button-container">
+    <button class="button" id="button38">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688342944367"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 39</span>
+          <div class="button-container">
+    <button class="button" id="button39">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688343403119"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ 
+ </p>
       </div>
       <div class="accordion-item">
         <h3 class="title">
@@ -814,7 +771,141 @@ iframe.blocked-click {
  
  </p>
       </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 41</span>
+          <div class="button-container">
+    <button class="button" id="button41">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879"><span>Youtube</span></a> 
+    
+
+ </p> 
  
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 42</span>
+          <div class="button-container">
+    <button class="button" id="button42">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 43</span>
+          <div class="button-container">
+    <button class="button" id="button43">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 44</span>
+          <div class="button-container">
+    <button class="button" id="button44">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 45</span>
+          <div class="button-container">
+    <button class="button" id="button45">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 46</span>
+          <div class="button-container">
+    <button class="button" id="button46">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 47</span>
+          <div class="button-container">
+    <button class="button" id="button47">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ 
+ </p>
+      </div>
+      <div class="accordion-item">
+        <h3 class="title">
+          <span>Capitulo 48</span>
+          <div class="button-container">
+    <button class="button" id="button48">No visto</button>
+  </div>
+          <i class="fas fa-chevron-down"></i>
+        </h3>
+        <p class="paragraph">
+     <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://ok.ru/videoembed/4688149088879"><span>Youtube</span></a> 
+    
+
+ </p> 
+ 
+ 
+ </p>
+      </div>
       <div class="accordion-item">
         <h3 class="title">
           <span>Capitulo 49</span>
@@ -985,49 +1076,6 @@ iframe.blocked-click {
 
     // ...
   </script>
-
-
-<script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
-<script>
-    // Función para abrir el lightbox y reproducir el video con Plyr
-    function abrirLightbox(videoUrl) {
-        var videoPlayer = new Plyr('#videoPlayer', {
-            controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
-        });
-
-        // Carga la nueva fuente del video
-        videoPlayer.source = {
-            type: 'video',
-            sources: [
-                {
-                    src: videoUrl,
-                    type: 'video/mp4'
-                    // También puedes agregar otros formatos compatibles aquí
-                }
-            ]
-        };
-
-        // Muestra el lightbox
-        document.getElementById('videoLightbox').style.display = 'block';
-
-        // Inicia la reproducción del video
-        videoPlayer.play();
-    }
-
-    // Función para cerrar el lightbox y pausar el video
-    function cerrarLightbox() {
-        var videoPlayer = Plyr.get('#videoPlayer');
-        videoPlayer.pause();
-        document.getElementById('videoLightbox').style.display = 'none';
-    }
-
-    // Evento clic para cerrar el lightbox
-    document.getElementById('videoLightbox').addEventListener('click', function () {
-        cerrarLightbox();
-    });
-</script>
-
-	  
   </body>
 </html>
 </div>

@@ -19,7 +19,6 @@ El tiempo pasa y Fátima, agobiada por la pérdida de Lady, se sumerge cada vez 
 <script src="jquery-ui.min.js"></script>
 <script src="bootstrap.min.js"></script>
 <script src="wb.overlay.min.js"></script>
-<script src="wb.drilldownmenu.min.js"></script>
 <script src="wwb18.min.js"></script>
 <script>
 $(document).ready(function()
@@ -29,11 +28,15 @@ $(document).ready(function()
       event.preventDefault();
       $('html, body').stop().animate({ scrollTop: $('#wb_intro').offset().top-88 }, 600, 'easeOutExpo');
    });
-   $('#OverlayMenu2-overlay').overlay({hideTransition:true});
-   $('.OverlayMenu2').drilldownmenu({backText: 'Atrás'});
-   $('#OverlayMenu2').on('click', function(e)
+   $('#OverlayMenu1-overlay').overlay({hideTransition:true});
+   $('.OverlayMenu1 .item-has-children').children('a').on('click', function(event)
    {
-      $.overlay.show($('#OverlayMenu2-overlay'));
+      event.preventDefault();
+      $(this).toggleClass('submenu-open').next('.sub-menu').slideToggle(0,'linear').end().parent('.item-has-children').siblings('.item-has-children').children('a').removeClass('submenu-open').next('.sub-menu').slideUp(0,'linear');
+   });
+   $('#OverlayMenu1').on('click', function(e)
+   {
+      $.overlay.show($('#OverlayMenu1-overlay'));
       return false;
    });
    if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {$('#preloader').remove();}
@@ -108,6 +111,18 @@ window.addEventListener('load', () => {
 </body>
 </html>
 
+<div id="wb_LayoutGrid1">
+<div id="LayoutGrid1">
+<div class="row">
+<div class="col-1">
+<iframe name="InlineFrame1" id="InlineFrame2" src="./buscador.html" allowfullscreen></iframe>
+<div id="wb_Icon1" style="display:none;width:39px;height:32px;text-align:center;z-index:1;">
+<a href="#" onclick="ShowObjectWithEffect('InlineFrame2', 0, 'fade', 0);ShowObjectWithEffect('wb_Icon1', 0, 'fade', 0);ShowObjectWithEffect('wb_Image4', 1, 'fade', 0);ShowObjectWithEffect('aaaa', 1, 'fade', 0);return false;"><div id="Icon1"><i class="fa fa-times"></i></div></a>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div id="wb_intro">
 <div id="intro-overlay"></div>
 <div id="intro">
@@ -119,7 +134,7 @@ window.addEventListener('load', () => {
 <div id="fav">
 <div class="row">
 <div class="col-1">
-<div id="Html1" style="display:inline-block;width:100%;height:85px;z-index:1">
+<div id="Html1" style="display:inline-block;width:100%;height:85px;z-index:3">
 
 <div class="container">
   <div id="botonFavoritosContainer">
@@ -185,7 +200,7 @@ window.addEventListener('load', () => {
 </div>
 </div>
 </div>
-<div id="wb_Card1" style="display:flex;width:calc(100% - 10px);z-index:3;" class="card">
+<div id="wb_Card1" style="display:flex;width:calc(100% - 10px);z-index:5;" class="card">
    <div id="Card1-card-header" class="collapsed" aria-expanded="false" data-bs-toggle="collapse" href="#Card1-card-body">Sinopsis Breve<svg class="icon-collapsed" viewBox="0 0 76 76" version="1.1" xmlns="http://www.w3.org/2000/svg">
    <path d="M68 34 L68 42 C68 43, 68 44, 67 45 C66 46, 65 46, 64 46 L47 46 L47 64 C47 65, 46 66, 45 67 C45 68, 44 68, 43 68 L34 68 C33 68, 32 68, 32 67 C31 66, 30 65, 30 64 L30 46 L13 46 C12 46, 11 46, 10 45 C9 44, 9 43, 9 42 L9 34 C9 33, 9 32, 10 31 C11 31, 12 30, 13 30 L30 30 L30 12 C30 11, 31 10, 32 10 C32 9, 33 8, 34 8 L43 8 C44 8, 45 9, 45 10 C46 10, 47 11, 47 12 L47 30 L64 30 C65 30, 66 31, 67 31 C68 32, 68 33, 68 34"/>
 </svg>
@@ -201,7 +216,7 @@ window.addEventListener('load', () => {
       <div id="Card1-card-item5"><br>Biografía - Drama</div>
    </div>
 </div>
-<div id="wb_Card2" style="display:flex;width:calc(100% - 10px);z-index:4;" class="card">
+<div id="wb_Card2" style="display:flex;width:calc(100% - 10px);z-index:6;" class="card">
    <div id="Card2-card-header" class="collapsed" aria-expanded="false" data-bs-toggle="collapse" href="#Card2-card-body">Ficha Técnica<svg class="icon-collapsed" viewBox="0 0 76 76" version="1.1" xmlns="http://www.w3.org/2000/svg">
    <path d="M68 34 L68 42 C68 43, 68 44, 67 45 C66 46, 65 46, 64 46 L47 46 L47 64 C47 65, 46 66, 45 67 C45 68, 44 68, 43 68 L34 68 C33 68, 32 68, 32 67 C31 66, 30 65, 30 64 L30 46 L13 46 C12 46, 11 46, 10 45 C9 44, 9 43, 9 42 L9 34 C9 33, 9 32, 10 31 C11 31, 12 30, 13 30 L30 30 L30 12 C30 11, 31 10, 32 10 C32 9, 33 8, 34 8 L43 8 C44 8, 45 9, 45 10 C46 10, 47 11, 47 12 L47 30 L64 30 C65 30, 66 31, 67 31 C68 32, 68 33, 68 34"/>
 </svg>
@@ -214,63 +229,95 @@ window.addEventListener('load', () => {
       <div id="Card2-card-item2"><br>Título Original: Lady la vendedora de rosas<br>Dirección: Israel Sánchez, Felipe Cano Ibañez<br>Guion: Lina Maria Arboleda, Pedro Miguel Rozo, Juliana Lema<br>Estado: Finalizado<br>País: Colombia<br>Temporadas: 1<br>Episodios: 53<br>Año: 2015<br></div>
    </div>
 </div>
-<div id="wb_Icon1" style="display:none;width:139px;height:73px;text-align:center;z-index:5;">
-<a href="./ladyt1-o1.html" target="InlineFrame1" onclick="ShowObjectWithEffect('InlineFrame1', 1, 'dropright', 500);ShowObjectWithEffect('wb_Icon1', 0, 'fade', 500);ShowObjectWithEffect('wb_Card1', 0, 'fade', 1);ShowObjectWithEffect('wb_Card2', 0, 'fade', 0);ShowObjectWithEffect('boton_cloce', 0, 'fade', 500);ShowObjectWithEffect('wb_Icon2', 1, 'fade', 500);ShowObjectWithEffect('h', 0, 'fade', 500);ShowObjectWithEffect('wb_fav', 0, 'fade', 500);ShowObjectWithEffect('Icon3', 1, 'fade', 500);ShowObjectWithEffect('Image1', 0, 'fade', 500);return false;"><div id="Icon1"><i class="fa fa-play-circle"></i></div></a>
-</div>
 <iframe name="InlineFrame1" id="InlineFrame1" src="./ladytem1.html" loading="lazy" scrolling="no" allowfullscreen></iframe>
 </div>
 </div>
 </div>
-<div id="wb_Image3" style="display:inline-block;width:195px;height:87px;z-index:8;">
-<a href="./ladytem1.html" target="InlineFrame1" onclick="ShowObjectWithEffect('InlineFrame1', 1, 'dropright', 500);ShowObjectWithEffect('wb_Image3', 0, 'fade', 500);ShowObjectWithEffect('wb_Card1', 0, 'dropright', 500);ShowObjectWithEffect('wb_Card2', 0, 'dropleft', 500);ShowObjectWithEffect('wb_Icon2', 1, 'fade', 500);ShowObjectWithEffect('aaaa', 0, 'fade', 500);ShowObjectWithEffect('wb_fav', 0, 'fade', 500);return false;"><img src="20230529_180338_332 (1).webp" id="Image3" alt=""></a>
+<div id="wb_Image3" style="display:inline-block;width:195px;height:87px;z-index:9;">
+<a href="./ladytem1.html" target="InlineFrame1" onclick="ShowObjectWithEffect('InlineFrame1', 1, 'dropright', 500);ShowObjectWithEffect('wb_Image3', 0, 'fade', 500);ShowObjectWithEffect('wb_Card1', 0, 'dropright', 500);ShowObjectWithEffect('wb_Card2', 0, 'dropleft', 500);ShowObjectWithEffect('wb_Icon2', 1, 'fade', 500);ShowObjectWithEffect('aaaa', 0, 'fade', 500);ShowObjectWithEffect('wb_fav', 0, 'fade', 500);ShowObjectWithEffect('Layer2', 0, 'fade', 500);return false;"><img src="20230529_180338_332 (1).webp" id="Image3" alt=""></a>
 </div>
 </div>
 </div>
 </div>
-<div id="layermenu" style="position:fixed;text-align:center;left:0px;top:20px;width:40px;height:38px;z-index:19;">
+<div id="layermenu" style="position:fixed;text-align:center;left:0px;top:20px;width:40px;height:38px;z-index:22;">
 <div id="layermenu_Container" style="width:40px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
 <div id="wb_Icon2" style="position:absolute;left:1px;top:5px;width:35px;height:33px;visibility:hidden;text-align:center;z-index:15;">
-<a href="./index.html" onclick="ShowObjectWithEffect('wb_Icon2', 0, 'fade', 500);ShowObjectWithEffect('boton_cloce', 1, 'fade', 500);ShowObjectWithEffect('InlineFrame1', 0, 'fade', 500);ShowObjectWithEffect('wb_Card1', 1, 'dropright', 500);ShowObjectWithEffect('wb_Card2', 1, 'dropleft', 500);ShowObjectWithEffect('aaaa', 1, 'fade', 500);ShowObjectWithEffect('wb_Image3', 1, 'fade', 500);ShowObjectWithEffect('wb_fav', 1, 'fade', 500);ShowObjectWithEffect('Icon3', 0, 'fade', 500);ShowObjectWithEffect('Image1', 1, 'fade', 500);return false;"><div id="Icon2"><i class="fa fa-chevron-circle-left"></i></div></a></div>
+<a href="./index.html" onclick="ShowObjectWithEffect('wb_Icon2', 0, 'fade', 500);ShowObjectWithEffect('boton_cloce', 1, 'fade', 500);ShowObjectWithEffect('InlineFrame1', 0, 'fade', 500);ShowObjectWithEffect('wb_Card1', 1, 'dropright', 500);ShowObjectWithEffect('wb_Card2', 1, 'dropleft', 500);ShowObjectWithEffect('aaaa', 1, 'fade', 500);ShowObjectWithEffect('wb_Image3', 1, 'fade', 500);ShowObjectWithEffect('wb_fav', 1, 'fade', 500);ShowObjectWithEffect('Icon3', 0, 'fade', 500);ShowObjectWithEffect('wb_Image1', 1, 'fade', 500);ShowObjectWithEffect('Layer2', 1, 'fade', 500);return false;"><div id="Icon2"><i class="fa fa-chevron-circle-left"></i></div></a></div>
 </div>
 </div>
 
-<div id="aaaa" style="position:fixed;text-align:center;left:0px;top:15px;width:243px;height:91px;z-index:21;">
-<div id="aaaa_Container" style="width:243px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
-<div id="wb_Image5" style="position:absolute;left:40px;top:12px;width:188px;height:61px;z-index:16;">
-<img src="images/logo.png" id="Image5" alt="" width="218" height="78"></div>
-<div id="wb_OverlayMenu2" style="position:absolute;left:0px;top:20px;width:40px;height:37px;z-index:17;">
-<a href="#" id="OverlayMenu2">
+<div id="aaaa" style="position:fixed;text-align:center;left:0px;top:14px;width:263px;height:81px;z-index:24;">
+<div id="aaaa_Container" style="width:263px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
+<div id="wb_OverlayMenu1" style="position:absolute;left:17px;top:14px;width:40px;height:37px;z-index:16;">
+<a href="#" id="OverlayMenu1">
 <span class="line"></span>
 <span class="line">
 </span><span class="line"></span>
 </a>
 </div>
+<div id="wb_JavaScript1" style="position:absolute;left:30px;top:58px;width:208px;height:23px;z-index:17;">
+<div style="color:#FFFFFF;font-size:12px;font-family:Arial;font-weight:normal;font-style:normal;text-align:left;text-decoration:none;" id="text_scroller"></div>
+<script>
+var messages = new Array
+(
+   '  Series Colombianas  ',
+   '  Apoyanos en las redes sociales!  ',
+   '    sintv.co    '
+);
+var speed = 50;
+var currentMsg = 0;
+function doScroller(text, pos, direction)
+{
+   var text_scroller = document.getElementById('text_scroller');
+   text_scroller.innerText = '[' + text.substring(0, pos) + ']';
+
+   pos += direction;
+   if (pos > text.length)
+   {
+      setTimeout('doScroller("'+text+'",'+pos+','+(-direction)+')', speed*10);
+   }
+   else
+   {
+     if (pos < 0)
+     {
+        currentMsg++;
+        if(currentMsg >= messages.length)
+          currentMsg = 0;
+        text = messages[currentMsg];
+        direction = -direction;
+     }
+     setTimeout('doScroller("'+text+'",'+pos+','+direction+')', speed);
+   }
+}
+doScroller(messages[0], 0, 1);
+</script>
+</div>
+<div id="wb_Image1" style="position:absolute;left:70px;top:12px;width:182px;height:41px;z-index:18;">
+<img src="images/8248849621_2e551c55-070d-47aa-9422-2b995658cef6.png" id="Image1" alt="" width="182" height="42"></div>
 </div>
 </div>
-<div id="OverlayMenu2-overlay">
-<div class="OverlayMenu2">
-<ul class="drilldown-menu" role="menu">
-<li><a role="menuitem" href="./index.html" class="OverlayMenu2-effect"><i class="fa fa-home overlay-icon"></i>Inicio</a></li>
-<li>
-<a role="menuitem" href="#" class="OverlayMenu2-effect"><i class="fa fa-caret-right overlay-icon"></i>Categorias</a>
-<ul class="drilldown-submenu" role="menu">
-<li><a role="menuitem" href="./series1.html" class="OverlayMenu2-effect"><i class="fa fa-play-circle overlay-icon"></i>Series</a></li>
-<li><a role="menuitem" href="./Peliculas.html" class="OverlayMenu2-effect"><i class="fa fa-play-circle overlay-icon"></i>Peliculas</a></li>
-<li><a role="menuitem" href="./Todas.html" class="OverlayMenu2-effect"><i class="fa fa-play-circle overlay-icon"></i>Ver&nbsp;todas</a></li>
-</ul>
-</li>
-<li><a role="menuitem" href="./results.html" class="OverlayMenu2-effect"><i class="fa fa-search overlay-icon"></i>Buscar</a></li>
-<li><a role="menuitem" href="./favoritos.html" class="OverlayMenu2-effect"><i class="fa fa-heart overlay-icon"></i>Favoritos</a></li>
-<li>
-<a role="menuitem" href="#" class="OverlayMenu2-effect"><i class="fa fa-circle overlay-icon"></i>En&nbsp;vivo</a>
-<ul class="drilldown-submenu" role="menu">
-<li><a role="menuitem" href="#" class="OverlayMenu2-effect"><i class="fa fa-circle overlay-icon"></i>Tv&nbsp;Nacional</a></li>
-<li><a role="menuitem" href="https://fudfkzkl.blogspot.com/p/eventos-del-dia.html" class="OverlayMenu2-effect"><i class="fa fa-circle overlay-icon"></i>Futbol&nbsp;en&nbsp;vivo</a></li>
+<div id="Layer2" style="position:fixed;text-align:center;left:auto;right:2px;top:30px;width:62px;height:34px;z-index:25;">
+<div id="Layer2_Container" style="width:62px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
+<div id="wb_Image4" style="position:absolute;left:0px;top:0px;width:62px;height:34px;z-index:19;">
+<a href="#" onclick="ShowObjectWithEffect('aaaa', 0, 'fade', 0);ShowObjectWithEffect('wb_Icon1', 1, 'fade', 500);ShowObjectWithEffect('wb_Image4', 0, 'fade', 500);ShowObjectWithEffect('InlineFrame2', 1, 'puff', 500, 'swing');return false;"><img src="images/image-removebg-preview.png" id="Image4" alt="" width="62" height="35"></a></div>
+</div>
+</div>
+<div id="OverlayMenu1-overlay">
+<div class="OverlayMenu1">
+<ul class="OverlayMenu1" role="menu">
+<li><a role="menuitem" href="./index.html" class="OverlayMenu1-effect"><i class="fa fa-home overlay-icon"></i>Inicio</a></li>
+<li><a role="menuitem" href="./categorias.html" class="OverlayMenu1-effect"><i class="fa fa-angle-right overlay-icon"></i>Categorias</a></li>
+<li><a role="menuitem" href="./favoritos.html" class="OverlayMenu1-effect"><i class="fa fa-heart overlay-icon"></i>Favoritos</a></li>
+<li class="item-has-children">
+<a role="menuitem" href="#" class="OverlayMenu1-effect"><i class="fa fa-circle overlay-icon"></i>En&nbsp;vivo</a>
+<ul class="sub-menu" role="menu">
+<li><a role="menuitem" href="#" class="OverlayMenu1-effect"><i class="fa fa-circle overlay-icon"></i>Tv&nbsp;Nacional</a></li>
+<li><a role="menuitem" href="https://fudfkzkl.blogspot.com/p/eventos-del-dia.html" class="OverlayMenu1-effect"><i class="fa fa-circle overlay-icon"></i>Futbol&nbsp;en&nbsp;vivo</a></li>
 </ul>
 </li>
    </ul>
 </div>
-<a class="close-button" id="OverlayMenu2-close" href="#" role="button" aria-hidden="true"><span></span></a>
+<a class="close-button" id="OverlayMenu1-close" href="#" role="button" aria-hidden="true"><span></span></a>
 </div>
 <div id="preloader"></div>
 </body>
