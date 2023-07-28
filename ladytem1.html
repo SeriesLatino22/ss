@@ -1125,21 +1125,28 @@ $(window).on('load', function()
 var contador = 0;
 var visitantesUnicos = new Set();
 
+function obtenerIdentificadorUnico() {
+    if (!localStorage.getItem('identificador')) {
+        localStorage.setItem('identificador', Math.random().toString(36).substr(2, 9));
+    }
+    return localStorage.getItem('identificador');
+}
+
 function actualizarContador() {
     contadorElemento.textContent = contador + ' visitantes';
 }
 
 function incrementarContador() {
-    var ipAddress = obtenerDireccionIP(); // Función para obtener la dirección IP del usuario (necesitarás una API externa para esto).
-    if (!visitantesUnicos.has(ipAddress)) {
-        visitantesUnicos.add(ipAddress);
+    var identificador = obtenerIdentificadorUnico();
+    if (!visitantesUnicos.has(identificador)) {
+        visitantesUnicos.add(identificador);
         contador++;
         actualizarContador();
     }
 }
 
 window.onload = incrementarContador;
-  
+
     </script>
 
 	  
