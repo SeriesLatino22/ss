@@ -6,7 +6,10 @@
 <meta name="generator" content="WYSIWYG Web Builder 18 - https://www.wysiwygwebbuilder.com">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="Sintv2.css" rel="stylesheet">
-<link href="ladytem1.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="estilos.css">
+
+	<link href="ladytem1.css" rel="stylesheet">
 <script src="bootstrap.min.js"></script>
 <script src="jquery-3.6.0.min.js"></script>
 <script>
@@ -1105,6 +1108,41 @@ $(window).on('load', function()
 </div>
 </div>
 </div>
+
+
+    
+
+    <div class="contador-container">
+        <button id="contador-btn">
+            <i class="fas fa-eye"></i>
+            <span id="contador">0</span>
+        </button>
+    </div>
+
+    <script>
+
+	  var contadorElemento = document.getElementById('contador');
+var contador = 0;
+var visitantesUnicos = new Set();
+
+function actualizarContador() {
+    contadorElemento.textContent = contador + ' visitantes';
+}
+
+function incrementarContador() {
+    var ipAddress = obtenerDireccionIP(); // Función para obtener la dirección IP del usuario (necesitarás una API externa para esto).
+    if (!visitantesUnicos.has(ipAddress)) {
+        visitantesUnicos.add(ipAddress);
+        contador++;
+        actualizarContador();
+    }
+}
+
+window.onload = incrementarContador;
+  
+    </script>
+
+	  
 <div id="preloader"></div>
 </body>
 </html>
