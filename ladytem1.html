@@ -618,6 +618,23 @@ text-align: center;
 } 
 
 
+.superimposed-button {
+  position: absolute;
+  top: -30px;
+  right: 20px;
+  z-index: 1;
+  background-color: #ff0000;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.superimposed-button:hover {
+  background-color: #cc0000;
+}
 
 
 
@@ -658,6 +675,8 @@ text-align: center;
           <div class="button-container">
     <button class="button" id="button1ll">No visto</button>
   </div>
+		<button class="button superimposed-button">Nuevo botón</button>
+                  
           <i class="fas fa-chevron-down"></i>
         </h3>
         <p class="paragraph">
