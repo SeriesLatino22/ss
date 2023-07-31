@@ -622,23 +622,30 @@ text-align: center;
   position: relative;
 }
 
-.superimposed-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
+/* Estilo para el botón */
+.nuevo-botón {
+  position: relative;
+  z-index: 1; /* Asegura que el botón esté en el frente */
   background-color: #ff0000;
   color: #ffffff;
   border: none;
   border-radius: 5px;
   padding: 5px 10px;
-  cursor: pointer;
   font-size: 14px;
+  cursor: pointer;
 }
 
-.superimposed-button:hover {
-  background-color: #cc0000;
+/* Capa transparente superpuesta */
+.nuevo-botón::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad aquí si lo deseas */
+  z-index: -1;
+  pointer-events: none; /* Evita que se pueda seleccionar el contenido detrás del botón */
 }
 
 
@@ -692,7 +699,7 @@ text-align: center;
 	      
         <p class="paragraph">
 
-		 <button class="button superimposed-button" style="margin: 0 auto;">Nuevo botón</button>
+		 <button class="nuevo-botón">Nuevo botón</button>
 
 
 		
