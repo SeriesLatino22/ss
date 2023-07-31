@@ -618,10 +618,14 @@ text-align: center;
 } 
 
 
+.chapter-content {
+  position: relative;
+}
+
 .superimposed-button {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 5px;
+  right: 5px;
   z-index: 1;
   background-color: #ff0000;
   color: #ffffff;
@@ -635,6 +639,7 @@ text-align: center;
 .superimposed-button:hover {
   background-color: #cc0000;
 }
+
 
 
 
@@ -677,13 +682,16 @@ text-align: center;
     <button class="button" id="button1ll">No visto</button>
   </div>
 
-<div class="button-container">
-                  <!-- Botón agregado y superpuesto -->
-                  <button class="button superimposed-button">Nuevo botón</button>
-                </div>
+
 		
           <i class="fas fa-chevron-down"></i>
         </h3>
+<div class="chapter-content">
+                  <!-- Botón agregado y superpuesto dentro del Capítulo 1 -->
+                  <button class="button superimposed-button">Nuevo botón</button>
+                  <!-- Opciones del Capítulo 1 -->
+                  
+	      
         <p class="paragraph">
      <span id="loading-message" style="color: white; display: none;">El reproductor se está cargando, espera...</span>
      <a class="fs-abrir-lightbox" href="javascript:void(0);" data-video="https://vk.com/video_ext.php?oid=813698000&id=456239080&hd=2" data-titulo="Capitulo 1"><span style="color: yellow;">Opcion 1</span></a>
