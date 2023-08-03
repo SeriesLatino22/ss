@@ -15,31 +15,5 @@
   <!-- Referencias a los archivos JavaScript de Video.js y el plugin "videojs-chromecast" -->
   <script src="https://vjs.zencdn.net/7.15.4/video.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/videojs-chromecast@3.3.1/dist/videojs-chromecast.min.js"></script>
-  <script>
-    // Inicializa el reproductor de Video.js con el plugin "videojs-chromecast"
-    const player = videojs('videoPlayer');
-    player.chromecast();
-
-    // Función para detectar dispositivos Chromecast disponibles y transmitir el video
-    function launchCast() {
-      const castSession = cast.framework.CastContext.getInstance().getCurrentSession();
-      if (castSession) {
-        player.pause();
-        const mediaInfo = new chrome.cast.media.MediaInfo('https://zn21g5kls-n995.bitchute.com/aD3ghcZLMN8V/rHLdW5urJHqT.mp4', 'video/mp4');
-        const request = new chrome.cast.media.LoadRequest(mediaInfo);
-        castSession.loadMedia(request).then(
-          () => {
-            console.log('Video transmitido con éxito a la TV');
-          },
-          (error) => {
-            console.error('Error al transmitir el video: ', error);
-          }
-        );
-      }
-    }
-  </script>
-
-  <!-- Agrega un botón para la opción de "cast" -->
-  <button onclick="launchCast()">Reproducir en TV</button>
 </body>
 </html>
