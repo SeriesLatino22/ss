@@ -54,6 +54,12 @@ body {
   border: none;
   border-radius: 25px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+#searchBtn i {
+  font-size: 18px;
 }
 
 .content {
