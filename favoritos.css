@@ -85,7 +85,7 @@ body
    background-image: none;
    border-radius: 0px;
 }
-#wb_Icon2
+#wb_Icon21
 {
    background-color: transparent;
    background-image: none;
@@ -96,12 +96,12 @@ body
    padding: 0;
    vertical-align: top;
 }
-#Icon2
+#Icon21
 {
    height: 35px;
    width: 64px;
 }
-#Icon2 i
+#Icon21 i
 {
    color: #FFFFFF;
    display: inline-block;
@@ -110,7 +110,7 @@ body
    vertical-align: middle;
    width: 34px;
 }
-#wb_Icon2:hover #Icon2 i
+#wb_Icon21:hover #Icon21 i
 {
    color: #FFFFFF;
 }
@@ -422,7 +422,7 @@ body
 {
    transition: all 500ms linear;
 }
-#Layer3
+#Layer33
 {
    background-color: #1E1E1E;
    background-image: none;

@@ -23,8 +23,8 @@ function SearchDatabase()
    this[database_length++] = new SearchPage("Peliculas66.html", "Untitled Page", " ", "");
    this[database_length++] = new SearchPage("car.html", "Untitled Page", "Categorias   ", "");
    this[database_length++] = new SearchPage("Todas.html", "Untitled Page", " ", "");
-   this[database_length++] = new SearchPage("favoritos.html", "Untitled Page", "Favoritos  Al ser una aplicación libre sin registro ni base de datos Al borrar los datos de la aplicación o desinstalar la app y volverla a instalar, podría borrar tus favoritos   ", "");
-   this[database_length++] = new SearchPage("results.html", "Untitled Page", " ", "");
+   this[database_length++] = new SearchPage("favoritos.html", "Untitled Page", "Favoritos  Al ser una página libre sin registro ni base de datos Al borrar los datos de la navegación o usar un navegador diferente, podría no mostrar tus favoritos, es decir, estos favoritos solo se mostrarán en este navegador   ", "");
+   this[database_length++] = new SearchPage("results.html", "Untitled Page", "No es necesario poner títulos completos, pon solo palabras clave, por ejemplo  lady, cartel, etc   ", "");
    this[database_length++] = new SearchPage("master.html", "Untitled Page", " ", "");
    this[database_length++] = new SearchPage("Temporadasalasdy2.1.html", "Untitled Page", " ", "");
    this[database_length++] = new SearchPage("savecap.html", "Untitled Page", " ", "");
@@ -41,5 +41,6 @@ function SearchDatabase()
    this[database_length++] = new SearchPage("Series3.html", "Untitled Page", " ", "");
    this[database_length++] = new SearchPage("Peliculas.html", "Untitled Page", " ", "");
    this[database_length++] = new SearchPage("page1.html", "Untitled Page", " ", "");
+   this[database_length++] = new SearchPage("error404.html", "Series y Peliculas Colombianas", " ", "Series y peliculas colombianas completas audio latino.");
    return this;
 }
