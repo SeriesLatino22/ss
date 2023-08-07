@@ -1,139 +1,64 @@
-body
-{
-   background-color: #131720;
-   color: #000000;
-   font-family: Arial;
-   font-weight: normal;
-   font-size: 13px;
-   line-height: 1.1875;
-   margin: 0;
-   padding: 0;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #131720;
+  margin: 0;
+  padding: 0;
 }
-#wb_LayoutGrid1
-{
-   clear: both;
-   position: relative;
-   table-layout: fixed;
-   display: table;
-   text-align: center;
-   width: 100%;
-   background-color: transparent;
-   background-image: none;
-   border: 0px solid #CCCCCC;
-   border-radius: 0px;
-   box-sizing: border-box;
-   margin: 0;
-}
-#LayoutGrid1
-{
-   box-sizing: border-box;
-   padding: 25px 0 0 0;
-   margin-right: auto;
-   margin-left: auto;
-}
-#LayoutGrid1 > .row
-{
-   margin-right: 0;
-   margin-left: 0;
-}
-#LayoutGrid1 > .row > .col-1
-{
-   box-sizing: border-box;
-   font-size: 0;
-   min-height: 1px;
-   padding-right: 0px;
-   padding-left: 0px;
-   position: relative;
-}
-#LayoutGrid1 > .row > .col-1
-{
-   float: left;
-}
-#LayoutGrid1 > .row > .col-1
-{
-   background-color: transparent;
-   background-image: none;
-   border: 0px solid #FFFFFF;
-   border-radius: 0px;
-   width: 100%;
-   text-align: center;
-}
-#LayoutGrid1:before,
-#LayoutGrid1:after,
-#LayoutGrid1 .row:before,
-#LayoutGrid1 .row:after
-{
-   display: table;
-   content: " ";
-}
-#LayoutGrid1:after,
-#LayoutGrid1 .row:after
-{
-   clear: both;
-}
-@media (max-width: 480px)
-{
-#LayoutGrid1 > .row > .col-1
-{
-   float: none;
-   width: 100% !important;
-}
-}
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #131720;
-      margin: 0;
-      padding: 0;
-    }
 
-    .search-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      padding: 10px;
-      background-color: transparent;
-      z-index: 9999; /* Asegurar que el buscador esté por encima de todo */
-    }
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
 
-    #search {
-      padding: 10px;
-      margin-right: 10px;
-      background-color: white; /* Cambiar el fondo a blanco */
-      color: black; /* Cambiar el color del texto a negro */
-      font-weight: bold;
-      font-size: 16px;
-      outline: none;
-      width: 250px;
-      transition: all 0.3s ease;
-      border: 1px solid #fff;
-      border-radius: 4px; /* Agregar borde redondeado de 4px */
-    }
+#search {
+  padding: 10px;
+  margin-right: 10px;
+  background-color: #f5f5f5;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+  outline: none;
+  width: 250px;
+  transition: all 0.3s ease;
+  border: none;
+  border-radius: 4px;
+}
 
-    #search::placeholder {
-      color: #aaa; /* Cambiar el color del marcador de posición */
-      font-weight: bold;
-      font-size: 16px;
-    }
+#search::placeholder {
+  color: #aaa;
+  font-weight: bold;
+  font-size: 16px;
+}
 
-    #search:focus::placeholder {
-      color: transparent; /* Ocultar el marcador de posición cuando se hace clic en el campo */
-    }
+#search:focus::placeholder {
+  color: transparent;
+}
 
-    #searchBtn {
-      padding: 10px 20px;
-      background-color: #4caf50;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+#searchBtn {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-    /* Estilos adicionales para el contenido debajo del buscador */
-    .content {
-      margin-top: 60px; /* Ajustar el margen superior para evitar la superposición con el buscador fijo */
-    }
-  
+.content {
+  margin-top: 80px;
+  padding: 20px;
+  color: #333;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+/* Additional styles as needed */
