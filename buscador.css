@@ -18,17 +18,23 @@ body {
   z-index: 9999;
 }
 
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #ecf0f1;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
 #search {
   padding: 10px;
-  margin-right: 10px;
-  background-color: #ecf0f1;
+  background-color: transparent;
   color: #34495e;
   font-weight: bold;
   font-size: 16px;
   outline: none;
-  width: 300px;
   border: none;
-  border-radius: 25px;
+  flex: 1;
 }
 
 #search::placeholder {
