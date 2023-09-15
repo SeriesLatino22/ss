@@ -1180,13 +1180,13 @@ body {
     top: 0;
     left: 50%;
     transform: translateX(-80%);
-    animation: heart-float 2s linear forwards;
+    animation: heart-float 3s linear forwards;
 }
 
 @keyframes heart-float {
     0% {
         transform: translateX(-50%) translateY(0);
-        opacity: 20;
+        opacity: 1;
     }
     100% {
         transform: translateX(-50%) translateY(-300%); /* Sube un poco más antes de desaparecer */
