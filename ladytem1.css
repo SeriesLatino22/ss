@@ -71,6 +71,76 @@ body
    max-width: 100% !important;
 }
 }
+#wb_fav
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   border-radius: 0px;
+   box-sizing: border-box;
+   margin: 0;
+}
+#fav
+{
+   box-sizing: border-box;
+   padding: 20px 0 0 0;
+   margin-right: auto;
+   margin-left: auto;
+}
+#fav > .row
+{
+   margin-right: 0;
+   margin-left: 0;
+}
+#fav > .row > .col-1
+{
+   box-sizing: border-box;
+   font-size: 0;
+   min-height: 1px;
+   padding-right: 0px;
+   padding-left: 0px;
+   position: relative;
+}
+#fav > .row > .col-1
+{
+   float: left;
+}
+#fav > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 100%;
+   text-align: center;
+}
+#fav:before,
+#fav:after,
+#fav .row:before,
+#fav .row:after
+{
+   display: table;
+   content: " ";
+}
+#fav:after,
+#fav .row:after
+{
+   clear: both;
+}
+@media (max-width: 480px)
+{
+#fav > .row > .col-1
+{
+   float: none;
+   width: 100% !important;
+}
+}
 
 #overlay {
   position: fixed;
@@ -419,3 +489,54 @@ font-size: 18px;
 } 
 
 
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .boton-favoritos {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .boton-favoritos:hover {
+    background-color: red;
+    transform: scale(1.05);
+  }
+
+
+  .corazon-icono {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url("https://i.ibb.co/svpbBCv/595067.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+
+
+  .animate-boton {
+    animation: fade 0.3s;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
