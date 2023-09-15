@@ -42,106 +42,7 @@ $(document).ready(function()
   gtag('config', 'G-2E3ZX4RV9D');
 </script>
 </head>
-<body 
-    <div class="container">
-        <button id="floating-button" class="icon-button" onclick="toggleButton()">
-            <div id="new-text">Nuevo</div>
-        </button>
-        <div id="iframe-container">
-            <button id="close-button" onclick="closeIframe()">X</button>
-            <iframe id="my-iframe" src=""></iframe>
-        </div>
-    </div>
-
-
-
-<script>
-
-var isDragging = false;
-var initialX;
-var initialY;
-var offsetX = 0;
-var offsetY = 0;
-
-var floatingButton = document.getElementById("floating-button");
-var iframeContainer = document.getElementById("iframe-container");
-var iframe = document.getElementById("my-iframe");
-var closeButton = document.getElementById("close-button");
-
-floatingButton.addEventListener("mousedown", handleMouseDown);
-document.addEventListener("mousemove", handleMouseMove);
-document.addEventListener("mouseup", handleMouseUp);
-floatingButton.addEventListener("touchstart", handleTouchStart);
-document.addEventListener("touchmove", handleTouchMove);
-document.addEventListener("touchend", handleTouchEnd);
-
-function handleMouseDown(event) {
-    isDragging = true;
-    initialX = event.clientX - offsetX;
-    initialY = event.clientY - offsetY;
-}
-
-function handleMouseMove(event) {
-    if (!isDragging) return;
-
-    offsetX = event.clientX - initialX;
-    offsetY = event.clientY - initialY;
-
-    floatingButton.style.transform = "translate(" + offsetX + "px, " + offsetY + "px)";
-}
-
-function handleMouseUp() {
-    isDragging = false;
-}
-
-function handleTouchStart(event) {
-    isDragging = true;
-    initialX = event.touches[0].clientX - offsetX;
-    initialY = event.touches[0].clientY - offsetY;
-}
-
-function handleTouchMove(event) {
-    if (!isDragging) return;
-
-    offsetX = event.touches[0].clientX - initialX;
-    offsetY = event.touches[0].clientY - initialY;
-
-    floatingButton.style.transform = "translate(" + offsetX + "px, " + offsetY + "px)";
-}
-
-function handleTouchEnd() {
-    isDragging = false;
-}
-
-function toggleButton() {
-    floatingButton.style.display = "none";
-    openIframe();
-    enablePageScroll(); // Habilita la barra de desplazamiento de la página principal
-}
-
-function openIframe() {
-    iframe.src = "https://serieslatino.co/series1";
-    iframeContainer.style.display = "block"; // Muestra el contenedor del iframe
-    disablePageScroll(); // Deshabilita la barra de desplazamiento de la página principal
-}
-
-function closeIframe() {
-    iframe.src = "";
-    iframeContainer.style.display = "none"; // Oculta el contenedor del iframe
-    floatingButton.style.display = "block";
-    enablePageScroll(); // Habilita la barra de desplazamiento de la página principal
-}
-
-function disablePageScroll() {
-    document.body.style.overflow = "hidden"; // Deshabilita el desplazamiento de la página principal
-}
-
-function enablePageScroll() {
-    document.body.style.overflow = "auto"; // Habilita el desplazamiento de la página principal
-}
-
-
-</script>>
+<body>
 <div id="Layer2" style="position:fixed;text-align:center;left:auto;right:2px;top:30px;width:62px;height:34px;z-index:7;">
 <div id="Layer2_Container" style="width:62px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
 <div id="wb_buscar" style="position:absolute;left:0px;top:0px;width:62px;height:34px;z-index:0;">
@@ -174,12 +75,6 @@ function enablePageScroll() {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
- 
-
-  <!--
-    - custom css link
-  -->
   <link rel="stylesheet" href="./assets/css/main.css">
   <link rel="stylesheet" href="./assets/css/media_query.css">
 
@@ -907,7 +802,6 @@ doScroller(messages[0], 0, 1);
 <img src="images/IMG_20230907_213058.png" id="Image1" alt="" width="140" height="60"></div>
 </div>
 </div>
-
 <div id="OverlayMenu2-overlay">
 <div class="OverlayMenu2">
 <ul class="OverlayMenu2" role="menu">
