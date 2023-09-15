@@ -9,6 +9,94 @@ body
    margin: 0;
    padding: 0;
 }
+#wb_fav
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   border-radius: 0px;
+   box-sizing: border-box;
+   margin: 0;
+}
+#fav
+{
+   box-sizing: border-box;
+   padding: 0;
+   margin-right: auto;
+   margin-left: auto;
+}
+#fav > .row
+{
+   margin-right: 0;
+   margin-left: 0;
+}
+#fav > .row > .col-1, #fav > .row > .col-2, #fav > .row > .col-3
+{
+   box-sizing: border-box;
+   font-size: 0;
+   min-height: 1px;
+   padding-right: 0px;
+   padding-left: 0px;
+   position: relative;
+}
+#fav > .row > .col-1, #fav > .row > .col-2, #fav > .row > .col-3
+{
+   float: left;
+}
+#fav > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 33.33333333%;
+   text-align: center;
+}
+#fav > .row > .col-2
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 33.33333333%;
+   text-align: center;
+}
+#fav > .row > .col-3
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 33.33333333%;
+   text-align: left;
+}
+#fav:before,
+#fav:after,
+#fav .row:before,
+#fav .row:after
+{
+   display: table;
+   content: " ";
+}
+#fav:after,
+#fav .row:after
+{
+   clear: both;
+}
+@media (max-width: 480px)
+{
+#fav > .row > .col-1, #fav > .row > .col-2, #fav > .row > .col-3
+{
+   float: none;
+   width: 100% !important;
+}
+}
 #wb_LayoutGrid1
 {
    clear: both;
@@ -77,76 +165,6 @@ body
 @media (max-width: 480px)
 {
 #LayoutGrid1 > .row > .col-1
-{
-   float: none;
-   width: 100% !important;
-}
-}
-#wb_fav
-{
-   clear: both;
-   position: relative;
-   table-layout: fixed;
-   display: table;
-   text-align: center;
-   width: 100%;
-   background-color: transparent;
-   background-image: none;
-   border: 0px solid #CCCCCC;
-   border-radius: 0px;
-   box-sizing: border-box;
-   margin: 0;
-}
-#fav
-{
-   box-sizing: border-box;
-   padding: 0;
-   margin-right: auto;
-   margin-left: auto;
-}
-#fav > .row
-{
-   margin-right: 0;
-   margin-left: 0;
-}
-#fav > .row > .col-1
-{
-   box-sizing: border-box;
-   font-size: 0;
-   min-height: 1px;
-   padding-right: 0px;
-   padding-left: 0px;
-   position: relative;
-}
-#fav > .row > .col-1
-{
-   float: left;
-}
-#fav > .row > .col-1
-{
-   background-color: transparent;
-   background-image: none;
-   border: 0px solid #FFFFFF;
-   border-radius: 0px;
-   width: 100%;
-   text-align: center;
-}
-#fav:before,
-#fav:after,
-#fav .row:before,
-#fav .row:after
-{
-   display: table;
-   content: " ";
-}
-#fav:after,
-#fav .row:after
-{
-   clear: both;
-}
-@media (max-width: 480px)
-{
-#fav > .row > .col-1
 {
    float: none;
    width: 100% !important;
@@ -1088,54 +1106,92 @@ body
 }
 
 
-  .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-  }
+    
+    
+    /* Estilo para quitar la decoración de texto en los enlaces */
+a {
+    text-decoration: none;
+}
 
-  .boton-favoritos {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 25px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Asegura que el cuerpo ocupe al menos el 100% del alto de la ventana */
+    margin: 0;
+    background-color: transparent;
+}
+
+/* Agrega estilos para centrar el botón verticalmente */
+#center-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#heart-container {
     position: relative;
-    overflow: hidden;
-  }
+}
 
-  .boton-favoritos:hover {
-    background-color: red;
-    transform: scale(1.05);
-  }
+#heart-button {
+    background-color: #3598db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 122px;
+    height: 40px;
+    font-size: 15px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s, transform 0.2s;
+    display: flex;
+    align-items: center;
+}
 
+#heart-button img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    
+}
 
-  .corazon-icono {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-image: url("https://i.ibb.co/svpbBCv/595067.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    vertical-align: middle;
-    margin-right: 5px;
-  }
+#heart-button:hover {
+    background-color: #FE2E64 !important; /* Cambia el color al pasar el mouse */
+    transform: scale(1.05) !important; /* Efecto de escala al pasar el mouse */
+}
 
+#heart-button.scaled {
+    transform: scale(1.2); /* Efecto de escala cuando está en snake */
+    background-color: #FE2E64 !important; /* Cambia el color a rojo cuando está en snake */
+}
 
-  .animate-boton {
-    animation: fade 0.3s;
-  }
+#heart-button.scaled:hover {
+    background-color: #FE2E64 !important; /* Mantén el color rojo al pasar el mouse cuando está en snake */
+    transform: scale(1.2) !important; /* Mantén la escala cuando pasa el mouse cuando está en snake */
+}
 
-  @keyframes fade {
-    from {
-      opacity: 0;
-      transform: translateX(-10px);
+#heart-button:active {
+    background-color: #FE2E64 !important; /* Cambia el color al hacer clic */
+    transform: scale(0.95) !important; /* Efecto de escala al hacer clic */
+}
+
+.heart {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-80%);
+    animation: heart-float 2s linear forwards;
+}
+
+@keyframes heart-float {
+    0% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 20;
     }
-    to {
-      opacity: 1;
-      transform: translateX(0);
+    100% {
+        transform: translateX(-50%) translateY(-300%); /* Sube un poco más antes de desaparecer */
+        opacity: 0;
     }
-  }
+}
+    
+    
