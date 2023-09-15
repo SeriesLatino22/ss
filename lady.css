@@ -1180,7 +1180,7 @@ body {
     top: 0;
     left: 50%;
     transform: translateX(-80%);
-    animation: heart-float 3s linear forwards;
+    animation: heart-float 2s linear forwards;
 }
 
 @keyframes heart-float {
