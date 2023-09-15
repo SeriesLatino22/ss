@@ -20,7 +20,7 @@ body
    clear: both;
    position: relative;
    table-layout: fixed;
-   display: table;
+   display: none;
    text-align: center;
    width: 100%;
    background-color: transparent;
@@ -340,21 +340,6 @@ body
 {
    transition: all 500ms linear;
 }
-#wb_Image2
-{
-   vertical-align: top;
-}
-#Image2
-{
-   border: 0px solid #000000;
-   border-radius: 0px;
-   padding: 0;
-   margin: 0;
-   left: 0;
-   top: 0;
-   width: 100%;
-   height: 100%;
-}
 #Layer2
 {
    background-color: transparent;
@@ -442,10 +427,25 @@ body
 {
    color: #FFFFFF;
 }
+#wb_Image1
+{
+   vertical-align: top;
+}
+#Image1
+{
+   border: 0px solid #000000;
+   border-radius: 0px;
+   padding: 0;
+   margin: 0;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+}
     body {
   font-family: Arial, sans-serif;
   background-color: #131720;
-  padding-top: 76px !important;
+  padding-top: 90px !important;
 }
 
 .container {

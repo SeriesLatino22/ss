@@ -11,9 +11,10 @@ El tiempo pasa y Fátima, agobiada por la pérdida de Lady, se sumerge cada vez 
 <meta name="keywords" content="lady,lady la vendedora de rosas">
 <meta name="author" content="RCN Televisión">
 <meta name="categories" content="Drama">
+<meta name="robots" content="index, follow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="font-awesome.min.css" rel="stylesheet">
-<link href="Sintv2.css" rel="stylesheet">
+<link href="latino7.css" rel="stylesheet">
 <link href="lady.css" rel="stylesheet">
 <script src="jquery-3.6.0.min.js"></script>
 <script src="jquery-ui.min.js"></script>
@@ -40,6 +41,15 @@ $(document).ready(function()
       return false;
    });
 });
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2E3ZX4RV9D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2E3ZX4RV9D');
 </script>
 </head>
 <body>
@@ -132,65 +142,18 @@ window.addEventListener('load', () => {
 <div id="Html1" style="display:inline-block;width:100%;height:85px;z-index:3">
 
 <div class="container">
-  <div id="botonFavoritosContainer">
-    <button id="botonFavoritos" class="boton-favoritos">
-      <span class="corazon-icono"></span>Agregar a favoritos
-    </button>
+    <div id="botonFavoritosContainer">
+      <a href="reportar" target="_blank">
+        <button id="botonFavoritos" class="boton-favoritos">
+          <span class="corazon-icono"></span>Reportar Problema
+        </button>
+      </a>
+    </div>
+
+   
   </div>
+</body>
 </div>
-
-<script>
-  var favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
-  var paginaActual = {
-    url: window.location.href,
-    titulo: "Lady, la vendedora de rosas",
-    imagen: "./img/ladyop.webp",
-    enlace: "./lady.html",
-  };
-
-  if (favoritos.some(function(favorito) {
-    return favorito.url === paginaActual.url;
-  })) {
-    mostrarBotonEliminar();
-  } else {
-    mostrarBotonAgregar();
-  }
-
-  function mostrarBotonEliminar() {
-    var botonEliminar = document.createElement("button");
-    botonEliminar.innerHTML = '<span class="caneca-icono"></span>Eliminar de favoritos';
-    botonEliminar.className = "boton-eliminar animate-boton";
-    botonEliminar.addEventListener("click", function() {
-      var index = favoritos.findIndex(function(favorito) {
-        return favorito.url === paginaActual.url;
-      });
-      if (index !== -1) {
-        favoritos.splice(index, 1);
-        localStorage.setItem("favoritos", JSON.stringify(favoritos));
-      }
-      mostrarBotonAgregar();
-    });
-
-    var botonFavoritosContainer = document.getElementById("botonFavoritosContainer");
-    botonFavoritosContainer.innerHTML = "";
-    botonFavoritosContainer.appendChild(botonEliminar);
-  }
-
-  function mostrarBotonAgregar() {
-    var botonAgregar = document.createElement("button");
-    botonAgregar.innerHTML = '<span class="corazon-icono"></span>Agregar a favoritos';
-    botonAgregar.className = "boton-favoritos animate-boton";
-    botonAgregar.addEventListener("click", function() {
-      favoritos.push(paginaActual);
-      localStorage.setItem("favoritos", JSON.stringify(favoritos));
-      mostrarBotonEliminar();
-    });
-
-    var botonFavoritosContainer = document.getElementById("botonFavoritosContainer");
-    botonFavoritosContainer.innerHTML = "";
-    botonFavoritosContainer.appendChild(botonAgregar);
-  }
-</script></div>
 </div>
 </div>
 </div>
@@ -221,29 +184,36 @@ window.addEventListener('load', () => {
 </div>
    <div id="Card2-card-body" class="collapse" data-bs-parent="#wb_Card2">
       <div id="Card2-card-item1"></div>
-      <div id="Card2-card-item2"><br>Título Original: Lady la vendedora de rosas<br>Dirección: Israel Sánchez, Felipe Cano Ibañez<br>Guion: Lina Maria Arboleda, Pedro Miguel Rozo, Juliana Lema<br>Estado: Finalizado<br>País: Colombia<br>Temporadas: 1<br>Episodios: 53<br>Año: 2015<br></div>
+      <div id="Card2-card-item2"><br>Título Original: Lady, la vendedora de rosas<br>Dirección: Israel Sánchez, Felipe Cano Ibañez<br>Guion: Lina Maria Arboleda, Pedro Miguel Rozo, Juliana Lema<br>Estado: Finalizado<br>País: Colombia<br>Temporadas: 1<br>Episodios: 75<br>Año: 2015<br></div>
    </div>
 </div>
-<iframe name="InlineFrame1" id="InlineFrame1" src="https://serieslatino.co/ladytem1" loading="lazy" scrolling="no" allowfullscreen></iframe>
+<iframe name="InlineFrame1" id="InlineFrame1" src="./ladytem1.html" loading="lazy" scrolling="no" allowfullscreen></iframe>
 </div>
 </div>
 </div>
-<div id="wb_Image3" style="display:inline-block;width:195px;height:87px;z-index:9;">
-<a href="#" onclick="ShowObjectWithEffect('InlineFrame1', 1, 'dropright', 500);ShowObjectWithEffect('wb_Image3', 0, 'fade', 500);ShowObjectWithEffect('wb_Card1', 0, 'dropright', 500);ShowObjectWithEffect('wb_Card2', 0, 'dropleft', 500);ShowObjectWithEffect('wb_Icon2', 1, 'fade', 500);ShowObjectWithEffect('aaaa', 0, 'fade', 500);ShowObjectWithEffect('wb_fav', 0, 'fade', 500);ShowObjectWithEffect('Layer2', 0, 'fade', 500);return false;"><img src="20230529_180338_332 (1).webp" id="Image3" alt=""></a>
+<div id="wb_Image3" style="display:inline-block;width:180px;height:55px;z-index:9;">
+<a href="#" onclick="ShowObjectWithEffect('InlineFrame1', 1, 'dropright', 500);ShowObjectWithEffect('wb_Image3', 0, 'fade', 500);ShowObjectWithEffect('wb_Card1', 0, 'dropright', 500);ShowObjectWithEffect('wb_Card2', 0, 'dropleft', 500);ShowObjectWithEffect('wb_Icon2', 1, 'fade', 500);ShowObjectWithEffect('aaaa', 0, 'fade', 500);ShowObjectWithEffect('wb_fav', 0, 'fade', 500);ShowObjectWithEffect('Layer2', 0, 'fade', 500);return false;"><img src="images/Ahoraa.png" srcset="images/Ahoraa.png 2x" id="Image3" alt="" width="180" height="55"></a><div id="Image3-overlay">Latino7,com</div>
+
 </div>
 </div>
 </div>
 </div>
-<div id="layermenu" style="position:fixed;text-align:center;left:0px;top:20px;width:40px;height:38px;z-index:22;">
+<div id="layermenu" style="position:fixed;text-align:center;left:20px;top:20px;width:40px;height:38px;z-index:22;">
 <div id="layermenu_Container" style="width:40px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
 <div id="wb_Icon2" style="position:absolute;left:1px;top:5px;width:35px;height:33px;visibility:hidden;text-align:center;z-index:15;">
 <a href="./index.html" onclick="ShowObjectWithEffect('wb_Icon2', 0, 'fade', 500);ShowObjectWithEffect('boton_cloce', 1, 'fade', 500);ShowObjectWithEffect('InlineFrame1', 0, 'fade', 500);ShowObjectWithEffect('wb_Card1', 1, 'dropright', 500);ShowObjectWithEffect('wb_Card2', 1, 'dropleft', 500);ShowObjectWithEffect('aaaa', 1, 'fade', 500);ShowObjectWithEffect('wb_Image3', 1, 'fade', 500);ShowObjectWithEffect('wb_fav', 1, 'fade', 500);ShowObjectWithEffect('Icon3', 0, 'fade', 500);ShowObjectWithEffect('wb_Image1', 1, 'fade', 500);ShowObjectWithEffect('Layer2', 1, 'fade', 500);return false;"><div id="Icon2"><i class="fa fa-chevron-circle-left"></i></div></a></div>
 </div>
 </div>
 
-<div id="aaaa" style="position:fixed;text-align:center;left:0px;top:14px;width:263px;height:81px;z-index:24;">
-<div id="aaaa_Container" style="width:263px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
-<div id="wb_JavaScript1" style="position:absolute;left:30px;top:58px;width:208px;height:23px;z-index:16;">
+<div id="Layer2" style="position:fixed;text-align:center;left:auto;right:2px;top:30px;width:62px;height:34px;z-index:24;">
+<div id="Layer2_Container" style="width:62px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
+<div id="wb_Image4" style="position:absolute;left:0px;top:0px;width:62px;height:34px;z-index:16;">
+<a href="#" onclick="ShowObjectWithEffect('aaaa', 0, 'fade', 0);ShowObjectWithEffect('wb_Image4', 0, 'fade', 500);ShowObjectWithEffect('InlineFrame2', 1, 'puff', 500, 'swing');ShowObjectWithEffect('wb_Icon1', 1, 'fade', 500);return false;"><img src="images/image.png" srcset="images/image.png 2x" id="Image4" alt="" width="62" height="35"></a></div>
+</div>
+</div>
+<div id="aaaa" style="position:fixed;text-align:center;left:0px;top:14px;width:255px;height:80px;z-index:25;">
+<div id="aaaa_Container" style="width:255px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
+<div id="wb_JavaScript1" style="position:absolute;left:19px;top:57px;width:208px;height:23px;z-index:17;">
 <div style="color:#FFFFFF;font-size:12px;font-family:Arial;font-weight:normal;font-style:normal;text-align:left;text-decoration:none;" id="text_scroller"></div>
 <script>
 var messages = new Array
@@ -280,8 +250,6 @@ function doScroller(text, pos, direction)
 doScroller(messages[0], 0, 1);
 </script>
 </div>
-<div id="wb_Image1" style="position:absolute;left:70px;top:12px;width:182px;height:41px;z-index:17;">
-<img src="images/8248849621_2e551c55-070d-47aa-9422-2b995658cef6.png" id="Image1" alt="" width="182" height="42"></div>
 <div id="wb_OverlayMenu2" style="position:absolute;left:17px;top:14px;width:40px;height:37px;z-index:18;">
 <a href="#" id="OverlayMenu2">
 <span class="line"></span>
@@ -289,12 +257,8 @@ doScroller(messages[0], 0, 1);
 </span><span class="line"></span>
 </a>
 </div>
-</div>
-</div>
-<div id="Layer2" style="position:fixed;text-align:center;left:auto;right:2px;top:30px;width:62px;height:34px;z-index:25;">
-<div id="Layer2_Container" style="width:62px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
-<div id="wb_Image4" style="position:absolute;left:0px;top:0px;width:62px;height:34px;z-index:19;">
-<a href="#" onclick="ShowObjectWithEffect('aaaa', 0, 'fade', 0);ShowObjectWithEffect('wb_Icon1', 1, 'fade', 500);ShowObjectWithEffect('wb_Image4', 0, 'fade', 500);ShowObjectWithEffect('InlineFrame2', 1, 'puff', 500, 'swing');return false;"><img src="images/image-removebg-preview.png" id="Image4" alt="" width="62" height="35"></a></div>
+<div id="wb_Image1" style="position:absolute;left:53px;top:6px;width:140px;height:52px;z-index:19;">
+<img src="images/IMG_20230907_213058.png" id="Image1" alt="" width="140" height="143"></div>
 </div>
 </div>
 <div id="OverlayMenu2-overlay">
@@ -302,7 +266,6 @@ doScroller(messages[0], 0, 1);
 <ul class="OverlayMenu2" role="menu">
 <li><a role="menuitem" href="https://www.serieslatino.co/" class="OverlayMenu2-effect"><i class="fa fa-home overlay-icon"></i>Inicio</a></li>
 <li><a role="menuitem" href="https://www.serieslatino.co/categorias" class="OverlayMenu2-effect"><i class="fa fa-angle-right overlay-icon"></i>Categorias</a></li>
-<li><a role="menuitem" href="https://www.serieslatino.co/favoritos" class="OverlayMenu2-effect"><i class="fa fa-heart overlay-icon"></i>Favoritos</a></li>
 <li class="item-has-children">
 <a role="menuitem" href="#" class="OverlayMenu2-effect"><i class="fa fa-circle overlay-icon"></i>En&nbsp;vivo</a>
 <ul class="sub-menu" role="menu">

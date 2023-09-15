@@ -11,15 +11,15 @@ El tiempo pasa y Fátima, agobiada por la pérdida de Lady, se sumerge cada vez 
 <meta name="keywords" content="lady,lady la vendedora de rosas">
 <meta name="author" content="RCN Televisión">
 <meta name="categories" content="Drama">
+<meta name="robots" content="index, follow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="font-awesome.min.css" rel="stylesheet">
-<link href="SeriesLatino3.css" rel="stylesheet">
+<link href="latino7.css" rel="stylesheet">
 <link href="muñecas.css" rel="stylesheet">
 <script src="jquery-3.6.0.min.js"></script>
 <script src="jquery-ui.min.js"></script>
 <script src="bootstrap.min.js"></script>
 <script src="wb.overlay.min.js"></script>
-<script src="wb.drilldownmenu.min.js"></script>
 <script src="wwb18.min.js"></script>
 <script>
 $(document).ready(function()
@@ -29,22 +29,105 @@ $(document).ready(function()
       event.preventDefault();
       $('html, body').stop().animate({ scrollTop: $('#wb_intro').offset().top-88 }, 600, 'easeOutExpo');
    });
-   $('#OverlayMenu1-overlay').overlay({hideTransition:true});
-   $('.OverlayMenu1').drilldownmenu({backText: 'Atrás'});
-   $('#OverlayMenu1').on('click', function(e)
+   $('#OverlayMenu2-overlay').overlay({hideTransition:true});
+   $('.OverlayMenu2 .item-has-children').children('a').on('click', function(event)
    {
-      $.overlay.show($('#OverlayMenu1-overlay'));
+      event.preventDefault();
+      $(this).toggleClass('submenu-open').next('.sub-menu').slideToggle(0,'linear').end().parent('.item-has-children').siblings('.item-has-children').children('a').removeClass('submenu-open').next('.sub-menu').slideUp(0,'linear');
+   });
+   $('#OverlayMenu2').on('click', function(e)
+   {
+      $.overlay.show($('#OverlayMenu2-overlay'));
       return false;
    });
-   if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {$('#preloader').remove();}
 });
-$(window).on('load', function()
-{
-   $('#preloader').remove();
-});
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2E3ZX4RV9D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2E3ZX4RV9D');
 </script>
 </head>
 <body>
+ <meta name="viewport" content="width=device-width, initial-scale=1"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'><link rel="stylesheet" href="./style.css">
+
+</body>
+
+
+<div class="social-button" title="expand social media options">
+  <i class="fas fa-share-alt" id="social-icon"></i>
+  <a hidden class="social-point" href="https://api.whatsapp.com/send?text=Hello" target="_blank" rel="nofollow" title="Whatsapp"><i class="fab fa-whatsapp"></i></a>
+  <a hidden class="social-point" href="https://www.youtube.com/" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+  <a hidden class="social-point" href="https://telegram.me/" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
+  <a hidden class="social-point" href="mailto:example@example.com" target="_blank" title="Correo"><i class="fas fa-envelope"></i></a>
+  <a hidden class="social-point" href="https://www.facebook.com/" target="_blank" rel="nofollow" title="Facebook"><i class="fab fa-facebook"></i></a>
+</div>
+
+
+<script>
+
+var social_open = false
+window.addEventListener('load', () => {
+  const menu = document.querySelector('.social-button');
+
+  menu.addEventListener('click', () => {
+    const icon = document.querySelector('#social-icon');
+    if(social_open == true) {
+      social_open = false;
+
+      menu.title = menu.title.replace(/hide/,"expand")
+      menu.classList.remove('social-button-open')
+      icon.classList.remove('fa-times')
+      icon.classList.add('fa-share-alt')
+
+      var menu_point = document.querySelectorAll(".social-point");
+      for (let i = 0; i < menu_point.length; i++) {
+          menu_point[i].classList.remove('social-point-open');
+        setTimeout(function() {
+          menu_point[i].hidden = true;
+        }, 800)
+      }
+    } else {
+      social_open = true;
+
+      menu.title = menu.title.replace(/expand/,"hide")
+      menu.classList.add('social-button-open');
+      icon.classList.remove('fa-share-alt')
+      icon.classList.add('fa-times')
+
+      var menu_point = document.querySelectorAll(".social-point");
+      for (let i = 0; i < menu_point.length; i++) {
+        menu_point[i].hidden = false;
+        setTimeout(function() {
+          menu_point[i].classList.add('social-point-open');
+        }, 200)
+      }
+    }
+  });
+})
+
+
+</script>
+
+</body>
+</html>
+
+<div id="wb_LayoutGrid1">
+<div id="LayoutGrid1">
+<div class="row">
+<div class="col-1">
+<iframe name="InlineFrame1" id="InlineFrame2" src="./buscador.html" allowfullscreen></iframe>
+<div id="wb_Icon1" style="display:none;width:39px;height:32px;text-align:center;z-index:1;">
+<a href="#" onclick="ShowObjectWithEffect('InlineFrame2', 0, 'fade', 0);ShowObjectWithEffect('wb_Icon1', 0, 'fade', 0);ShowObjectWithEffect('wb_Image4', 1, 'fade', 0);ShowObjectWithEffect('aaaa', 1, 'fade', 0);return false;"><div id="Icon1"><i class="fa fa-times"></i></div></a>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div id="wb_intro">
 <div id="intro-overlay"></div>
 <div id="intro">
@@ -56,73 +139,26 @@ $(window).on('load', function()
 <div id="fav">
 <div class="row">
 <div class="col-1">
-<div id="Html1" style="display:inline-block;width:100%;height:85px;z-index:1">
+<div id="Html1" style="display:inline-block;width:100%;height:85px;z-index:3">
 
 <div class="container">
-  <div id="botonFavoritosContainer">
-    <button id="botonFavoritos" class="boton-favoritos">
-      <span class="corazon-icono"></span>Agregar a favoritos
-    </button>
+    <div id="botonFavoritosContainer">
+      <a href="reportar" target="_blank">
+        <button id="botonFavoritos" class="boton-favoritos">
+          <span class="corazon-icono"></span>Reportar Problema
+        </button>
+      </a>
+    </div>
+
+   
   </div>
-</div>
-
-<script>
-  var favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
-  var paginaActual = {
-    url: window.location.href,
-    titulo: "Las muñecas de la mafia",
-        imagen: "./img/muñecasop.webp",
-        enlace: "./muñecas.html",
-  };
-
-  if (favoritos.some(function(favorito) {
-    return favorito.url === paginaActual.url;
-  })) {
-    mostrarBotonEliminar();
-  } else {
-    mostrarBotonAgregar();
-  }
-
-  function mostrarBotonEliminar() {
-    var botonEliminar = document.createElement("button");
-    botonEliminar.innerHTML = '<span class="caneca-icono"></span>Eliminar de favoritos';
-    botonEliminar.className = "boton-eliminar animate-boton";
-    botonEliminar.addEventListener("click", function() {
-      var index = favoritos.findIndex(function(favorito) {
-        return favorito.url === paginaActual.url;
-      });
-      if (index !== -1) {
-        favoritos.splice(index, 1);
-        localStorage.setItem("favoritos", JSON.stringify(favoritos));
-      }
-      mostrarBotonAgregar();
-    });
-
-    var botonFavoritosContainer = document.getElementById("botonFavoritosContainer");
-    botonFavoritosContainer.innerHTML = "";
-    botonFavoritosContainer.appendChild(botonEliminar);
-  }
-
-  function mostrarBotonAgregar() {
-    var botonAgregar = document.createElement("button");
-    botonAgregar.innerHTML = '<span class="corazon-icono"></span>Agregar a favoritos';
-    botonAgregar.className = "boton-favoritos animate-boton";
-    botonAgregar.addEventListener("click", function() {
-      favoritos.push(paginaActual);
-      localStorage.setItem("favoritos", JSON.stringify(favoritos));
-      mostrarBotonEliminar();
-    });
-
-    var botonFavoritosContainer = document.getElementById("botonFavoritosContainer");
-    botonFavoritosContainer.innerHTML = "";
-    botonFavoritosContainer.appendChild(botonAgregar);
-  }
-</script></div>
+</body>
 </div>
 </div>
 </div>
 </div>
-<div id="wb_Card1" style="display:flex;width:calc(100% - 10px);z-index:3;" class="card">
+</div>
+<div id="wb_Card1" style="display:flex;width:calc(100% - 10px);z-index:5;" class="card">
    <div id="Card1-card-header" class="collapsed" aria-expanded="false" data-bs-toggle="collapse" href="#Card1-card-body">Sinopsis Breve<svg class="icon-collapsed" viewBox="0 0 76 76" version="1.1" xmlns="http://www.w3.org/2000/svg">
    <path d="M68 34 L68 42 C68 43, 68 44, 67 45 C66 46, 65 46, 64 46 L47 46 L47 64 C47 65, 46 66, 45 67 C45 68, 44 68, 43 68 L34 68 C33 68, 32 68, 32 67 C31 66, 30 65, 30 64 L30 46 L13 46 C12 46, 11 46, 10 45 C9 44, 9 43, 9 42 L9 34 C9 33, 9 32, 10 31 C11 31, 12 30, 13 30 L30 30 L30 12 C30 11, 31 10, 32 10 C32 9, 33 8, 34 8 L43 8 C44 8, 45 9, 45 10 C46 10, 47 11, 47 12 L47 30 L64 30 C65 30, 66 31, 67 31 C68 32, 68 33, 68 34"/>
 </svg>
@@ -138,7 +174,7 @@ $(window).on('load', function()
       <div id="Card1-card-item5"><br>Narco serie</div>
    </div>
 </div>
-<div id="wb_Card2" style="display:flex;width:calc(100% - 10px);z-index:4;" class="card">
+<div id="wb_Card2" style="display:flex;width:calc(100% - 10px);z-index:6;" class="card">
    <div id="Card2-card-header" class="collapsed" aria-expanded="false" data-bs-toggle="collapse" href="#Card2-card-body">Ficha Técnica<svg class="icon-collapsed" viewBox="0 0 76 76" version="1.1" xmlns="http://www.w3.org/2000/svg">
    <path d="M68 34 L68 42 C68 43, 68 44, 67 45 C66 46, 65 46, 64 46 L47 46 L47 64 C47 65, 46 66, 45 67 C45 68, 44 68, 43 68 L34 68 C33 68, 32 68, 32 67 C31 66, 30 65, 30 64 L30 46 L13 46 C12 46, 11 46, 10 45 C9 44, 9 43, 9 42 L9 34 C9 33, 9 32, 10 31 C11 31, 12 30, 13 30 L30 30 L30 12 C30 11, 31 10, 32 10 C32 9, 33 8, 34 8 L43 8 C44 8, 45 9, 45 10 C46 10, 47 11, 47 12 L47 30 L64 30 C65 30, 66 31, 67 31 C68 32, 68 33, 68 34"/>
 </svg>
@@ -148,76 +184,99 @@ $(window).on('load', function()
 </div>
    <div id="Card2-card-body" class="collapse" data-bs-parent="#wb_Card2">
       <div id="Card2-card-item1"></div>
-      <div id="Card2-card-item2"><br>Título Original: Las muñecas de la mafia<br>Dirección: Juan Camilo Ferrand <br>Estado: Finalizado<br>País: Colombia<br>Temporadas: 2<br>Episodios: 58 T1 - 60 T2<br>Año: 2009 - 2010<br></div>
+      <div id="Card2-card-item2"><br><br>Título Original: Las muñecas de la mafia<br>Dirección: Juan Camilo Ferrand <br>Episodios: 58 T1 - 60 T2<br>Estado: Finalizado<br>País: Colombia<br>Temporadas: 2<br>Año: 2009 - 2010<br><br></div>
    </div>
 </div>
-<div id="wb_Icon1" style="display:none;width:139px;height:73px;text-align:center;z-index:5;">
-<a href="./ladyt1.html" target="InlineFrame1" onclick="ShowObjectWithEffect('InlineFrame1', 1, 'dropright', 500);ShowObjectWithEffect('wb_Icon1', 0, 'fade', 500);ShowObjectWithEffect('wb_Card1', 0, 'fade', 1);ShowObjectWithEffect('wb_Card2', 0, 'fade', 0);ShowObjectWithEffect('boton_cloce', 0, 'fade', 500);ShowObjectWithEffect('wb_Icon2', 1, 'fade', 500);ShowObjectWithEffect('h', 0, 'fade', 500);ShowObjectWithEffect('wb_fav', 0, 'fade', 500);ShowObjectWithEffect('Icon3', 1, 'fade', 500);ShowObjectWithEffect('wb_Image1', 0, 'fade', 500);return false;"><div id="Icon1"><i class="fa fa-play-circle"></i></div></a>
-</div>
-<iframe name="InlineFrame1" id="InlineFrame1" src="./muñecat1.html" scrolling="no" allowfullscreen></iframe>
-</div>
-</div>
-</div>
-<div id="wb_Image3" style="display:inline-block;width:195px;height:87px;z-index:8;">
-<a href="#" onclick="ShowObjectWithEffect('InlineFrame1', 1, 'dropright', 500);ShowObjectWithEffect('wb_Image3', 0, 'fade', 500);ShowObjectWithEffect('wb_Card1', 0, 'dropright', 500);ShowObjectWithEffect('wb_Card2', 0, 'dropleft', 500);ShowObjectWithEffect('wb_Icon2', 1, 'fade', 500);ShowObjectWithEffect('h', 0, 'fade', 500);ShowObjectWithEffect('wb_fav', 0, 'fade', 500);return false;"><img src="20230529_180338_332 (1).webp" id="Image3" alt=""></a>
+<div id="wb_InlineFrame1" style="display:none;width:100%;height:605px;z-index:7;">
+<iframe name="InlineFrame1" id="InlineFrame1" src="./muneT.html" allowfullscreen></iframe>
 </div>
 </div>
 </div>
 </div>
-<div id="layermenu" style="position:fixed;text-align:center;left:0px;top:20px;width:40px;height:38px;z-index:20;">
+<div id="wb_Image3" style="display:inline-block;width:180px;height:55px;z-index:9;">
+<a href="#" onclick="ShowObjectWithEffect('wb_InlineFrame1', 1, 'dropright', 500);ShowObjectWithEffect('wb_Image3', 0, 'fade', 500);ShowObjectWithEffect('wb_Card1', 0, 'dropright', 500);ShowObjectWithEffect('wb_Card2', 0, 'dropleft', 500);ShowObjectWithEffect('wb_Icon2', 1, 'fade', 500);ShowObjectWithEffect('aaaa', 0, 'fade', 500);ShowObjectWithEffect('wb_fav', 0, 'fade', 500);ShowObjectWithEffect('Layer2', 0, 'fade', 500);return false;"><img src="images/Ahoraa.png" srcset="images/Ahoraa.png 2x" id="Image3" alt="" width="180" height="55"></a>
+</div>
+</div>
+</div>
+</div>
+<div id="layermenu" style="position:fixed;text-align:center;left:0px;top:20px;width:40px;height:38px;z-index:22;">
 <div id="layermenu_Container" style="width:40px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
 <div id="wb_Icon2" style="position:absolute;left:1px;top:5px;width:35px;height:33px;visibility:hidden;text-align:center;z-index:15;">
-<a href="./index.html" onclick="ShowObjectWithEffect('wb_Icon2', 0, 'fade', 500);ShowObjectWithEffect('boton_cloce', 1, 'fade', 500);ShowObjectWithEffect('InlineFrame1', 0, 'fade', 500);ShowObjectWithEffect('wb_Card1', 1, 'dropright', 500);ShowObjectWithEffect('wb_Card2', 1, 'dropleft', 500);ShowObjectWithEffect('h', 1, 'fade', 500);ShowObjectWithEffect('wb_Image3', 1, 'fade', 500);ShowObjectWithEffect('wb_fav', 1, 'fade', 500);ShowObjectWithEffect('Icon3', 0, 'fade', 500);ShowObjectWithEffect('wb_Image1', 1, 'fade', 500);return false;"><div id="Icon2"><i class="fa fa-chevron-circle-left"></i></div></a></div>
+<a href="./index.html" onclick="ShowObjectWithEffect('wb_Icon2', 0, 'fade', 500);ShowObjectWithEffect('boton_cloce', 1, 'fade', 500);ShowObjectWithEffect('wb_InlineFrame1', 0, 'fade', 500);ShowObjectWithEffect('wb_Card1', 1, 'dropright', 500);ShowObjectWithEffect('wb_Card2', 1, 'dropleft', 500);ShowObjectWithEffect('aaaa', 1, 'fade', 500);ShowObjectWithEffect('wb_Image3', 1, 'fade', 500);ShowObjectWithEffect('wb_fav', 1, 'fade', 500);ShowObjectWithEffect('Icon3', 0, 'fade', 500);ShowObjectWithEffect('wb_Image1', 1, 'fade', 500);ShowObjectWithEffect('Layer2', 1, 'fade', 500);return false;"><div id="Icon2"><i class="fa fa-chevron-circle-left"></i></div></a></div>
 </div>
 </div>
-<div id="h" style="position:fixed;text-align:center;left:0px;top:20px;width:258px;height:43px;z-index:21;">
-<div id="h_Container" style="width:258px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
-<div id="wb_Image2" style="position:absolute;left:70px;top:0px;width:188px;height:43px;z-index:16;">
-<img src="images/8248849621_2e551c55-070d-47aa-9422-2b995658cef6.png" id="Image2" alt="" width="188" height="43"></div>
-<div id="wb_OverlayMenu1" style="position:absolute;left:9px;top:6px;width:40px;height:37px;z-index:17;">
-<a href="#" id="OverlayMenu1">
+
+<div id="Layer2" style="position:fixed;text-align:center;left:auto;right:2px;top:30px;width:62px;height:34px;z-index:24;">
+<div id="Layer2_Container" style="width:62px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
+<div id="wb_Image4" style="position:absolute;left:0px;top:0px;width:62px;height:34px;z-index:16;">
+<a href="#" onclick="ShowObjectWithEffect('aaaa', 0, 'fade', 0);ShowObjectWithEffect('wb_Image4', 0, 'fade', 500);ShowObjectWithEffect('InlineFrame2', 1, 'puff', 500, 'swing');ShowObjectWithEffect('wb_Icon1', 1, 'fade', 500);return false;"><img src="images/image.png" srcset="images/image.png 2x" id="Image4" alt="" width="62" height="35"></a></div>
+</div>
+</div>
+<div id="aaaa" style="position:fixed;text-align:center;left:0px;top:14px;width:255px;height:80px;z-index:25;">
+<div id="aaaa_Container" style="width:255px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
+<div id="wb_JavaScript1" style="position:absolute;left:19px;top:57px;width:208px;height:23px;z-index:17;">
+<div style="color:#FFFFFF;font-size:12px;font-family:Arial;font-weight:normal;font-style:normal;text-align:left;text-decoration:none;" id="text_scroller"></div>
+<script>
+var messages = new Array
+(
+   '  Series Colombianas  ',
+   '  Apoyanos en las redes sociales!  ',
+   '    sintv.co    '
+);
+var speed = 50;
+var currentMsg = 0;
+function doScroller(text, pos, direction)
+{
+   var text_scroller = document.getElementById('text_scroller');
+   text_scroller.innerText = '[' + text.substring(0, pos) + ']';
+
+   pos += direction;
+   if (pos > text.length)
+   {
+      setTimeout('doScroller("'+text+'",'+pos+','+(-direction)+')', speed*10);
+   }
+   else
+   {
+     if (pos < 0)
+     {
+        currentMsg++;
+        if(currentMsg >= messages.length)
+          currentMsg = 0;
+        text = messages[currentMsg];
+        direction = -direction;
+     }
+     setTimeout('doScroller("'+text+'",'+pos+','+direction+')', speed);
+   }
+}
+doScroller(messages[0], 0, 1);
+</script>
+</div>
+<div id="wb_OverlayMenu2" style="position:absolute;left:17px;top:14px;width:40px;height:37px;z-index:18;">
+<a href="#" id="OverlayMenu2">
 <span class="line"></span>
 <span class="line">
 </span><span class="line"></span>
 </a>
 </div>
+<div id="wb_Image1" style="position:absolute;left:53px;top:6px;width:140px;height:52px;z-index:19;">
+<img src="images/IMG_20230907_213058.png" id="Image1" alt="" width="140" height="143"></div>
 </div>
 </div>
-
-<div id="Layer2" style="position:fixed;text-align:right;left:auto;right:20px;top:auto;bottom:14px;width:53px;height:51px;z-index:23;">
-<div id="Layer2_Container" style="width:53px;position:relative;margin-left:auto;margin-right:0;text-align:left;">
-<div id="wb_Image1" style="position:absolute;left:0px;top:0px;width:53px;height:51px;z-index:18;">
-<a href="https://t.me/+-RNE8YcFmKtmOTMx" target="_blank"><img src="images/telegrama.png" id="Image1" alt="" width="53" height="53"></a></div>
-</div>
-</div>
-<div id="OverlayMenu1-overlay">
-<div class="OverlayMenu1">
-<ul class="drilldown-menu" role="menu">
-<li><a role="menuitem" href="./index.html" class="OverlayMenu1-effect"><i class="fa fa-home overlay-icon"></i>Inicio</a></li>
-<li><a role="menuitem" href="./categorias.html" class="OverlayMenu1-effect"><i class="fa fa-caret-right overlay-icon"></i>Categorias</a></li>
-<li><a role="menuitem" href="./buscar.html" class="OverlayMenu1-effect"><i class="fa fa-search overlay-icon"></i>Buscar</a></li>
-<li><a role="menuitem" href="./favoritos.html" class="OverlayMenu1-effect"><i class="fa fa-heart overlay-icon"></i>Favoritos</a></li>
-<li>
-<a role="menuitem" href="#" class="OverlayMenu1-effect"><i class="fa fa-circle overlay-icon"></i>En&nbsp;vivo</a>
-<ul class="drilldown-submenu" role="menu">
-<li><a role="menuitem" href="#" class="OverlayMenu1-effect"><i class="fa fa-circle overlay-icon"></i>Tv&nbsp;Nacional</a></li>
-<li><a role="menuitem" href="#" class="OverlayMenu1-effect"><i class="fa fa-circle overlay-icon"></i>Futbol&nbsp;en&nbsp;vivo</a></li>
+<div id="OverlayMenu2-overlay">
+<div class="OverlayMenu2">
+<ul class="OverlayMenu2" role="menu">
+<li><a role="menuitem" href="https://www.serieslatino.co/" class="OverlayMenu2-effect"><i class="fa fa-home overlay-icon"></i>Inicio</a></li>
+<li><a role="menuitem" href="https://www.serieslatino.co/categorias" class="OverlayMenu2-effect"><i class="fa fa-angle-right overlay-icon"></i>Categorias</a></li>
+<li class="item-has-children">
+<a role="menuitem" href="#" class="OverlayMenu2-effect"><i class="fa fa-circle overlay-icon"></i>En&nbsp;vivo</a>
+<ul class="sub-menu" role="menu">
+<li><a role="menuitem" href="#" class="OverlayMenu2-effect"><i class="fa fa-circle overlay-icon"></i>Tv&nbsp;Nacional</a></li>
+<li><a role="menuitem" href="https://fudfkzkl.blogspot.com/p/eventos-del-dia.html" class="OverlayMenu2-effect"><i class="fa fa-circle overlay-icon"></i>Futbol&nbsp;en&nbsp;vivo</a></li>
 </ul>
 </li>
    </ul>
 </div>
-<a class="close-button" id="OverlayMenu1-close" href="#" role="button" aria-hidden="true"><span></span></a>
+<a class="close-button" id="OverlayMenu2-close" href="#" role="button" aria-hidden="true"><span></span></a>
 </div>
-<script>
-        document.addEventListener('DOMContentLoaded', () => {
-            var disclaimer = document.querySelector("img[alt='www.000webhost.com']");
-            if(disclaimer) {
-                disclaimer.remove();
-            }
-        });
-    </script>
-    
-    
-  <div id="preloader"></div>
 </body>
 </html>

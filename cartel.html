@@ -11,15 +11,15 @@ El tiempo pasa y Fátima, agobiada por la pérdida de Lady, se sumerge cada vez 
 <meta name="keywords" content="lady,lady la vendedora de rosas">
 <meta name="author" content="RCN Televisión">
 <meta name="categories" content="Drama">
+<meta name="robots" content="index, follow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="font-awesome.min.css" rel="stylesheet">
-<link href="Sintv2.css" rel="stylesheet">
+<link href="latino7.css" rel="stylesheet">
 <link href="cartel.css" rel="stylesheet">
 <script src="jquery-3.6.0.min.js"></script>
 <script src="jquery-ui.min.js"></script>
 <script src="bootstrap.min.js"></script>
 <script src="wb.overlay.min.js"></script>
-<script src="wb.drilldownmenu.min.js"></script>
 <script src="wwb18.min.js"></script>
 <script>
 $(document).ready(function()
@@ -30,18 +30,26 @@ $(document).ready(function()
       $('html, body').stop().animate({ scrollTop: $('#wb_intro').offset().top-88 }, 600, 'easeOutExpo');
    });
    $('#OverlayMenu2-overlay').overlay({hideTransition:true});
-   $('.OverlayMenu2').drilldownmenu({backText: 'Atrás'});
+   $('.OverlayMenu2 .item-has-children').children('a').on('click', function(event)
+   {
+      event.preventDefault();
+      $(this).toggleClass('submenu-open').next('.sub-menu').slideToggle(0,'linear').end().parent('.item-has-children').siblings('.item-has-children').children('a').removeClass('submenu-open').next('.sub-menu').slideUp(0,'linear');
+   });
    $('#OverlayMenu2').on('click', function(e)
    {
       $.overlay.show($('#OverlayMenu2-overlay'));
       return false;
    });
-   if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {$('#preloader').remove();}
 });
-$(window).on('load', function()
-{
-   $('#preloader').remove();
-});
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2E3ZX4RV9D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2E3ZX4RV9D');
 </script>
 </head>
 <body>
@@ -108,6 +116,18 @@ window.addEventListener('load', () => {
 </body>
 </html>
 
+<div id="wb_LayoutGrid1">
+<div id="LayoutGrid1">
+<div class="row">
+<div class="col-1">
+<iframe name="InlineFrame1" id="InlineFrame2" src="./buscador.html" allowfullscreen></iframe>
+<div id="wb_Icon1" style="display:none;width:39px;height:32px;text-align:center;z-index:1;">
+<a href="#" onclick="ShowObjectWithEffect('InlineFrame2', 0, 'fade', 0);ShowObjectWithEffect('wb_Icon1', 0, 'fade', 0);ShowObjectWithEffect('wb_Image4', 1, 'fade', 0);ShowObjectWithEffect('aaaa', 1, 'fade', 0);return false;"><div id="Icon1"><i class="fa fa-times"></i></div></a>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div id="wb_intro">
 <div id="intro-overlay"></div>
 <div id="intro">
@@ -119,73 +139,26 @@ window.addEventListener('load', () => {
 <div id="fav">
 <div class="row">
 <div class="col-1">
-<div id="Html1" style="display:inline-block;width:100%;height:85px;z-index:1">
+<div id="Html1" style="display:inline-block;width:100%;height:85px;z-index:3">
 
 <div class="container">
-  <div id="botonFavoritosContainer">
-    <button id="botonFavoritos" class="boton-favoritos">
-      <span class="corazon-icono"></span>Agregar a favoritos
-    </button>
+    <div id="botonFavoritosContainer">
+      <a href="reportar" target="_blank">
+        <button id="botonFavoritos" class="boton-favoritos">
+          <span class="corazon-icono"></span>Reportar Problema
+        </button>
+      </a>
+    </div>
+
+   
   </div>
-</div>
-
-<script>
-  var favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
-  var paginaActual = {
-    url: window.location.href,
-    titulo: "Regreso a la guaca",
-     imagen: "./img/guacaop.webp",
-     enlace: "./guaca.html",
-  };
-
-  if (favoritos.some(function(favorito) {
-    return favorito.url === paginaActual.url;
-  })) {
-    mostrarBotonEliminar();
-  } else {
-    mostrarBotonAgregar();
-  }
-
-  function mostrarBotonEliminar() {
-    var botonEliminar = document.createElement("button");
-    botonEliminar.innerHTML = '<span class="caneca-icono"></span>Eliminar de favoritos';
-    botonEliminar.className = "boton-eliminar animate-boton";
-    botonEliminar.addEventListener("click", function() {
-      var index = favoritos.findIndex(function(favorito) {
-        return favorito.url === paginaActual.url;
-      });
-      if (index !== -1) {
-        favoritos.splice(index, 1);
-        localStorage.setItem("favoritos", JSON.stringify(favoritos));
-      }
-      mostrarBotonAgregar();
-    });
-
-    var botonFavoritosContainer = document.getElementById("botonFavoritosContainer");
-    botonFavoritosContainer.innerHTML = "";
-    botonFavoritosContainer.appendChild(botonEliminar);
-  }
-
-  function mostrarBotonAgregar() {
-    var botonAgregar = document.createElement("button");
-    botonAgregar.innerHTML = '<span class="corazon-icono"></span>Agregar a favoritos';
-    botonAgregar.className = "boton-favoritos animate-boton";
-    botonAgregar.addEventListener("click", function() {
-      favoritos.push(paginaActual);
-      localStorage.setItem("favoritos", JSON.stringify(favoritos));
-      mostrarBotonEliminar();
-    });
-
-    var botonFavoritosContainer = document.getElementById("botonFavoritosContainer");
-    botonFavoritosContainer.innerHTML = "";
-    botonFavoritosContainer.appendChild(botonAgregar);
-  }
-</script></div>
+</body>
 </div>
 </div>
 </div>
 </div>
-<div id="wb_Card1" style="display:flex;width:calc(100% - 10px);z-index:3;" class="card">
+</div>
+<div id="wb_Card1" style="display:flex;width:calc(100% - 10px);z-index:5;" class="card">
    <div id="Card1-card-header" class="collapsed" aria-expanded="false" data-bs-toggle="collapse" href="#Card1-card-body">Sinopsis Breve<svg class="icon-collapsed" viewBox="0 0 76 76" version="1.1" xmlns="http://www.w3.org/2000/svg">
    <path d="M68 34 L68 42 C68 43, 68 44, 67 45 C66 46, 65 46, 64 46 L47 46 L47 64 C47 65, 46 66, 45 67 C45 68, 44 68, 43 68 L34 68 C33 68, 32 68, 32 67 C31 66, 30 65, 30 64 L30 46 L13 46 C12 46, 11 46, 10 45 C9 44, 9 43, 9 42 L9 34 C9 33, 9 32, 10 31 C11 31, 12 30, 13 30 L30 30 L30 12 C30 11, 31 10, 32 10 C32 9, 33 8, 34 8 L43 8 C44 8, 45 9, 45 10 C46 10, 47 11, 47 12 L47 30 L64 30 C65 30, 66 31, 67 31 C68 32, 68 33, 68 34"/>
 </svg>
@@ -196,12 +169,12 @@ window.addEventListener('load', () => {
    <div id="Card1-card-body" class="collapse" data-bs-parent="#wb_Card1">
       <div id="Card1-card-item1"></div>
       <hr id="Card1-card-item2">
-      <div id="Card1-card-item3"><br><br>Regreso a la guaca</div>
-      <div id="Card1-card-item4"><h2><br><br>Basada en hechos reales ocurridos en abril de 2003. Tanto la película como la serie narra la historia de Porras, Venegas, Lloreda y Perlaza, pertenecientes a un grupo de soldados del ejército nacional de Colombia que combaten en la selva amazónica a una cuadrilla de la guerrilla de las FARC1​ que tiene en su poder a unos ciudadanos norteamericanos, tras repeler al enemigo encuentran una caleta con millones de dólares que pertenecen al grupo insurgente, los nuevos millonarios se dedican a derrochar el dinero encontrado en lujosos coches, ropa, restaurantes y burdeles por lo que levantan sospechas que llevan a una investigación por la cual terminarán siendo juzgados</h2></div>
-      <div id="Card1-card-item5"><br>Acción - Drama</div>
+      <div id="Card1-card-item3"><br><br>El cartel de los sapos [ T1 - T2]</div>
+      <div id="Card1-card-item4"><h2><br><br><br>Temporada 1<br><br>La serie comienza con Martín González (Manolo Cardona) contando su historia de la cárcel, recordando cuando tenía quince años y su madre trabajaba en Estados Unidos para enviarles dinero. Martín le pide a su mejor amigo Pepe Cadena (Diego Cadavid) que lo lleve a donde su hermano mayor Óscar Cadena (Fernando Solórzano), también conocido como Don Óscar — que en ese momento es el jefe supremo del Cartel del Pacífico — para entrar al negocio<br>Martín inicia desde abajo, desde las denominadas "cocinas"; yendo a trabajar todos los días después del colegio. Aquí permaneció por cinco años, pero luego se convirtió en un narcotraficante de talla mayor<br><br>Temporada 2<br><br>En esta, Martín González finalizó su versión de la historia sobre los carteles de la droga, y ahora es Pepe Cadena quien toma la palabra para contar lo que ocurrió durante los cuatro años siguientes: cómo logró salir de la cárcel en Nueva York con el pretexto de colaborar con la DEA, su huida a Colombia, y finalmente, el momento en que fue nuevamente arrestado y puesto en prisión.</h2></div>
+      <div id="Card1-card-item5"><br>Narco - Serie</div>
    </div>
 </div>
-<div id="wb_Card2" style="display:flex;width:calc(100% - 10px);z-index:4;" class="card">
+<div id="wb_Card2" style="display:flex;width:calc(100% - 10px);z-index:6;" class="card">
    <div id="Card2-card-header" class="collapsed" aria-expanded="false" data-bs-toggle="collapse" href="#Card2-card-body">Ficha Técnica<svg class="icon-collapsed" viewBox="0 0 76 76" version="1.1" xmlns="http://www.w3.org/2000/svg">
    <path d="M68 34 L68 42 C68 43, 68 44, 67 45 C66 46, 65 46, 64 46 L47 46 L47 64 C47 65, 46 66, 45 67 C45 68, 44 68, 43 68 L34 68 C33 68, 32 68, 32 67 C31 66, 30 65, 30 64 L30 46 L13 46 C12 46, 11 46, 10 45 C9 44, 9 43, 9 42 L9 34 C9 33, 9 32, 10 31 C11 31, 12 30, 13 30 L30 30 L30 12 C30 11, 31 10, 32 10 C32 9, 33 8, 34 8 L43 8 C44 8, 45 9, 45 10 C46 10, 47 11, 47 12 L47 30 L64 30 C65 30, 66 31, 67 31 C68 32, 68 33, 68 34"/>
 </svg>
@@ -211,59 +184,91 @@ window.addEventListener('load', () => {
 </div>
    <div id="Card2-card-body" class="collapse" data-bs-parent="#wb_Card2">
       <div id="Card2-card-item1"></div>
-      <div id="Card2-card-item2"><br><br>Título Original: Regreso a la guaca<br>Creada por: Clara María Ochoa<br>Estado: Finalizado<br>País: Colombia<br>Temporadas: 1<br>Episodios: 27<br>Año: 2009<br></div>
+      <div id="Card2-card-item2"><br>Título Original: El cartel de los sapos [T1-T2]<br>Guion: Juan Camilo Ferrand, Andrés López López<br>Creado: Andrés López López<br>Episodios: 57 T1  - 50- T2<br>Estado: Finalizado<br>País: Colombia<br>Temporadas: 2<br>Año: 2015<br><br><br></div>
    </div>
 </div>
-<div id="wb_Icon1" style="display:none;width:139px;height:73px;text-align:center;z-index:5;">
-<a href="./ladyt1-o1.html" target="InlineFrame1" onclick="ShowObjectWithEffect('InlineFrame1', 1, 'dropright', 500);ShowObjectWithEffect('wb_Icon1', 0, 'fade', 500);ShowObjectWithEffect('wb_Card1', 0, 'fade', 1);ShowObjectWithEffect('wb_Card2', 0, 'fade', 0);ShowObjectWithEffect('boton_cloce', 0, 'fade', 500);ShowObjectWithEffect('wb_Icon2', 1, 'fade', 500);ShowObjectWithEffect('h', 0, 'fade', 500);ShowObjectWithEffect('wb_fav', 0, 'fade', 500);ShowObjectWithEffect('Icon3', 1, 'fade', 500);ShowObjectWithEffect('Image1', 0, 'fade', 500);return false;"><div id="Icon1"><i class="fa fa-play-circle"></i></div></a>
-</div>
-<iframe name="InlineFrame1" id="InlineFrame1" src="./cartltemp1.html" loading="lazy" scrolling="yes" allowfullscreen></iframe>
+<iframe name="InlineFrame1" id="InlineFrame1" src="./cartelT1.html" loading="lazy" scrolling="no" allowfullscreen></iframe>
 </div>
 </div>
 </div>
-<div id="wb_Image3" style="display:inline-block;width:195px;height:87px;z-index:8;">
-<a href="./ladytem1.html" target="InlineFrame1" onclick="ShowObjectWithEffect('InlineFrame1', 1, 'dropright', 500);ShowObjectWithEffect('wb_Image3', 0, 'fade', 500);ShowObjectWithEffect('wb_Card1', 0, 'dropright', 500);ShowObjectWithEffect('wb_Card2', 0, 'dropleft', 500);ShowObjectWithEffect('wb_Icon2', 1, 'fade', 500);ShowObjectWithEffect('aaaa', 0, 'fade', 500);ShowObjectWithEffect('wb_fav', 0, 'fade', 500);return false;"><img src="20230529_180338_332 (1).webp" id="Image3" alt=""></a>
+<div id="wb_Image3" style="display:inline-block;width:180px;height:55px;z-index:9;">
+<a href="#" onclick="ShowObjectWithEffect('InlineFrame1', 1, 'dropright', 500);ShowObjectWithEffect('wb_Image3', 0, 'fade', 500);ShowObjectWithEffect('wb_Card1', 0, 'dropright', 500);ShowObjectWithEffect('wb_Card2', 0, 'dropleft', 500);ShowObjectWithEffect('wb_Icon2', 1, 'fade', 500);ShowObjectWithEffect('aaaa', 0, 'fade', 500);ShowObjectWithEffect('wb_fav', 0, 'fade', 500);ShowObjectWithEffect('Layer2', 0, 'fade', 500);return false;"><img src="images/Ahoraa.png" srcset="images/Ahoraa.png 2x" id="Image3" alt="" width="180" height="55"></a><div id="Image3-overlay">Latino7,com</div>
+
 </div>
 </div>
 </div>
 </div>
-<div id="layermenu" style="position:fixed;text-align:center;left:0px;top:20px;width:40px;height:38px;z-index:19;">
+<div id="layermenu" style="position:fixed;text-align:center;left:20px;top:20px;width:40px;height:38px;z-index:22;">
 <div id="layermenu_Container" style="width:40px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
 <div id="wb_Icon2" style="position:absolute;left:1px;top:5px;width:35px;height:33px;visibility:hidden;text-align:center;z-index:15;">
-<a href="./index.html" onclick="ShowObjectWithEffect('wb_Icon2', 0, 'fade', 500);ShowObjectWithEffect('boton_cloce', 1, 'fade', 500);ShowObjectWithEffect('InlineFrame1', 0, 'fade', 500);ShowObjectWithEffect('wb_Card1', 1, 'dropright', 500);ShowObjectWithEffect('wb_Card2', 1, 'dropleft', 500);ShowObjectWithEffect('aaaa', 1, 'fade', 500);ShowObjectWithEffect('wb_Image3', 1, 'fade', 500);ShowObjectWithEffect('wb_fav', 1, 'fade', 500);ShowObjectWithEffect('Icon3', 0, 'fade', 500);ShowObjectWithEffect('Image1', 1, 'fade', 500);return false;"><div id="Icon2"><i class="fa fa-chevron-circle-left"></i></div></a></div>
+<a href="./index.html" onclick="ShowObjectWithEffect('wb_Icon2', 0, 'fade', 500);ShowObjectWithEffect('boton_cloce', 1, 'fade', 500);ShowObjectWithEffect('InlineFrame1', 0, 'fade', 500);ShowObjectWithEffect('wb_Card1', 1, 'dropright', 500);ShowObjectWithEffect('wb_Card2', 1, 'dropleft', 500);ShowObjectWithEffect('aaaa', 1, 'fade', 500);ShowObjectWithEffect('wb_Image3', 1, 'fade', 500);ShowObjectWithEffect('wb_fav', 1, 'fade', 500);ShowObjectWithEffect('Icon3', 0, 'fade', 500);ShowObjectWithEffect('wb_Image1', 1, 'fade', 500);ShowObjectWithEffect('Layer2', 1, 'fade', 500);return false;"><div id="Icon2"><i class="fa fa-chevron-circle-left"></i></div></a></div>
 </div>
 </div>
 
-<div id="aaaa" style="position:fixed;text-align:center;left:0px;top:15px;width:243px;height:91px;z-index:21;">
-<div id="aaaa_Container" style="width:243px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
-<div id="wb_Image5" style="position:absolute;left:40px;top:12px;width:188px;height:61px;z-index:16;">
-<img src="images/logo.png" id="Image5" alt="" width="218" height="78"></div>
-<div id="wb_OverlayMenu2" style="position:absolute;left:0px;top:20px;width:40px;height:37px;z-index:17;">
+<div id="Layer2" style="position:fixed;text-align:center;left:auto;right:2px;top:30px;width:62px;height:34px;z-index:24;">
+<div id="Layer2_Container" style="width:62px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
+<div id="wb_Image4" style="position:absolute;left:0px;top:0px;width:62px;height:34px;z-index:16;">
+<a href="#" onclick="ShowObjectWithEffect('aaaa', 0, 'fade', 0);ShowObjectWithEffect('wb_Image4', 0, 'fade', 500);ShowObjectWithEffect('InlineFrame2', 1, 'puff', 500, 'swing');ShowObjectWithEffect('wb_Icon1', 1, 'fade', 500);return false;"><img src="images/image.png" srcset="images/image.png 2x" id="Image4" alt="" width="62" height="35"></a></div>
+</div>
+</div>
+<div id="aaaa" style="position:fixed;text-align:center;left:0px;top:14px;width:255px;height:80px;z-index:25;">
+<div id="aaaa_Container" style="width:255px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
+<div id="wb_JavaScript1" style="position:absolute;left:19px;top:57px;width:208px;height:23px;z-index:17;">
+<div style="color:#FFFFFF;font-size:12px;font-family:Arial;font-weight:normal;font-style:normal;text-align:left;text-decoration:none;" id="text_scroller"></div>
+<script>
+var messages = new Array
+(
+   '  Series Colombianas  ',
+   '  Apoyanos en las redes sociales!  ',
+   '    sintv.co    '
+);
+var speed = 50;
+var currentMsg = 0;
+function doScroller(text, pos, direction)
+{
+   var text_scroller = document.getElementById('text_scroller');
+   text_scroller.innerText = '[' + text.substring(0, pos) + ']';
+
+   pos += direction;
+   if (pos > text.length)
+   {
+      setTimeout('doScroller("'+text+'",'+pos+','+(-direction)+')', speed*10);
+   }
+   else
+   {
+     if (pos < 0)
+     {
+        currentMsg++;
+        if(currentMsg >= messages.length)
+          currentMsg = 0;
+        text = messages[currentMsg];
+        direction = -direction;
+     }
+     setTimeout('doScroller("'+text+'",'+pos+','+direction+')', speed);
+   }
+}
+doScroller(messages[0], 0, 1);
+</script>
+</div>
+<div id="wb_OverlayMenu2" style="position:absolute;left:17px;top:14px;width:40px;height:37px;z-index:18;">
 <a href="#" id="OverlayMenu2">
 <span class="line"></span>
 <span class="line">
 </span><span class="line"></span>
 </a>
 </div>
+<div id="wb_Image1" style="position:absolute;left:53px;top:6px;width:140px;height:52px;z-index:19;">
+<img src="images/IMG_20230907_213058.png" id="Image1" alt="" width="140" height="143"></div>
 </div>
 </div>
 <div id="OverlayMenu2-overlay">
 <div class="OverlayMenu2">
-<ul class="drilldown-menu" role="menu">
-<li><a role="menuitem" href="./index.html" class="OverlayMenu2-effect"><i class="fa fa-home overlay-icon"></i>Inicio</a></li>
-<li>
-<a role="menuitem" href="#" class="OverlayMenu2-effect"><i class="fa fa-caret-right overlay-icon"></i>Categorias</a>
-<ul class="drilldown-submenu" role="menu">
-<li><a role="menuitem" href="./series1.html" class="OverlayMenu2-effect"><i class="fa fa-play-circle overlay-icon"></i>Series</a></li>
-<li><a role="menuitem" href="./Peliculas.html" class="OverlayMenu2-effect"><i class="fa fa-play-circle overlay-icon"></i>Peliculas</a></li>
-<li><a role="menuitem" href="./Todas.html" class="OverlayMenu2-effect"><i class="fa fa-play-circle overlay-icon"></i>Ver&nbsp;todas</a></li>
-</ul>
-</li>
-<li><a role="menuitem" href="./results.html" class="OverlayMenu2-effect"><i class="fa fa-search overlay-icon"></i>Buscar</a></li>
-<li><a role="menuitem" href="./favoritos.html" class="OverlayMenu2-effect"><i class="fa fa-heart overlay-icon"></i>Favoritos</a></li>
-<li>
+<ul class="OverlayMenu2" role="menu">
+<li><a role="menuitem" href="https://www.serieslatino.co/" class="OverlayMenu2-effect"><i class="fa fa-home overlay-icon"></i>Inicio</a></li>
+<li><a role="menuitem" href="https://www.serieslatino.co/categorias" class="OverlayMenu2-effect"><i class="fa fa-angle-right overlay-icon"></i>Categorias</a></li>
+<li class="item-has-children">
 <a role="menuitem" href="#" class="OverlayMenu2-effect"><i class="fa fa-circle overlay-icon"></i>En&nbsp;vivo</a>
-<ul class="drilldown-submenu" role="menu">
+<ul class="sub-menu" role="menu">
 <li><a role="menuitem" href="#" class="OverlayMenu2-effect"><i class="fa fa-circle overlay-icon"></i>Tv&nbsp;Nacional</a></li>
 <li><a role="menuitem" href="https://fudfkzkl.blogspot.com/p/eventos-del-dia.html" class="OverlayMenu2-effect"><i class="fa fa-circle overlay-icon"></i>Futbol&nbsp;en&nbsp;vivo</a></li>
 </ul>
@@ -272,6 +277,5 @@ window.addEventListener('load', () => {
 </div>
 <a class="close-button" id="OverlayMenu2-close" href="#" role="button" aria-hidden="true"><span></span></a>
 </div>
-<div id="preloader"></div>
 </body>
 </html>

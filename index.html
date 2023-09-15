@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es-ar">
+<html lang="es-co">
 <head>
 <meta charset="utf-8">
 <title>Series y Peliculas Colombianas</title>
@@ -7,9 +7,10 @@
 <meta name="keywords" content="Series colombianas, Series latinas, narco series,  series mexicanas,peliculas colombianas, descargar series colombianas, peliculas audio latino, pablo escobar. lady la vendedora de rosas ">
 <meta name="author" content="Series Latino">
 <meta name="categories" content="series">
+<meta name="robots" content="index, follow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="font-awesome.min.css" rel="stylesheet">
-<link href="Sintv2.css" rel="stylesheet">
+<link href="latino7.css" rel="stylesheet">
 <link href="index.css" rel="stylesheet">
 <script src="jquery-3.6.0.min.js"></script>
 <script src="jquery-ui.min.js"></script>
@@ -31,84 +32,129 @@ $(document).ready(function()
    });
 });
 </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2E3ZX4RV9D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2E3ZX4RV9D');
+</script>
 </head>
-<body>
- <meta name="viewport" content="width=device-width, initial-scale=1"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'><link rel="stylesheet" href="./style.css">
+<body 
+    <div class="container">
+        <button id="floating-button" class="icon-button" onclick="toggleButton()">
+            <div id="new-text">Nuevo</div>
+        </button>
+        <div id="iframe-container">
+            <button id="close-button" onclick="closeIframe()">X</button>
+            <iframe id="my-iframe" src=""></iframe>
+        </div>
+    </div>
 
-</body>
-
-
-<div class="social-button" title="expand social media options">
-  <i class="fas fa-share-alt" id="social-icon"></i>
-  <a hidden class="social-point" href="https://api.whatsapp.com/send?text=Hello" target="_blank" rel="nofollow" title="Whatsapp"><i class="fab fa-whatsapp"></i></a>
-  <a hidden class="social-point" href="https://www.youtube.com/" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-  <a hidden class="social-point" href="https://telegram.me/" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
-  <a hidden class="social-point" href="mailto:example@example.com" target="_blank" title="Correo"><i class="fas fa-envelope"></i></a>
-  <a hidden class="social-point" href="https://www.facebook.com/" target="_blank" rel="nofollow" title="Facebook"><i class="fab fa-facebook"></i></a>
-</div>
 
 
 <script>
 
-var social_open = false
-window.addEventListener('load', () => {
-  const menu = document.querySelector('.social-button');
+var isDragging = false;
+var initialX;
+var initialY;
+var offsetX = 0;
+var offsetY = 0;
 
-  menu.addEventListener('click', () => {
-    const icon = document.querySelector('#social-icon');
-    if(social_open == true) {
-      social_open = false;
+var floatingButton = document.getElementById("floating-button");
+var iframeContainer = document.getElementById("iframe-container");
+var iframe = document.getElementById("my-iframe");
+var closeButton = document.getElementById("close-button");
 
-      menu.title = menu.title.replace(/hide/,"expand")
-      menu.classList.remove('social-button-open')
-      icon.classList.remove('fa-times')
-      icon.classList.add('fa-share-alt')
+floatingButton.addEventListener("mousedown", handleMouseDown);
+document.addEventListener("mousemove", handleMouseMove);
+document.addEventListener("mouseup", handleMouseUp);
+floatingButton.addEventListener("touchstart", handleTouchStart);
+document.addEventListener("touchmove", handleTouchMove);
+document.addEventListener("touchend", handleTouchEnd);
 
-      var menu_point = document.querySelectorAll(".social-point");
-      for (let i = 0; i < menu_point.length; i++) {
-          menu_point[i].classList.remove('social-point-open');
-        setTimeout(function() {
-          menu_point[i].hidden = true;
-        }, 800)
-      }
-    } else {
-      social_open = true;
+function handleMouseDown(event) {
+    isDragging = true;
+    initialX = event.clientX - offsetX;
+    initialY = event.clientY - offsetY;
+}
 
-      menu.title = menu.title.replace(/expand/,"hide")
-      menu.classList.add('social-button-open');
-      icon.classList.remove('fa-share-alt')
-      icon.classList.add('fa-times')
+function handleMouseMove(event) {
+    if (!isDragging) return;
 
-      var menu_point = document.querySelectorAll(".social-point");
-      for (let i = 0; i < menu_point.length; i++) {
-        menu_point[i].hidden = false;
-        setTimeout(function() {
-          menu_point[i].classList.add('social-point-open');
-        }, 200)
-      }
-    }
-  });
-})
+    offsetX = event.clientX - initialX;
+    offsetY = event.clientY - initialY;
+
+    floatingButton.style.transform = "translate(" + offsetX + "px, " + offsetY + "px)";
+}
+
+function handleMouseUp() {
+    isDragging = false;
+}
+
+function handleTouchStart(event) {
+    isDragging = true;
+    initialX = event.touches[0].clientX - offsetX;
+    initialY = event.touches[0].clientY - offsetY;
+}
+
+function handleTouchMove(event) {
+    if (!isDragging) return;
+
+    offsetX = event.touches[0].clientX - initialX;
+    offsetY = event.touches[0].clientY - initialY;
+
+    floatingButton.style.transform = "translate(" + offsetX + "px, " + offsetY + "px)";
+}
+
+function handleTouchEnd() {
+    isDragging = false;
+}
+
+function toggleButton() {
+    floatingButton.style.display = "none";
+    openIframe();
+    enablePageScroll(); // Habilita la barra de desplazamiento de la página principal
+}
+
+function openIframe() {
+    iframe.src = "https://serieslatino.co/series1";
+    iframeContainer.style.display = "block"; // Muestra el contenedor del iframe
+    disablePageScroll(); // Deshabilita la barra de desplazamiento de la página principal
+}
+
+function closeIframe() {
+    iframe.src = "";
+    iframeContainer.style.display = "none"; // Oculta el contenedor del iframe
+    floatingButton.style.display = "block";
+    enablePageScroll(); // Habilita la barra de desplazamiento de la página principal
+}
+
+function disablePageScroll() {
+    document.body.style.overflow = "hidden"; // Deshabilita el desplazamiento de la página principal
+}
+
+function enablePageScroll() {
+    document.body.style.overflow = "auto"; // Habilita el desplazamiento de la página principal
+}
 
 
-</script>
-
-</body>
-</html>
-
+</script>>
 <div id="Layer2" style="position:fixed;text-align:center;left:auto;right:2px;top:30px;width:62px;height:34px;z-index:7;">
 <div id="Layer2_Container" style="width:62px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
-<div id="wb_Image4" style="position:absolute;left:0px;top:0px;width:62px;height:34px;z-index:0;">
-<a href="#" onclick="ShowObjectWithEffect('aaaa', 0, 'fade', 0);ShowObjectWithEffect('wb_Icon2', 1, 'fade', 0);ShowObjectWithEffect('wb_Image4', 0, 'fade', 0);ShowObjectWithEffect('InlineFrame1', 1, 'puff', 700, 'swing');return false;"><img src="images/image-removebg-preview.png" id="Image4" alt="" width="62" height="35"></a></div>
+<div id="wb_buscar" style="position:absolute;left:0px;top:0px;width:62px;height:34px;z-index:0;">
+<a href="#" onclick="ShowObjectWithEffect('aaaa', 0, 'fade', 0);ShowObjectWithEffect('wb_buscar', 0, 'fade', 0);ShowObjectWithEffect('frame111', 1, 'puff', 0, 'swing');ShowObjectWithEffect('wb_cloceee', 1, 'puff', 0, 'swing');return false;"><img src="images/image.png" srcset="images/image.png 2x" id="buscar" alt="" width="62" height="35"></a></div>
 </div>
 </div>
-<div id="wb_LayoutGrid2">
-<div id="LayoutGrid2">
+<div id="wb_la">
+<div id="la">
 <div class="row">
 <div class="col-1">
-<iframe name="InlineFrame1" id="InlineFrame1" src="./buscador.html" allowfullscreen></iframe>
-<div id="wb_Icon2" style="display:none;width:39px;height:32px;text-align:center;z-index:2;">
-<a href="#" onclick="ShowObjectWithEffect('InlineFrame1', 0, 'fade', 0);ShowObjectWithEffect('wb_Icon2', 0, 'fade', 0);ShowObjectWithEffect('wb_Image4', 1, 'fade', 0);ShowObjectWithEffect('aaaa', 1, 'fade', 0);return false;"><div id="Icon2"><i class="fa fa-times"></i></div></a>
+<iframe name="InlineFrame1" id="frame111" src="./buscador.html" allowfullscreen></iframe>
+<div id="wb_cloceee" style="display:none;width:32px;height:30px;text-align:center;z-index:2;">
+<a href="#" onclick="ShowObjectWithEffect('frame111', 0, 'fade', 0);ShowObjectWithEffect('wb_cloceee', 0, 'fade', 0);ShowObjectWithEffect('wb_buscar', 1, 'fade', 0);ShowObjectWithEffect('aaaa', 1, 'fade', 0);return false;"><div id="cloceee"><i class="fa fa-times"></i></div></a>
 </div>
 </div>
 </div>
@@ -128,8 +174,8 @@ window.addEventListener('load', () => {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="./assets/images/icon.png" type="image/png">
-  <title>CineFlix</title>
+  
+ 
 
   <!--
     - custom css link
@@ -140,7 +186,7 @@ window.addEventListener('load', () => {
   <!--
     - google font link
   -->
-  <link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" rel="stylesheet" />
+ 
 </head>
 
 <body>
@@ -159,7 +205,7 @@ window.addEventListener('load', () => {
       <section class="banner">
         <div class="banner-card">
 
-          <a href="./guaca.html"><img data-src="./img/regresoop.webp" class="banner-img lazy" alt="bann"></a>
+          <a href=""><img data-src="https://i.ibb.co/sHC6XRp/regresoop.webp" class="banner-img lazy" alt="bann"></a>
 
           <div class="card-content">
             <div class="card-info">
@@ -218,7 +264,7 @@ window.addEventListener('load', () => {
           <div class="movie-card">
 
             <div class="card-head">
-              <img data-src="./img/ladyop.webp" alt="Lady" class="card-img lazy">
+              <img data-src="https://i.ibb.co/zGvbqTK/ladyop33.webp" alt="Lady" class="card-img lazy">
 
               <div class="card-overlay">
 
@@ -250,7 +296,7 @@ window.addEventListener('load', () => {
 
             <div class="card-head">
               
-              <img data-src="./img/cartelop.webp" alt="cartel" class="card-img lazy">
+              <img data-src="https://i.ibb.co/PQHnT6f/cartelop-jpg-11zon.webp" alt="cartel" class="card-img lazy">
 
               <div class="card-overlay">
 
@@ -282,7 +328,7 @@ window.addEventListener('load', () => {
           <div class="movie-card">
 
             <div class="card-head">
-              <img data-src="./img/muñecasop.webp" alt="muñecas" class="card-img lazy">
+              <img data-src="https://i.ibb.co/s545fc6/mu-ecasop.webp" alt="muñecas" class="card-img lazy">
 
               <div class="card-overlay">
 
@@ -313,7 +359,7 @@ window.addEventListener('load', () => {
           <div class="movie-card">
 
             <div class="card-head">
-              <img data-src="./img/enfermerasNo2.webp" alt="enfermeras" class="card-img lazy">
+              <img data-src="https://i.ibb.co/LnGdR47/el-patron-del-mal-4-11zon.webp" alt="pablo" class="card-img lazy">
 
               <div class="card-overlay">
 
@@ -330,7 +376,7 @@ window.addEventListener('load', () => {
             </div>
 
             <div class="card-body">
-              <h3 class="card-title">Enfermeras</h3>
+              <h3 class="card-title">Pablo escobar, el patron del mal</h3>
 
               <div class="card-info">
                 <span class="genre"></span>
@@ -343,7 +389,7 @@ window.addEventListener('load', () => {
           <div class="movie-card">
 
             <div class="card-head">
-              <img data-src="./img/hastaop.webp" alt="hasta" class="card-img lazy">
+              <img data-src="https://i.ibb.co/vmFgb6d/alias-jj-2-11zon.webp" alt="hasta" class="card-img lazy">
 
               <div class="card-overlay">
 
@@ -361,7 +407,7 @@ window.addEventListener('load', () => {
             </div>
 
             <div class="card-body">
-              <a href="./hasta.html"><h3 class="card-title">Hasta que la plata nos separe</h3></a>
+              <a href="./hasta.html"><h3 class="card-title">Alias JJ</h3></a>
 
               <div class="card-info">
                 <span class="genre"></span>
@@ -374,7 +420,7 @@ window.addEventListener('load', () => {
           <div class="movie-card">
 
             <div class="card-head">
-              <img data-src="./img/dejemonosop.webp" alt="dejemonos" class="card-img lazy">
+              <img data-src="https://i.ibb.co/F3VZ6Vq/alias-el-mexicano-1-11zon.webp" alt="dejemonos" class="card-img lazy">
 
               <div class="card-overlay">
 
@@ -391,7 +437,7 @@ window.addEventListener('load', () => {
             </div>
 
             <div class="card-body">
-              <h3 class="card-title">Dejemonos de vargas</h3>
+              <h3 class="card-title">El mexicano</h3>
 
               <div class="card-info">
                 <span class="genre"></span>
@@ -404,7 +450,7 @@ window.addEventListener('load', () => {
           <div class="movie-card">
 
             <div class="card-head">
-              <img data-src="./img/guacaop.webp" alt="guaca" class="card-img lazy">
+              <img data-src="https://i.ibb.co/dJn7MXV/guacaop-8-11zon-11zon.webp" alt="guaca" class="card-img lazy">
 
               <div class="card-overlay">
 
@@ -436,7 +482,7 @@ window.addEventListener('load', () => {
           <div class="movie-card">
 
             <div class="card-head">
-              <img data-src="./img/anaop.webp" alt="ana" class="card-img lazy">
+              <img data-src="https://i.ibb.co/Ldg1nwt/la-pola-5-11zon.webp" alt="ana" class="card-img lazy">
 
               <div class="card-overlay">
 
@@ -453,7 +499,7 @@ window.addEventListener('load', () => {
             </div>
 
             <div class="card-body">
-              <h3 class="card-title">Ana de nadie</h3>
+              <h3 class="card-title">La pola</h3>
 
               <div class="card-info">
                 <span class="genre"></span>
@@ -466,7 +512,7 @@ window.addEventListener('load', () => {
           <div class="movie-card">
 
             <div class="card-head">
-              <img data-src="./img/pasionop.webp" alt="pasion" class="card-img lazy">
+              <img data-src="https://i.ibb.co/L54kfkM/el-bronx-3-11zon.webp" alt="pasion" class="card-img lazy">
 
               <div class="card-overlay">
 
@@ -483,7 +529,7 @@ window.addEventListener('load', () => {
             </div>
 
             <div class="card-body">
-              <h3 class="card-title">Pasion de gavilanes</h3>
+              <h3 class="card-title">El bronx</h3>
 
               <div class="card-info">
                 <span class="genre"></span>
@@ -496,43 +542,13 @@ window.addEventListener('load', () => {
           <div class="movie-card">
 
             <div class="card-head">
-              <img data-src="./img/entreop.webp" alt="entre" class="card-img lazy">
+              <img data-src="https://i.ibb.co/Qjmg0hv/tres-caines-9-11zon.webp" alt="entre" class="card-img lazy">
 
               <div class="card-overlay">
 
                 <div class="rating">
                   <ion-icon name="star-outline"></ion-icon>
                   <span>8.6</span>
-                </div>
-
-                <div class="play">
-                  <ion-icon name="play-circle-outline"></ion-icon>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="card-body">
-              <h3 class="card-title">Entre sombras</h3>
-
-              <div class="card-info">
-                <span class="genre"></span>
-                <span class="year"></span>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="movie-card">
-
-            <div class="card-head">
-              <img data-src="./img/tresop.webp" alt="tres" class="card-img lazy">
-
-              <div class="card-overlay">
-
-                <div class="rating">
-                  <ion-icon name="star-outline"></ion-icon>
-                  <span>8.5</span>
                 </div>
 
                 <div class="play">
@@ -556,7 +572,37 @@ window.addEventListener('load', () => {
           <div class="movie-card">
 
             <div class="card-head">
-              <img data-src="./img/betiop.webp" alt="beti" class="card-img lazy">
+              <img data-src="https://i.ibb.co/T2XZH1w/los-canarios-7-11zon.webp" alt="tres" class="card-img lazy">
+
+              <div class="card-overlay">
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>8.5</span>
+                </div>
+
+                <div class="play">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+              <h3 class="card-title">Los canarios</h3>
+
+              <div class="card-info">
+                <span class="genre"></span>
+                <span class="year"></span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img data-src="https://i.ibb.co/Wvp47X5/la-selccion-6-11zon.webp" alt="beti" class="card-img lazy">
 
               <div class="card-overlay">
 
@@ -573,7 +619,7 @@ window.addEventListener('load', () => {
             </div>
 
             <div class="card-body">
-              <h3 class="card-title">Yo soy Betty la fea</h3>
+              <h3 class="card-title">La seleccion</h3>
 
               <div class="card-info">
                 <span class="genre"></span>
@@ -586,7 +632,7 @@ window.addEventListener('load', () => {
           <div class="movie-card">
 
             <div class="card-head">
-              <img data-src="./img/chepeop.webp" alt="chepe" class="card-img lazy">
+              <img data-src="https://i.ibb.co/VNnVnr8/hasta-8-11zon.webp" alt="chepe" class="card-img lazy">
 
               <div class="card-overlay">
 
@@ -603,7 +649,7 @@ window.addEventListener('load', () => {
             </div>
 
             <div class="card-body">
-              <h3 class="card-title">Chepe fortuna</h3>
+              <h3 class="card-title">Hasta que la plata nos separe</h3>
 
               <div class="card-info">
                 <span class="genre"></span>
@@ -616,7 +662,7 @@ window.addEventListener('load', () => {
           <div class="movie-card">
 
             <div class="card-head">
-              <img data-src="./img/costeñaop.webp" alt="costeña" class="card-img lazy">
+              <img data-src="https://i.ibb.co/tPXHRcG/photo-5086944418136697561-y-11zon.webp" alt="costeña" class="card-img lazy">
 
               <div class="card-overlay">
 
@@ -633,7 +679,7 @@ window.addEventListener('load', () => {
             </div>
 
             <div class="card-body">
-              <h3 class="card-title">La costeña y el cachaco</h3>
+              <h3 class="card-title">Metastasis</h3>
 
               <div class="card-info">
                 <span class="genre"></span>
@@ -685,7 +731,7 @@ window.addEventListener('load', () => {
       <div class="footer-content">
 
         <div class="footer-brand">
-          <img data-src="./img/logop.png" alt="" class="footer-logo lazy">
+          <img data-src="./img/as.png" alt="" class="footer-logo lazy">
           <p class="slogan">Series audio Latino, En su mayoria de colombia.</p>
 
 
@@ -716,7 +762,7 @@ window.addEventListener('load', () => {
 
             <h4 class="link-heading">SeriesLatino</h4>
 
-            <li class="link-item"><a href="#">Sobre nosotros</a></li>
+            <li class="link-item"><a href="#">Reportar Problema</a></li>
             <li class="link-item"><a href="#">Redes sociales</a></li>
             <li class="link-item"><a href="#">Comentarios</a></li>
             <li class="link-item"><a href="#">Contacto</a></li>
@@ -811,10 +857,9 @@ window.addEventListener('load', () => {
 </div>
 </div>
 </div>
-
-<div id="aaaa" style="position:fixed;text-align:center;left:0px;top:14px;width:263px;height:81px;z-index:12;">
-<div id="aaaa_Container" style="width:263px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
-<div id="wb_JavaScript1" style="position:absolute;left:30px;top:58px;width:208px;height:23px;z-index:4;">
+<div id="aaaa" style="position:fixed;text-align:center;left:0px;top:14px;width:255px;height:80px;z-index:11;">
+<div id="aaaa_Container" style="width:255px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
+<div id="wb_JavaScript1" style="position:absolute;left:19px;top:57px;width:208px;height:23px;z-index:4;">
 <div style="color:#FFFFFF;font-size:12px;font-family:Arial;font-weight:normal;font-style:normal;text-align:left;text-decoration:none;" id="text_scroller"></div>
 <script>
 var messages = new Array
@@ -851,23 +896,23 @@ function doScroller(text, pos, direction)
 doScroller(messages[0], 0, 1);
 </script>
 </div>
-<div id="wb_Image1" style="position:absolute;left:70px;top:12px;width:182px;height:41px;z-index:5;">
-<img src="images/8248849621_2e551c55-070d-47aa-9422-2b995658cef6.png" id="Image1" alt="" width="182" height="42"></div>
-<div id="wb_OverlayMenu2" style="position:absolute;left:17px;top:14px;width:40px;height:37px;z-index:6;">
+<div id="wb_OverlayMenu2" style="position:absolute;left:17px;top:14px;width:40px;height:37px;z-index:5;">
 <a href="#" id="OverlayMenu2">
 <span class="line"></span>
 <span class="line">
 </span><span class="line"></span>
 </a>
 </div>
+<div id="wb_Image1" style="position:absolute;left:53px;top:6px;width:140px;height:52px;z-index:6;">
+<img src="images/IMG_20230907_213058.png" id="Image1" alt="" width="140" height="60"></div>
 </div>
 </div>
+
 <div id="OverlayMenu2-overlay">
 <div class="OverlayMenu2">
 <ul class="OverlayMenu2" role="menu">
 <li><a role="menuitem" href="https://www.serieslatino.co/" class="OverlayMenu2-effect"><i class="fa fa-home overlay-icon"></i>Inicio</a></li>
 <li><a role="menuitem" href="https://www.serieslatino.co/categorias" class="OverlayMenu2-effect"><i class="fa fa-angle-right overlay-icon"></i>Categorias</a></li>
-<li><a role="menuitem" href="https://www.serieslatino.co/favoritos" class="OverlayMenu2-effect"><i class="fa fa-heart overlay-icon"></i>Favoritos</a></li>
 <li class="item-has-children">
 <a role="menuitem" href="#" class="OverlayMenu2-effect"><i class="fa fa-circle overlay-icon"></i>En&nbsp;vivo</a>
 <ul class="sub-menu" role="menu">
