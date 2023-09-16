@@ -192,7 +192,7 @@ function createHeart() {
     image.style.height = "24px"; // Alto de un emoji típico
 
     heart.appendChild(image);
-    heart.style.left = Math.random() * 100 + "%";
+    heart.style.left = Math.random() * 40 + "%";
     heartContainer.appendChild(heart);
 
     setTimeout(() => {
@@ -201,7 +201,7 @@ function createHeart() {
 }
 
 function startAnimation() {
-    animationInterval = setInterval(createHeart, 900);
+    animationInterval = setInterval(createHeart, 700);
 }
 
 function stopAnimation() {
