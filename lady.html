@@ -166,67 +166,7 @@ window.addEventListener('load', () => {
     
         
     
-   <script>
-   
-   
-   const heartContainer = document.getElementById("heart-container");
-const imageUrls = [
-     "https://cdn.iconscout.com/icon/free/png-512/free-care-2387662-1991058.png?f=avif&w=512",
-            "https://cdn.iconscout.com/icon/free/png-512/free-haha-2387660-1991060.png?f=avif&w=512",
-            "https://cdn.iconscout.com/icon/free/png-512/free-love-2387666-1991064.png?f=avif&w=512",
-            "https://cdn.iconscout.com/icon/free/png-512/free-like-2387659-1991059.png?f=avif&w=512",
-            "https://cdn.iconscout.com/icon/free/png-512/free-like-2387659-1991059.png?f=avif&w=512"
-        ];
-const heartButton = document.getElementById("heart-button");
-let animationInterval;
-
-function createHeart() {
-    const heart = document.createElement("div");
-    heart.classList.add("heart");
-    const randomImageUrl = imageUrls[Math.floor(Math.random() * imageUrls.length)];
-    const image = new Image();
-    image.src = randomImageUrl;
-
-    // Establece el ancho y alto de la imagen (ajusta según tus necesidades)
-    image.style.width = "24px"; // Ancho de un emoji típico
-    image.style.height = "24px"; // Alto de un emoji típico
-
-    heart.appendChild(image);
-    heart.style.left = Math.random() * 40 + "%";
-    heartContainer.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 10000);
-}
-
-function startAnimation() {
-    animationInterval = setInterval(createHeart, 700);
-}
-
-function stopAnimation() {
-    clearInterval(animationInterval);
-}
-
-document.addEventListener("visibilitychange", () => {
-    if (document.visibilityState === "visible") {
-        startAnimation();
-    } else {
-        stopAnimation();
-    }
-});
-
-startAnimation();
-
-setInterval(() => {
-    heartButton.classList.add("scaled");
-    setTimeout(() => {
-        heartButton.classList.remove("scaled");
-    }, 4000);
-}, 10000);
-   
-   
-   </script>
+  <script  src="./scriptv2.js"></script>
 </body>
 </html></div>
 </div>
@@ -246,7 +186,7 @@ setInterval(() => {
    <div id="Card1-card-body" class="collapse" data-bs-parent="#wb_Card1">
       <div id="Card1-card-item1"></div>
       <hr id="Card1-card-item2">
-      <div id="Card1-card-item3"><br><br>Lady la vendedora de rosas</div>
+      <div id="Card1-card-item3"><br><br>Lady, la vendedora de rosas,</div>
       <div id="Card1-card-item4"><h2><br><br>Lady es una niña de diez años que roba rosas para venderlas, poder comer y juntar el pago que arriendan en un inquilinato junto con su madre Fátima, una mujer desgastada por los golpes de la vida; y su hermano Didier, de ocho años. El gran amigo de Lady es Alex, un joven algo tímido, quien es hijo de Arnulfo, hermano de Elmer, dueño del inquilinato y quien fue abandonado por su mujer en el altar. Fátima y Lady se disponen a vender en los semáforos las rosas que han robado en el barrio El Poblado, con el fin de pagar lo que le adeudan a don Elmer...<br>Sofía Soto, una abogada defensora de menores muy ceñida a las normas, está empeñada en separar a Fátima de su hija por ponerla a trabajar de vendedora ambulante, creyendo que así ayudará a rescatar a una niña más en situación de abandono. Con el tiempo, Lady termina en un orfanato en el municipio de La Estrella, cerca de Medellín. Ella hace lo que sea por reencontrarse con su madre, intenta fugarse varias veces, pero es localizada antes de cumplir con su objetivo. Lady les da guerra a las religiosas donde se encuentra internada, hasta el punto de llegar a recibir fuertes castigos.</h2></div>
       <div id="Card1-card-item5"><br>Biografía - Drama</div>
    </div>
@@ -338,6 +278,7 @@ doScroller(messages[0], 0, 1);
 <img src="images/IMG_20230907_213058.png" id="Image1" alt="" width="140" height="60"></div>
 </div>
 </div>
+
 <div id="OverlayMenu2-overlay">
 <div class="OverlayMenu2">
 <ul class="OverlayMenu2" role="menu">
