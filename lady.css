@@ -625,6 +625,17 @@ body
    padding: 0;
    vertical-align: top;
 }
+#wb_Icon2 a::after
+{
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   z-index: 1;
+   pointer-events: auto;
+   content: "";
+}
 #Icon2
 {
    height: 33px;
@@ -632,7 +643,7 @@ body
 }
 #Icon2 i
 {
-   color: #FFFFFF;
+   color: #FF0000;
    display: inline-block;
    font-size: 33px;
    line-height: 33px;
@@ -641,7 +652,7 @@ body
 }
 #wb_Icon2:hover #Icon2 i
 {
-   color: #FFFFFF;
+   color: #FF0000;
 }
 #Layer2
 {
