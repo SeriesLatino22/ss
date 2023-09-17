@@ -274,7 +274,7 @@ body
    width: 100%;
    background-color: transparent;
    background-image: none;
-   border: 0px solid #CCCCCC;
+   border: 0px solid transparent;
    border-radius: 0px;
    box-sizing: border-box;
    margin: 0;

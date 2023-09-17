@@ -353,13 +353,11 @@ body
 {
    height: auto !important;
    position: relative;
-   display: flex;
+   display: inline-block;
    flex-direction: column;
    box-sizing: border-box;
    margin: 5px 5px 5px 5px;
-   max-width: calc(100% - 10px);
-   margin-left: auto !important;
-   margin-right: auto !important;
+   vertical-align: top;
    background-color: rgba(0,0,0,0.87);
    background-image: none;
    border: 1px solid #DEDEDE;
