@@ -74,7 +74,10 @@ body
 #wb_fav
 {
    clear: both;
-   position: relative;
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   z-index: 7777;
    table-layout: fixed;
    display: table;
    text-align: center;

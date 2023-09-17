@@ -629,7 +629,7 @@ body
 }
 #Icon2 i
 {
-   color: #FFFFFF;
+   color: #FF0000;
    display: inline-block;
    font-size: 33px;
    line-height: 33px;
@@ -638,7 +638,7 @@ body
 }
 #wb_Icon2:hover #Icon2 i
 {
-   color: #FFFFFF;
+   color: #FF0000;
 }
 #Layer2
 {
