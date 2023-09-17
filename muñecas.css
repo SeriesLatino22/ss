@@ -1,6 +1,7 @@
 body
 {
-   background-color: #131720;
+   background-color: #000000;
+   color: #000000;
    font-family: Arial;
    font-weight: normal;
    font-size: 13px;
@@ -1115,7 +1116,7 @@ body {
     align-items: center;
     min-height: 100vh; /* Asegura que el cuerpo ocupe al menos el 100% del alto de la ventana */
     margin: 0;
-    background-color: transparent;
+    background-color: transparent important!;
 }
 
 /* Agrega estilos para centrar el botón verticalmente */
