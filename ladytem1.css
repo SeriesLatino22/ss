@@ -381,17 +381,13 @@ font-size: 18px;
 } 
 
 
-    
-    body  {
-           padding-top: 30px;
-        }
-        
-        
         /* Estilos para el contenedor de los botones */
         .button-container {
            position: fixed;
   right: 25px;
   bottom: 25px;
+  width: 60px;
+  height: 60px;
         }
 
         /* Estilo para el contenedor de cada botón y su texto */
@@ -522,7 +518,6 @@ font-size: 18px;
         .accordion .answer {
             display: none;
             padding: 10px;
-            text-align: left;
             border: 1px solid #ddd;
             border-radius: 5px;
             max-height: 150px; /* Altura máxima para mostrar antes del desplazamiento */
