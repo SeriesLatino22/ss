@@ -10,50 +10,6 @@
 <link href="ladytem1.css" rel="stylesheet">
 </head>
 <body>
-<div id="overlay" onclick="handleOverlayClick()">
-    <div id="overlay-message">
-      <div id="overlay-title">Publicidad:</div>
-      <div id="overlay-subtitle">
-        • Para omitir presiona en cualquier parte de la pantalla, se abrirá publicidad, Cierrala. <br>
-        • Repite el paso dos veces.
-      </div>
-    </div>
-  </div>
-
-
-
-<script>
-
-
-var clickCount = 0;
-var urls = ["https://www.url1.com", "https://www.url2.com"]; // Agrega las URLs que desees
-
-function handleOverlayClick() {
-  if (clickCount < urls.length) {
-    window.open(urls[clickCount], "_blank");
-    clickCount++;
-  }
-
-  if (clickCount >= urls.length) {
-    var overlay = document.getElementById("overlay");
-    overlay.style.display = "none";
-    setTimeout(function() {
-      overlay.style.display = "block";
-      clickCount = 0; // Reiniciar el contador de clics
-    }, 300000); // 5 minutos en milisegundos
-  }
-}
-
-function startOverlayCycle() {
-  var overlay = document.getElementById("overlay");
-  overlay.style.display = "block";
-}
-
-setTimeout(function() {
-  startOverlayCycle();
-}, 10000); // 20 segundos en milisegundos
-
-</script>
 <div id="wb_LayoutGrid1">
 <div id="LayoutGrid1">
 <div class="col-1">
@@ -1464,27 +1420,94 @@ setTimeout(function() {
 </div>
 </div>
 </div>
+<div id="Html2" style="position:absolute;left:249px;top:534px;width:233px;height:110px;z-index:2">
 
-<div id="wb_fav">
-<div id="fav">
-<div class="col-1">
-<div id="Html3" style="display:inline-block;width:100%;height:85px;z-index:1">
-
-<div class="container">
-    <div id="botonFavoritosContainer">
-      <a href="reportar" target="_blank">
-        <button id="botonFavoritos" class="boton-favoritos">
-          <span class="corazon-icono"></span>Reportar Problema
-        </button>
-      </a>
+    
+    <div class="button-container" style="position: fixed; bottom: 20px; left: 20px; z-index: -1 important!;";>
+        <div class="button-group">
+            <button class="error-button" onclick="window.open('https://www.ejemplo.com', '_blank');">
+                <i class="fa fa-exclamation-triangle"></i>
+            </button>
+            <span class="error-text">Reportar Error</span>
+        </div>
+        
+        <div class="button-group">
+            <button class="error-button" id="faqButton">
+                <i class="fa fa-question"></i>
+            </button>
+            <span class="error-text">Preguntas frecuentes</span>
+        </div>
     </div>
 
-   
-  </div>
-</body>
-</div>
-</div>
-</div>
+    <!-- Agrega el enlace a los íconos de Font Awesome si aún no lo tienes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <div class="popup-overlay" id="overlay" onclick="closePopup()"></div>
+    <div class="popup-content" id="popup">
+        <!-- Contenido del popup -->
+        <button class="popup-close-button" onclick="closePopup()">&times;</button>
+        <!-- Agrega aquí el contenido del popup -->
+        <h2>Preguntas Frecuentes:</h2>
+        <div class="accordion">
+            <div class="question" onclick="toggleAnswer(1)">
+                ¿Cómo hacer algo?
+                <span class="expand-icon">+</span>
+            </div>
+            <div class="answer" id="answer1">
+                Aquí está la respuesta a la pregunta sobre cómo hacer algo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tempus tincidunt nulla, ut vulputate justo ullamcorper ac. Nam nec fringilla purus. Pellentesque ac vestibulum nunc. Fusce rhoncus vehicula augue, eget sodales quam hendrerit nec.Duis tempus tincidunt nulla, ut vulputate justo ullamcorper ac. Nam nec fringilla purus. Pellentesque ac vestibulumDuis tempus tincidunt nulla, ut vulputate justo ullamcorper ac. Nam nec fringilla purus. Pellentesque ac vestibulumDuis tempus tincidunt nulla, ut vulputate justo ullamcorper ac. Nam nec fringilla purus. Pellentesque ac vestibulumDuis tempus tincidunt nulla, ut vulputate justo ullamcorper ac. Nam nec fringilla purus. Pellentesque ac vestibulum
+            </div>
+
+            <div class="question" onclick="toggleAnswer(2)">
+                ¿Pregunta frecuente 2?
+                <span class="expand-icon">+</span>
+            </div>
+            <div class="answer" id="answer2">Respuesta a la pregunta frecuente 2.</div>
+
+            <div class="question" onclick="toggleAnswer(3)">
+                ¿Otra pregunta frecuente?
+                <span class="expand-icon">+</span>
+            </div>
+            <div class="answer" id="answer3">Respuesta a la otra pregunta frecuente.</div>
+
+            <div class="question" onclick="toggleAnswer(4)">
+                ¿Cuál es la cuarta pregunta?
+                <span class="expand-icon">+</span>
+            </div>
+            <div class="answer" id="answer4">Respuesta a la cuarta pregunta frecuente.</div>
+        </div>
+    </div>
+
+    <script>
+        // Función para abrir el popup
+        function openPopup() {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        // Función para cerrar el popup
+        function closePopup() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        document.getElementById('faqButton').addEventListener('click', function() {
+            openPopup();
+        });
+
+        // Función para mostrar u ocultar la respuesta en el acordeón
+        function toggleAnswer(index) {
+            const answer = document.getElementById('answer' + index);
+            const expandIcon = document.querySelectorAll('.expand-icon')[index - 1];
+
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+                expandIcon.textContent = '+';
+            } else {
+                answer.style.display = 'block';
+                expandIcon.textContent = '-';
+            }
+        }
+    </script>
 </div>
 </body>
 </html>
