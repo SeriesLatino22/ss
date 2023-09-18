@@ -125,6 +125,7 @@ body
 	 max-width: 100%;
 	 margin: 0 auto;
     margin-top: -40px;
+    z-index: 99999 important:
 }
  .container h1 {
 	 text-align: center;
@@ -380,13 +381,17 @@ font-size: 18px;
 } 
 
 
+    
+    body  {
+           padding-top: 30px;
+        }
+        
+        
         /* Estilos para el contenedor de los botones */
         .button-container {
-            display: flex; 
-           bottom: 20px;
-         left: 20px;
-            flex-direction: column; /* Apila los botones verticalmente */
-            align-items: flex-start; /* Alinea los botones a la izquierda */
+           position: fixed;
+  right: 25px;
+  bottom: 25px;
         }
 
         /* Estilo para el contenedor de cada botón y su texto */
@@ -398,7 +403,7 @@ font-size: 18px;
 
         /* Estilo para el botón cuadrado más pequeño */
         .error-button {
-            background-color: #e74c3c; /* Color rojo */
+            background-color: #3498db; /* Color rojo */
             color: #fff;
             border: none;
             width: 40px; /* Ancho cuadrado más pequeño */
@@ -413,12 +418,12 @@ font-size: 18px;
 
         /* Estilo para el icono de error */
         .error-button i {
-            font-size: 20px; /* Tamaño de ícono más pequeño */
+            font-size: 24px; /* Tamaño de ícono más pequeño */
         }
 
         /* Estilo para el texto emergente a la derecha del botón */
         .error-text {
-            background-color: #e74c3c; /* Color rojo */
+            background-color: transparent; /* Color rojo */
             color: #fff;
             padding: 6px 10px;
             border-radius: 5px;
@@ -430,12 +435,14 @@ font-size: 18px;
             font-size: 14px; /* Tamaño de fuente diferente */
             font-weight: bold; /* Negrita */
             margin-left: 10px; /* Espacio entre el botón y el texto */
+            display: none;
         }
 
         /* Mostrar el texto emergente cuando se pasa el cursor */
         .button-group:hover .error-button + .error-text {
             opacity: 1;
             transform: translateX(-5px); /* Mover el texto al lado del botón */
+            display: block;
         }
 
         /* Estilo para el botón de cerrar en el popup */
@@ -515,6 +522,7 @@ font-size: 18px;
         .accordion .answer {
             display: none;
             padding: 10px;
+            text-align: left;
             border: 1px solid #ddd;
             border-radius: 5px;
             max-height: 150px; /* Altura máxima para mostrar antes del desplazamiento */

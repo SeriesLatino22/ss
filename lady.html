@@ -53,6 +53,69 @@ $(document).ready(function()
 </script>
 </head>
 <body>
+ <meta name="viewport" content="width=device-width, initial-scale=1"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'><link rel="stylesheet" href="./style.css">
+
+</body>
+
+
+<div class="social-button" title="expand social media options">
+  <i class="fas fa-share-alt" id="social-icon"></i>
+  <a hidden class="social-point" href="https://api.whatsapp.com/send?text=Hello" target="_blank" rel="nofollow" title="Whatsapp"><i class="fab fa-whatsapp"></i></a>
+  <a hidden class="social-point" href="https://www.youtube.com/" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+  <a hidden class="social-point" href="https://telegram.me/" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
+  <a hidden class="social-point" href="mailto:example@example.com" target="_blank" title="Correo"><i class="fas fa-envelope"></i></a>
+  <a hidden class="social-point" href="https://www.facebook.com/" target="_blank" rel="nofollow" title="Facebook"><i class="fab fa-facebook"></i></a>
+</div>
+
+
+<script>
+
+var social_open = false
+window.addEventListener('load', () => {
+  const menu = document.querySelector('.social-button');
+
+  menu.addEventListener('click', () => {
+    const icon = document.querySelector('#social-icon');
+    if(social_open == true) {
+      social_open = false;
+
+      menu.title = menu.title.replace(/hide/,"expand")
+      menu.classList.remove('social-button-open')
+      icon.classList.remove('fa-times')
+      icon.classList.add('fa-share-alt')
+
+      var menu_point = document.querySelectorAll(".social-point");
+      for (let i = 0; i < menu_point.length; i++) {
+          menu_point[i].classList.remove('social-point-open');
+        setTimeout(function() {
+          menu_point[i].hidden = true;
+        }, 800)
+      }
+    } else {
+      social_open = true;
+
+      menu.title = menu.title.replace(/expand/,"hide")
+      menu.classList.add('social-button-open');
+      icon.classList.remove('fa-share-alt')
+      icon.classList.add('fa-times')
+
+      var menu_point = document.querySelectorAll(".social-point");
+      for (let i = 0; i < menu_point.length; i++) {
+        menu_point[i].hidden = false;
+        setTimeout(function() {
+          menu_point[i].classList.add('social-point-open');
+        }, 200)
+      }
+    }
+  });
+})
+
+
+</script>
+
+</body>
+</html>
+
 <div id="wb_LayoutGrid1">
 <div id="LayoutGrid1">
 <div class="row">
@@ -214,6 +277,7 @@ doScroller(messages[0], 0, 1);
 <img src="images/IMG_20230907_213058.png" id="Image1" alt="" width="140" height="60"></div>
 </div>
 </div>
+
 
 <div id="OverlayMenu2-overlay">
 <div class="OverlayMenu2">
