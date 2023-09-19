@@ -44,7 +44,7 @@
                         overlay.style.display = "block";
                         clickCount = 0;
                         localStorage.setItem("overlayActive", "false");
-                    }, 300000); // 10 segundos en milisegundos
+                    }, 300000); // 5 minutos en milisegundos
                 }
             }
         }
@@ -55,16 +55,14 @@
         }
 
         var overlayActive = localStorage.getItem("overlayActive");
-        if (overlayActive === "true") {
-            startOverlayCycle();
-        }
-
-        setTimeout(function () {
-            if (overlayActive !== "true") {
+        if (overlayActive === null || overlayActive === "false") {
+            setTimeout(function () {
                 localStorage.setItem("overlayActive", "true");
                 startOverlayCycle();
-            }
-        }, 10000); // 6 segundos en milisegundos
+            }, 30000); // 30 segundos en milisegundos
+        } else {
+            startOverlayCycle();
+        }
     </script>
 </body>
 </html>
