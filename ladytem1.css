@@ -312,6 +312,7 @@ width: 100%; /* Ajusta el ancho para móviles */
 	 margin: 0 auto;
 }
  .main .accordion {
+	 
 	 max-width: 100%;
 	 height: auto;
 	 margin: 0 auto;
@@ -392,6 +393,7 @@ font-size: 18px;
 
         /* Estilo para el contenedor de cada botón y su texto */
         .button-group {
+	
             display: flex;
             align-items: center;
             margin-bottom: 10px; /* Espacio entre los botones */
@@ -401,7 +403,7 @@ font-size: 18px;
         .error-button {
             background-color: transparent; /* Color rojo */
             color: #fff;
-            border: none;
+            border: 1px;
             width: 40px; /* Ancho cuadrado más pequeño */
             height: 40px; /* Alto cuadrado más pequeño */
             border-radius: 5px;
