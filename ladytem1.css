@@ -519,15 +519,7 @@ font-size: 18px;
             font-size: 18px;
         }
 
-        .accordion .answer {
-            display: none;
-            padding: 10px;
-		
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            max-height: 150px; /* Altura máxima para mostrar antes del desplazamiento */
-            overflow-y: auto; /* Agregar barra de desplazamiento vertical si el contenido es largo */
-        }
+        
 
 
     .answer {
@@ -536,6 +528,7 @@ font-size: 18px;
     border: 1px solid #ddd;
     border-radius: 5px;
     overflow: hidden;
+    overflow-y: auto;
     max-height: 0;
     transition: max-height 3s linear !important; /* Transición forzada y lenta con !important */
     margin-bottom: 10px;
