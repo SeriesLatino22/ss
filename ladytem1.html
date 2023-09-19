@@ -60,14 +60,13 @@
                 localStorage.setItem("overlayActive", "true");
                 startOverlayCycle();
             }, 30000); // 30 segundos en milisegundos
-        } else {
+        } else if (overlayActive === "true") {
             startOverlayCycle();
             // Agrega esta parte para reiniciar la publicidad después de 5 minutos
-            setTimeout(function () {
+            setInterval(function () {
                 var overlay = document.getElementById("overlay1");
                 overlay.style.display = "block";
                 clickCount = 0;
-                localStorage.setItem("overlayActive", "true");
             }, 300000); // 5 minutos en milisegundos
         }
     </script>
