@@ -515,7 +515,7 @@ font-size: 18px;
             display: none;
             padding: 20px;
             overflow-y: auto; /* Agregar barra de desplazamiento vertical si el contenido es largo */
-            z-index: 2; /* Asegura que el popup esté sobre el overlay */
+            z-index: 1002; /* Asegura que el popup esté sobre el overlay */
         }
 
         /* Estilo para el fondo oscuro detrás del popup */

@@ -10,50 +10,69 @@
 <link href="muneT.css" rel="stylesheet">
 </head>
 <body>
-<div id="overlay1" onclick="handleOverlayClick()">
-    <div id="overlay-message">
-      <div id="overlay-title">Publicidad:</div>
-      <div id="overlay-subtitle">
-        • Para omitir presiona en cualquier parte de la pantalla, se abrirá publicidad, Cierrala. <br>
-        • Repite el paso dos veces.
-      </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Sitio Web</title>
+    </head>
+<body>
+    <div id="overlay1" onclick="handleOverlayClick()">
+        <div id="overlay-message">
+            <div id="overlay-title">Publicidad:</div>
+            <div id="overlay-subtitle">
+                • Para omitir presiona en cualquier parte de la pantalla, se abrirá publicidad, Cierra la. <br>
+                • Repite el paso dos veces.
+            </div>
+        </div>
     </div>
-  </div>
 
+    <script>
+        var clickCount = 0;
+        var urls = ["https://www.url1.com", "https://www.url2.com"]; // Agrega las URLs que desees
 
+        function handleOverlayClick() {
+            if (clickCount < urls.length) {
+                window.open(urls[clickCount], "_blank");
+                clickCount++;
 
-<script>
+                if (clickCount >= urls.length) {
+                    var overlay = document.getElementById("overlay1");
+                    overlay.style.display = "none";
+                    setTimeout(function () {
+                        overlay.style.display = "block";
+                        clickCount = 0;
+                        localStorage.setItem("overlayActive", "true");
+                    }, 300000); // 5 minutos en milisegundos
+                }
+            }
+        }
 
+        function startOverlayCycle() {
+            var overlay = document.getElementById("overlay1");
+            overlay.style.display = "block";
+        }
 
-var clickCount = 0;
-var urls = ["https://www.url1.com", "https://www.url2.com"]; // Agrega las URLs que desees
+        var overlayActive = localStorage.getItem("overlayActive");
+        if (overlayActive === null || overlayActive === "false") {
+            setTimeout(function () {
+                localStorage.setItem("overlayActive", "true");
+                startOverlayCycle();
+            }, 30000); // 30 segundos en milisegundos
+        } else if (overlayActive === "true") {
+            startOverlayCycle();
+            // Agrega esta parte para reiniciar la publicidad después de 5 minutos
+            setInterval(function () {
+                var overlay = document.getElementById("overlay1");
+                overlay.style.display = "block";
+                clickCount = 0;
+            }, 300000); // 5 minutos en milisegundos
+        }
+    </script>
+</body>
+</html>
 
-function handleOverlayClick() {
-  if (clickCount < urls.length) {
-    window.open(urls[clickCount], "_blank");
-    clickCount++;
-  }
-
-  if (clickCount >= urls.length) {
-    var overlay = document.getElementById("overlay1");
-    overlay.style.display = "none";
-    setTimeout(function() {
-      overlay.style.display = "block";
-      clickCount = 0; // Reiniciar el contador de clics
-    }, 10000); // 5 minutos en milisegundos
-  }
-}
-
-function startOverlayCycle() {
-  var overlay = document.getElementById("overlay1");
-  overlay.style.display = "block";
-}
-
-setTimeout(function() {
-  startOverlayCycle();
-}, 6000); // 20 segundos en milisegundos
-
-</script>
 <div id="wb_LayoutGrid1">
 <div id="LayoutGrid1">
 <div class="col-1">
