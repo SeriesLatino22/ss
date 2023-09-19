@@ -399,7 +399,7 @@ font-size: 18px;
 
         /* Estilo para el botón cuadrado más pequeño */
         .error-button {
-            background-color: #3498db; /* Color rojo */
+            background-color: transparent; /* Color rojo */
             color: #fff;
             border: none;
             width: 40px; /* Ancho cuadrado más pequeño */
