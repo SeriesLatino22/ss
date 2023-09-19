@@ -536,6 +536,8 @@ font-size: 18px;
     border: 1px solid #ddd;
     border-radius: 5px;
     max-height: 150px; /* Altura máxima para mostrar antes del desplazamiento */
+    transition: max-height 0.3s ease-in-out; 
+	    
     overflow-y: auto; /* Agregar barra de desplazamiento vertical si el contenido es largo */
     margin-bottom: 10px; /* Agregar espacio en la parte inferior */
 }
