@@ -62,13 +62,12 @@
             }, 30000); // 30 segundos en milisegundos
         } else if (overlayActive === "true") {
             startOverlayCycle();
-            // Agrega esta parte para reiniciar la publicidad después de 5 minutos
-            setInterval(function () {
-                var overlay = document.getElementById("overlay1");
-                overlay.style.display = "block";
-                clickCount = 0;
-            }, 300000); // 5 minutos en milisegundos
         }
+        
+        // Agrega esta parte para evitar que el overlay aparezca después de recargar la página
+        window.addEventListener("beforeunload", function() {
+            localStorage.setItem("overlayActive", "false");
+        });
     </script>
 </body>
 </html>
