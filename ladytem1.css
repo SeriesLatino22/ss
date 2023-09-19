@@ -519,7 +519,8 @@ font-size: 18px;
 
         .accordion .answer {
             display: none;
-            padding: 10px 10px;
+            padding: 10px;
+		padding-top: 40px;
             border: 1px solid #ddd;
             border-radius: 5px;
             max-height: 150px; /* Altura máxima para mostrar antes del desplazamiento */
