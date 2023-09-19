@@ -522,7 +522,7 @@ font-size: 18px;
         
 
 
-   .accordion .answer {
+   .answer {
     display: none;
     padding: 10px;
     border: 1px solid #ddd;
@@ -530,11 +530,12 @@ font-size: 18px;
     overflow-y: auto;
     max-height: 100px; /* Altura máxima inicial */
     margin-bottom: 10px;
+    transition: max-height 1.5s ease-in-out; /* Transición suave al expandirse */
 }
 
-.accordion .answer:hover {
-    max-height: 500px; /* Altura máxima al pasar el cursor */
-    transition: max-height 0.5s ease-in-out; /* Transición suave */
+.answer.active {
+    max-height: 500px; /* Altura máxima al hacer clic */
 }
+
 
 
