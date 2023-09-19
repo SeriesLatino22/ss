@@ -403,7 +403,7 @@ font-size: 18px;
         .error-button {
             background-color: transparent; /* Color rojo */
             color: #fff;
-            border: red 5px solid;
+            border: #262626 1px solid;
             width: 40px; /* Ancho cuadrado más pequeño */
             height: 40px; /* Alto cuadrado más pequeño */
             border-radius: 5px;
