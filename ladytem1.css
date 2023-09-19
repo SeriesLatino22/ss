@@ -312,7 +312,6 @@ width: 100%; /* Ajusta el ancho para móviles */
 	 margin: 0 auto;
 }
  .main .accordion {
-	 
 	 max-width: 100%;
 	 height: auto;
 	 margin: 0 auto;
@@ -393,17 +392,17 @@ font-size: 18px;
 
         /* Estilo para el contenedor de cada botón y su texto */
         .button-group {
-	
             display: flex;
             align-items: center;
             margin-bottom: 10px; /* Espacio entre los botones */
+            border: #787878 1px solid;
         }
 
         /* Estilo para el botón cuadrado más pequeño */
         .error-button {
-            background-color: transparent; /* Color rojo */
+            background-color: transparent; /* Color rojo */; /* Color rojo */
             color: #fff;
-            border: #262626 2px solid;
+            border: none;
             width: 40px; /* Ancho cuadrado más pequeño */
             height: 40px; /* Alto cuadrado más pequeño */
             border-radius: 5px;
@@ -434,6 +433,7 @@ font-size: 18px;
             font-weight: bold; /* Negrita */
             margin-left: 10px; /* Espacio entre el botón y el texto */
             display: none;
+            cursor: pointer;
         }
 
         /* Mostrar el texto emergente cuando se pasa el cursor */
@@ -475,7 +475,6 @@ font-size: 18px;
             transform: translate(-50%, -50%);
             display: none;
             padding: 20px;
-		
             overflow-y: auto; /* Agregar barra de desplazamiento vertical si el contenido es largo */
             z-index: 2; /* Asegura que el popup esté sobre el overlay */
         }
@@ -505,27 +504,35 @@ font-size: 18px;
             transition: background-color 0.3s;
             position: relative;
             display: flex;
-	
             justify-content: space-between;
             align-items: center;
         }
+        
+       .accordion .question.open {
 
+            background-color: #B4B4B4;
+            }
+            
         .accordion .question:hover {
-            background-color: #e0e0e0; /* Cambia a un tono más claro al pasar el cursor */
+            background-color: #B4B4B4; /* Cambia a un tono más claro al pasar el cursor */
         }
+        
+         .accordion .question:not(.open) {
+            background-color: #f2f2f2; /* Cambia a un tono más claro al pasar el cursor */
+        }
+        
+        
 
         /* Estilo para el símbolo "+" o "-" */
         .accordion .expand-icon {
             font-size: 18px;
         }
 
-        
-
-
-   .answer {
+       .answer {
+       text-align: left;
     display: none;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 2px solid #B4B4B4;
     border-radius: 5px;
     overflow-y: auto;
     max-height: 100px; /* Altura máxima inicial */
@@ -533,9 +540,13 @@ font-size: 18px;
     transition: max-height 1.5s ease-in-out; /* Transición suave al expandirse */
 }
 
-.answer.active {
-    max-height: 500px; /* Altura máxima al hacer clic */
-}
+ .answer-prefix {
+  color: red;
+  font-weight: bold;
+  margin-right: 5px;
 
 
 
+
+
+    
