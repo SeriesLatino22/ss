@@ -36,8 +36,15 @@
             if (clickCount < urls.length) {
                 window.open(urls[clickCount], "_blank");
                 clickCount++;
+
                 if (clickCount >= urls.length) {
-                    localStorage.setItem("overlayActive", "false");
+                    var overlay = document.getElementById("overlay1");
+                    overlay.style.display = "none";
+                    setTimeout(function () {
+                        overlay.style.display = "block";
+                        clickCount = 0;
+                        localStorage.setItem("overlayActive", "false");
+                    }, 10000); // 10 segundos en milisegundos
                 }
             }
         }
