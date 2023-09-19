@@ -474,8 +474,8 @@ font-size: 18px;
             left: 50%;
             transform: translate(-50%, -50%);
             display: none;
-            padding: 20px;
-		padding-bottom: 50px;
+            padding: 200px;
+		padding-top: 40px;
             overflow-y: auto; /* Agregar barra de desplazamiento vertical si el contenido es largo */
             z-index: 2; /* Asegura que el popup esté sobre el overlay */
         }
