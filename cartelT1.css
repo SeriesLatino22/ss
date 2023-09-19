@@ -71,68 +71,6 @@ body
    max-width: 100% !important;
 }
 }
-#wb_fav
-{
-   clear: both;
-   position: relative;
-   table-layout: fixed;
-   display: table;
-   text-align: center;
-   width: 100%;
-   background-color: transparent;
-   background-image: none;
-   border: 0px solid #CCCCCC;
-   border-radius: 0px;
-   box-sizing: border-box;
-   margin: 0;
-}
-#fav
-{
-   box-sizing: border-box;
-   display: flex;
-   flex-direction: row;
-   flex-wrap: wrap;
-   padding: 150px 0 0 0;
-   margin-right: auto;
-   margin-left: auto;
-}
-#fav > .col-1
-{
-   box-sizing: border-box;
-   font-size: 0;
-   min-height: 1px;
-   padding-right: 0px;
-   padding-left: 0px;
-   position: relative;
-}
-#fav > .col-1
-{
-   flex: 0 0 auto;
-}
-#fav > .col-1
-{
-   background-color: transparent;
-   background-image: none;
-   border: 0px solid #FFFFFF;
-   border-radius: 0px;
-   flex-basis: 100%;
-   max-width: 100%;
-   display: flex;
-   flex-wrap: wrap;
-   align-content: flex-end;
-   align-self: stretch;
-   align-items: flex-end;
-   justify-content: center;
-   text-align: center;
-}
-@media (max-width: 480px)
-{
-#fav > .col-1
-{
-   flex-basis: 100% !important;
-   max-width: 100% !important;
-}
-}
 
 #overlay {
   position: fixed;
@@ -493,54 +431,172 @@ font-size: 18px;
 } 
 
 
-  .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-  }
+        /* Estilos para el contenedor de los botones */
+        .button-container {
+           position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 60px;
+  height: 60px;
+        }
 
-  .boton-favoritos {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 25px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    position: relative;
-    overflow: hidden;
-  }
+        /* Estilo para el contenedor de cada botón y su texto */
+        .button-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px; /* Espacio entre los botones */
+            border: #787878 1px solid;
+        }
 
-  .boton-favoritos:hover {
-    background-color: red;
-    transform: scale(1.05);
-  }
+        /* Estilo para el botón cuadrado más pequeño */
+        .error-button {
+            background-color: transparent; /* Color rojo */; /* Color rojo */
+            color: #fff;
+            border: none;
+            width: 40px; /* Ancho cuadrado más pequeño */
+            height: 40px; /* Alto cuadrado más pequeño */
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Estilo para el icono de error */
+        .error-button i {
+            font-size: 24px; /* Tamaño de ícono más pequeño */
+        }
+
+        /* Estilo para el texto emergente a la derecha del botón */
+        .error-text {
+            background-color: transparent; /* Color rojo */
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 5px;
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateX(0); /* Cambiado a translateX */
+            transition: opacity 0.6s, transform 0.9s; /* Reducida la duración de la transición */
+            text-align: center;
+            font-size: 14px; /* Tamaño de fuente diferente */
+            font-weight: bold; /* Negrita */
+            margin-left: 10px; /* Espacio entre el botón y el texto */
+            display: none;
+            cursor: pointer;
+        }
+
+        /* Mostrar el texto emergente cuando se pasa el cursor */
+        .button-group:hover .error-button + .error-text {
+            opacity: 1;
+            transform: translateX(-5px); /* Mover el texto al lado del botón */
+            display: block;
+        }
+
+        /* Estilo para el botón de cerrar en el popup */
+        .popup-close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: #fff;
+            background-color: #e74c3c;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        /* Estilo para el contenido del popup */
+        .popup-content {
+            width: 400px;
+            max-width: 80%;
+            max-height: 80%;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            padding: 20px;
+            overflow-y: auto; /* Agregar barra de desplazamiento vertical si el contenido es largo */
+            z-index: 2; /* Asegura que el popup esté sobre el overlay */
+        }
+
+        /* Estilo para el fondo oscuro detrás del popup */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9); /* Fondo un poco más oscuro */
+            display: none;
+            z-index: 1;
+            cursor: pointer; /* Agrega un cursor para indicar que se puede hacer clic */
+        }
+
+       
+
+        .accordion .question {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #f2f2f2; /* Fondo un poco más oscuro */
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            transition: background-color 0.3s;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+       .accordion .question.open {
+
+            background-color: #B4B4B4;
+            }
+            
+        .accordion .question:hover {
+            background-color: #B4B4B4; /* Cambia a un tono más claro al pasar el cursor */
+        }
+        
+         .accordion .question:not(.open) {
+            background-color: #f2f2f2; /* Cambia a un tono más claro al pasar el cursor */
+        }
+        
+        
+
+        /* Estilo para el símbolo "+" o "-" */
+        .accordion .expand-icon {
+            font-size: 18px;
+        }
+
+       .answer {
+       text-align: left;
+    display: none;
+    padding: 10px;
+    border: 2px solid #B4B4B4;
+    border-radius: 5px;
+    overflow-y: auto;
+    max-height: 100px; /* Altura máxima inicial */
+    margin-bottom: 10px;
+    transition: max-height 1.5s ease-in-out; /* Transición suave al expandirse */
+}
+
+ .answer-prefix {
+  color: red;
+  font-weight: bold;
+  margin-right: 5px;
 
 
-  .corazon-icono {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-image: url("https://i.ibb.co/svpbBCv/595067.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    vertical-align: middle;
-    margin-right: 5px;
-  }
 
 
-  .animate-boton {
-    animation: fade 0.3s;
-  }
 
-  @keyframes fade {
-    from {
-      opacity: 0;
-      transform: translateX(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
+    
