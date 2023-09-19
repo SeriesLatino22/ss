@@ -55,15 +55,29 @@
         }
 
         var overlayActive = localStorage.getItem("overlayActive");
+        var overlaySkipped = localStorage.getItem("overlaySkipped");
+
         if (overlayActive === null || overlayActive === "false") {
             setTimeout(function () {
                 localStorage.setItem("overlayActive", "true");
                 startOverlayCycle();
             }, 30000); // 30 segundos en milisegundos
+        } else if (overlaySkipped === "true") {
+            setTimeout(function () {
+                localStorage.setItem("overlayActive", "true");
+                startOverlayCycle();
+            }, 300000); // 5 minutos en milisegundos
         } else {
             startOverlayCycle();
         }
+        
+        function skipOverlay() {
+            localStorage.setItem("overlaySkipped", "true");
+            var overlay = document.getElementById("overlay1");
+            overlay.style.display = "none";
+        }
     </script>
+    <button onclick="skipOverlay()">Saltar Publicidad</button>
 </body>
 </html>
 
