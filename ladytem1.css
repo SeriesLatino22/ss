@@ -527,10 +527,14 @@ font-size: 18px;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    
     overflow-y: auto;
-    max-height: 100px;
-    transition: max-height 3s linear !important; /* Transición forzada y lenta con !important */
+    max-height: 100px; /* Altura máxima inicial */
     margin-bottom: 10px;
 }
+
+.answer:hover {
+    max-height: 500px; /* Altura máxima al pasar el cursor */
+    transition: max-height 0.5s ease-in-out; /* Transición suave */
+}
+
 
