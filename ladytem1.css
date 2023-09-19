@@ -527,9 +527,9 @@ font-size: 18px;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    overflow: hidden;
+    
     overflow-y: auto;
-    max-height: 0;
+    max-height: 100;
     transition: max-height 3s linear !important; /* Transición forzada y lenta con !important */
     margin-bottom: 10px;
 }
