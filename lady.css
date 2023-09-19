@@ -641,9 +641,24 @@ body
    height: 33px;
    width: 35px;
 }
+.Icon2
+{
+   position: relative;
+   left: 0;
+   top: 0;
+   display: inline-block;
+   font-family: "Material Icons";
+   font-style: normal;
+   font-weight: normal;
+   line-height: 1;
+}
+.Icon2:before
+{
+   content: "\e863";
+}
 #Icon2 i
 {
-   color: #FF0000;
+   color: #A9A9A9;
    display: inline-block;
    font-size: 33px;
    line-height: 33px;
@@ -652,7 +667,7 @@ body
 }
 #wb_Icon2:hover #Icon2 i
 {
-   color: #FF0000;
+   color: #FFFFFF;
 }
 #Layer2
 {

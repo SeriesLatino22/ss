@@ -36,17 +36,9 @@
             if (clickCount < urls.length) {
                 window.open(urls[clickCount], "_blank");
                 clickCount++;
-                localStorage.setItem("clickCount", clickCount);
-            }
-
-            if (clickCount >= urls.length) {
-                var overlay = document.getElementById("overlay1");
-                overlay.style.display = "none";
-                setTimeout(function () {
-                    overlay.style.display = "block";
-                    clickCount = 0;
-                    localStorage.setItem("clickCount", clickCount);
-                }, 10000); // 10 segundos en milisegundos
+                if (clickCount >= urls.length) {
+                    localStorage.setItem("overlayActive", "false");
+                }
             }
         }
 
@@ -55,13 +47,16 @@
             overlay.style.display = "block";
         }
 
-        var storedClickCount = localStorage.getItem("clickCount");
-        if (storedClickCount !== null) {
-            clickCount = parseInt(storedClickCount);
+        var overlayActive = localStorage.getItem("overlayActive");
+        if (overlayActive === "true") {
+            startOverlayCycle();
         }
 
         setTimeout(function () {
-            startOverlayCycle();
+            if (overlayActive !== "true") {
+                localStorage.setItem("overlayActive", "true");
+                startOverlayCycle();
+            }
         }, 6000); // 6 segundos en milisegundos
     </script>
 </body>
