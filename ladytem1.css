@@ -72,7 +72,7 @@ body
 }
 }
 
-#overlay {
+#overlay1 {
   position: fixed;
   top: 0;
   left: 0;
@@ -81,7 +81,7 @@ body
   background-color: rgba(0, 0, 0, 0.88); /* Transparent black overlay */
   display: none;
   cursor: pointer;
-  z-index: 9999; /* Asegura que el overlay esté por encima de todo */
+  z-index: 997; /* Asegura que el overlay esté por encima de todo */
 }
 
 #overlay-message {
@@ -93,6 +93,7 @@ body
   font-size: 18px;
   font-color: red;
   margin-top: -10px;
+  z-index: 998;
 }
 
 #overlay-title {
@@ -100,6 +101,7 @@ body
   font-weight: bold;
   color: red;
   margin-bottom: 10px;
+  z-index: 999;
   
 }
 
@@ -108,6 +110,7 @@ body
   font-weight: bold;
   color: white;
   line-height: 1.3;
+  z-index: 1000;
 }
 
     
@@ -422,11 +425,11 @@ font-size: 18px;
 
         /* Estilos para el contenedor de los botones */
         .button-container {
-           position: fixed;
-  right: 25px;
-  bottom: 25px;
-  width: 60px;
-  height: 60px;
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            width: 60px;
+            height: 60px;
         }
 
         /* Estilo para el contenedor de cada botón y su texto */
@@ -531,8 +534,6 @@ font-size: 18px;
             cursor: pointer; /* Agrega un cursor para indicar que se puede hacer clic */
         }
 
-       
-
         .accordion .question {
             cursor: pointer;
             padding: 10px;
@@ -547,45 +548,38 @@ font-size: 18px;
             align-items: center;
         }
         
-       .accordion .question.open {
-
+        .accordion .question.open {
             background-color: #B4B4B4;
-            }
-            
+        }
+        
         .accordion .question:hover {
             background-color: #B4B4B4; /* Cambia a un tono más claro al pasar el cursor */
         }
         
-         .accordion .question:not(.open) {
+        .accordion .question:not(.open) {
             background-color: #f2f2f2; /* Cambia a un tono más claro al pasar el cursor */
         }
         
-        
-
         /* Estilo para el símbolo "+" o "-" */
         .accordion .expand-icon {
             font-size: 18px;
         }
 
-       .answer {
-       text-align: left;
-    display: none;
-    padding: 10px;
-    border: 2px solid #B4B4B4;
-    border-radius: 5px;
-    overflow-y: auto;
-    max-height: 100px; /* Altura máxima inicial */
-    margin-bottom: 10px;
-    transition: max-height 1.5s ease-in-out; /* Transición suave al expandirse */
-}
+        .answer {
+            text-align: left;
+            display: none;
+            padding: 10px;
+            border: 2px solid #B4B4B4;
+            border-radius: 5px;
+            overflow-y: auto;
+            max-height: 100px; /* Altura máxima inicial */
+            margin-bottom: 10px;
+            transition: max-height 1.5s ease-in-out; /* Transición suave al expandirse */
+        }
 
- .answer-prefix {
-  color: red;
-  font-weight: bold;
-  margin-right: 5px;
-
-
-
-
-
+        .answer-prefix {
+            color: red;
+            font-weight: bold;
+            margin-right: 5px;
+        }
     

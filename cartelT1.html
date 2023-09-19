@@ -10,7 +10,7 @@
 <link href="cartelT1.css" rel="stylesheet">
 </head>
 <body>
-<div id="overlay" onclick="handleOverlayClick()">
+<div id="overlay1" onclick="handleOverlayClick()">
     <div id="overlay-message">
       <div id="overlay-title">Publicidad:</div>
       <div id="overlay-subtitle">
@@ -35,23 +35,23 @@ function handleOverlayClick() {
   }
 
   if (clickCount >= urls.length) {
-    var overlay = document.getElementById("overlay");
+    var overlay = document.getElementById("overlay1");
     overlay.style.display = "none";
     setTimeout(function() {
       overlay.style.display = "block";
       clickCount = 0; // Reiniciar el contador de clics
-    }, 300000); // 5 minutos en milisegundos
+    }, 10000); // 5 minutos en milisegundos
   }
 }
 
 function startOverlayCycle() {
-  var overlay = document.getElementById("overlay");
+  var overlay = document.getElementById("overlay1");
   overlay.style.display = "block";
 }
 
 setTimeout(function() {
   startOverlayCycle();
-}, 10000); // 20 segundos en milisegundos
+}, 6000); // 20 segundos en milisegundos
 
 </script>
 <div id="wb_LayoutGrid1">
@@ -2392,26 +2392,30 @@ setTimeout(function() {
 </div>
 </div>
 </div>
-
-
-    
- 
-        
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+<body>
+    <div class="button-container">
         <div class="button-group">
             <button class="error-button" id="faqButton">
                 <i class="fa fa-question"></i>
             </button>
-            <span class="error-text" onclick="openPopup()">Preguntas frecuentes</span>
+            <span class="error-text" onclick="openPopup('faqPopup')">Preguntas frecuentes</span>
         </div>
     </div>
 
     <!-- Agrega el enlace a los íconos de Font Awesome si aún no lo tienes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
-    <div class="popup-overlay" id="overlay" onclick="closePopup()"></div>
-    <div class="popup-content" id="popup">
+    <div class="popup-overlay" id="overlay" onclick="closePopup('faqPopup')"></div>
+    <div class="popup-content" id="faqPopup">
         <!-- Contenido del popup -->
-        <button class="popup-close-button" onclick="closePopup()">&times;</button>
+        <button class="popup-close-button" onclick="closePopup('faqPopup')">&times;</button>
         <!-- Agrega aquí el contenido del popup -->
         <h2>Preguntas Frecuentes:</h2>
         <div class="accordion">
@@ -2446,64 +2450,67 @@ setTimeout(function() {
         </div>
     </div>
 
-  <script>
-    // Variable para llevar un registro de la pregunta abierta actual
-    let currentlyOpenIndex = null;
+    <script>
+        // Variable para llevar un registro de la pregunta abierta actual
+let currentlyOpenIndex = null;
 
-    // Función para abrir el popup
-    function openPopup() {
-        document.getElementById('overlay').style.display = 'block';
-        document.getElementById('popup').style.display = 'block';
-    }
+// Función para abrir el popup
+function openPopup(popupId) {
+    document.getElementById('overlay').style.display = 'block';
+    document.getElementById(popupId).style.display = 'block';
+}
 
-    // Función para cerrar el popup
-    function closePopup() {
-        document.getElementById('overlay').style.display = 'none';
-        document.getElementById('popup').style.display = 'none';
-    }
+// Función para cerrar el popup
+function closePopup(popupId) {
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById(popupId).style.display = 'none';
+}
 
-    document.getElementById('faqButton').addEventListener('click', function () {
-        openPopup();
-    });
+document.getElementById('faqButton').addEventListener('click', function () {
+    openPopup('faqPopup');
+});
 
-    // Función para mostrar u ocultar la respuesta en el acordeón
-    function toggleAnswer(index) {
-        const answer = document.getElementById('answer' + index);
-        const expandIcon = document.querySelectorAll('.expand-icon')[index - 1];
-        const question = document.querySelectorAll('.question')[index - 1];
+// Función para mostrar u ocultar la respuesta en el acordeón
+function toggleAnswer(index) {
+    const answer = document.getElementById('answer' + index);
+    const expandIcon = document.querySelectorAll('.expand-icon')[index - 1];
+    const question = document.querySelectorAll('.question')[index - 1];
 
-        if (answer.style.display === 'block') {
-            answer.style.display = 'none';
-            expandIcon.textContent = '+';
-            question.classList.remove('open'); // Remover la clase 'open'
+    if (answer.style.display === 'block') {
+        answer.style.display = 'none';
+        expandIcon.textContent = '+';
+        question.classList.remove('open'); // Remover la clase 'open'
 
-            // Restablecer el fondo normal de la pregunta cerrada
-            question.style.backgroundColor = '#f2f2f2';
-            currentlyOpenIndex = null;
-        } else {
-            // Cerrar la respuesta abierta actualmente (si la hay)
-            if (currentlyOpenIndex !== null) {
-                const currentlyOpenAnswer = document.getElementById('answer' + currentlyOpenIndex);
-                currentlyOpenAnswer.style.display = 'none';
-                const currentlyOpenIcon = document.querySelectorAll('.expand-icon')[currentlyOpenIndex - 1];
-                currentlyOpenIcon.textContent = '+';
-                const currentlyOpenQuestion = document.querySelectorAll('.question')[currentlyOpenIndex - 1];
-                currentlyOpenQuestion.classList.remove('open'); // Remover la clase 'open' de la pregunta previamente abierta
+        // Restablecer el fondo normal de la pregunta cerrada
+        question.style.backgroundColor = '#f2f2f2';
+        currentlyOpenIndex = null;
+    } else {
+        // Cerrar la respuesta abierta actualmente (si la hay)
+        if (currentlyOpenIndex !== null) {
+            const currentlyOpenAnswer = document.getElementById('answer' + currentlyOpenIndex);
+            currentlyOpenAnswer.style.display = 'none';
+            const currentlyOpenIcon = document.querySelectorAll('.expand-icon')[currentlyOpenIndex - 1];
+            currentlyOpenIcon.textContent = '+';
+            const currentlyOpenQuestion = document.querySelectorAll('.question')[currentlyOpenIndex - 1];
+            currentlyOpenQuestion.classList.remove('open'); // Remover la clase 'open' de la pregunta previamente abierta
 
-                // Restablecer el fondo normal de la pregunta cerrada anterior
-                currentlyOpenQuestion.style.backgroundColor = '#f2f2f2';
-            }
-
-            answer.style.display = 'block';
-            expandIcon.textContent = '-';
-            question.classList.add('open'); // Agregar la clase 'open' a la pregunta abierta
-
-            // Aplicar un fondo diferente solo a la pregunta abierta
-            question.style.backgroundColor = '#B4B4B4';
-            currentlyOpenIndex = index;
+            // Restablecer el fondo normal de la pregunta cerrada anterior
+            currentlyOpenQuestion.style.backgroundColor = '#f2f2f2';
         }
+
+        answer.style.display = 'block';
+        expandIcon.textContent = '-';
+        question.classList.add('open'); // Agregar la clase 'open' a la pregunta abierta
+
+        // Aplicar un fondo diferente solo a la pregunta abierta
+        question.style.backgroundColor = '#B4B4B4';
+        currentlyOpenIndex = index;
     }
-</script>
+}
+    </script>
+</body>
+</html>
+
 
 
 
