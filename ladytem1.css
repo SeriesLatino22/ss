@@ -535,9 +535,9 @@ font-size: 18px;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    overflow: hidden; /* Ocultamos el contenido que se desborda */
-    max-height: 0; /* Inicialmente con altura cero */
-    transition: max-height 3s ease-in-out; /* Transición suave de altura */
-    margin-bottom: 10px; /* Espacio en la parte inferior para separar las respuestas */
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 3s linear !important; /* Transición forzada y lenta con !important */
+    margin-bottom: 10px;
 }
 
