@@ -537,7 +537,7 @@ font-size: 18px;
     border-radius: 5px;
     overflow: hidden; /* Ocultamos el contenido que se desborda */
     max-height: 0; /* Inicialmente con altura cero */
-    transition: max-height 0.9s ease-in-out; /* Transición suave de altura */
+    transition: max-height 3s ease-in-out; /* Transición suave de altura */
     margin-bottom: 10px; /* Espacio en la parte inferior para separar las respuestas */
 }
 
