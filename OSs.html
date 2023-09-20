@@ -86,21 +86,23 @@
             // Verifica si el usuario está entrando por primera vez o el overlay no está activo
             if (!localStorage.getItem("visited")) {
                 localStorage.setItem("visited", "true");
-                setTimeout(function () {
-                    startOverlayCycle();
-                }, 30000); // 30 segundos en milisegundos
             } else {
                 startOverlayCycle();
             }
         } else if (overlayActive === "true") {
             startOverlayCycle();
-            // Agrega esta parte para reiniciar la publicidad cada 5 minutos
-            setInterval(function () {
-                var overlay = document.getElementById("overlay1");
-                overlay.style.display = "block";
-                clickCount = 0;
-            }, 300000); // 5 minutos en milisegundos
         }
+
+        setTimeout(function () {
+            startOverlayCycle();
+        }, 30000); // 30 segundos en milisegundos
+
+        // Agrega esta parte para reiniciar la publicidad cada 5 minutos
+        setInterval(function () {
+            var overlay = document.getElementById("overlay1");
+            overlay.style.display = "block";
+            clickCount = 0;
+        }, 300000); // 5 minutos en milisegundos
     </script>
 </body>
 </html>
