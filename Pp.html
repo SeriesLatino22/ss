@@ -87,9 +87,7 @@
             if (!localStorage.getItem("visited")) {
                 localStorage.setItem("visited", "true");
             } else {
-                setTimeout(function () {
-                    startOverlayCycle();
-                }, 30000); // 30 segundos en milisegundos
+                startOverlayCycle();
             }
         } else if (overlayActive === "true") {
             startOverlayCycle();
