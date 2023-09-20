@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Sitio Web - Identificador Único</title>
+    <style>
+        #overlay1 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.88);
+            display: none;
+            cursor: pointer;
+            z-index: 997;
+        }
+
+        #overlay-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 18px;
+            color: red;
+            margin-top: -10px;
+            z-index: 998;
+        }
+
+        #overlay-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+            margin-bottom: 10px;
+            z-index: 999;
+        }
+
+        #overlay-subtitle {
+            font-size: 13px;
+            font-weight: bold;
+            color: white;
+            line-height: 1.3;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div id="overlay1" onclick="handleOverlayClick()">
+        <div id="overlay-message">
+            <div id="overlay-title">Publicidad:</div>
+            <div id="overlay-subtitle">
+                • Para omitir presiona en cualquier parte de la pantalla, se abrirá publicidad, Cierra la. <br>
+                • Repite el paso dos veces.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var clickCount = 0;
+        var urls = ["https://www.url1.com", "https://www.url2.com"]; // Agrega las URLs que desees
+        var uniqueStorageKey = "uniqueAppKey_overlayActive"; // Cambia esto a un valor único para tu aplicación
+
+        function handleOverlayClick() {
+            if (clickCount < urls.length) {
+                window.open(urls[clickCount], "_blank");
+                clickCount++;
+
+                if (clickCount >= urls.length) {
+                    var overlay = document.getElementById("overlay1");
+                    overlay.style.display = "none";
+                    clickCount = 0;
+                    localStorage.setItem(uniqueStorageKey, "true");
+                }
+            }
+        }
+
+        function startOverlayCycle() {
+            var overlay = document.getElementById("overlay1");
+            overlay.style.display = "block";
+        }
+
+        var overlayActive = localStorage.getItem(uniqueStorageKey);
+        if (overlayActive === null || overlayActive === "false") {
+            // Verifica si el usuario está entrando por primera vez o el overlay no está activo
+            if (!localStorage.getItem("visited")) {
+                localStorage.setItem("visited", "true");
+            } else {
+                setTimeout(function () {
+                    startOverlayCycle();
+                }, 40000); // 40 segundos en milisegundos
+            }
+        } else if (overlayActive === "true") {
+            startOverlayCycle();
+            // Agrega esta parte para reiniciar la publicidad cada 5 minutos
+            setInterval(function () {
+                var overlay = document.getElementById("overlay1");
+                overlay.style.display = "block";
+                clickCount = 0;
+            }, 300000); // 5 minutos en milisegundos
+        }
+        
+        // Agrega esta parte para evitar que el overlay aparezca después de recargar la página
+        window.addEventListener("beforeunload", function() {
+            localStorage.setItem(uniqueStorageKey, "false");
+        });
+    </script>
+</body>
+</html>
