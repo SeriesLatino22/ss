@@ -15,7 +15,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu Sitio Web</title>
+    <title>Tu Sitio Web - Identificador Único</title>
     </head>
 <body>
     <div id="overlay1" onclick="handleOverlayClick()">
@@ -31,6 +31,7 @@
     <script>
         var clickCount = 0;
         var urls = ["https://www.url1.com", "https://www.url2.com"]; // Agrega las URLs que desees
+        var uniqueStorageKey = "mune1"; // Cambia esto a un valor único para tu aplicación
 
         function handleOverlayClick() {
             if (clickCount < urls.length) {
@@ -43,7 +44,7 @@
                     setTimeout(function () {
                         overlay.style.display = "block";
                         clickCount = 0;
-                        localStorage.setItem("overlayActive", "true");
+                        localStorage.setItem(uniqueStorageKey, "true");
                     }, 300000); // 5 minutos en milisegundos
                 }
             }
@@ -54,10 +55,10 @@
             overlay.style.display = "block";
         }
 
-        var overlayActive = localStorage.getItem("overlayActive");
+        var overlayActive = localStorage.getItem(uniqueStorageKey);
         if (overlayActive === null || overlayActive === "false") {
             setTimeout(function () {
-                localStorage.setItem("overlayActive", "true");
+                localStorage.setItem(uniqueStorageKey, "true");
                 startOverlayCycle();
             }, 30000); // 30 segundos en milisegundos
         } else if (overlayActive === "true") {
@@ -69,6 +70,11 @@
                 clickCount = 0;
             }, 300000); // 5 minutos en milisegundos
         }
+        
+        // Agrega esta parte para evitar que el overlay aparezca después de recargar la página
+        window.addEventListener("beforeunload", function() {
+            localStorage.setItem(uniqueStorageKey, "false");
+        });
     </script>
 </body>
 </html>
@@ -117,7 +123,7 @@
         <h3 class="title">
           <span>Capitulo 1 &nbsp;</span>
           <div class="button-container">
-    <button class="button" id="button1ll">No visto</button>
+    <button class="button" id="button1llcartel">No visto</button>
   </div>
           <i class="fas fa-chevron-down"></i>
         </h3>
@@ -131,7 +137,7 @@
         <h3 class="title">
           <span>Capitulo 2 &nbsp;</span>
           <div class="button-container">
-    <button class="button" id="button2ll">No visto</button>
+    <button class="button" id="button2llcartel">No visto</button>
   </div>
           <i class="fas fa-chevron-down"></i>
         </h3>
@@ -148,7 +154,7 @@
         <h3 class="title">
           <span>Capitulo 3 &nbsp;</span>
           <div class="button-container">
-    <button class="button" id="button3ll">No visto</button>
+    <button class="button" id="button3llcartel">No visto</button>
   </div>
           <i class="fas fa-chevron-down"></i>
         </h3>
@@ -166,7 +172,7 @@
         <h3 class="title">
           <span>Capitulo 4 &nbsp;</span>
           <div class="button-container">
-    <button class="button" id="button4ll">No visto</button>
+    <button class="button" id="button4llcartel">No visto</button>
   </div>
           <i class="fas fa-chevron-down"></i>
         </h3>
@@ -182,7 +188,7 @@
         <h3 class="title">
           <span>Capitulo 5 &nbsp;</span>
           <div class="button-container">
-    <button class="button" id="button5ll">No visto</button>
+    <button class="button" id="button5llcartel">No visto</button>
   </div>
           <i class="fas fa-chevron-down"></i>
         </h3>
@@ -1092,7 +1098,7 @@
         <h3 class="title">
           <span>Capitulo 1 &nbsp;</span>
           <div class="button-container">
-    <button class="button" id="button1lla">No visto</button>
+    <button class="button" id="button1llacartwel">No visto</button>
   </div>
           <i class="fas fa-chevron-down"></i>
         </h3>
@@ -1106,7 +1112,7 @@
         <h3 class="title">
           <span>Capitulo 2 &nbsp;</span>
           <div class="button-container">
-    <button class="button" id="button2lal">No visto</button>
+    <button class="button" id="button2lalcartwel">No visto</button>
   </div>
           <i class="fas fa-chevron-down"></i>
         </h3>
@@ -1123,7 +1129,7 @@
         <h3 class="title">
           <span>Capitulo 3 &nbsp;</span>
           <div class="button-container">
-    <button class="button" id="button3lla">No visto</button>
+    <button class="button" id="button3llacartwel">No visto</button>
   </div>
           <i class="fas fa-chevron-down"></i>
         </h3>

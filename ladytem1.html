@@ -10,69 +10,6 @@
 <link href="ladytem1.css" rel="stylesheet">
 </head>
 <body>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu Sitio Web</title>
-    </head>
-<body>
-    <div id="overlay1" onclick="handleOverlayClick()">
-        <div id="overlay-message">
-            <div id="overlay-title">Publicidad:</div>
-            <div id="overlay-subtitle">
-                • Para omitir presiona en cualquier parte de la pantalla, se abrirá publicidad, Cierra la. <br>
-                • Repite el paso dos veces.
-            </div>
-        </div>
-    </div>
-
-    <script>
-        var clickCount = 0;
-        var urls = ["https://www.url1.com", "https://www.url2.com"]; // Agrega las URLs que desees
-
-        function handleOverlayClick() {
-            if (clickCount < urls.length) {
-                window.open(urls[clickCount], "_blank");
-                clickCount++;
-
-                if (clickCount >= urls.length) {
-                    var overlay = document.getElementById("overlay1");
-                    overlay.style.display = "none";
-                    setTimeout(function () {
-                        overlay.style.display = "block";
-                        clickCount = 0;
-                        localStorage.setItem("overlayActive", "true");
-                    }, 300000); // 5 minutos en milisegundos
-                }
-            }
-        }
-
-        function startOverlayCycle() {
-            var overlay = document.getElementById("overlay1");
-            overlay.style.display = "block";
-        }
-
-        var overlayActive = localStorage.getItem("overlayActive");
-        if (overlayActive === null || overlayActive === "false") {
-            setTimeout(function () {
-                localStorage.setItem("overlayActive", "true");
-                startOverlayCycle();
-            }, 30000); // 30 segundos en milisegundos
-        } else if (overlayActive === "true") {
-            startOverlayCycle();
-            // Agrega esta parte para reiniciar la publicidad después de 5 minutos
-            setInterval(function () {
-                var overlay = document.getElementById("overlay1");
-                overlay.style.display = "block";
-                clickCount = 0;
-            }, 300000); // 5 minutos en milisegundos
-        }
-    </script>
-</body>
-</html>
-
 <div id="wb_LayoutGrid1">
 <div id="LayoutGrid1">
 <div class="col-1">
@@ -117,7 +54,7 @@
         <h3 class="title">
           <span>Capitulo 1 &nbsp;</span>
           <div class="button-container">
-    <button class="button" id="button1ll">No visto</button>
+    <button class="button" id="button1lllady">No visto</button>
   </div>
           <i class="fas fa-chevron-down"></i>
         </h3>
@@ -131,7 +68,7 @@
         <h3 class="title">
           <span>Capitulo 2 &nbsp;</span>
           <div class="button-container">
-    <button class="button" id="button2ll">No visto</button>
+    <button class="button" id="button2lllady">No visto</button>
   </div>
           <i class="fas fa-chevron-down"></i>
         </h3>
@@ -148,7 +85,7 @@
         <h3 class="title">
           <span>Capitulo 3 &nbsp;</span>
           <div class="button-container">
-    <button class="button" id="button3ll">No visto</button>
+    <button class="button" id="button3lllady">No visto</button>
   </div>
           <i class="fas fa-chevron-down"></i>
         </h3>
@@ -166,7 +103,7 @@
         <h3 class="title">
           <span>Capitulo 4 &nbsp;</span>
           <div class="button-container">
-    <button class="button" id="button4ll">No visto</button>
+    <button class="button" id="button4lllady">No visto</button>
   </div>
           <i class="fas fa-chevron-down"></i>
         </h3>
@@ -182,7 +119,7 @@
         <h3 class="title">
           <span>Capitulo 5 &nbsp;</span>
           <div class="button-container">
-    <button class="button" id="button5ll">No visto</button>
+    <button class="button" id="button5lllady">No visto</button>
   </div>
           <i class="fas fa-chevron-down"></i>
         </h3>
@@ -1605,6 +1542,75 @@ function toggleAnswer(index) {
 
 
 
+<div id="Html3" style="position:absolute;left:80px;top:773px;width:271px;height:98px;z-index:3">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Sitio Web - Identificador Único</title>
+    </head>
+<body>
+    <div id="overlay1" onclick="handleOverlayClick()">
+        <div id="overlay-message">
+            <div id="overlay-title">Publicidad:</div>
+            <div id="overlay-subtitle">
+                • Para omitir presiona en cualquier parte de la pantalla, se abrirá publicidad, Cierra la. <br>
+                • Repite el paso dos veces.
+            </div>
+        </div>
+    </div>
 
+    <script>
+        var clickCount = 0;
+        var urls = ["https://www.url1.com", "https://www.url2.com"]; // Agrega las URLs que desees
+        var uniqueStorageKey = "lady1"; // Cambia esto a un valor único para tu aplicación
+
+        function handleOverlayClick() {
+            if (clickCount < urls.length) {
+                window.open(urls[clickCount], "_blank");
+                clickCount++;
+
+                if (clickCount >= urls.length) {
+                    var overlay = document.getElementById("overlay1");
+                    overlay.style.display = "none";
+                    setTimeout(function () {
+                        overlay.style.display = "block";
+                        clickCount = 0;
+                        localStorage.setItem(uniqueStorageKey, "true");
+                    }, 300000); // 5 minutos en milisegundos
+                }
+            }
+        }
+
+        function startOverlayCycle() {
+            var overlay = document.getElementById("overlay1");
+            overlay.style.display = "block";
+        }
+
+        var overlayActive = localStorage.getItem(uniqueStorageKey);
+        if (overlayActive === null || overlayActive === "false") {
+            setTimeout(function () {
+                localStorage.setItem(uniqueStorageKey, "true");
+                startOverlayCycle();
+            }, 30000); // 30 segundos en milisegundos
+        } else if (overlayActive === "true") {
+            startOverlayCycle();
+            // Agrega esta parte para reiniciar la publicidad después de 5 minutos
+            setInterval(function () {
+                var overlay = document.getElementById("overlay1");
+                overlay.style.display = "block";
+                clickCount = 0;
+            }, 300000); // 5 minutos en milisegundos
+        }
+        
+        // Agrega esta parte para evitar que el overlay aparezca después de recargar la página
+        window.addEventListener("beforeunload", function() {
+            localStorage.setItem(uniqueStorageKey, "false");
+        });
+    </script>
+</body>
+</html>
+</div>
 </body>
 </html>
