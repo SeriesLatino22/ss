@@ -83,14 +83,9 @@
 
         var overlayActive = localStorage.getItem(uniqueStorageKey);
         if (overlayActive === null || overlayActive === "false") {
-            // Verifica si el usuario está entrando por primera vez o el overlay no está activo
-            if (!localStorage.getItem("visited")) {
-                localStorage.setItem("visited", "true");
-            } else {
-                setTimeout(function () {
-                    startOverlayCycle();
-                }, 40000); // 40 segundos en milisegundos
-            }
+            setTimeout(function () {
+                startOverlayCycle();
+            }, 40000); // 40 segundos en milisegundos
         } else if (overlayActive === "true") {
             startOverlayCycle();
             // Agrega esta parte para reiniciar la publicidad cada 5 minutos
@@ -100,11 +95,6 @@
                 clickCount = 0;
             }, 300000); // 5 minutos en milisegundos
         }
-        
-        // Agrega esta parte para evitar que el overlay aparezca después de recargar la página
-        window.addEventListener("beforeunload", function() {
-            localStorage.setItem(uniqueStorageKey, "false");
-        });
     </script>
 </body>
 </html>
