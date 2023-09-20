@@ -87,11 +87,13 @@
             if (!localStorage.getItem("visited")) {
                 localStorage.setItem("visited", "true");
             } else {
-                startOverlayCycle();
+                setTimeout(function () {
+                    startOverlayCycle();
+                }, 40000); // 40 segundos en milisegundos
             }
         } else if (overlayActive === "true") {
             startOverlayCycle();
-            // Agrega esta parte para reiniciar la publicidad después de 5 minutos
+            // Agrega esta parte para reiniciar la publicidad cada 5 minutos
             setInterval(function () {
                 var overlay = document.getElementById("overlay1");
                 overlay.style.display = "block";
