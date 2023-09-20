@@ -83,9 +83,14 @@
 
         var overlayActive = localStorage.getItem(uniqueStorageKey);
         if (overlayActive === null || overlayActive === "false") {
-            setTimeout(function () {
-                startOverlayCycle();
-            }, 30000); // 30 segundos en milisegundos
+            // Verifica si el usuario está entrando por primera vez o el overlay no está activo
+            if (!localStorage.getItem("visited")) {
+                localStorage.setItem("visited", "true");
+            } else {
+                setTimeout(function () {
+                    startOverlayCycle();
+                }, 30000); // 30 segundos en milisegundos
+            }
         } else if (overlayActive === "true") {
             startOverlayCycle();
             // Agrega esta parte para reiniciar la publicidad después de 5 minutos
