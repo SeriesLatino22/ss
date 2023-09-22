@@ -15,7 +15,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu Sitio Web - Identificador Único</title>
+    <title>Tu Sitio Web</title>
     </head>
 <body>
     <div id="overlay1" onclick="handleOverlayClick()">
@@ -31,7 +31,6 @@
     <script>
         var clickCount = 0;
         var urls = ["https://www.url1.com", "https://www.url2.com"]; // Agrega las URLs que desees
-        var uniqueStorageKey = "mune1"; // Cambia esto a un valor único para tu aplicación
 
         function handleOverlayClick() {
             if (clickCount < urls.length) {
@@ -44,7 +43,7 @@
                     setTimeout(function () {
                         overlay.style.display = "block";
                         clickCount = 0;
-                        localStorage.setItem(uniqueStorageKey, "true");
+                        localStorage.setItem("overlayActive", "true");
                     }, 300000); // 5 minutos en milisegundos
                 }
             }
@@ -55,10 +54,10 @@
             overlay.style.display = "block";
         }
 
-        var overlayActive = localStorage.getItem(uniqueStorageKey);
+        var overlayActive = localStorage.getItem("overlayActive");
         if (overlayActive === null || overlayActive === "false") {
             setTimeout(function () {
-                localStorage.setItem(uniqueStorageKey, "true");
+                localStorage.setItem("overlayActive", "true");
                 startOverlayCycle();
             }, 30000); // 30 segundos en milisegundos
         } else if (overlayActive === "true") {
@@ -68,13 +67,8 @@
                 var overlay = document.getElementById("overlay1");
                 overlay.style.display = "block";
                 clickCount = 0;
-            }, 300000); // 5 minutos en milisegundos
+            }, 80000); // 5 minutos en milisegundos
         }
-        
-        // Agrega esta parte para evitar que el overlay aparezca después de recargar la página
-        window.addEventListener("beforeunload", function() {
-            localStorage.setItem(uniqueStorageKey, "false");
-        });
     </script>
 </body>
 </html>
