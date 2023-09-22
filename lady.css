@@ -1220,4 +1220,11 @@ body {
     }
 }
     
-    
+    #Card1-card-item4 {
+    box-sizing: border-box;
+    margin: 0 10px 0 10px;
+    padding: 0;
+    text-align: left;
+    overflow-y: auto;
+    max-height: 100px;
+}
