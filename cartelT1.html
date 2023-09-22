@@ -15,7 +15,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu Sitio Web</title>
     </head>
 <body>
     <div id="overlay1" onclick="handleOverlayClick()">
@@ -59,7 +58,7 @@
             setTimeout(function () {
                 localStorage.setItem("overlayActive", "true");
                 startOverlayCycle();
-            }, 30000); // 30 segundos en milisegundos
+            }, 40000); // 30 segundos en milisegundos
         } else if (overlayActive === "true") {
             startOverlayCycle();
             // Agrega esta parte para reiniciar la publicidad después de 5 minutos
@@ -67,7 +66,7 @@
                 var overlay = document.getElementById("overlay1");
                 overlay.style.display = "block";
                 clickCount = 0;
-            }, 80000); // 5 minutos en milisegundos
+            }, 200000); // 5 minutos en milisegundos
         }
     </script>
 </body>
@@ -2424,7 +2423,7 @@
             <button class="error-button" id="faqButton">
                 <i class="fa fa-question"></i>
             </button>
-            <span class="error-text" onclick="openPopup('faqPopup')">Preguntas frecuentes</span>
+            <span class="error-text" onclick="openPopup('faqPopup')">Preguntas Frecuentes:</span>
         </div>
     </div>
 
@@ -2439,33 +2438,28 @@
         <h2>Preguntas Frecuentes:</h2>
         <div class="accordion">
             <div class="question" onclick="toggleAnswer(1)">
-                ¿Cómo hacer algo?
+                ¿No te aparece el reproductor?
                 <span class="expand-icon">+</span>
             </div>
             <div class="answer" id="answer1">
-                <span class="answer-prefix">R/</span>Aquí está la respuesta a la pregunta sobre cómo hacer algo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tempus tincidunt nulla, ut vulputate justo ullamcorper ac. Nam nec fringilla purus. Pellentesque ac vestibulum nunc. Fusce rhoncus vehicula augue, eget sodales quam hendrerit nec.Duis tempus tincidunt nulla, ut vulputate justo ullamcorper ac. Nam nec fringilla purus. Pellentesque ac vestibulumDuis tempus tincidunt nulla, ut vulputate justo ullamcorper ac. Nam nec fringilla purus. Pellentesque ac vestibulumDuis tempus tincidunt nulla, ut vulputate justo ullamcorper ac. Nam nec fringilla purus. Pellentesque ac vestibulumDuis tempus tincidunt nulla, ut vulputate justo ullamcorper ac. Nam nec fringilla purus. Pellentesque ac vestibulum
-            </div>
+                <span class="answer-prefix">R/</span>Algunas ocasiones el reproductor suele demorar unos segundos en aparecer, esto también va a depender de la velocidad de tu internet, si después de 8 segundos no aparece, reinicia la página. Si esto no funciona por favor avísanos.</div>
 
             <div class="question" onclick="toggleAnswer(2)">
-                ¿Pregunta frecuente 2?
+               ¿Capítulo caído o dañado?
                 <span class="expand-icon">+</span>
             </div>
             <div class="answer" id="answer2">
-            <span class="answer-prefix">R/</span>Respuesta a la pregunta frecuente 2.</div>
+            <span class="answer-prefix">R/</span>Avísanos por Telegram, o envíanos un correo, nos ayudas mucho reportando.</div>
 
             <div class="question" onclick="toggleAnswer(3)">
-                ¿Otra pregunta frecuente?
+                Botón Novisto/Visto
                 <span class="expand-icon">+</span>
             </div>
             <div class="answer" id="answer3">
-            <span class="answer-prefix">R/</span>Respuesta a la otra pregunta frecuente.</div>
+            <span class="answer-prefix">R/</span>El botón "Visto" y "No visto" debe ser presionado manualmente, está hecho para recordar en caso tal en que capitulo te has quedado. 
+Al ser una página libre sin registro ni base de datos. Al borrar los datos de la navegación o cambiar de navegador, podría borrar tus capítulos vistos y no vistos guardados, es decir, esto solo se guardará en este navegador.</div>
 
-            <div class="question" onclick="toggleAnswer(4)">
-                ¿Cuál es la cuarta pregunta?
-                <span class="expand-icon">+</span>
-            </div>
-            <div class="answer" id="answer4">
-            <span class="answer-prefix">R/</span>Respuesta a la cuarta pregunta frecuente.</div>
+            
         </div>
     </div>
 
