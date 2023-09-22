@@ -460,6 +460,33 @@ body
 #Card1-card-item5
 {
    box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   color: #000000;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 16px;
+}
+#Card1-card-item6
+{
+   box-sizing: border-box;
+   margin: 0 10px 0 10px;
+   padding: 0;
+   text-align: left;
+}
+#Card1-card-item6 h2
+{
+   color: #FFFFFF;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 13px;
+   margin: 0;
+}
+#Card1-card-item7
+{
+   box-sizing: border-box;
    border-radius: 0 0 15px 15px !important;
    margin: 0;
    padding: 0;
@@ -1191,4 +1218,21 @@ body {
     }
 }
     
-    
+    #Card1-card-item4 {
+    box-sizing: border-box;
+    margin: 0 10px 0 10px;
+    padding: 0;
+    text-align: left;
+    overflow-y: auto;
+    max-height: 115px;
+}
+
+#Card1-card-item6 {
+    box-sizing: border-box;
+    margin: 0 10px 0 10px;
+    padding: 0;
+    text-align: left;
+    overflow-y: auto;
+    max-height: 115px;
+}
+
