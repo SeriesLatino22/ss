@@ -65,38 +65,52 @@ function copyToClipboard(url) {
   document.execCommand("copy");
   document.body.removeChild(tempInput);
 
-  var copyMessage = document.createElement("div");
-  copyMessage.textContent = "Enlace copiado";
-  copyMessage.classList.add("copy-message");
-  document.body.appendChild(copyMessage);
-
-  // Obtener la posición del botón de enlace
   var linkButton = document.getElementById("copy-link");
   var linkButtonRect = linkButton.getBoundingClientRect();
 
-  // Posicionar el mensaje encima del botón de enlace
+  // Crear el mensaje "Enlace copiado"
+  var copyMessage = document.createElement("div");
+  copyMessage.textContent = "Enlace copiado";
+  copyMessage.classList.add("copy-message");
+
+  // Posicionar el mensaje justo arriba del botón de enlace
   copyMessage.style.position = "absolute";
   copyMessage.style.top = linkButtonRect.top - copyMessage.offsetHeight - 10 + "px";
   copyMessage.style.left = linkButtonRect.left + "px";
+
+  document.body.appendChild(copyMessage);
+
+  // Función para actualizar la posición del mensaje mientras se desplaza
+  function updateCopyMessagePosition() {
+    var yOffset = window.scrollY || window.pageYOffset;
+    copyMessage.style.top = linkButtonRect.top - copyMessage.offsetHeight - 10 + yOffset + "px";
+  }
+
+  // Actualizar la posición inicial
+  updateCopyMessagePosition();
 
   // Agregar la clase para mostrar el mensaje
   setTimeout(function () {
     copyMessage.classList.add("active");
   }, 50); // Agregar la clase después de un pequeño retraso
 
+  // Evento de desplazamiento para actualizar la posición
+  window.addEventListener("scroll", updateCopyMessagePosition);
+
   setTimeout(function () {
-    copyMessage.classList.remove("active"); // Quitar la clase después de 2 segundos
+    copyMessage.classList.remove("active");
     setTimeout(function () {
       document.body.removeChild(copyMessage);
-    }, 510); // Eliminar el elemento después de la transición de opacidad
-  }, 1600);
+    }, 500);
+    window.removeEventListener("scroll", updateCopyMessagePosition); // Eliminar el evento de desplazamiento
+  }, 2000);
 }
 
 var linkButton = document.getElementById("copy-link");
 
-linkButton.addEventListener('click', function(event) {
+linkButton.addEventListener("click", function (event) {
   event.preventDefault(); // Prevenir la acción predeterminada de abrir el enlace
-  copyToClipboard('https://serieslatino.co/lady'); // Reemplaza con tu URL
+  copyToClipboard("https://www.tu-url.com"); // Reemplaza con tu URL
   event.stopPropagation(); // Evitar la propagación del clic a otros elementos
 });
 

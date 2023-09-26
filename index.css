@@ -615,7 +615,7 @@ body
 }
 
 .copy-message {
-  position: absolute;
+  position: fixed;
   background-color: #25D366;
   color: #000;
   padding: 3px 8px;
