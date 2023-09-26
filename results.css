@@ -579,7 +579,7 @@ body
   text-align: center;
   line-height: 60px;
   border-radius: 50%;
-  background-color: #2186EC;
+  background-color: #3498db;
   color: #fff;
   font-size: 24px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26), 0 2px 10px 0 rgba(0, 0, 0, 0.22);
@@ -643,7 +643,7 @@ body
   position: absolute;
   right: 50px;
   bottom: 50px;
-  background-color: #3b5998;
+  background-color: #3b5899;
 }
 .social-button-open .social-point-open{
   opacity: 1;
@@ -690,6 +690,29 @@ body
 .social-button-open .social-point-open:nth-child(6):hover {
   transition-delay: 0s;
   background-color: #2F4575;
+}
+
+.copy-message {
+  position: absolute;
+  background-color: #25D366;
+  color: #000;
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-size: 12px; /* Tamaño de fuente más pequeño */
+  white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+  pointer-events: none; /* Evitar que el mensaje interfiera con los clics */
+  top: 10px; /* Alineación más arriba */
+  left: 50%; /* Centrar horizontalmente */
+  transform: translateX(-50%); /* Centrar horizontalmente */
+  margin-left: 23px; /* Mover hacia la derecha */
+  font-weight: bold;
+}
+
+.copy-message.active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
 }
 
 
