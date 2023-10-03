@@ -62,61 +62,11 @@ $(document).ready(function()
 </div>
 </div>
 
-<div id="aaaa" style="position:fixed;text-align:center;left:0px;top:14px;width:255px;height:80px;z-index:21;">
-<div id="aaaa_Container" style="width:255px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
-<div id="wb_JavaScript1" style="position:absolute;left:19px;top:57px;width:208px;height:23px;z-index:3;">
-<div style="color:#FFFFFF;font-size:12px;font-family:Arial;font-weight:normal;font-style:normal;text-align:left;text-decoration:none;" id="text_scroller"></div>
-<script>
-var messages = new Array
-(
-   '  Series Colombianas  ',
-   '  Apoyanos en las redes sociales!  ',
-   '    sintv.co    '
-);
-var speed = 50;
-var currentMsg = 0;
-function doScroller(text, pos, direction)
-{
-   var text_scroller = document.getElementById('text_scroller');
-   text_scroller.innerText = '[' + text.substring(0, pos) + ']';
-
-   pos += direction;
-   if (pos > text.length)
-   {
-      setTimeout('doScroller("'+text+'",'+pos+','+(-direction)+')', speed*10);
-   }
-   else
-   {
-     if (pos < 0)
-     {
-        currentMsg++;
-        if(currentMsg >= messages.length)
-          currentMsg = 0;
-        text = messages[currentMsg];
-        direction = -direction;
-     }
-     setTimeout('doScroller("'+text+'",'+pos+','+direction+')', speed);
-   }
-}
-doScroller(messages[0], 0, 1);
-</script>
-</div>
-<div id="wb_OverlayMenu2" style="position:absolute;left:17px;top:14px;width:40px;height:37px;z-index:4;">
-<a href="#" id="OverlayMenu2">
-<span class="line"></span>
-<span class="line">
-</span><span class="line"></span>
-</a>
-</div>
-<div id="wb_Image1" style="position:absolute;left:53px;top:6px;width:140px;height:52px;z-index:5;">
-<img src="images/IMG_20230907_213058.png" id="Image1" alt="" width="140" height="143"></div>
-</div>
-</div>
 <div id="wb_LayoutGrid1">
 <div id="LayoutGrid1">
 <div class="row">
 <div class="col-1">
-<div id="Html1" style="display:inline-block;width:100%;height:218px;z-index:6">
+<div id="Html1" style="display:inline-block;width:100%;height:218px;z-index:3">
 <!DOCTYPE html>
 <html lang="en">
 
@@ -713,6 +663,56 @@ doScroller(messages[0], 0, 1);
 </html></div>
 </div>
 </div>
+</div>
+</div>
+<div id="aaaa" style="position:fixed;text-align:center;left:0px;top:14px;width:255px;height:80px;z-index:22;">
+<div id="aaaa_Container" style="width:255px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
+<div id="wb_JavaScript1" style="position:absolute;left:19px;top:57px;width:208px;height:23px;z-index:4;">
+<div style="color:#FFFFFF;font-size:12px;font-family:Arial;font-weight:normal;font-style:normal;text-align:left;text-decoration:none;" id="text_scroller"></div>
+<script>
+var messages = new Array
+(
+   '  Series Colombianas  ',
+   '  Apoyanos en las redes sociales!  ',
+   '    sintv.co    '
+);
+var speed = 50;
+var currentMsg = 0;
+function doScroller(text, pos, direction)
+{
+   var text_scroller = document.getElementById('text_scroller');
+   text_scroller.innerText = '[' + text.substring(0, pos) + ']';
+
+   pos += direction;
+   if (pos > text.length)
+   {
+      setTimeout('doScroller("'+text+'",'+pos+','+(-direction)+')', speed*10);
+   }
+   else
+   {
+     if (pos < 0)
+     {
+        currentMsg++;
+        if(currentMsg >= messages.length)
+          currentMsg = 0;
+        text = messages[currentMsg];
+        direction = -direction;
+     }
+     setTimeout('doScroller("'+text+'",'+pos+','+direction+')', speed);
+   }
+}
+doScroller(messages[0], 0, 1);
+</script>
+</div>
+<div id="wb_OverlayMenu2" style="position:absolute;left:17px;top:14px;width:40px;height:37px;z-index:5;">
+<a href="#" id="OverlayMenu2">
+<span class="line"></span>
+<span class="line">
+</span><span class="line"></span>
+</a>
+</div>
+<div id="wb_Image1" style="position:absolute;left:53px;top:6px;width:140px;height:52px;z-index:6;">
+<img src="https://i.ibb.co/99KR5xt/zyro-image-1.png"<img src="" id="Image1" alt=""></div>
 </div>
 </div>
 <div id="wb_LayoutGrid2">

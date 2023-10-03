@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="es-ar">
+<head>
+<meta charset="utf-8">
+<title>Series y Peliculas Colombianas</title>
+<meta name="description" content="Series y peliculas colombianas completas audio latino.">
+<meta name="keywords" content="Series colombianas, Series latinas, narco series,  series mexicanas,peliculas colombianas, descargar series colombianas, peliculas audio latino, pablo escobar. lady la vendedora de rosas ">
+<meta name="author" content="Series Latino">
+<meta name="categories" content="series">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="latino7.css" rel="stylesheet">
+<link href="listaa2.css" rel="stylesheet">
+<!-- Insert Google Analytics code here -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <div class="search-container">
+        <div class="filter-icon" id="filterIcon">
+            <i class="fas fa-cog"></i>
+        </div>
+        <input type="text" id="searchInput" placeholder="Buscar">
+    </div>
+    <div class="button-container" id="buttonContainer">
+        <button id="showAllButton">Ver todo</button>
+        <button id="recentButton">Recién agregado</button>
+        <button id="popularButton">Más vistas</button>
+        <button id="topButton">Mejor ranking</button>
+    </div>
+    <ul id="mainList" class="list active">
+        <li><a href="ejemplo.com">• A mano limpia</a></li>
+        <li><a href="ejemplo.com">• Alias el mexicano </a></li>
+        <li><a href="ejemplo.com">• Alias J.J</a></li>
+        <li><a href="ejemplo.com">• Allá te espero</a></li>
+        <li><a href="ejemplo.com">• Amar y temer</a></li>
+         <li><a href="ejemplo.com">• A mano limpia</a></li>
+        <li><a href="ejemplo.com">• Alias el mexicano </a></li>
+        <li><a href="ejemplo.com">• Alias J.J</a></li>
+        <li><a href="ejemplo.com">• Allá te espero</a></li>
+        <li><a href="ejemplo.com">• Amar y temer</a></li>
+         <li><a href="ejemplo.com">• A mano limpia</a></li>
+        <li><a href="ejemplo.com">• Alias el mexicano </a></li>
+        <li><a href="ejemplo.com">• Alias J.J</a></li>
+        <li><a href="ejemplo.com">• Allá te espero</a></li>
+        <li><a href="ejemplo.com">• Amar y temer</a></li>
+         <li><a href="ejemplo.com">• A mano limpia</a></li>
+        <li><a href="ejemplo.com">• Alias el mexicano </a></li>
+        <li><a href="ejemplo.com">• Alias J.J</a></li>
+        <li><a href="ejemplo.com">• Allá te espero</a></li>
+        <li><a href="ejemplo.com">• Amar y temer</a></li>
+         <li><a href="ejemplo.com">• A mano limpia</a></li>
+        <li><a href="ejemplo.com">• Alias el mexicano </a></li>
+        <li><a href="ejemplo.com">• Alias J.J</a></li>
+        <li><a href="ejemplo.com">• Allá te espero</a></li>
+        <li><a href="ejemplo.com">• Amar y temer</a></li>
+         <li><a href="ejemplo.com">• A mano limpia</a></li>
+        <li><a href="ejemplo.com">• Alias el mexicano </a></li>
+        <li><a href="ejemplo.com">• Alias J.J</a></li>
+        <li><a href="ejemplo.com">• Allá te espero</a></li>
+        <li><a href="ejemplo.com">• Amar y temer</a></li>
+         <li><a href="ejemplo.com">• A mano limpia</a></li>
+        <li><a href="ejemplo.com">• Alias el mexicano </a></li>
+        <li><a href="ejemplo.com">• Alias J.J</a></li>
+        <li><a href="ejemplo.com">• Allá te espero</a></li>
+        <li><a href="ejemplo.com">• Amar y temer</a></li>
+         <li><a href="ejemplo.com">• A mano limpia</a></li>
+        <li><a href="ejemplo.com">• Alias el mexicano </a></li>
+        <li><a href="ejemplo.com">• Alias J.J</a></li>
+        <li><a href="ejemplo.com">• Allá te espero</a></li>
+        <li><a href="ejemplo.com">• Amar y temer</a></li>
+         <li><a href="ejemplo.com">• A mano limpia</a></li>
+        <li><a href="ejemplo.com">• Alias el mexicano </a></li>
+        <li><a href="ejemplo.com">• Alias J.J</a></li>
+        <li><a href="ejemplo.com">• Allá te espero</a></li>
+        <li><a href="ejemplo.com">Queso</a></li>
+    </ul>
+    <ul id="recentList" class="list">
+        <li>Zorro</li>
+        <li>Gato</li>
+        <li>Perro</li>
+    </ul>
+    <ul id="popularList" class="list">
+        <li>Elefante</li>
+        <li>Pájaro</li>
+    </ul>
+    <ul id="topList" class="list">
+        <li>León</li>
+        <li>Tigre</li>
+    </ul>
+    
+    
+        
+    <script>
+    
+    document.addEventListener("DOMContentLoaded", function() {
+    const searchInput = document.getElementById("searchInput");
+    const lists = document.querySelectorAll(".list");
+    const buttons = document.querySelectorAll("button");
+    const filterIcon = document.getElementById("filterIcon");
+    const buttonContainer = document.getElementById("buttonContainer");
+    const showAllButton = document.getElementById("showAllButton");
+    const mainList = document.getElementById("mainList"); // Lista principal
+
+    let activeList = mainList; // Variable para rastrear la lista activa
+
+    let filterOpen = false; // Variable para rastrear el estado del filtro
+
+    filterIcon.addEventListener("click", function() {
+        if (filterOpen) {
+            // Si el filtro está abierto (mostrando botones), ciérralo
+            buttonContainer.style.display = "none";
+            filterIcon.querySelector("i").classList.remove("fa-times");
+            filterIcon.querySelector("i").classList.add("fa-cog");
+        } else {
+            // Si el filtro está cerrado, ábrelo
+            buttonContainer.style.display = "flex";
+            filterIcon.querySelector("i").classList.remove("fa-cog");
+            filterIcon.querySelector("i").classList.add("fa-times");
+        }
+        
+        // Cambia el estado del filtro
+        filterOpen = !filterOpen;
+    });
+
+    buttons.forEach(button => {
+        button.addEventListener("click", function() {
+            buttons.forEach(btn => btn.classList.remove("active"));
+            this.classList.add("active");
+
+            const targetListId = this.id.replace("Button", "List");
+            activeList.classList.remove("active");
+            activeList = document.getElementById(targetListId);
+            activeList.classList.add("active");
+
+            // Actualizar la búsqueda cuando cambias de lista
+            updateSearch();
+        });
+    });
+
+    showAllButton.addEventListener("click", function() {
+        buttons.forEach(btn => btn.classList.remove("active"));
+
+        lists.forEach(list => {
+            list.classList.remove("active");
+
+            // Mostrar todos los elementos en cada lista
+            const items = Array.from(list.getElementsByTagName("li"));
+            items.forEach(item => {
+                item.style.display = "block";
+            });
+        });
+
+        activeList = mainList; // Cambiar de nuevo a la lista principal
+        activeList.classList.add("active");
+        searchInput.value = ""; // Limpia el campo de búsqueda cuando se muestra "Ver todo"
+
+        // Actualizar la búsqueda cuando muestras "Ver todo"
+        updateSearch();
+    });
+
+    searchInput.addEventListener("input", updateSearch);
+    
+    // Función para activar automáticamente "Ver todo" al hacer clic en el campo de búsqueda
+    searchInput.addEventListener("focus", function() {
+        buttons.forEach(btn => btn.classList.remove("active"));
+        showAllButton.classList.add("active");
+        activeList.classList.remove("active");
+        activeList = mainList;
+        activeList.classList.add("active");
+        updateSearch();
+    });
+
+    // Función para actualizar la búsqueda
+    function updateSearch() {
+        const searchTerm = searchInput.value.trim().toLowerCase();
+
+        const items = Array.from(mainList.getElementsByTagName("li"));
+        items.forEach(item => {
+            const text = item.textContent.toLowerCase();
+            const itemVisible = text.includes(searchTerm);
+
+            item.style.display = itemVisible ? "block" : "none";
+        });
+    }
+
+    // Establecer la lista principal como activa al cargar la página
+    activeList.classList.add("active");
+});
+
+    
+    
+    </script>
+    
+      <script>
+function openLink(url) {
+  window.top.location.href = url;
+}
+</script>
+
+
+</head>
+<body>
+<div id="wb_LayoutGrid1">
+<div id="LayoutGrid1">
+<div class="row">
+<div class="col-1">
+
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

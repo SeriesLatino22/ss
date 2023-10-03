@@ -43,132 +43,6 @@ $(document).ready(function()
 </script>
 </head>
 <body>
- <meta name="viewport" content="width=device-width, initial-scale=1"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'><link rel="stylesheet" href="./style.css">
-
-</body>
-
-
-<div class="social-button" title="">
-  <i class="fas fa-share-alt" id="social-icon"></i>
-  <a hidden class="social-point" title="Copiar link" href="#" onclick="copyToClipboard('123')" id="copy-link">
-  <i class="fas fa-copy"></i> <!-- Cambiar a un icono de copiar -->
-  <span id="button-text"></span> <!-- Texto opcional -->
-</a>
- <a hidden class="social-point" href="https://www.youtube.com/" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-  <a hidden class="social-point" href="https://telegram.me/" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
-  <a hidden class="social-point" href="mailto:example@example.com" target="_blank" title="Correo"><i class="fas fa-envelope"></i></a>
-  <a hidden class="social-point" href="https://www.facebook.com/" target="_blank" rel="nofollow" title="Facebook"><i class="fab fa-facebook"></i></a>
-</div>
-
-
-
-<script>
-
-
-function copyToClipboard(url) {
-  var tempInput = document.createElement("input");
-  tempInput.value = url;
-  document.body.appendChild(tempInput);
-  tempInput.select();
-  document.execCommand("copy");
-  document.body.removeChild(tempInput);
-
-  var linkButton = document.getElementById("copy-link");
-  var linkButtonRect = linkButton.getBoundingClientRect();
-
-  // Crear el mensaje "Enlace copiado"
-  var copyMessage = document.createElement("div");
-  copyMessage.textContent = "Enlace copiado";
-  copyMessage.classList.add("copy-message");
-
-  // Posicionar el mensaje justo arriba del botón de enlace
-  copyMessage.style.position = "absolute";
-  copyMessage.style.top = linkButtonRect.top - copyMessage.offsetHeight - 10 + "px";
-  copyMessage.style.left = linkButtonRect.left + "px";
-
-  document.body.appendChild(copyMessage);
-
-  // Función para actualizar la posición del mensaje mientras se desplaza
-  function updateCopyMessagePosition() {
-    var yOffset = window.scrollY || window.pageYOffset;
-    copyMessage.style.top = linkButtonRect.top - copyMessage.offsetHeight - 10 + yOffset + "px";
-  }
-
-  // Actualizar la posición inicial
-  updateCopyMessagePosition();
-
-  // Agregar la clase para mostrar el mensaje
-  setTimeout(function () {
-    copyMessage.classList.add("active");
-  }, 50); // Agregar la clase después de un pequeño retraso
-
-  // Evento de desplazamiento para actualizar la posición
-  window.addEventListener("scroll", updateCopyMessagePosition);
-
-  setTimeout(function () {
-    copyMessage.classList.remove("active");
-    setTimeout(function () {
-      document.body.removeChild(copyMessage);
-    }, 500);
-    window.removeEventListener("scroll", updateCopyMessagePosition); // Eliminar el evento de desplazamiento
-  }, 2000);
-}
-
-var linkButton = document.getElementById("copy-link");
-
-linkButton.addEventListener("click", function (event) {
-  event.preventDefault(); // Prevenir la acción predeterminada de abrir el enlace
-  copyToClipboard("https://www.tu-url.com"); // Reemplaza con tu URL
-  event.stopPropagation(); // Evitar la propagación del clic a otros elementos
-});
-
-var social_open = false;
-
-window.addEventListener('load', () => {
-  const menu = document.querySelector('.social-button');
-
-  menu.addEventListener('click', () => {
-    const icon = document.querySelector('#social-icon');
-    if (social_open == true) {
-      social_open = false;
-
-      menu.title = menu.title.replace(/hide/, "expand");
-      menu.classList.remove('social-button-open');
-      icon.classList.remove('fa-times');
-      icon.classList.add('fa-share-alt');
-
-      var menu_point = document.querySelectorAll(".social-point");
-      for (let i = 0; i < menu_point.length; i++) {
-        menu_point[i].classList.remove('social-point-open');
-        setTimeout(function () {
-          menu_point[i].hidden = true;
-        }, 800);
-      }
-    } else {
-      social_open = true;
-
-      menu.title = menu.title.replace(/expand/, "hide");
-      menu.classList.add('social-button-open');
-      icon.classList.remove('fa-share-alt');
-      icon.classList.add('fa-times');
-
-      var menu_point = document.querySelectorAll(".social-point");
-      for (let i = 0; i < menu_point.length; i++) {
-        menu_point[i].hidden = false;
-        setTimeout(function () {
-          menu_point[i].classList.add('social-point-open');
-        }, 200);
-      }
-    }
-  });
-});
-
-
-
-</script>
-</body>
-</html>
-
 <div id="Layer2" style="position:fixed;text-align:center;left:auto;right:2px;top:30px;width:62px;height:34px;z-index:7;">
 <div id="Layer2_Container" style="width:62px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
 <div id="wb_buscar" style="position:absolute;left:0px;top:0px;width:62px;height:34px;z-index:0;">
@@ -752,7 +626,7 @@ window.addEventListener('load', () => {
       <div class="footer-content">
 
         <div class="footer-brand">
-          <img data-src="./img/as.png" alt="" class="footer-logo lazy">
+          <img data-src="https://i.ibb.co/6Wt1jqF/IMG-20230907-213058.png" alt="" class="footer-logo lazy">
           <p class="slogan">Series audio Latino, En su mayoria de colombia.</p>
 
 
@@ -813,8 +687,8 @@ window.addEventListener('load', () => {
         </div>
 
         <div class="wrapper">
-          <a href="./politica.html">Política de privacidad</a>
-          <a href="./aviso.html">Aviso legal</a>
+          <a href="./politica.html"><strong>Política de privacidad</a>
+          <a href="./aviso.html"><strong>Aviso legal</a>
         </div>
 
       </div>
@@ -925,9 +799,83 @@ doScroller(messages[0], 0, 1);
 </a>
 </div>
 <div id="wb_Image1" style="position:absolute;left:53px;top:3px;width:140px;height:58px;z-index:6;">
-<img src="images/IMG_20230907_213058.png" id="Image1" alt="" width="140" height="60"></div>
+<img src="https://i.ibb.co/6Wt1jqF/IMG-20230907-213058.png"<img src="" id="Image1" alt=""></div>
 </div>
 </div>
+ <meta name="viewport" content="width=device-width, initial-scale=1"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'><link rel="stylesheet" href="./style.css">
+
+</body>
+
+<div class="follow-us">Síguenos</div>
+
+<div class="social-button" title="">
+ 
+  <i class="fas fa-share-alt" id="social-icon"></i>
+
+  <a hidden class="social-point" href="https://www.youtube.com/" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+  <a hidden class="social-point" href="https://www.facebook.com/" target="_blank" rel="nofollow" title="Facebook"><i class="fab fa-facebook"></i></a>
+   <a hidden class="social-point" href="https://telegram.me/" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
+ 
+
+
+      
+      <script>
+var social_open = false;
+window.addEventListener('load', () => {
+  const menu = document.querySelector('.social-button');
+  const followUsText = document.querySelector('.follow-us'); // Agregamos esto para seleccionar el texto "Síguenos"
+
+  menu.addEventListener('click', () => {
+    const icon = document.querySelector('#social-icon');
+    if (social_open == true) {
+      social_open = false;
+
+      menu.title = menu.title.replace(/hide/, "expand");
+      menu.classList.remove('social-button-open');
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-share-alt');
+
+      var menu_point = document.querySelectorAll(".social-point");
+      for (let i = 0; i < menu_point.length; i++) {
+        menu_point[i].classList.remove('social-point-open');
+        setTimeout(function () {
+          menu_point[i].hidden = true;
+        }, 800);
+      }
+
+      // Mostrar nuevamente el texto "Síguenos" cuando se cierra
+      setTimeout(function () {
+      followUsText.style.opacity = '1';
+      }, 1550);
+    } else {
+      social_open = true;
+
+      menu.title = menu.title.replace(/expand/, "hide");
+      menu.classList.add('social-button-open');
+      icon.classList.remove('fa-share-alt');
+      icon.classList.add('fa-times');
+
+      var menu_point = document.querySelectorAll(".social-point");
+      for (let i = 0; i < menu_point.length; i++) {
+        menu_point[i].hidden = false;
+        setTimeout(function () {
+          menu_point[i].classList.add('social-point-open');
+        }, 200);
+      }
+
+      // Ocultar el texto "Síguenos" cuando se abre
+      followUsText.style.opacity = '0';
+    }
+  });
+});
+</script>
+
+
+
+
+
+</body>
+</html>
 
 <div id="OverlayMenu2-overlay">
 <div class="OverlayMenu2">
