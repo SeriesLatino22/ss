@@ -627,7 +627,7 @@ body
     color: #000; /* Texto negro */
     border: 1px solid #000; /* Borde de 1px sólido negro */
     border-radius: 5px;
-    z-index: 1;
+    z-index: 99999;
     transition: opacity 0.1s; /* Ajusta la duración de la transición según lo desees */
     display: inline-block;
     font-weight: bold;
