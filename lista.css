@@ -22,7 +22,7 @@ body
    position: fixed;
    left: 0;
    top: 0;
-   z-index: 7777;
+   z-index: 7;
    table-layout: fixed;
    display: table;
    text-align: center;
