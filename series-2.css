@@ -560,8 +560,8 @@ body
 }
 #wb_ThemeableButton7 .ui-state-hover, #wb_ThemeableButton7 .ui-button:hover
 {
-   border-color: #CCCCCC;
-   background-color: #87CEFA;
+   border-color: #FF0000;
+   background-color: transparent;
    background-image: none;
    color: #F5F5F5;
 }
@@ -619,7 +619,7 @@ body
 }
 #ThemeableButton2.ui-state-hover, #ThemeableButton2.ui-button:hover
 {
-   border-color: #FF0000;
+   border-color: #87CEFA;
    background-color: #87CEFA;
    background-image: none;
    color: #FFFFFF;
@@ -979,3 +979,9 @@ body
    width: 100% !important;
 }
 }
+  @media (max-width: 768px) {
+    #wb_Text1 {
+    position: relative;
+      top: 112px;
+    }
+  }

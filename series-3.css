@@ -979,3 +979,9 @@ body
    width: 100% !important;
 }
 }
+  @media (max-width: 768px) {
+    #wb_Text1 {
+    position: relative;
+      top: 112px;
+    }
+  }
