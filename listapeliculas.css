@@ -1,0 +1,555 @@
+body
+{
+   background-color: #131720;
+   color: #000000;
+   font-family: Arial;
+   font-weight: normal;
+   font-size: 13px;
+   line-height: 1.1875;
+   margin: 0;
+   padding: 0;
+}
+#Layer1
+{
+   background-color: transparent;
+   background-image: none;
+   border-radius: 0px;
+   margin: 0;
+}
+#wb_Image1
+{
+   vertical-align: top;
+}
+#Image1
+{
+   border: 0px solid #000000;
+   border-radius: 0px;
+   padding: 0;
+   margin: 0;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+}
+#wb_LayoutGrid1
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: #131720;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   border-radius: 0px;
+   box-sizing: border-box;
+   margin: 0;
+}
+#LayoutGrid1
+{
+   box-sizing: border-box;
+   padding: 0 0 10px 0;
+   margin-right: auto;
+   margin-left: auto;
+}
+#LayoutGrid1 > .row
+{
+   margin-right: 0;
+   margin-left: 0;
+}
+#LayoutGrid1 > .row > .col-1
+{
+   box-sizing: border-box;
+   font-size: 0;
+   min-height: 1px;
+   padding-right: 0px;
+   padding-left: 0px;
+   position: relative;
+}
+#LayoutGrid1 > .row > .col-1
+{
+   float: left;
+}
+#LayoutGrid1 > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 100%;
+   text-align: center;
+}
+#LayoutGrid1:before,
+#LayoutGrid1:after,
+#LayoutGrid1 .row:before,
+#LayoutGrid1 .row:after
+{
+   display: table;
+   content: " ";
+}
+#LayoutGrid1:after,
+#LayoutGrid1 .row:after
+{
+   clear: both;
+}
+@media (max-width: 480px)
+{
+#LayoutGrid1 > .row > .col-1
+{
+   float: none;
+   width: 100% !important;
+}
+}
+#OverlayMenu1
+{
+   background-color: #FFFFFF;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 3px;
+   margin: 0;
+}
+#OverlayMenu1:hover
+{
+   background-color: #CCCCCC;
+   background-image: none;
+   border-color: #424242;
+}
+#OverlayMenu1
+{
+   display: block;
+   width: 40px;
+   height: 37px;
+   position: absolute;
+   overflow: hidden;
+}
+#OverlayMenu1 .line
+{
+   width: 26px;
+   height: 5px;
+   position: relative;
+   top: 2px;
+   background: #454545;
+   display: block;
+   margin: 5px auto;
+}
+#OverlayMenu1:hover .line
+{
+   background: #FFFFFF;
+}
+#OverlayMenu1-close
+{
+   background: transparent;
+   font-size: 10px;
+   height: 2.8em; 
+   outline: none;
+   position: absolute;
+   right: 10px;
+   text-align: left;
+   top: 10px;
+   width: 3em; 
+}
+#OverlayMenu1-close:before, #OverlayMenu1-close:after
+{
+   background: #FFFFFF;
+   content: "";
+   display: block;
+   height: 0.6em;
+   left: 0;
+   opacity: 1;
+   position: absolute;
+   top: 0;
+   width: 100%;
+}
+#OverlayMenu1-close span
+{
+   background: #FFFFFF;
+   height: 0.6em;
+   margin-top: -0.3em;
+   position: absolute;
+   top: 50%;
+   transform-origin: 50% 50%;
+   width: 100%;
+}
+#OverlayMenu1-close span::after
+{
+   background: #FFFFFF;
+   content: "";
+   display: block;
+   height: 0.6em;
+   position: absolute;
+   transform-origin: 50% 50%;
+   width: 100%;
+}
+#OverlayMenu1-close:before
+{
+   margin-top: -0.3em;
+   opacity: 0;
+   top: 50%;
+}
+#OverlayMenu1-close:after
+{
+   bottom: 50%;
+   opacity: 0;
+}
+#OverlayMenu1-close span
+{
+   background: #FFFFFF;
+   transform: rotate(-45deg);
+}
+#OverlayMenu1-close span:after
+{
+   background: #FFFFFF;
+   transform: rotate(-90deg);
+}
+#OverlayMenu1-overlay
+{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100%;
+   left: 0;
+   overflow-y: auto;
+   position: fixed;
+   top: 0;
+   width: 100%;
+   z-index: -1;
+   background-color: rgba(122,122,122,0.87);
+}
+#OverlayMenu1-overlay ul
+{
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 35px;
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+.OverlayMenu1
+{
+   height: 60%;
+   width: 100%;
+   max-width: 970px;
+   margin: 0 auto 0 auto;
+}
+.OverlayMenu1 a
+{
+   text-decoration: none;
+}
+.OverlayMenu1 ul
+{
+   list-style: none;
+   padding: 0;
+   text-align: center;
+}
+.OverlayMenu1 li
+{
+   position: relative;
+}
+.OverlayMenu1 li a
+{
+   display: block;
+   position: relative;
+   padding: 10px 15px 10px 15px;
+   color: #FFFFFF;
+   outline: none;
+}
+.OverlayMenu1 li a:hover
+{
+   color: #424242;
+   background-color: #CCCCCC;
+}
+#OverlayMenu1-overlay
+{
+   opacity: 0;
+   visibility: hidden;
+   transition: opacity 400ms, visibility 0s 400ms;
+}
+#OverlayMenu1-overlay.show
+{
+   opacity: 1;
+   visibility: visible;
+   transition: opacity 400ms;
+}
+#OverlayMenu1-overlay ul li a
+{
+   opacity: 0;
+   transform: translateY(100px);
+   transition: transform 400ms, opacity 400ms;
+}
+#OverlayMenu1-overlay.show ul li a
+{
+   opacity: 1;
+   transform: translateY(0);
+}
+#OverlayMenu1-overlay.show ul li:nth-child(2) a
+{
+   transition-delay: 50ms;
+}
+#OverlayMenu1-overlay.show ul li:nth-child(3) a
+{
+   transition-delay: 100ms;
+}
+#OverlayMenu1-overlay.show ul li:nth-child(4) a
+{
+   transition-delay: 150ms;
+}
+.OverlayMenu1 .sub-menu
+{
+   padding-top: 0;
+   padding-left: 15px !important;
+   display: none;
+}
+.OverlayMenu1 .item-has-children > a 
+{
+   position: relative;
+}
+.OverlayMenu1 .item-has-children > a::after
+{
+   background: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%228%22%20height%3D%2211%22%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M8%205.5L1.9%2011%20.1%209.4l4.3-3.8L.1%201.8%202%20.1l6%205.4%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E') no-repeat center center;
+   background-size: 8px 11px;
+   bottom: auto;
+   content: "";
+   display: block;
+   height: 11px;
+   position: absolute;
+   right: 1em;
+   top: 50%;
+   width: 8px;
+   transform: translateY(-50%);
+}
+.OverlayMenu1 .item-has-children > a.submenu-open::after
+{
+   transform: translateY(-50%) rotate(90deg);
+}
+.OverlayMenu1 .item-has-children > a:hover::after
+{
+   background: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%228%22%20height%3D%2211%22%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cpath%20fill%3D%22%23424242%22%20d%3D%22M8%205.5L1.9%2011%20.1%209.4l4.3-3.8L.1%201.8%202%20.1l6%205.4%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E') no-repeat center center;
+}
+#OverlayMenu1-overlay .overlay-icon
+{
+   margin: 0 10px 0 0 ;
+}
+#OverlayMenu1-social
+{
+   padding: 40px 0 0 0;
+}
+#OverlayMenu1-social .social-icon 
+{
+   border-radius: 50%;
+   background-color: #FFFFFF;
+   color: #7A7A7A;
+   display: inline-block;
+   font-size: 35px;
+   margin: 0 .5em;
+   padding: 13px;
+   transition: all .2s linear 0s;
+   width: 35px;
+}
+#OverlayMenu1-social .social-icon:hover 
+{
+   background-color: #424242;
+   color: #CCCCCC;
+}
+.OverlayMenu1-effect
+{
+   transition: all 500ms linear;
+}
+#wb_LayoutGrid3
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   border-radius: 0px;
+   box-sizing: border-box;
+   margin: 0;
+}
+#LayoutGrid3
+{
+   box-sizing: border-box;
+   padding: 20px 0 20px 0;
+   margin-right: auto;
+   margin-left: auto;
+}
+#LayoutGrid3 > .row
+{
+   margin-right: 0;
+   margin-left: 0;
+}
+#LayoutGrid3 > .row > .col-1
+{
+   box-sizing: border-box;
+   font-size: 0;
+   min-height: 1px;
+   padding-right: 0px;
+   padding-left: 0px;
+   position: relative;
+}
+#LayoutGrid3 > .row > .col-1
+{
+   float: left;
+}
+#LayoutGrid3 > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 100%;
+   text-align: left;
+}
+#LayoutGrid3:before,
+#LayoutGrid3:after,
+#LayoutGrid3 .row:before,
+#LayoutGrid3 .row:after
+{
+   display: table;
+   content: " ";
+}
+#LayoutGrid3:after,
+#LayoutGrid3 .row:after
+{
+   clear: both;
+}
+@media (max-width: 480px)
+{
+#LayoutGrid3 > .row > .col-1
+{
+   float: none;
+   width: 100% !important;
+}
+}
+#wb_peliculasp
+{
+   border: 0px solid #C0C0C0;
+   border-radius: 0px;
+   margin: 0;
+   overflow: auto;
+   -webkit-overflow-scrolling: touch;
+   position: relative;
+}
+#peliculasp
+{
+   border-width: 0;
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+}
+#ListaSeriesboton
+{
+   font-family: Arial;
+   font-weight: normal;
+   font-size: 19px;
+   font-style: normal;
+   display: inline-block;
+   position: relative;
+   vertical-align: middle;
+   user-select: none;
+   overflow: visible;
+   text-decoration: none;
+   cursor: pointer;
+}
+#wb_ListaSeriesboton
+{
+   border-radius: 4px;
+   margin: 0;
+   vertical-align: top;
+}
+#ListaSeriesboton
+{
+   box-sizing: border-box;
+   padding: 0;
+   text-align: center;
+}
+#wb_ListaSeriesboton .ui-button
+{
+   display: flex;
+   align-items: center;
+   margin: 0;
+   justify-content: center;
+}
+#ListaSeriesboton
+{
+   color: #454545;
+   text-decoration: none;
+}
+#ListaSeriesboton :hover
+{
+   color: #2B2B2B;
+}
+#ListaSeriesboton :active
+{
+   color: #FFFFFF;
+}
+#wb_ListaSeriesboton .ui-primary
+{
+   background-image: none !important;
+   font-family: FontAwesome;
+   font-size: 40px;
+   font-style: normal;
+   font-weight: normal;
+   line-height: 1;
+   margin-top: 0;
+   text-indent: 0;
+   display: inline-block;
+   overflow: visible;
+   position: absolute;
+   left: 10px;
+   top: 50%;
+   transform: translateY(-50%);
+   width: 40px;
+   height: 40px;
+   color: #F6F6F6;
+}
+#wb_ListaSeriesboton .ui-primary:before
+{
+   content: "\f060";
+}
+#wb_ListaSeriesboton:hover .ui-primary
+{
+   color: #00BFFF;
+}
+#wb_ListaSeriesboton:active .ui-primary
+{
+   color: #FFFFFF;
+}
+#wb_ListaSeriesboton .ui-corner-all, #wb_ListaSeriesboton .ui-corner-left
+{
+   border-bottom-left-radius: 4px;
+   border-top-left-radius: 4px;
+}
+#wb_ListaSeriesboton .ui-corner-all, #wb_ListaSeriesboton .ui-corner-right
+{
+   border-bottom-right-radius: 4px;
+   border-top-right-radius: 4px;
+}
+#wb_ListaSeriesboton .ui-button
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #0000FF;
+   color: #F6F6F6;
+}
+#wb_ListaSeriesboton .ui-state-hover, #wb_ListaSeriesboton .ui-button:hover
+{
+   border-color: #4169E1;
+   background-color: transparent;
+   background-image: none;
+   color: #3498DB;
+}
+#wb_ListaSeriesboton .ui-state-active, #wb_ListaSeriesboton .ui-button:active
+{
+   border-color: #2E6DA4;
+   background-color: transparent;
+   background-image: none;
+   color: #F6F6F6;
+}

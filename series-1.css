@@ -498,7 +498,7 @@ body
 #ThemeableButton7
 {
    font-family: Arial;
-   font-weight: normal;
+   font-weight: bold;
    font-size: 13px;
    font-style: normal;
    display: inline-block;
@@ -532,15 +532,15 @@ body
 {
    background-color: #87CEFA;
    background-image: none;
-   border: 1px solid #C5C5C5;
-   color: #000000;
+   border: 1px solid #87CEFA;
+   color: #454545;
 }
 #ThemeableButton7.ui-state-hover, #ThemeableButton7.ui-button:hover
 {
    border-color: #CCCCCC;
-   background-color: #C0C0C0;
+   background-color: #87CEFA;
    background-image: none;
-   color: #FFFFFF;
+   color: #2B2B2B;
 }
 #ThemeableButton7.ui-state-active, #ThemeableButton7.ui-button:active
 {
@@ -607,22 +607,22 @@ body
 }
 #wb_ThemeableButton8 .ui-button
 {
-   background-color: #FFFFFF;
+   background-color: rgba(255,255,255,0.00);
    background-image: none;
-   border: 1px solid #C5C5C5;
-   color: #000000;
+   border: 1px solid #FFFFFF;
+   color: #FFFFFF;
 }
 #wb_ThemeableButton8 .ui-state-hover, #wb_ThemeableButton8 .ui-button:hover
 {
-   border-color: #CCCCCC;
-   background-color: #C0C0C0;
+   border-color: #FF0000;
+   background-color: #131720;
    background-image: none;
    color: #FFFFFF;
 }
 #wb_ThemeableButton8 .ui-state-active, #wb_ThemeableButton8 .ui-button:active
 {
-   border-color: #2E6DA4;
-   background-color: #3370B7;
+   border-color: #FFFFFF;
+   background-color: #131720;
    background-image: none;
    color: #FFFFFF;
 }
@@ -684,22 +684,22 @@ body
 }
 #wb_ThemeableButton2 .ui-button
 {
-   background-color: #FFFFFF;
+   background-color: rgba(255,255,255,0.00);
    background-image: none;
-   border: 1px solid #C5C5C5;
-   color: #000000;
+   border: 1px solid #F5FFFA;
+   color: #FFFFFF;
 }
 #wb_ThemeableButton2 .ui-state-hover, #wb_ThemeableButton2 .ui-button:hover
 {
-   border-color: #CCCCCC;
-   background-color: #C0C0C0;
+   border-color: #FF0000;
+   background-color: #131720;
    background-image: none;
    color: #FFFFFF;
 }
 #wb_ThemeableButton2 .ui-state-active, #wb_ThemeableButton2 .ui-button:active
 {
-   border-color: #2E6DA4;
-   background-color: #3370B7;
+   border-color: #FF0000;
+   background-color: #131720;
    background-image: none;
    color: #FFFFFF;
 }
@@ -776,22 +776,22 @@ body
 }
 #wb_ThemeableButton4 .ui-button
 {
-   background-color: #FFFFFF;
+   background-color: rgba(255,255,255,0.00);
    background-image: none;
-   border: 1px solid #C5C5C5;
-   color: #000000;
+   border: 1px solid #FFFFFF;
+   color: #FFFFFF;
 }
 #wb_ThemeableButton4 .ui-state-hover, #wb_ThemeableButton4 .ui-button:hover
 {
-   border-color: #CCCCCC;
-   background-color: #C0C0C0;
+   border-color: #FF0000;
+   background-color: #131720;
    background-image: none;
    color: #FFFFFF;
 }
 #wb_ThemeableButton4 .ui-state-active, #wb_ThemeableButton4 .ui-button:active
 {
-   border-color: #2E6DA4;
-   background-color: #3370B7;
+   border-color: #FFFFFF;
+   background-color: #131720;
    background-image: none;
    color: #FFFFFF;
 }
@@ -841,6 +841,38 @@ body
 {
    color: #FFFFFF;
 }
+#wb_ThemeableButton6 .ui-primary
+{
+   background-image: none !important;
+   font-family: FontAwesome;
+   font-size: 35px;
+   font-style: normal;
+   font-weight: normal;
+   line-height: 1;
+   margin-top: 0;
+   text-indent: 0;
+   display: inline-block;
+   overflow: visible;
+   position: absolute;
+   left: 6px;
+   top: 50%;
+   transform: translateY(-50%);
+   width: 35px;
+   height: 35px;
+   color: #FFFFFF;
+}
+#wb_ThemeableButton6 .ui-primary:before
+{
+   content: "\f101";
+}
+#wb_ThemeableButton6:hover .ui-primary
+{
+   color: #FF0000;
+}
+#wb_ThemeableButton6:active .ui-primary
+{
+   color: #FF0000;
+}
 #wb_ThemeableButton6 .ui-corner-all, #wb_ThemeableButton6 .ui-corner-left
 {
    border-bottom-left-radius: 4px;
@@ -853,22 +885,22 @@ body
 }
 #wb_ThemeableButton6 .ui-button
 {
-   background-color: #FFFFFF;
+   background-color: transparent;
    background-image: none;
-   border: 1px solid #C5C5C5;
-   color: #000000;
+   border: 0px solid rgba(255,255,255,0.00);
+   color: #FFFFFF;
 }
 #wb_ThemeableButton6 .ui-state-hover, #wb_ThemeableButton6 .ui-button:hover
 {
-   border-color: #CCCCCC;
-   background-color: #C0C0C0;
+   border-color: #FFFFFF;
+   background-color: transparent;
    background-image: none;
-   color: #000000;
+   color: #FFFFFF;
 }
 #wb_ThemeableButton6 .ui-state-active, #wb_ThemeableButton6 .ui-button:active
 {
-   border-color: #2E6DA4;
-   background-color: #3370B7;
+   border-color: #FFFFFF;
+   background-color: #131720;
    background-image: none;
    color: #000000;
 }
@@ -880,10 +912,7 @@ body
 #wb_LayoutGrid2
 {
    clear: both;
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   z-index: 7777;
+   position: relative;
    table-layout: fixed;
    display: table;
    text-align: center;
@@ -898,7 +927,7 @@ body
 #LayoutGrid2
 {
    box-sizing: border-box;
-   padding: 20px 0 6px 0;
+   padding: 0 0 30px 0;
    margin-right: auto;
    margin-left: auto;
 }

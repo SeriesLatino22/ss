@@ -1,0 +1,206 @@
+body
+{
+   background-color: #131720;
+   color: #000000;
+   font-family: Arial;
+   font-weight: normal;
+   font-size: 13px;
+   line-height: 1.1875;
+   margin: 0;
+   padding: 0;
+}
+#wb_LayoutGrid1
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   border-radius: 0px;
+   box-sizing: border-box;
+   margin: 0;
+}
+#LayoutGrid1
+{
+   box-sizing: border-box;
+   padding: 0;
+   margin-right: auto;
+   margin-left: auto;
+}
+#LayoutGrid1 > .row
+{
+   margin-right: 0;
+   margin-left: 0;
+}
+#LayoutGrid1 > .row > .col-1
+{
+   box-sizing: border-box;
+   font-size: 0;
+   min-height: 1px;
+   padding-right: 0px;
+   padding-left: 0px;
+   position: relative;
+}
+#LayoutGrid1 > .row > .col-1
+{
+   float: left;
+}
+#LayoutGrid1 > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 100%;
+   text-align: center;
+}
+#LayoutGrid1:before,
+#LayoutGrid1:after,
+#LayoutGrid1 .row:before,
+#LayoutGrid1 .row:after
+{
+   display: table;
+   content: " ";
+}
+#LayoutGrid1:after,
+#LayoutGrid1 .row:after
+{
+   clear: both;
+}
+@media (max-width: 480px)
+{
+#LayoutGrid1 > .row > .col-1
+{
+   float: none;
+   width: 100% !important;
+}
+}
+    
+    body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  padding-top: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+/* Estilos para los enlaces dentro de los elementos <li> */
+.list li a {
+    text-decoration: none; /* Quitar subrayado */
+    color: black; /* Texto negro */
+    cursor: pointer; /* Cursor de tipo pointer (mano) */
+}
+
+/* Cambiar el color del texto al pasar el mouse sobre los enlaces */
+.list li a:hover {
+    color: #007bff; /* Cambiar el color del texto en hover a azul (#007bff) */
+}
+
+.search-container, .button-container {
+display: sticky;
+
+
+
+}
+
+.search-container {
+            position: sticky;
+            top: 0; /* La posición en la parte superior de la ventana */
+           background-color: #131720;
+            z-index: 100; /* Ajusta el índice z para estar por encima del contenido desplazado */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            margin-bottom: 20px;
+        }
+
+.filter-icon {
+    font-size: 20px;
+    margin-right: 10px;
+  margin-top: -12px;
+    cursor: pointer;
+   color: blue;
+}
+
+.filter-icon i {
+    transition: transform 0.3s;
+}
+
+#searchInput {
+    padding: 10px;
+    border: 1px solid blue;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 300px;
+    text-align: left;
+    margin-bottom: 10px;
+  
+}
+
+.button-container {
+            position: sticky;
+            top: 42px; /* Ajusta la distancia desde la parte superior */
+            background-color: #131720; /* Cambia el color de fondo según tus preferencias */
+            z-index: 100; /* Ajusta el índice z para estar por encima del contenido desplazado */
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            display: none; /* Botones ocultos al principio */
+            margin-bottom: 20px;
+        }
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 15px;
+    margin: 0 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+ul {
+    list-style-type: disc;
+    padding: 0;
+    text-align: left;
+    display: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    gab: -3px;
+}
+
+ul.active {
+    display: block;
+    transition: opacity 0.3s;
+}
+
+li {
+    padding: 10px;
+    margin: 5px;
+    background-color: #fff;
+    color: #000;
+    font-size: 20px;
+    font-weight; bold;
+}
+
+
+    
+    
+    
