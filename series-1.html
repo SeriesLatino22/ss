@@ -135,34 +135,70 @@ $(document).ready(function()
 
 
 
-<div id="wb_Text1" style="position: relative; background-color: #333; padding: 20px; border-radius: 10px; text-align: center;">
-  <a href="javascript:void(0);" onclick="ocultarBurbuja()" style="position: absolute; top: 10px; right: 10px; color: #FF0000; font-size: 24px; text-decoration: none; cursor: pointer; font-weight: bold;">X</a>
-  <span style="color: #FFFFFF; font-family: Arial; font-size: 18px;">¿Deseas ver una lista rápida de series y películas disponibles?</span><br><br>
-  <a href="lista" style="background-color: #FF0000; color: #FFFFFF; text-decoration: none; font-family: Arial; font-size: 16px; padding: 8px 16px; border-radius: 5px; transition: transform 0.3s; cursor: pointer; display: inline-block;">
-    Ver lista <i class="fas fa-arrow-right" style="margin-left: 5px;"></i>
-  </a>
-</div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-<style>
-  a:hover {
-    background-color: #FF5555 !important; /* Cambiar el color de fondo del botón al pasar el mouse */
-  }
-
-  a:active {
-    transform: scale(0.95); /* Cambiar el tamaño del botón al hacer clic */
-  }
   
-  a:focus {
-    outline: none; /* Quitar cualquier resaltado de fondo al hacer clic en la "x" */
-  }
-</style>
+    <div id="wb_Text1" style="position: relative; border: 1px solid #ccc; border-radius: 10px; text-align: center; padding: 20px;">
+        <a href="javascript:void(0);" onclick="ocultarBurbuja()" class="cerrar-burbuja"><i class="fas fa-times"></i></a>
+        <span style="color: #FFFFFF; font-family: Arial; font-size: 18px;">¿Deseas ver una lista rápida de series y películas disponibles?</span><br><br>
+        <a href="lista" class="boton-ver-lista">Ver lista <i class="fas fa-arrow-right" style="margin-left: 5px;"></i></a>
+    </div>
 
-<script>
-  function ocultarBurbuja() {
-    var burbuja = document.getElementById("wb_Text1");
-    burbuja.style.display = "none";
-  }
-</script>
+    <style>
+        .boton-ver-lista {
+            background-color: #FF0000;
+            color: #FFFFFF;
+            text-decoration: none;
+            font-family: Arial;
+            font-size: 16px;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .boton-ver-lista:hover {
+            background-color: #FF5555; /* Cambiar el color de fondo del botón al pasar el mouse */
+        }
+
+        .boton-ver-lista:active {
+            transform: scale(0.95); /* Cambiar el tamaño del botón al hacer clic */
+        }
+
+        .cerrar-burbuja {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #FF0000;
+            font-size: 24px;
+            text-decoration: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .cerrar-burbuja:hover {
+            color: #FF5555; /* Cambiar el color de la "X" al pasar el mouse */
+        }
+
+        .cerrar-burbuja:active {
+            transform: scale(0.95); /* Cambiar el tamaño de la "X" al hacer clic */
+        }
+
+        a:focus {
+            outline: none; /* Quitar cualquier resaltado de fondo al hacer clic en el botón o la "X" */
+        }
+    </style>
+
+    <script>
+        function ocultarBurbuja() {
+            var burbuja = document.getElementById("wb_Text1");
+            burbuja.style.display = "none";
+        }
+    </script>
+
+
+
 
 
 
