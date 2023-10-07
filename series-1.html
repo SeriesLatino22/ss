@@ -133,16 +133,35 @@ $(document).ready(function()
 
 
 
-<div id="wb_Text1">
-  <span style="color:#FFFFFF;font-family:Arial;font-size:13px;">Si deseas ver una lista rápida de series y películas disponibles.:&nbsp; </span>
-  <span style="font-family: Arial; font-size: 17px;">
-    <a href="lista" style="color: red;font-size: 18px;">
-      -> Ver lista <-
-      <!-- Agregar el icono de la flecha a la derecha -->
-    </a>
-    <br><br>
-  </span>
+<div id="wb_Text1" style="position: relative; background-color: #333; padding: 20px; border-radius: 10px; text-align: center;">
+  <a href="javascript:void(0);" onclick="ocultarBurbuja()" style="position: absolute; top: 10px; right: 10px; color: #FF0000; font-size: 24px; text-decoration: none; cursor: pointer; font-weight: bold;">X</a>
+  <span style="color: #FFFFFF; font-family: Arial; font-size: 18px;">¿Deseas ver una lista rápida de series y películas disponibles?</span><br><br>
+  <a href="lista" style="background-color: #FF0000; color: #FFFFFF; text-decoration: none; font-family: Arial; font-size: 16px; padding: 8px 16px; border-radius: 5px; transition: transform 0.3s; cursor: pointer; display: inline-block;">
+    Ver lista <i class="fas fa-arrow-right" style="margin-left: 5px;"></i>
+  </a>
 </div>
+
+<style>
+  a:hover {
+    background-color: #FF5555 !important; /* Cambiar el color de fondo del botón al pasar el mouse */
+  }
+
+  a:active {
+    transform: scale(0.95); /* Cambiar el tamaño del botón al hacer clic */
+  }
+  
+  a:focus {
+    outline: none; /* Quitar cualquier resaltado de fondo al hacer clic en la "x" */
+  }
+</style>
+
+<script>
+  function ocultarBurbuja() {
+    var burbuja = document.getElementById("wb_Text1");
+    burbuja.style.display = "none";
+  }
+</script>
+
 
 
 
