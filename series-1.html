@@ -10,8 +10,6 @@
 <meta name="robots" content="index, follow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="font-awesome.min.css" rel="stylesheet">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
 <link href="latino7.css" rel="stylesheet">
 <link href="series-1.css" rel="stylesheet">
 <script src="jquery-3.6.0.min.js"></script>
@@ -21,15 +19,15 @@
 <script>
 $(document).ready(function()
 {
-   $('#OverlayMenu2-overlay').overlay({hideTransition:true});
-   $('.OverlayMenu2 .item-has-children').children('a').on('click', function(event)
+   $('#OverlayMenu1-overlay').overlay({hideTransition:true});
+   $('.OverlayMenu1 .item-has-children').children('a').on('click', function(event)
    {
       event.preventDefault();
       $(this).toggleClass('submenu-open').next('.sub-menu').slideToggle(0,'linear').end().parent('.item-has-children').siblings('.item-has-children').children('a').removeClass('submenu-open').next('.sub-menu').slideUp(0,'linear');
    });
-   $('#OverlayMenu2').on('click', function(e)
+   $('#OverlayMenu1').on('click', function(e)
    {
-      $.overlay.show($('#OverlayMenu2-overlay'));
+      $.overlay.show($('#OverlayMenu1-overlay'));
       return false;
    });
 });
@@ -45,7 +43,7 @@ $(document).ready(function()
 </script>
 </head>
 <body>
-<div id="Layer2" style="position:fixed;text-align:center;left:auto;right:2px;top:30px;width:62px;height:34px;z-index:17;">
+<div id="Layer2" style="position:fixed;text-align:center;left:auto;right:2px;top:30px;width:62px;height:34px;z-index:16;">
 <div id="Layer2_Container" style="width:62px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
 <div id="wb_buscar" style="position:absolute;left:0px;top:0px;width:62px;height:34px;z-index:0;">
 <a href="#" onclick="ShowObjectWithEffect('aaaa', 0, 'fade', 0);ShowObjectWithEffect('wb_buscar', 0, 'fade', 0);ShowObjectWithEffect('frame111', 1, 'puff', 0, 'swing');ShowObjectWithEffect('wb_cloceee', 1, 'puff', 0, 'swing');return false;"><img src="images/image.png" srcset="images/image.png 2x" id="buscar" alt="" width="62" height="35"></a></div>
@@ -132,6 +130,9 @@ $(document).ready(function()
       </section>
 
 
+
+
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 <div id="wb_Text1" style="position: relative; border: 1px solid #ccc; border-radius: 10px; text-align: center; padding: 20px;">
@@ -140,51 +141,6 @@ $(document).ready(function()
     <a href="lista" class="boton-ver-lista" style="padding: 8px 10px; margin-top: 8px;">Ver lista <i class="fas fa-arrow-right" style="margin-left: 5px;"></i></a>
 </div>
 
-<style>
-    .boton-ver-lista {
-        background-color: #FF0000;
-        color: #FFFFFF;
-        text-decoration: none;
-        font-family: Arial;
-        font-size: 16px;
-        padding: 8px 16px; /* Cambiado a 8px arriba/abajo y 16px izquierda/derecha */
-        border-radius: 5px;
-        transition: background-color 0.3s, transform 0.3s;
-        cursor: pointer;
-        display: inline-block;
-    }
-
-    .boton-ver-lista:hover {
-        background-color: #FF5555; /* Cambiar el color de fondo del botón al pasar el mouse */
-    }
-
-    .boton-ver-lista:active {
-        transform: scale(0.95); /* Cambiar el tamaño del botón al hacer clic */
-    }
-
-    .cerrar-burbuja {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        color: #FF0000;
-        font-size: 24px;
-        text-decoration: none;
-        cursor: pointer;
-        font-weight: bold;
-    }
-
-    .cerrar-burbuja:hover {
-        color: #FF5555; /* Cambiar el color de la "X" al pasar el mouse */
-    }
-
-    .cerrar-burbuja:active {
-        transform: scale(0.95); /* Cambiar el tamaño de la "X" al hacer clic */
-    }
-
-    a:focus {
-        outline: none; /* Quitar cualquier resaltado de fondo al hacer clic en el botón o la "X" */
-    }
-</style>
 
 <script>
     function ocultarBurbuja() {
@@ -192,14 +148,6 @@ $(document).ready(function()
         burbuja.style.display = "none";
     }
 </script>
-
-
-
-    
-
-
-
-
 
 
 
@@ -727,7 +675,7 @@ $(document).ready(function()
 </div>
 </div>
 </div>
-<div id="aaaa" style="position:fixed;text-align:center;left:0px;top:14px;width:255px;height:80px;z-index:21;">
+<div id="aaaa" style="position:fixed;text-align:center;left:0px;top:14px;width:255px;height:80px;z-index:20;">
 <div id="aaaa_Container" style="width:255px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
 <div id="wb_JavaScript1" style="position:absolute;left:19px;top:57px;width:208px;height:23px;z-index:4;">
 <div style="color:#FFFFFF;font-size:12px;font-family:Arial;font-weight:normal;font-style:normal;text-align:left;text-decoration:none;" id="text_scroller"></div>
@@ -766,15 +714,15 @@ function doScroller(text, pos, direction)
 doScroller(messages[0], 0, 1);
 </script>
 </div>
-<div id="wb_OverlayMenu2" style="position:absolute;left:17px;top:14px;width:40px;height:37px;z-index:5;">
-<a href="#" id="OverlayMenu2">
+<div id="wb_Image1" style="position:absolute;left:53px;top:6px;width:140px;height:52px;z-index:5;">
+<img src="https://i.ibb.co/99KR5xt/zyro-image-1.png"<img src="" id="Image1" alt=""></div>
+<div id="wb_OverlayMenu1" style="position:absolute;left:17px;top:14px;width:40px;height:37px;z-index:6;">
+<a href="#" id="OverlayMenu1">
 <span class="line"></span>
 <span class="line">
 </span><span class="line"></span>
 </a>
 </div>
-<div id="wb_Image1" style="position:absolute;left:53px;top:6px;width:140px;height:52px;z-index:6;">
-<img src="https://i.ibb.co/99KR5xt/zyro-image-1.png"<img src="" id="Image1" alt=""></div>
 </div>
 </div>
 <div id="wb_LayoutGrid2">
@@ -803,37 +751,34 @@ doScroller(messages[0], 0, 1);
 <div id="wb_ThemeableButton4" style="display:inline-block;width:32px;height:35px;z-index:14;">
 <a class="ui-button ui-corner-all" id="ThemeableButton4" href="series-4" style="width:100%;height:100%;">4</a>
 </div>
-<div id="wb_Shape5" style="display:inline-block;width:8px;height:34px;z-index:15;position:relative;">
-<img src="images/img0005.png" id="Shape5" alt="" width="8" height="34" style="width:8px;height:34px;">
-</div>
-<div id="wb_ThemeableButton6" style="display:inline-block;width:38px;height:35px;z-index:16;">
+<div id="wb_ThemeableButton6" style="display:inline-block;width:38px;height:35px;z-index:15;">
 <a class="ui-button ui-corner-all" id="ThemeableButton6" href="series-2" style="width:100%;height:100%;"><span class="ui-button-icon ui-icon ui-primary"></span><span class="ui-button-icon-space"> </span></a>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div id="OverlayMenu2-overlay">
-<div class="OverlayMenu2">
-<ul class="OverlayMenu2" role="menu">
-<li><a role="menuitem" href="https://www.serieslatino.co/" class="OverlayMenu2-effect"><i class="fa fa-home overlay-icon"></i>Inicio</a></li>
+<div id="OverlayMenu1-overlay">
+<div class="OverlayMenu1">
+<ul class="OverlayMenu1" role="menu">
+<li><a role="menuitem" href="inicio" class="OverlayMenu1-effect"><i class="fa fa-home overlay-icon"></i>Inicio</a></li>
 <li class="item-has-children">
-<a role="menuitem" href="https://www.serieslatino.co/categorias" class="OverlayMenu2-effect"><i class="fa fa-angle-right overlay-icon"></i>Categorias</a>
+<a role="menuitem" href="#" class="OverlayMenu1-effect"><i class="fa fa-angle-right overlay-icon"></i>Categorias</a>
 <ul class="sub-menu" role="menu">
-<li><a role="menuitem" href="#" class="OverlayMenu2-effect"><i class="fa fa-caret-right overlay-icon"></i>Peliculas</a></li>
-<li><a role="menuitem" href="#" class="OverlayMenu2-effect"><i class="fa fa-caret-right overlay-icon"></i>Series</a></li>
+<li><a role="menuitem" href="series-1" class="OverlayMenu1-effect"><i class="fa fa-caret-right overlay-icon"></i>Series</a></li>
+<li><a role="menuitem" href="peliculas-1" class="OverlayMenu1-effect"><i class="fa fa-caret-right overlay-icon"></i>Peliculas</a></li>
 </ul>
 </li>
 <li class="item-has-children">
-<a role="menuitem" href="#" class="OverlayMenu2-effect"><i class="fa fa-circle overlay-icon"></i>En&nbsp;vivo</a>
+<a role="menuitem" href="#" class="OverlayMenu1-effect"><i class="fa fa-circle overlay-icon"></i>En&nbsp;vivo</a>
 <ul class="sub-menu" role="menu">
-<li><a role="menuitem" href="#" class="OverlayMenu2-effect"><i class="fa fa-circle overlay-icon"></i>Tv&nbsp;Nacional</a></li>
-<li><a role="menuitem" href="https://fudfkzkl.blogspot.com/p/eventos-del-dia.html" class="OverlayMenu2-effect"><i class="fa fa-circle overlay-icon"></i>Futbol&nbsp;en&nbsp;vivo</a></li>
+<li><a role="menuitem" href="tv" class="OverlayMenu1-effect"><i class="fa fa-circle overlay-icon"></i>Tv&nbsp;Nacional</a></li>
+<li><a role="menuitem" href="futbol" class="OverlayMenu1-effect"><i class="fa fa-circle overlay-icon"></i>Futbol&nbsp;en&nbsp;vivo</a></li>
 </ul>
 </li>
    </ul>
 </div>
-<a class="close-button" id="OverlayMenu2-close" href="#" role="button" aria-hidden="true"><span></span></a>
+<a class="close-button" id="OverlayMenu1-close" href="#" role="button" aria-hidden="true"><span></span></a>
 </div>
 </body>
 </html>

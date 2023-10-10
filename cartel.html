@@ -29,15 +29,15 @@ $(document).ready(function()
       event.preventDefault();
       $('html, body').stop().animate({ scrollTop: $('#wb_intro').offset().top-88 }, 600, 'easeOutExpo');
    });
-   $('#OverlayMenu2-overlay').overlay({hideTransition:true});
-   $('.OverlayMenu2 .item-has-children').children('a').on('click', function(event)
+   $('#OverlayMenu1-overlay').overlay({hideTransition:true});
+   $('.OverlayMenu1 .item-has-children').children('a').on('click', function(event)
    {
       event.preventDefault();
       $(this).toggleClass('submenu-open').next('.sub-menu').slideToggle(0,'linear').end().parent('.item-has-children').siblings('.item-has-children').children('a').removeClass('submenu-open').next('.sub-menu').slideUp(0,'linear');
    });
-   $('#OverlayMenu2').on('click', function(e)
+   $('#OverlayMenu1').on('click', function(e)
    {
-      $.overlay.show($('#OverlayMenu2-overlay'));
+      $.overlay.show($('#OverlayMenu1-overlay'));
       return false;
    });
 });
@@ -86,7 +86,7 @@ $(document).ready(function()
     <!-- Centra el botón vertical y horizontalmente -->
     <div id="heart-container">
         <div id="center-wrapper">
-            <a href="https://www.ejemplo.com" target="_blank">
+            <a href="apoyo" target="_blank">
                 <button id="heart-button">
                     <img src="https://i.ibb.co/LnSWj29/1f97a-1.png" alt="Imagen" />
                     ¡Apóyanos!
@@ -206,16 +206,16 @@ function doScroller(text, pos, direction)
 doScroller(messages[0], 0, 1);
 </script>
 </div>
-<div id="wb_OverlayMenu2" style="position:absolute;left:17px;top:14px;width:40px;height:37px;z-index:15;">
-<a href="#" id="OverlayMenu2">
+<div id="wb_Image2" style="position:absolute;left:53px;top:6px;width:140px;height:58px;z-index:15;">
+<img src="https://i.ibb.co/6Wt1jqF/IMG-20230907-213058.png"<img src="" id="Image2" alt=""></div>
+<div id="Layer1" style="position:absolute;text-align:left;left:53px;top:6px;width:140px;height:58px;z-index:16;">
+</div>
+<div id="wb_OverlayMenu1" style="position:absolute;left:17px;top:14px;width:40px;height:37px;z-index:17;">
+<a href="#" id="OverlayMenu1">
 <span class="line"></span>
 <span class="line">
 </span><span class="line"></span>
 </a>
-</div>
-<div id="wb_Image2" style="position:absolute;left:53px;top:6px;width:140px;height:58px;z-index:16;">
-<img src="https://i.ibb.co/6Wt1jqF/IMG-20230907-213058.png"<img src="" id="Image2" alt=""></div>
-<div id="Layer1" style="position:absolute;text-align:left;left:53px;top:6px;width:140px;height:58px;z-index:17;">
 </div>
 </div>
 </div>
@@ -294,21 +294,27 @@ window.addEventListener('load', () => {
 </body>
 </html>
 
-<div id="OverlayMenu2-overlay">
-<div class="OverlayMenu2">
-<ul class="OverlayMenu2" role="menu">
-<li><a role="menuitem" href="https://www.serieslatino.co/" class="OverlayMenu2-effect"><i class="fa fa-home overlay-icon"></i>Inicio</a></li>
-<li><a role="menuitem" href="https://www.serieslatino.co/categorias" class="OverlayMenu2-effect"><i class="fa fa-angle-right overlay-icon"></i>Categorias</a></li>
+<div id="OverlayMenu1-overlay">
+<div class="OverlayMenu1">
+<ul class="OverlayMenu1" role="menu">
+<li><a role="menuitem" href="inicio" class="OverlayMenu1-effect"><i class="fa fa-home overlay-icon"></i>Inicio</a></li>
 <li class="item-has-children">
-<a role="menuitem" href="#" class="OverlayMenu2-effect"><i class="fa fa-circle overlay-icon"></i>En&nbsp;vivo</a>
+<a role="menuitem" href="#" class="OverlayMenu1-effect"><i class="fa fa-angle-right overlay-icon"></i>Categorias</a>
 <ul class="sub-menu" role="menu">
-<li><a role="menuitem" href="#" class="OverlayMenu2-effect"><i class="fa fa-circle overlay-icon"></i>Tv&nbsp;Nacional</a></li>
-<li><a role="menuitem" href="https://fudfkzkl.blogspot.com/p/eventos-del-dia.html" class="OverlayMenu2-effect"><i class="fa fa-circle overlay-icon"></i>Futbol&nbsp;en&nbsp;vivo</a></li>
+<li><a role="menuitem" href="series-1" class="OverlayMenu1-effect"><i class="fa fa-caret-right overlay-icon"></i>Series</a></li>
+<li><a role="menuitem" href="peliculas-1" class="OverlayMenu1-effect"><i class="fa fa-caret-right overlay-icon"></i>Peliculas</a></li>
+</ul>
+</li>
+<li class="item-has-children">
+<a role="menuitem" href="#" class="OverlayMenu1-effect"><i class="fa fa-circle overlay-icon"></i>En&nbsp;vivo</a>
+<ul class="sub-menu" role="menu">
+<li><a role="menuitem" href="tv" class="OverlayMenu1-effect"><i class="fa fa-circle overlay-icon"></i>Tv&nbsp;Nacional</a></li>
+<li><a role="menuitem" href="futbol" class="OverlayMenu1-effect"><i class="fa fa-circle overlay-icon"></i>Futbol&nbsp;en&nbsp;vivo</a></li>
 </ul>
 </li>
    </ul>
 </div>
-<a class="close-button" id="OverlayMenu2-close" href="#" role="button" aria-hidden="true"><span></span></a>
+<a class="close-button" id="OverlayMenu1-close" href="#" role="button" aria-hidden="true"><span></span></a>
 </div>
 </body>
 </html>

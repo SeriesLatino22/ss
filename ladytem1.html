@@ -83,38 +83,7 @@
 <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
 
     
-<!-- Incluye la biblioteca "bowser" desde un CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bowser/2.11.3/bowser.min.js"></script>
 
-<script>
-    // Función para redirigir al usuario a la página de no compatible
-    function redirectToNoCompatiblePage() {
-        window.location.href = "pagina-no-compatible.html";
-    }
-
-    // Detecta el navegador actual del usuario utilizando "bowser"
-    const browser = bowser.getParser(navigator.userAgent);
-
-    // Verifica si el navegador es Chrome o Brave
-    if (browser.satisfies({ chrome: ">0", brave: ">0" })) {
-        // Navegador permitido, no hacer nada
-    } else {
-        // Navegador no permitido, redirige al usuario
-        redirectToNoCompatiblePage();
-    }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-	  
 
   </head>
   <body>

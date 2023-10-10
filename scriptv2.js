@@ -1,10 +1,10 @@
  const heartContainer = document.getElementById("heart-container");
 const imageUrls = [
-    "https://cdn.iconscout.com/icon/free/png-512/free-care-2387662-1991058.png?f=avif&w=512",
-            "https://cdn.iconscout.com/icon/free/png-512/free-haha-2387660-1991060.png?f=avif&w=512",
-            "https://cdn.iconscout.com/icon/free/png-512/free-love-2387666-1991064.png?f=avif&w=512",
-            "https://cdn.iconscout.com/icon/free/png-512/free-like-2387659-1991059.png?f=avif&w=512",
-            "https://cdn.iconscout.com/icon/free/png-512/free-like-2387659-1991059.png?f=avif&w=512"
+    "https://i.ibb.co/TwqZTH3/emoji-abrzando-corazon.png",
+            "https://i.ibb.co/TwqZTH3/emoji-abrzando-corazon.png",
+            "https://i.ibb.co/NZbL6v8/emojilike.png",
+            "https://i.ibb.co/FnGTwZT/free-haha-2387660-1991060.png",
+            "https://i.ibb.co/TwqZTH3/emoji-abrzando-corazon.png"
         ];
 const heartButton = document.getElementById("heart-button");
 let animationInterval;
