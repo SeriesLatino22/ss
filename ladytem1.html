@@ -85,6 +85,10 @@
     
 
     
+    <!DOCTYPE html>
+<html>
+<head>
+    <title>Mi Sitio Web</title>
     <style>
         /* Estilo para la capa de no compatible */
         .no-compatible-overlay {
@@ -108,7 +112,10 @@
             text-align: center;
         }
     </style>
- <div class="no-compatible-overlay" id="noCompatibleOverlay">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+</head>
+<body>
+    <div class="no-compatible-overlay" id="noCompatibleOverlay">
         <div class="no-compatible-message">
             <p>Lo sentimos, tu navegador no es compatible con este sitio web.</p>
         </div>
@@ -116,28 +123,16 @@
 
     <!-- El contenido de tu sitio web va aquí -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bowser/2.11.3/bowser.min.js"></script>
     <script>
         // JavaScript para ocultar la capa de no compatible en navegadores compatibles
-        var userAgent = navigator.userAgent;
-        var isCompatibleBrowser = (
-            bowser.msie ||
-            bowser.edge ||
-            bowser.chrome ||
-            bowser.firefox ||
-            bowser.safari ||
-            bowser.opera ||
-            bowser.brave ||
-            bowser.vivaldi ||
-            bowser.ucbrowser ||
-            bowser.yabrowser
-        );
-        
-        if (!isCompatibleBrowser) {
-            // Navegador no compatible, mostrar mensaje
-            document.getElementById("noCompatibleOverlay").style.display = "block";
+        if (Modernizr.chrome || Modernizr.firefox || Modernizr.safari || Modernizr.msie || Modernizr.edge || Modernizr.opera) {
+            // Navegador compatible, ocultar la capa de no compatible
+            document.getElementById("noCompatibleOverlay").style.display = "none";
         }
     </script>
+</body>
+</html>
+
 
 
 
