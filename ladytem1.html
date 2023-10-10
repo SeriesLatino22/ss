@@ -84,6 +84,67 @@
 
     
 
+    <style>
+        /* Estilo para la capa de no compatible */
+        .no-compatible-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Colocarla encima de todo */
+        }
+
+        /* Estilo para el mensaje dentro de la capa */
+        .no-compatible-message {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+    <div class="no-compatible-overlay" id="noCompatibleOverlay">
+        <div class="no-compatible-message">
+            <p>Lo sentimos, tu navegador no es compatible con este sitio web.</p>
+        </div>
+    </div>
+
+    <!-- El contenido de tu sitio web va aquí -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bowser/2.11.3/bowser.min.js"></script>
+    <script>
+        // JavaScript para ocultar la capa de no compatible en navegadores compatibles
+        var userAgent = navigator.userAgent;
+        
+        if (
+            bowser.msie ||
+            bowser.edge ||
+            bowser.chrome ||
+            bowser.firefox ||
+            bowser.safari ||
+            bowser.opera ||
+            bowser.brave ||
+            bowser.vivaldi ||
+            bowser.ucbrowser ||
+            bowser.yabrowser
+        ) {
+            // Navegador compatible, ocultar la capa de no compatible
+            document.getElementById("noCompatibleOverlay").style.display = "none";
+        } else {
+            // Navegador no compatible, mostrar mensaje
+            document.getElementById("noCompatibleOverlay").style.display = "block";
+        }
+    </script>
+
+
+
+
+
+	  
 
   </head>
   <body>
