@@ -84,6 +84,7 @@
 
     
 
+    
     <style>
         /* Estilo para la capa de no compatible */
         .no-compatible-overlay {
@@ -107,7 +108,7 @@
             text-align: center;
         }
     </style>
-    <div class="no-compatible-overlay" id="noCompatibleOverlay">
+ <div class="no-compatible-overlay" id="noCompatibleOverlay">
         <div class="no-compatible-message">
             <p>Lo sentimos, tu navegador no es compatible con este sitio web.</p>
         </div>
@@ -119,8 +120,7 @@
     <script>
         // JavaScript para ocultar la capa de no compatible en navegadores compatibles
         var userAgent = navigator.userAgent;
-        
-        if (
+        var isCompatibleBrowser = (
             bowser.msie ||
             bowser.edge ||
             bowser.chrome ||
@@ -131,14 +131,15 @@
             bowser.vivaldi ||
             bowser.ucbrowser ||
             bowser.yabrowser
-        ) {
-            // Navegador compatible, ocultar la capa de no compatible
-            document.getElementById("noCompatibleOverlay").style.display = "none";
-        } else {
+        );
+        
+        if (!isCompatibleBrowser) {
             // Navegador no compatible, mostrar mensaje
             document.getElementById("noCompatibleOverlay").style.display = "block";
         }
     </script>
+
+
 
 
 
